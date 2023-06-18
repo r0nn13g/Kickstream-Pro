@@ -8,7 +8,7 @@ const GetChannelDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get('https://kick.com/api/v1/channels/Suspendas');
+          const response = await axios.get('https://kick.com/api/v1/channels/hyubsama');
           setData(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ const GetChannelDetails = () => {
         const livestreamViewers = data.livestream;
           console.log(livestreamViewers)
 
-        const viewerCount = data.livestream;
+        const viewerCount = data.livestream.viewers;
           console.log(viewerCount);
 
         return (
