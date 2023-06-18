@@ -8,7 +8,7 @@ const GetChannelDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get('https://kick.com/api/v1/channels/BruceDropemOff');
+          const response = await axios.get('https://kick.com/api/v1/channels/Brucedropemoff');
           setData(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -16,7 +16,7 @@ const GetChannelDetails = () => {
       };
       fetchData();
     }, []);
-    
+          let pfp;
           let channel;
           let isOnline;
           let activeOrBanned;
@@ -26,12 +26,17 @@ const GetChannelDetails = () => {
             console.log(data)
               channel = data.slug
                 console.log(channel);
+             
+              if(data.user.profile_pic){
+                pfp = data.user.profile_pic;
+                console.log(pfp)
+              }
+                
+                activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
+                  console.log(activeOrBanned.props.children);
     
-              isOnline = data.livestream === null ? <p>This channel is offline</p> : <p>Online</p>;
-                console.log(isOnline.props.children)
-              
-              activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
-                console.log(activeOrBanned.props.children);
+                isOnline = data.livestream !== null ?  <p>Online</p> : <p>This channel is offline</p>;
+                  console.log(isOnline.props.children)
             }
             
             if(data.livestream){
@@ -39,12 +44,13 @@ const GetChannelDetails = () => {
                 console.log(liveViewerCount);
             } else{
               liveViewerCount = 0;
+              console.log(liveViewerCount);
             }
-            
 
         return (
           <div className='live-stream-card'>
               <ul>
+                <li><img src={pfp}/></li>
                 <li>{channel}</li>
                 <li>{isOnline}</li>
                 <li>{activeOrBanned}</li>
