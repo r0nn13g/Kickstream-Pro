@@ -27,26 +27,26 @@ const GetChannelDetails = () => {
               channel = data.slug
                 console.log(channel);
              
-              if(data.user.profile_pic){
-                pfp = data.user.profile_pic;
-                console.log(pfp)
-              }
+                  activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
+                    console.log(activeOrBanned.props.children);
                 
-                activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
-                  console.log(activeOrBanned.props.children);
-    
-                isOnline = data.livestream !== null ?  <p>Online</p> : <p>This channel is offline</p>;
-                  console.log(isOnline.props.children)
+                  isOnline = data.livestream !== null ?  <p>Online</p> : <p>This channel is offline</p>;
+                    console.log(isOnline.props.children)
+                  
+                    if(data.livestream){
+                      liveViewerCount = data.livestream.viewer_count;
+                        console.log(liveViewerCount);
+                    } else {
+                      liveViewerCount = 0;
+                        console.log(liveViewerCount);
+                    }
+            
+                    if(data.user){
+                      pfp = data.user.profile_pic;
+                        console.log(pfp)
+                    }
             }
             
-            if(data.livestream){
-              liveViewerCount = data.livestream.viewer_count;
-                console.log(liveViewerCount);
-            } else{
-              liveViewerCount = 0;
-              console.log(liveViewerCount);
-            }
-
         return (
           <div className='live-stream-card'>
               <ul>
