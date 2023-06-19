@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../Styles/getchannels.css';
 
 const GetChannels = () => {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ const GetChannels = () => {
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get('https://kick.com/api/v1/channels/nickwhite');
+          const response = await axios.get('https://kick.com/api/v1/channels/AdinRoss');
           setData(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -19,7 +20,7 @@ const GetChannels = () => {
             setInterval(fetchData, refreshInterval);
     }, []);
           let pfp;
-          let channel;
+          let channelName;
           let isOnline;
           let activeOrBanned;
           let liveViewerCount;
@@ -27,13 +28,10 @@ const GetChannels = () => {
 
           if(data){
             console.log(data)
-              channel = data.slug
-                console.log(channel);
-             
                   activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
                     console.log(activeOrBanned.props.children);
                 
-                  isOnline = data.livestream !== null ?  <p>Live 🔴</p> : <p>Offline 💤</p>;
+                  isOnline = data.livestream !== null ?  <p>Live 🟢</p> : <p>Offline 🔴</p>;
                     console.log(isOnline.props.children)
                   
                     if(data.livestream){
@@ -44,28 +42,36 @@ const GetChannels = () => {
                     } else {
                       liveViewerCount = 0;
                         console.log(liveViewerCount);
-                      liveStreamTitle = data.livestream.title;
+                      liveStreamTitle = 'n/a';
                     }
             
                     if(data.user){
                       pfp = data.user.profile_pic;
                         console.log(pfp)
+                      channelName = data.user.username
+                        console.log(channelName);
+                    } else {
+                      pfp = 'https://cdn2.iconfinder.com/data/icons/social-media-and-logos-vol-1';
                     }
             }
             
         return (
           <div className='live-stream-card'>
             <div className='channel-pfp-container'>
-                <img id="channel-pfp" src={pfp} alt="channel_pfp"/>
+                <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
             </div>
-              <ul>
-                <li>{channel}</li>
-                <li>{isOnline}</li>
-                <li>{liveStreamTitle}</li>
-                <li>{activeOrBanned}</li>
-                <li>Viewers: {liveViewerCount}</li>
-              </ul>
-            </div>
+              <div className='channel-name-container'>
+                <h3 id='channel-name'>{channelName}</h3>
+              </div>
+                  <div className='live-stream-details-container'>
+                    {liveStreamTitle}
+                  </div>
+                <div className='live-viewers-count-container'>
+                    <p id="is-online">{isOnline}</p>
+                    <p>Viewers: <b>{liveViewerCount}</b></p>
+                    {/* {activeOrBanned} */}
+                </div>
+          </div>
     )
-};
+  };
 export default GetChannels;

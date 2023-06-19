@@ -1,0 +1,72 @@
+
+.live-stream-card {
+  margin: 100px;
+  display: grid;
+  grid-template-areas: 
+   "pfp name details viewers";
+}
+.channel-pfp-container {
+  display: grid;
+  grid-area: pfp;
+}
+#channel-pfp {
+  grid-area: pfp;
+  margin: 10px;
+}
+#channel-pfp {
+  grid-area: pfp;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 75px; /* Adjust the width and height to your desired size */
+  height: 75px;
+  border-radius: 50%; /* Makes the element circular */
+  overflow: hidden; /* Hides the parts of the image outside the circle */
+}
+
+#channel-pfp img {
+  grid-area: pfp;
+  width: 80%;
+  height: 80%;
+  object-fit: cover; /* Ensures the image fills the circle */
+}
+
+.channel-name-container {
+  display: grid;
+  grid-area: name;
+  margin: auto 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+#channel-name {
+  grid-area: pfp;
+  margin: auto 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.live-stream-details-container {
+  margin: auto 0;
+  text-align: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  white-space: nowrap;
+  grid-area: details;
+}
+
+.live-viewers-count-container {
+  margin: auto 0;
+  text-align: left;
+  margin-right: 15px;
+  margin-left: 15px;
+
+  white-space: nowrap;
+  grid-area: viewers;
+}
+
+#is-online {
+  text-align: left;
+}
