@@ -1,6 +1,6 @@
 
 .live-stream-card {
-  margin: 100px;
+  margin: 50px;
   display: grid;
   grid-template-areas: 
    "pfp name details viewers";

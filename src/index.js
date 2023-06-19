@@ -5,13 +5,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import GetChannel from './components/GetChannels';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import GetMultipleChannels from './components/GetMultipleChannels';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Channel" element={<GetChannel />}>
-        </Route>
+        <Route path="/" element={<GetChannel />}></Route>
+        <Route path="/channel" element={<GetMultipleChannels />}></Route>
       </Routes>
     </BrowserRouter>
   );
