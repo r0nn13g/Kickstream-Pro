@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GetChannelDetails from './components/GetChannelDetails';
+import GetChannel from './components/GetChannels';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Channel" element={<GetChannelDetails />}>
+        <Route path="/Channel" element={<GetChannel />}>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const GetChannelDetails = () => {
+const GetChannels = () => {
   const [data, setData] = useState([]);
   // const [slug, setSlug] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
         try {
-          const response = await axios.get('https://kick.com/api/v1/channels/Brucedropemoff');
+          const response = await axios.get('https://kick.com/api/v1/channels/nickwhite');
           setData(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
         }
       };
-      fetchData();
+       const refreshInterval = 60000;
+          fetchData();
+            setInterval(fetchData, refreshInterval);
     }, []);
           let pfp;
           let channel;
@@ -30,7 +32,7 @@ const GetChannelDetails = () => {
                   activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
                     console.log(activeOrBanned.props.children);
                 
-                  isOnline = data.livestream !== null ?  <p>Online</p> : <p>This channel is offline</p>;
+                  isOnline = data.livestream !== null ?  <p>Live 🔴</p> : <p>Offline 💤</p>;
                     console.log(isOnline.props.children)
                   
                     if(data.livestream){
@@ -49,8 +51,10 @@ const GetChannelDetails = () => {
             
         return (
           <div className='live-stream-card'>
+            <div className='channel-pfp-container'>
+                <img id="channel-pfp" src={pfp} alt="channel_pfp"/>
+            </div>
               <ul>
-                <li><img src={pfp}/></li>
                 <li>{channel}</li>
                 <li>{isOnline}</li>
                 <li>{activeOrBanned}</li>
@@ -59,4 +63,4 @@ const GetChannelDetails = () => {
             </div>
     )
 };
-export default GetChannelDetails;
+export default GetChannels;
