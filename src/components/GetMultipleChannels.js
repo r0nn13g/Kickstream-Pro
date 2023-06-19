@@ -11,8 +11,11 @@ const GetChannels = () => {
       const request1 = axios.get('https://kick.com/api/v1/channels/adinross');
       const request2 = axios.get('https://kick.com/api/v1/channels/brucedropemoff');
       const request3 = axios.get('https://kick.com/api/v1/channels/nickwhite');
+      const request4 = axios.get('https://kick.com/api/v1/channels/garydavid');
+      const request5 = axios.get('https://kick.com/api/v1/channels/iceposeidon');
+      const request6 = axios.get('https://kick.com/api/v1/channels/deepak');
 
-      const responses = await Promise.all([request1, request2, request3]);
+      const responses = await Promise.all([request1, request2, request3,request4, request5, request6]);
       
       const responseData = responses.map((response) => response.data);
       
@@ -32,34 +35,6 @@ const GetChannels = () => {
     let liveViewerCount;
     let liveStreamTitle;
 
-    if(data){
-            activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
-              console.log("Status:", activeOrBanned.props.children);
-
-            isOnline = data.livestream !== null ?  <p>🔴 Live</p> : <p>Offline</p>;
-              console.log("Online", isOnline.props.children)
-            
-              if(data.livestream){
-                liveViewerCount = data.livestream.viewer_count;
-                  console.log("viewer_count:", liveViewerCount);
-                liveStreamTitle = data.livestream.session_title;
-                  console.log("session_title:", liveStreamTitle);
-              } else {
-                liveViewerCount = 0;
-                  console.log(liveViewerCount);
-                liveStreamTitle = 'n/a';
-                console.log("Livestream title:", liveStreamTitle)
-              }
-      
-              if(data.user){
-                pfp = data.user.profile_pic;
-                  console.log("profile_pic", pfp)
-                channelName = data.user.username
-                  console.log("username:", channelName);
-              } 
-      }
-
-    
     console.log(data)
     return (
       <div>
@@ -80,35 +55,50 @@ const GetChannels = () => {
                     } else {
                       liveViewerCount = 0;
                         console.log(liveViewerCount);
-                      liveStreamTitle = 'n/a';
+                      liveStreamTitle = "NOTHING YET";                      ;
+                        // console.log(liveStreamTitle.session_title);
                     }
             
                     if(item.user){
                       pfp = item.user.profile_pic;
-                        console.log(pfp)
                       channelName = item.user.username
                         console.log(channelName);
                     } else {
                       pfp = 'https://cdn2.iconfinder.com/data/icons/social-media-and-logos-vol-1';
                     }
+
+                    if(!isOnline && item.previous_livestream){
+                      liveStreamTitle = item.previous_livestream.session_title
+                      console.log(liveStreamTitle)
+                    } else {
+                      
+                    }
             }
 
             return(
               <div key={item.id} className='live-stream-card'>
-              <div key={item.id} className='channel-pfp-container'>
+
+              <div className='channel-pfp-container'>
                 <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
               </div>
+
               <div className='channel-name-container'>
                 <h3 id='channel-name'>{channelName}</h3>
               </div>
+
               <div  className='live-stream-details-container'>
-                {liveStreamTitle}
+                <h3>{liveStreamTitle}</h3>
               </div>
-              <div className='live-viewers-count-container'>
+
+              <div className="active-banned-container">
                  <b>{activeOrBanned}</b>
+              </div>
+
+              <div className='live-viewers-count-container'>
                  <p id="is-online">{isOnline}</p>
                   Viewers: <b>{liveViewerCount}</b>
               </div>
+
             </div>
             )
       })}

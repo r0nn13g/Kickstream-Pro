@@ -64,7 +64,7 @@ const GetChannels = () => {
                 <h3 id='channel-name'>{channelName}</h3>
               </div>
               <div className='live-stream-details-container'>
-                {liveStreamTitle}
+                <h3>{liveStreamTitle}</h3>
               </div>
               <div className='live-viewers-count-container'>
                 <p id="is-online">{isOnline}</p>

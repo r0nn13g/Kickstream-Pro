@@ -2,69 +2,65 @@
 .live-stream-card {
   margin: 50px;
   display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr 4fr 3fr;
   grid-template-areas: 
-   "pfp name details viewers";
+   "pfp name details Banstat viewers";
 }
 .channel-pfp-container {
+  grid-area: pfp;
   display: grid;
-  grid-area: pfp;
 }
 #channel-pfp {
-  grid-area: pfp;
-  margin: 10px;
-}
-#channel-pfp {
-  grid-area: pfp;
-  margin-left: 15px;
-  margin-right: 15px;
-  width: 75px; /* Adjust the width and height to your desired size */
-  height: 75px;
+  width: 65px; /* Adjust the width and height to your desired size */
+  height: 65px;
   border-radius: 50%; /* Makes the element circular */
-  overflow: hidden; /* Hides the parts of the image outside the circle */
-}
-
-#channel-pfp img {
-  grid-area: pfp;
-  width: 80%;
-  height: 80%;
-  object-fit: cover; /* Ensures the image fills the circle */
+  overflow: hidden;
 }
 
 .channel-name-container {
-  display: grid;
   grid-area: name;
-  margin: auto 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  text-align: center;
-  white-space: nowrap;
+  display: grid;
 }
+
 #channel-name {
-  grid-area: pfp;
-  margin: auto 0;
-  margin-left: 15px;
-  margin-right: 15px;
   text-align: center;
+  margin: auto 0;
+  padding-left: 0%;
+  /* margin-right: 15px; */
   white-space: nowrap;
 }
 
 .live-stream-details-container {
+  grid-area: details;
   margin: auto 0;
   text-align: center;
   margin-left: 15px;
-  margin-right: 15px;
-  white-space: nowrap;
-  grid-area: details;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.live-stream-details-container h3 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+
+  .active-banned-container{
+    grid-area: Banstat;
+    margin: auto 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+
 .live-viewers-count-container {
+  grid-area: viewers;
   margin: auto 0;
   text-align: left;
   margin-right: 15px;
   margin-left: 15px;
-
   white-space: nowrap;
-  grid-area: viewers;
 }
 
 #is-online {
