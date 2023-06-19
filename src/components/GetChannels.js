@@ -23,6 +23,7 @@ const GetChannels = () => {
           let isOnline;
           let activeOrBanned;
           let liveViewerCount;
+          let liveStreamTitle;
 
           if(data){
             console.log(data)
@@ -38,9 +39,12 @@ const GetChannels = () => {
                     if(data.livestream){
                       liveViewerCount = data.livestream.viewer_count;
                         console.log(liveViewerCount);
+                      liveStreamTitle = data.livestream.session_title;
+                        console.log(liveStreamTitle);
                     } else {
                       liveViewerCount = 0;
                         console.log(liveViewerCount);
+                      liveStreamTitle = data.livestream.title;
                     }
             
                     if(data.user){
@@ -57,8 +61,9 @@ const GetChannels = () => {
               <ul>
                 <li>{channel}</li>
                 <li>{isOnline}</li>
+                <li>{liveStreamTitle}</li>
                 <li>{activeOrBanned}</li>
-                <li>{liveViewerCount}</li>
+                <li>Viewers: {liveViewerCount}</li>
               </ul>
             </div>
     )
