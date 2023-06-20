@@ -1,68 +1,78 @@
 
 .live-stream-card {
-  margin: 50px;
+  /* border: 0.5px solid white; */
+  margin: 20px;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 4fr 4fr 3fr;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
   grid-template-areas: 
-   "pfp name details Banstat viewers";
+   "pfp name details isLive viewers";
 }
 .channel-pfp-container {
+  margin: auto 0;
   grid-area: pfp;
   display: grid;
 }
 #channel-pfp {
-  width: 65px; /* Adjust the width and height to your desired size */
-  height: 65px;
-  border-radius: 50%; /* Makes the element circular */
+  margin-left: 0px;
+  width: 50px; 
+  height: 50px;
+  border-radius: 50%;
   overflow: hidden;
 }
 
 .channel-name-container {
   grid-area: name;
   display: grid;
+  margin-left: 20px;
 }
 
 #channel-name {
-  text-align: center;
+  color: rgb(85, 255, 47);
+  text-align: left;
   margin: auto 0;
-  padding-left: 0%;
-  /* margin-right: 15px; */
   white-space: nowrap;
 }
 
 .live-stream-details-container {
   grid-area: details;
-  margin: auto 0;
-  text-align: center;
-  margin-left: 15px;
+  color: rgb(177, 177, 177);
+  margin-left: 20px;
+  text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.live-stream-details-container h3 {
+.live-stream-details-container h5 {
   width: 100%;
   overflow: hidden;
+  margin-left: 20px;
   text-overflow: ellipsis;
-  }
+  white-space: nowrap;
+}
 
   .active-banned-container{
-    grid-area: Banstat;
+    /* grid-area: Banstat; */
     margin: auto 0;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
   }
   
 
 .live-viewers-count-container {
   grid-area: viewers;
-  margin: auto 0;
   text-align: left;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin: auto 0;
   white-space: nowrap;
 }
 
-#is-online {
-  text-align: left;
+.is-live{
+  color: rgb(177, 177, 177);
+  grid-area: isLive;
+  margin: auto 0;
+  text-align: center;
+}
+
+#is-online{
+  text-align: center;
 }

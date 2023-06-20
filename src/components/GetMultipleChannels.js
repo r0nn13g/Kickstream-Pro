@@ -10,10 +10,10 @@ const GetChannels = () => {
     try {
       const request1 = axios.get('https://kick.com/api/v1/channels/adinross');
       const request2 = axios.get('https://kick.com/api/v1/channels/brucedropemoff');
-      const request3 = axios.get('https://kick.com/api/v1/channels/nickwhite');
-      const request4 = axios.get('https://kick.com/api/v1/channels/garydavid');
-      const request5 = axios.get('https://kick.com/api/v1/channels/iceposeidon');
-      const request6 = axios.get('https://kick.com/api/v1/channels/deepak');
+      const request3 = axios.get('https://kick.com/api/v1/channels/iceposeidon');
+      const request4 = axios.get('https://kick.com/api/v1/channels/imjoel3004');
+      const request5 = axios.get('https://kick.com/api/v1/channels/nickwhite');
+      const request6 = axios.get('https://kick.com/api/v1/channels/garydavid');
 
       const responses = await Promise.all([request1, request2, request3,request4, request5, request6]);
       
@@ -77,28 +77,24 @@ const GetChannels = () => {
 
             return(
               <div key={item.id} className='live-stream-card'>
-
-              <div className='channel-pfp-container'>
-                <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
-              </div>
-
-              <div className='channel-name-container'>
-                <h3 id='channel-name'>{channelName}</h3>
-              </div>
-
-              <div  className='live-stream-details-container'>
-                <h3>{liveStreamTitle}</h3>
-              </div>
-
-              <div className="active-banned-container">
-                 <b>{activeOrBanned}</b>
-              </div>
-
+                <div className='channel-pfp-container'>
+                  <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
+                </div>
+                  <div className='channel-name-container'>
+                    <h5 id='channel-name'>{channelName}</h5>
+                  </div>
+                    <div  className='live-stream-details-container'>
+                      <h5>{liveStreamTitle}</h5>
+                    </div>
+                  {/* <div className="active-banned-container">
+                    <b>{activeOrBanned}</b>
+                  </div> */}
               <div className='live-viewers-count-container'>
-                 <p id="is-online">{isOnline}</p>
-                  Viewers: <b>{liveViewerCount}</b>
+                  <b>{liveViewerCount}</b>
               </div>
-
+              <div className="is-live">
+                 <h5 id="is-online">{isOnline}</h5>
+              </div>
             </div>
             )
       })}
