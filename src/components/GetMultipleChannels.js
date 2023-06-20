@@ -12,10 +12,16 @@ const GetChannels = () => {
           const request2 = axios.get('https://kick.com/api/v1/channels/adinross');
           const request3 = axios.get('https://kick.com/api/v1/channels/brucedropemoff');
           const request4 = axios.get('https://kick.com/api/v1/channels/iceposeidon');
-          const request5 = axios.get('https://kick.com/api/v1/channels/sam');
-          const request6 = axios.get('https://kick.com/api/v1/channels/imjoel3004');
+          const request5 = axios.get('https://kick.com/api/v1/channels/suspendas');
+          const request6 = axios.get('https://kick.com/api/v1/channels/sam');
+          const request7 = axios.get('https://kick.com/api/v1/channels/imjoel3004');
+          const request8 = axios.get('https://kick.com/api/v1/channels/johnnysomali');
+          const request9 = axios.get('https://kick.com/api/v1/channels/nickwhite');
+          const request10 = axios.get('https://kick.com/api/v1/channels/eddie');
 
-          const responses = await Promise.all([request1, request2, request3,request4, request5, request6]);
+
+
+          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8, request9, request10]);
           
           const responseData = responses.map((response) => response.data);
           
@@ -43,10 +49,10 @@ const GetChannels = () => {
                 
                 accountStatus = item.is_banned === true ? <p>Banned</p> : <p>Active</p>;
                   console.log("Account Status", accountStatus.props.children);       
-                isLive = item.livestream !== null? <p>LIVE</p> : <p></p>;
+                isLive = item.livestream !== null? <p>Live</p> : <p></p>;
                   console.log(isLive.props.children);    
                     
-                  if(item.user){
+                    if(item.user){
                       pfp = item.user.profile_pic;
                         channel = item.user.username;
                         console.log("Channel:", channel);
@@ -55,22 +61,20 @@ const GetChannels = () => {
                     };
                     
                     if(item.livestream){
-                      
                       rawViewers = item.livestream.viewer_count;
-                      viewerCount = rawViewers.toLocaleString("en-US");
-                      
+                      viewerCount = rawViewers.toLocaleString("en-US") + " " + "viewers";
                       streamTitle = item.livestream.session_title;
                         console.log("Viewers:", viewerCount);
                         console.log("Title:", streamTitle);
                     } else {
                       viewerCount = undefined;
-                      streamTitle = "offline";
+                      streamTitle = "OFFLINE";
                         console.log("offline");
                     };
                     
                     if(!isLive && item.previous_livestream){
                       streamTitle = item.previous_livestream.session_title;
-                        console.log(streamTitle);
+                        console.log("Stream title", streamTitle);
                     };
                 };
                     return(
@@ -84,9 +88,6 @@ const GetChannels = () => {
                         </div> 
                           <h5>{streamTitle}</h5>
                         </div>
-                        {/* <div className="active-banned-container">
-                            <b>{accountStatus}</b>
-                        </div> */}
                         <div className="is-live">
                           <h5 id="is-online">{isLive}</h5>
                         </div>

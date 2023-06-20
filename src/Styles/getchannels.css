@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   margin-right: -30px;
-  margin-top: 12px;
+  margin: 10px;
 
 }
 #channel-pfp {
@@ -27,23 +27,26 @@
 .channel-name-container {
   grid-area: name;
   display: grid;
-  margin: 5px;
+  margin-bottom: 30px;
 }
 
 #channel-name {
   color: rgb(85, 255, 47);
   text-align: left;
   white-space: nowrap;
-  margin-bottom: 15px;
+}
+
+#channel-name h5 {
+   margin: 0px;
 }
 
 .live-stream-details-container {
   grid-area: details;
-  color: rgb(177, 177, 177);
+  color: rgb(94, 94, 94);
   text-align: left;
   overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 15px;
+  text-overflow:ellipsis;
+  margin-bottom: 10px;
 }
 
 .live-stream-details-container h5 {
@@ -55,7 +58,6 @@
 }
 
   .active-banned-container{
-    /* grid-area: Banstat; */
     margin: auto 0;
     text-align: left;
     white-space: nowrap;
@@ -73,9 +75,9 @@
   }
 
 .live-viewers-count-container {
-  color: rgb(94, 94, 94);
+  color: rgb(177, 177, 177);
   grid-area: viewers;
-  text-align: center;
+  text-align: left;
   margin: auto 0;
   white-space: nowrap;
 }
