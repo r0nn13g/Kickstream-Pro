@@ -33,6 +33,7 @@ const GetChannels = () => {
     let channel;
     let streamTitle;
     let accountStatus;
+    let rawViewers;
     let viewerCount;
         return (
           <div>
@@ -42,7 +43,7 @@ const GetChannels = () => {
                 
                 accountStatus = item.is_banned === true ? <p>Banned</p> : <p>Active</p>;
                   console.log("Account Status", accountStatus.props.children);       
-                isLive = item.livestream !== null? <p>🟢 Live</p> : <p></p>;
+                isLive = item.livestream !== null? <p>LIVE</p> : <p></p>;
                   console.log(isLive.props.children);    
                     
                   if(item.user){
@@ -54,7 +55,10 @@ const GetChannels = () => {
                     };
                     
                     if(item.livestream){
-                      viewerCount = item.livestream.viewer_count;
+                      
+                      rawViewers = item.livestream.viewer_count;
+                      viewerCount = rawViewers.toLocaleString("en-US");
+                      
                       streamTitle = item.livestream.session_title;
                         console.log("Viewers:", viewerCount);
                         console.log("Title:", streamTitle);
@@ -74,24 +78,25 @@ const GetChannels = () => {
                         <div className='channel-pfp-container'>
                           <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
                         </div>
+                        <div  className='live-stream-details-container'>
                         <div className='channel-name-container'>
                           <h5 id='channel-name'>{channel}</h5>
-                        </div>
-                        <div  className='live-stream-details-container'>
+                        </div> 
                           <h5>{streamTitle}</h5>
                         </div>
                         {/* <div className="active-banned-container">
                             <b>{accountStatus}</b>
                         </div> */}
-                        <div className='live-viewers-count-container'>
-                          <b>{viewerCount}</b>
-                        </div>
                         <div className="is-live">
                           <h5 id="is-online">{isLive}</h5>
                         </div>
+                        <div className='live-viewers-count-container'>
+                          <b>{viewerCount}</b>
+                        </div>
+                  
                       </div>
                     )
-              })}
+                  })}
             </div>
     );
   };
