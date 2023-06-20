@@ -3,11 +3,11 @@
   display: grid;
   gap: 10px;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr;
   grid-template-areas: 
    "pfp name isLive viewers"
    "pfp details isLive viewers";
-   border-bottom: 2px solid rgb(35, 35, 35);
+   border-top: 2px solid rgb(35, 35, 35);
 }
 .channel-pfp-container {
   grid-area: pfp;
@@ -15,6 +15,7 @@
   justify-content: center;
   margin-right: -30px;
   margin: 10px;
+  border-right: 2px solid rgb(35, 35, 35);
 
 }
 #channel-pfp {
@@ -64,10 +65,13 @@
   }
   
   .is-live{
-    color:  rgb(85, 255, 47);
     grid-area: isLive;
+    color:  rgb(85, 255, 47);
     margin: auto 0;
     text-align: center;
+    border-left: 2px solid rgb(35, 35, 35);
+    border-right: 2px solid rgb(35, 35, 35);
+
   }
   
   #is-online{
@@ -77,7 +81,7 @@
 .live-viewers-count-container {
   color: rgb(177, 177, 177);
   grid-area: viewers;
-  text-align: left;
+  text-align: center;
   margin: auto 0;
   white-space: nowrap;
 }

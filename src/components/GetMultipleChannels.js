@@ -15,13 +15,13 @@ const GetChannels = () => {
           const request5 = axios.get('https://kick.com/api/v1/channels/suspendas');
           const request6 = axios.get('https://kick.com/api/v1/channels/sam');
           const request7 = axios.get('https://kick.com/api/v1/channels/imjoel3004');
-          const request8 = axios.get('https://kick.com/api/v1/channels/johnnysomali');
+          const request8 = axios.get('https://kick.com/api/v1/channels/garydavid');
           const request9 = axios.get('https://kick.com/api/v1/channels/nickwhite');
           const request10 = axios.get('https://kick.com/api/v1/channels/eddie');
 
 
 
-          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8, request9, request10]);
+          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8,  request9, request10]);
           
           const responseData = responses.map((response) => response.data);
           
@@ -47,9 +47,9 @@ const GetChannels = () => {
               if(data){
                 console.log(data)
                 
-                accountStatus = item.is_banned === true ? <p>Banned</p> : <p>Active</p>;
+                accountStatus = item.is_banned === true ? <p>BANNED</p> : <p>ACTIVE</p>;
                   console.log("Account Status", accountStatus.props.children);       
-                isLive = item.livestream !== null? <p>Live</p> : <p></p>;
+                isLive = item.livestream !== null? <p>LIVE</p> : <p></p>;
                   console.log(isLive.props.children);    
                     
                     if(item.user){
@@ -62,7 +62,7 @@ const GetChannels = () => {
                     
                     if(item.livestream){
                       rawViewers = item.livestream.viewer_count;
-                      viewerCount = rawViewers.toLocaleString("en-US") + " " + "viewers";
+                      viewerCount = rawViewers.toLocaleString("en-US") + " " + "Viewers";
                       streamTitle = item.livestream.session_title;
                         console.log("Viewers:", viewerCount);
                         console.log("Title:", streamTitle);
@@ -76,7 +76,9 @@ const GetChannels = () => {
                       streamTitle = item.previous_livestream.session_title;
                         console.log("Stream title", streamTitle);
                     };
-                };
+                } else {
+
+                }
                     return(
                       <div key={item.id} className='live-stream-card'>
                         <div className='channel-pfp-container'>
