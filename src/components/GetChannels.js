@@ -65,8 +65,8 @@ const GetChannels = () => {
                 rawViewers = item.livestream.viewer_count;
                 viewerCount = rawViewers.toLocaleString("en-US");
                 streamTitle = item.livestream.session_title;
-                console.log("Current title:", streamTitle);
-                console.log("Viewer count:", viewerCount);
+                  console.log("Current title:", streamTitle);
+                  console.log("Viewer count:", viewerCount);
               } else {
                 viewerCount = undefined;
                 streamTitle = `Last Title: ${previousStreamTitle}`;
@@ -84,7 +84,9 @@ const GetChannels = () => {
                 <div className='channel-name-container'>
                   <h6 id='channel-name'>{channel}</h6>
                 </div> 
+                <div className="stream-title-container">
                   <h6>{streamTitle}</h6>  
+                </div>
               </div>
               <div className="is-live">
                 <h6 id="is-online">{isLive}</h6>
