@@ -57,7 +57,7 @@ const GetChannels = () => {
                 console.log(item.previous_livestreams[0])
                   console.log("Previous title:", previousStreamTitle)
                 } else {
-                  previousStreamTitle = "OFFLINE";
+                  previousStreamTitle = "No titles yet.";
                   console.log("previous stream title does not exist ")
               };
                     
@@ -69,10 +69,10 @@ const GetChannels = () => {
                 console.log("Viewer count:", viewerCount);
               } else {
                 viewerCount = undefined;
-                streamTitle = previousStreamTitle;
+                streamTitle = `Last Title: ${previousStreamTitle}`;
               };
               
-              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>LIVE</p>;
+              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>offline</p>;
             };
 
       return(

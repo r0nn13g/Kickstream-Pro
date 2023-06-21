@@ -76,7 +76,7 @@ const RemoveBannedChannel = () => {
                 streamTitle = previousStreamTitle;
               };
               
-              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>LIVE</p>;
+              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>OFFLINE</p>;
             };
                     return(
                       <div key={item.id} className='live-stream-card'>
