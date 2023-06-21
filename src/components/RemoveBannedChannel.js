@@ -1,8 +1,8 @@
 import React, {useState, useEffect}from "react";
 import axios from 'axios';
 import '../Styles/getchannels.css';
-import streamers from "./streamers";
-console.log(streamers)
+// import streamers from "./streamers";
+// console.log(streamers)
 
 const RemoveBannedChannel = () => {
   const [data, setData] = useState([]);
@@ -33,73 +33,72 @@ const RemoveBannedChannel = () => {
       // fetchData();
       setInterval(fetchData, refreshInterval);
     }, []);
+    
     let pfp;
     let isLive;
     let channel;
     let streamTitle;
-    let accountStatus;
     let rawViewers;
     let viewerCount;
-        return (
-          <div>
-            {data.map((item) => {
-              if(data){
-                console.log(data)
-                
-                accountStatus = item.is_banned === true ? <p>BANNED</p> : <p>ACTIVE</p>;
-                  console.log("Account Status", accountStatus.props.children);       
-                isLive = item.livestream !== null? <p>LIVE</p> : <p></p>;
-                  console.log(isLive.props.children);    
-                    
-                    if(item.user){
-                      pfp = item.user.profile_pic;
-                        channel = item.user.username;
-                        console.log("Channel:", channel);
-                    } else {
-                      pfp = 'https://cdn2.iconfinder.com/data/icons/social-media-and-logos-vol-1';
-                    };
-                    
-                    if(item.livestream){
-                      rawViewers = item.livestream.viewer_count;
-                      viewerCount = rawViewers.toLocaleString("en-US");
-                      streamTitle = item.livestream.session_title;
-                        console.log("Viewers:", viewerCount);
-                        console.log("Title:", streamTitle);
-                    } else {
-                      viewerCount = undefined;
-                      streamTitle = "OFFLINE";
-                        console.log("offline");
-                    };
-                    
-                    if(!isLive && item.previous_livestream){
-                      streamTitle = item.previous_livestream.session_title;
-                        console.log("Stream title", streamTitle);
-                    };
-                } else {
+    let previousStreamTitle;
 
-                }
+    return (
+      <div>
+        {data.map((item) => {
+          // console.log(data)
+            if(data){
+              
+              if(item && item.user){
+                pfp = item.user.profile_pic;
+                channel = item.user.username;
+                console.log("Channel:", channel);
+              } else {
+                pfp = 'https://static.wikia.nocookie.net/logopedia/images/8/82/Kick_%28App_Icon%29.svg/revision/latest/scale-to-width-down/250?cb=20230329130702';
+              };
+              
+              if(item && item.user && item.previous_livestreams[0]){
+                previousStreamTitle = item.previous_livestreams[0].session_title
+                console.log(item.previous_livestreams[0])
+                  console.log("Previous title:", previousStreamTitle)
+                } else {
+                  previousStreamTitle = "OFFLINE";
+                  console.log("previous stream title does not exist ")
+              };
+                    
+              if(item.livestream){
+                rawViewers = item.livestream.viewer_count;
+                viewerCount = rawViewers.toLocaleString("en-US");
+                streamTitle = item.livestream.session_title;
+                console.log("Current title:", streamTitle);
+                console.log("Viewer count:", viewerCount);
+              } else {
+                viewerCount = undefined;
+                streamTitle = previousStreamTitle;
+              };
+              
+              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>LIVE</p>;
+            };
                     return(
                       <div key={item.id} className='live-stream-card'>
-                        <div className='channel-pfp-container'>
-                          <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
-                        </div>
-                        <div  className='live-stream-details-container'>
-                        <div className='channel-name-container'>
-                          <h5 id='channel-name'>@{channel}</h5>
-                        </div> 
-                          <h5>{streamTitle}</h5>
-                        </div>
-                        <div className="is-live">
-                          <h5 id="is-online">{isLive}</h5>
-                        </div>
-                        <div className='live-viewers-count-container'>
-                          <b>{viewerCount}</b>
-                        </div>
-                  
+                      <div className='channel-pfp-container'>
+                        <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
                       </div>
-                    )
-                  })}
-            </div>
-    );
-  };
+                      <div  className='live-stream-details-container'>
+                        <div className='channel-name-container'>
+                          <h6 id='channel-name'>{channel}</h6>
+                        </div> 
+                          <h6>{streamTitle}</h6>  
+                      </div>
+                      <div className="is-live">
+                        <h6 id="is-online">{isLive}</h6>
+                      </div>
+                      <div className='live-viewers-count-container'>
+                        <h6 id="viewer-count" >{viewerCount}</h6>
+                      </div>
+                  </div>
+            )
+          })}
+        </div>
+      );
+    };
 export default RemoveBannedChannel;

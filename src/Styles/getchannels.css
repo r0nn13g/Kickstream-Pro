@@ -1,3 +1,8 @@
+.live-stream-card-container {
+  margin: 50px;
+  border: 3px solid rgb(35, 35, 35);
+  border-radius: 2%;
+}
 
 .live-stream-card {
   display: grid;
@@ -13,6 +18,8 @@
   display: flex;
   justify-content: center;
   margin: 10px;
+  /* border: 5px solid rgb(35, 35, 35); */
+  border-radius: 2%;
 }
 #channel-pfp {
   width: 60px; 
@@ -69,7 +76,7 @@
     border-right: 2px solid rgb(35, 35, 35);
   }
   
-  #offline-noti{
+  #offline-live{
     color:rgb(60, 60, 60);
   }
   #is-online{
