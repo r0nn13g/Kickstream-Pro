@@ -1,77 +1,104 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState, useEffect}from "react";
 import axios from 'axios';
 import '../Styles/getchannels.css';
 
 const GetChannels = () => {
   const [data, setData] = useState([]);
-  // const [slug, setSlug] = useState(null)
-
-  useEffect(() => {
-    const fetchData = async () => {
+    useEffect(() => {
+      const fetchData = async () => {
         try {
-          const response = await axios.get('https://kick.com/api/v1/channels/adinross');
-          setData(response.data);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      };
-       const refreshInterval = 60000;
-          fetchData();
-            setInterval(fetchData, refreshInterval);
-    }, []);
-          let pfp;
-          let channelName;
-          let isOnline;
-          let activeOrBanned;
-          let liveViewerCount;
-          let liveStreamTitle;
+          const request1 = axios.get('https://kick.com/api/v1/channels/brucedropemoff');
+          const request2 = axios.get('https://kick.com/api/v1/channels/iceposeidon');
+          const request3 = axios.get('https://kick.com/api/v1/channels/adinross');
+          const request4 = axios.get('https://kick.com/api/v1/channels/xqc');
+          const request5 = axios.get('https://kick.com/api/v1/channels/suspendas');
+          const request6 = axios.get('https://kick.com/api/v1/channels/sam');
+          const request7 = axios.get('https://kick.com/api/v1/channels/imjoel3004');
+          const request8 = axios.get('https://kick.com/api/v1/channels/garydavid');
+          const request9 = axios.get('https://kick.com/api/v1/channels/nickwhite');
+          const request10 = axios.get('https://kick.com/api/v1/channels/asmongold');
+          const request11 = axios.get('https://kick.com/api/v1/channels/ludwig');
 
-          if(data){
-            console.log(data)
-                  activeOrBanned = data.is_banned === true ? <p>Banned</p> : <p>Active</p>;
-                    console.log(activeOrBanned.props.children);
-                
-                  isOnline = data.livestream !== null ?  <p>🔴 Live</p> : <p>Offline</p>;
-                    console.log(isOnline.props.children)
-                  
-                    if(data.livestream){
-                      liveViewerCount = data.livestream.viewer_count;
-                        console.log(liveViewerCount);
-                      liveStreamTitle = data.livestream.session_title;
-                        console.log(liveStreamTitle);
+          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8,  request9, request10, request11]);          
+          const responseData = responses.map((response) => response.data);
+          
+          setData(responseData);
+        } catch (error) {
+          console.error('Error:', error);
+        };
+      };
+      const refreshInterval = 60000;
+      fetchData(); 
+      setInterval(fetchData, refreshInterval);
+    }, []);
+    let pfp;
+    let isLive;
+    let channel;
+    let streamTitle;
+    let accountStatus;
+    let rawViewers;
+    let viewerCount;
+    let previousStreamTitle;
+
+
+    return (
+          <div>
+            {data.map((item) => {
+              if(data){
+                console.log(data)
+                accountStatus = item.is_banned === true ? <p>BANNED</p> : <p>Active</p>;
+                  console.log(accountStatus)
+                isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-noti'>OFFLINE</p>;
+                  console.log(isLive.props.children); 
+                  if(item && item.user){
+                    pfp = item.user.profile_pic;
+                    channel = item.user.username;
+                    console.log("Channel:", channel);
+                  } else {
+                    pfp = 'https://static.wikia.nocookie.net/logopedia/images/8/82/Kick_%28App_Icon%29.svg/revision/latest/scale-to-width-down/250?cb=20230329130702';
+                    };
+                    
+                    if(item && item.user && item.previous_livestreams[0]){
+                      previousStreamTitle = item.previous_livestreams[0].session_title
+                        console.log("Previous live stream data:", item.previous_livestreams[0])
+                        console.log("Previous stream title:", previousStreamTitle)
                     } else {
-                      liveViewerCount = 0;
-                        console.log(liveViewerCount);
-                      liveStreamTitle = 'n/a';
+                      previousStreamTitle = "OFFLINE";
                     }
-            
-                    if(data.user){
-                      pfp = data.user.profile_pic;
-                        console.log(pfp)
-                      channelName = data.user.username
-                        console.log(channelName);
-                    } else {
-                      pfp = 'https://cdn2.iconfinder.com/data/icons/social-media-and-logos-vol-1';
-                    }
-            }
-            
-          return (
-            <div className='live-stream-card'>
-              <div className='channel-pfp-container'>
-                <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
-              </div>
-              <div className='channel-name-container'>
-                <h3 id='channel-name'>{channelName}</h3>
-              </div>
-              <div className='live-stream-details-container'>
-                <h3>{liveStreamTitle}</h3>
-              </div>
-              <div className='live-viewers-count-container'>
-                <p id="is-online">{isOnline}</p>
-                <p>Viewers: <b>{liveViewerCount}</b></p>
-                  {/* {activeOrBanned} */}
-              </div>
+                    
+                    if(item.livestream){
+                      rawViewers = item.livestream.viewer_count;
+                      viewerCount = rawViewers.toLocaleString("en-US");
+                      streamTitle = item.livestream.session_title;
+                        console.log("Viewers:", viewerCount);
+                        console.log("Title:", streamTitle);
+                      } else {
+                        viewerCount = undefined;
+                        streamTitle = previousStreamTitle;
+                          console.log("Offline");
+                      };
+            };
+                    return(
+                      <div key={item.id} className='live-stream-card'>
+                        <div className='channel-pfp-container'>
+                          <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
+                        </div>
+                        <div  className='live-stream-details-container'>
+                        <div className='channel-name-container'>
+                          <h6 id='channel-name'>{channel}</h6>
+                        </div> 
+                          <h6>{streamTitle}</h6>
+                        </div>
+                        <div className="is-live">
+                          <h6 id="is-online">{isLive}</h6>
+                        </div>
+                        <div className='live-viewers-count-container'>
+                          <h6 id="viewer-count" >{viewerCount}</h6>
+                        </div>
+                      </div>
+                    )
+                  })}
             </div>
-    )
+    );
   };
 export default GetChannels;

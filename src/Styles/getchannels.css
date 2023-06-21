@@ -1,9 +1,8 @@
 
 .live-stream-card {
   display: grid;
-  gap: 10px;
   grid-template-rows: 1fr;
-  grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr;
+  grid-template-columns: 0.5fr 2.5fr 0.5fr 0.5fr;
   grid-template-areas: 
    "pfp name isLive viewers"
    "pfp details isLive viewers";
@@ -13,14 +12,11 @@
   grid-area: pfp;
   display: flex;
   justify-content: center;
-  margin-right: -30px;
   margin: 10px;
-  border-right: 2px solid rgb(35, 35, 35);
-
 }
 #channel-pfp {
-  width: 75px; 
-  height: 75px;
+  width: 60px; 
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -50,7 +46,7 @@
   margin-bottom: 10px;
 }
 
-.live-stream-details-container h5 {
+.live-stream-details-container h6 {
   margin: 0px;
   width: 100%;
   overflow: hidden;
@@ -71,9 +67,11 @@
     text-align: center;
     border-left: 2px solid rgb(35, 35, 35);
     border-right: 2px solid rgb(35, 35, 35);
-
   }
   
+  #offline-noti{
+    color:rgb(60, 60, 60);
+  }
   #is-online{
     text-align: center;
   }
@@ -81,7 +79,9 @@
 .live-viewers-count-container {
   color: rgb(177, 177, 177);
   grid-area: viewers;
+  display: flex;
   text-align: center;
-  margin: auto 0;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
 }

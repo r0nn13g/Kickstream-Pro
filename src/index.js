@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GetChannel from './components/GetChannels';
+import Channel from './components/Channel';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import GetMultipleChannels from './components/GetMultipleChannels';
+import GetChannels from './components/GetChannels';
+import RemoveBannedChannel from './components/RemoveBannedChannel';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<GetChannel />}></Route>
-        <Route path="/channel" element={<GetMultipleChannels />}></Route>
+        <Route path="/" element={<Channel />}></Route>
+        <Route path="/channels" element={<GetChannels />}></Route>
+        <Route path="/dev" element={<RemoveBannedChannel />}></Route>
       </Routes>
     </BrowserRouter>
   );

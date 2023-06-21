@@ -1,8 +1,10 @@
 import React, {useState, useEffect}from "react";
 import axios from 'axios';
 import '../Styles/getchannels.css';
+import streamers from "./streamers";
+console.log(streamers)
 
-const GetChannels = () => {
+const RemoveBannedChannel = () => {
   const [data, setData] = useState([]);
   
     useEffect(() => {
@@ -19,10 +21,7 @@ const GetChannels = () => {
           const request9 = axios.get('https://kick.com/api/v1/channels/nickwhite');
           const request10 = axios.get('https://kick.com/api/v1/channels/eddie');
 
-
-
-          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8,  request9, request10]);
-          
+          const responses = await Promise.all([request1, request2, request3,request4, request5, request6, request7, request8,  request9, request10]);          
           const responseData = responses.map((response) => response.data);
           
           setData(responseData);
@@ -31,8 +30,8 @@ const GetChannels = () => {
         };
       };
       const refreshInterval = 60000;
+      // fetchData();
       setInterval(fetchData, refreshInterval);
-      fetchData();
     }, []);
     let pfp;
     let isLive;
@@ -62,7 +61,7 @@ const GetChannels = () => {
                     
                     if(item.livestream){
                       rawViewers = item.livestream.viewer_count;
-                      viewerCount = rawViewers.toLocaleString("en-US") + " " + "Viewers";
+                      viewerCount = rawViewers.toLocaleString("en-US");
                       streamTitle = item.livestream.session_title;
                         console.log("Viewers:", viewerCount);
                         console.log("Title:", streamTitle);
@@ -86,7 +85,7 @@ const GetChannels = () => {
                         </div>
                         <div  className='live-stream-details-container'>
                         <div className='channel-name-container'>
-                          <h5 id='channel-name'>{channel}</h5>
+                          <h5 id='channel-name'>@{channel}</h5>
                         </div> 
                           <h5>{streamTitle}</h5>
                         </div>
@@ -103,4 +102,4 @@ const GetChannels = () => {
             </div>
     );
   };
-export default GetChannels;
+export default RemoveBannedChannel;
