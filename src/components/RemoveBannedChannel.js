@@ -56,27 +56,20 @@ const RemoveBannedChannel = () => {
               channel = item.user.username;
               followerCount = item.followersCount;
               followers = followerCount.toLocaleString("en-US");
-              console.log("Channel:", channel);
-              console.log("Followers:", followers);
             } else {
               pfp = '';
             };
             
             if(item && item.user && item.previous_livestreams[0]){
               previousStreamTitle = item.previous_livestreams[0].session_title
-              // console.log(item.previous_livestreams[0])
-                // console.log("Previous title:", previousStreamTitle)
               } else {
                 previousStreamTitle = "No titles yet.";
-                console.log("previous stream title does not exist ")
             };
                   
             if(item.livestream){
               rawViewers = item.livestream.viewer_count;
               viewerCount = rawViewers.toLocaleString("en-US");
               streamTitle = item.livestream.session_title;
-                console.log("Current title:", streamTitle);
-                console.log("Viewer count:", viewerCount);
             } else {
               viewerCount = undefined;
               streamTitle = `Last Title: ${previousStreamTitle}`;
