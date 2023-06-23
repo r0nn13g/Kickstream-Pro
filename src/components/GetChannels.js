@@ -12,7 +12,7 @@ let followers;
 let followerCount;
 let previousStreamTitle;
 
-let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png'
+let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
 
 const GetChannels = () => {
   const [data, setData] = useState([]);
