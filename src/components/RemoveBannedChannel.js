@@ -17,14 +17,26 @@ const RemoveBannedChannel = () => {
     const fetchData = async () => {
       try {
           const responses = await Promise.all(streamers());  
-          const responseData = responses.map((response) => response.data);       
-          setData(responseData);
-        } catch (error) {
-          console.error('Error:', error);
+          const responseData = responses.filter(response => {
+            if(response instanceof Error){
+              // Handle the error response
+            if (response.response && response.response.status === 404) {
+              // Remove the failed URL from state
+              return false;
+            }
+            console.error('Error:', response);
+            return true; // Keep other error responses
+          }
+          return true; // Keep successful responses
+        }).map(response => response.data);
+
+        setData(responseData);
+      } catch (error) {
+        console.error('Error:', error);
       }
-    }
+    }       
       const refreshInterval = 70000;
-      // fetchData();
+      fetchData();
       setInterval(fetchData, refreshInterval);
     }, []);
     
@@ -38,7 +50,7 @@ const RemoveBannedChannel = () => {
               channel = item.user.username;
               console.log("Channel:", channel);
             } else {
-              pfp = 'https://static.wikia.nocookie.net/logopedia/images/8/82/Kick_%28App_Icon%29.svg/revision/latest/scale-to-width-down/250?cb=20230329130702';
+              pfp = '';
             };
             
             if(item && item.user && item.previous_livestreams[0]){

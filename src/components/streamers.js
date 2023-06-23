@@ -2,6 +2,7 @@ import axios from "axios";
 
 const Streamers = () => {
  let urls = [
+  // axios.get('https://kick.com/api/v1/channels/johnnysomali'),
   axios.get('https://kick.com/api/v1/channels/xqc'),
   axios.get('https://kick.com/api/v1/channels/adinross'),
   axios.get('https://kick.com/api/v1/channels/brucedropemoff'),
@@ -11,8 +12,7 @@ const Streamers = () => {
   axios.get('https://kick.com/api/v1/channels/imjoel3004'),
   axios.get('https://kick.com/api/v1/channels/garydavid'),
   axios.get('https://kick.com/api/v1/channels/nickwhite'),
-  axios.get('https://kick.com/api/v1/channels/ludwig'),
-  // axios.get('https://kick.com/api/v1/channels/johnnysomali')
+  axios.get('https://kick.com/api/v1/channels/LosPollosTv'),
   ];
   return urls;
 };

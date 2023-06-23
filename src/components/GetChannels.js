@@ -30,7 +30,7 @@ const GetChannels = () => {
     return (
       <div className="live-stream-card-container">
         {data.map((item) => {
-          // console.log(data);
+          console.log(data);
             if(data){  
               if(item && item.user){
                 pfp = item.user.profile_pic;
