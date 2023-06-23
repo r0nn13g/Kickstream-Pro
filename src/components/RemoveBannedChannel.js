@@ -14,31 +14,21 @@ let previousStreamTitle;
 
 const RemoveBannedChannel = () => {
   const [data, setData] = useState([]);
-  
+  // const [failedUrl, setFailedUrl] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
-      try {
-          const responses = await Promise.all(streamers());  
-          const responseData = responses.filter(response => {
-            if(response instanceof Error){
-              // Handle the error response
-            if (response.response && response.response.status === 404) {
-              // Remove the failed URL from state
-              return false;
-            }
-            console.error('Error:', response);
-            return true; // Keep other error responses
-          }
-          return true; // Keep successful responses
-        }).map(response => response.data);
-
-        setData(responseData);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }       
+     try {
+          const responses = await Promise.all(streamers());
+          const responseData = responses.map((response) => response.data);
+          console.log(responseData.status)
+          setData(responseData);
+        } catch (error) {
+          console.error('Error:', error);
+        };
+      };
       const refreshInterval = 70000;
-      fetchData();
+      fetchData(); 
       setInterval(fetchData, refreshInterval);
     }, []);
     

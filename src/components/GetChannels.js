@@ -18,7 +18,7 @@ const GetChannels = () => {
       const fetchData = async () => {
         try {
           const responses = await Promise.all(streamers());  
-          const responseData = responses.map((response) => response.data);       
+          const responseData = responses.map((response) => response.data);
           setData(responseData);
         } catch (error) {
           console.error('Error:', error);
