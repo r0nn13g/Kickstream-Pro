@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import streamers from "./streamers";
+import axios from "axios";
 
 let pfp;
 let isLive;
@@ -14,24 +15,38 @@ let previousStreamTitle;
 
 const RemoveBannedChannel = () => {
   const [data, setData] = useState([]);
-  // const [failedUrl, setFailedUrl] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
-     try {
-          const responses = await Promise.all(streamers());
-          const responseData = responses.map((response) => response.data);
-          console.log(responseData.status)
-          setData(responseData);
-        } catch (error) {
-          console.error('Error:', error);
-        };
-      };
-      const refreshInterval = 70000;
-      fetchData(); 
-      setInterval(fetchData, refreshInterval);
-    }, []);
-    
+      try {
+        const updatedStreamers = [...streamers()];
+        const responses = await Promise.all(updatedStreamers.map(axios.get));
+        const responseData = responses.map((response, index) => {
+          if (response.status === 404) {
+            console.error(`Error accessing ${updatedStreamers[index]}: ${response.status}`);
+            updatedStreamers.splice(index, 1);
+            return null;
+          }
+          return response.data;
+        });
+  
+        const validResponses = responseData.filter((data) => data !== null);
+  
+        setData(validResponses);
+        console.log(validResponses);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+  
+    const refreshInterval = 70000;
+    fetchData();
+    const intervalId = setInterval(fetchData, refreshInterval);
+  
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+  
     return (
       <div className="live-stream-card-container">
         {data.map((item) => {
@@ -42,15 +57,15 @@ const RemoveBannedChannel = () => {
               followerCount = item.followersCount;
               followers = followerCount.toLocaleString("en-US");
               console.log("Channel:", channel);
-              console.log(followerCount);
+              console.log("Followers:", followers);
             } else {
               pfp = '';
             };
             
             if(item && item.user && item.previous_livestreams[0]){
               previousStreamTitle = item.previous_livestreams[0].session_title
-              console.log(item.previous_livestreams[0])
-                console.log("Previous title:", previousStreamTitle)
+              // console.log(item.previous_livestreams[0])
+                // console.log("Previous title:", previousStreamTitle)
               } else {
                 previousStreamTitle = "No titles yet.";
                 console.log("previous stream title does not exist ")
