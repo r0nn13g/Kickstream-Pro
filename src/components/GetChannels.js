@@ -12,6 +12,8 @@ let followers;
 let followerCount;
 let previousStreamTitle;
 
+let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png'
+
 const GetChannels = () => {
   const [data, setData] = useState([]);
     useEffect(() => {
@@ -34,26 +36,34 @@ const GetChannels = () => {
         {data.map((item) => {
           console.log(data);
           if(item && item.user && item.previous_livestreams[0]){
-                pfp = item.user.profile_pic;
-                channel = item.user.username;
-                  console.log("Channel:", channel);
-                followerCount = item.followersCount;
-                followers = followerCount.toLocaleString("en-US");
-                previousStreamTitle = item.previous_livestreams[0].session_title
-              } else {
-                pfp = '';
-                previousStreamTitle = "No titles yet.";
-              };
-                    
-              if(item.livestream){
-                rawViewers = item.livestream.viewer_count;
-                viewerCount = rawViewers.toLocaleString("en-US");
+            channel = item.user.username;
+            console.log("Channel:", channel);
+            followerCount = item.followersCount;
+            followers = followerCount.toLocaleString("en-US");
+            previousStreamTitle = item.previous_livestreams[0].session_title
+            pfp = item.user.profile_pic;
+          } else {
+            previousStreamTitle = "No titles yet.";
+          };
+          
+          if(item.livestream){
+            rawViewers = item.livestream.viewer_count;
+            viewerCount = rawViewers.toLocaleString("en-US");
+            console.log("Viewer count:", viewerCount);
                 streamTitle = item.livestream.session_title;
-                  console.log("Viewer count:", viewerCount);
               } else {
                 viewerCount = undefined;
                 streamTitle = `Last Title: ${previousStreamTitle}`;
               };
+
+              if(item.user.profile_pic === null && item.livestream === null ){
+                channel = item.user.username;
+                console.log("Channel:",channel)
+              followerCount = item.followersCount;
+              followers = followerCount.toLocaleString("en-US");
+              previousStreamTitle = "No titles yet.";
+              pfp = kickAvatar;
+             }
                 isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
               
 

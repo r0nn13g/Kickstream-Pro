@@ -1,6 +1,6 @@
 .live-stream-card-container {
-  margin: 15px;
-  border: 3px solid rgb(35, 35, 35);
+  margin: 5px;
+  /* border: 1px solid rgb(35, 35, 35); */
   border-radius: 2%;
 }
 
@@ -10,7 +10,7 @@
   grid-template-columns: 0.5fr 2.5fr 0.5fr ;
   grid-template-areas: 
    "pfp details isLive ";
-   border-top: 2px solid rgb(35, 35, 35);
+   border-top: 1px solid rgb(35, 35, 35);
 }
 .channel-pfp-container {
   grid-area: pfp;
