@@ -50,34 +50,30 @@ const RemoveBannedChannel = () => {
     return (
       <div className="live-stream-card-container">
         {data.map((item) => {
-          if(data){ 
-            if(item && item.user){
-              pfp = item.user.profile_pic;
-              channel = item.user.username;
-              followerCount = item.followersCount;
-              followers = followerCount.toLocaleString("en-US");
-            } else {
-              pfp = '';
-            };
-            
-            if(item && item.user && item.previous_livestreams[0]){
-              previousStreamTitle = item.previous_livestreams[0].session_title
+          console.log(data);
+          if(item && item.user && item.previous_livestreams[0]){
+                pfp = item.user.profile_pic;
+                channel = item.user.username;
+                  console.log("Channel:", channel);
+                followerCount = item.followersCount;
+                followers = followerCount.toLocaleString("en-US");
+                previousStreamTitle = item.previous_livestreams[0].session_title
               } else {
+                pfp = '';
                 previousStreamTitle = "No titles yet.";
-            };
-                  
-            if(item.livestream){
-              rawViewers = item.livestream.viewer_count;
-              viewerCount = rawViewers.toLocaleString("en-US");
-              streamTitle = item.livestream.session_title;
-            } else {
-              viewerCount = undefined;
-              streamTitle = `Last Title: ${previousStreamTitle}`;
-            };
-            
-            isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>offline</p>;
-          };
-    
+              };
+                    
+              if(item.livestream){
+                rawViewers = item.livestream.viewer_count;
+                viewerCount = rawViewers.toLocaleString("en-US");
+                streamTitle = item.livestream.session_title;
+                  console.log("Viewer count:", viewerCount);
+              } else {
+                viewerCount = undefined;
+                streamTitle = `Last Title: ${previousStreamTitle}`;
+              };
+                isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
+              
                     return(
                       <div key={item.id} className='live-stream-card'>
                       <div className='channel-pfp-container'>

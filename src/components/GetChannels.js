@@ -33,40 +33,29 @@ const GetChannels = () => {
       <div className="live-stream-card-container">
         {data.map((item) => {
           console.log(data);
-            if(data){  
-              if(item && item.user){
+          if(item && item.user && item.previous_livestreams[0]){
                 pfp = item.user.profile_pic;
                 channel = item.user.username;
+                  console.log("Channel:", channel);
                 followerCount = item.followersCount;
                 followers = followerCount.toLocaleString("en-US");
-                console.log("Channel:", channel);
-                console.log(followerCount);
+                previousStreamTitle = item.previous_livestreams[0].session_title
               } else {
                 pfp = '';
-              };
-              
-              if(item && item.user && item.previous_livestreams[0]){
-                previousStreamTitle = item.previous_livestreams[0].session_title
-                console.log(item.previous_livestreams[0])
-                  console.log("Previous title:", previousStreamTitle)
-                } else {
-                  previousStreamTitle = "No titles yet.";
-                  console.log("previous stream title does not exist ")
+                previousStreamTitle = "No titles yet.";
               };
                     
               if(item.livestream){
                 rawViewers = item.livestream.viewer_count;
                 viewerCount = rawViewers.toLocaleString("en-US");
                 streamTitle = item.livestream.session_title;
-                  console.log("Current title:", streamTitle);
                   console.log("Viewer count:", viewerCount);
               } else {
                 viewerCount = undefined;
                 streamTitle = `Last Title: ${previousStreamTitle}`;
               };
+                isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
               
-              isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
-            };
 
       return(
           <div key={item.id} className='live-stream-card'>
