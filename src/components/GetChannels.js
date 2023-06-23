@@ -8,6 +8,8 @@ let channel;
 let streamTitle;
 let rawViewers;
 let viewerCount;
+let followers;
+let followerCount;
 let previousStreamTitle;
 
 const GetChannels = () => {
@@ -35,7 +37,10 @@ const GetChannels = () => {
               if(item && item.user){
                 pfp = item.user.profile_pic;
                 channel = item.user.username;
+                followerCount = item.followersCount;
+                followers = followerCount.toLocaleString("en-US");
                 console.log("Channel:", channel);
+                console.log(followerCount);
               } else {
                 pfp = '';
               };
@@ -60,7 +65,7 @@ const GetChannels = () => {
                 streamTitle = `Last Title: ${previousStreamTitle}`;
               };
               
-              isLive = item.livestream !== null? <p>LIVE</p> : <p id='offline-live'>offline</p>;
+              isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
             };
 
       return(
@@ -71,6 +76,7 @@ const GetChannels = () => {
               <div  className='live-stream-details-container'>
                 <div className='channel-name-container'>
                   <h6 id='channel-name'>{channel}</h6>
+                  <h6>{followers}</h6>
                 </div> 
                 <div className="stream-title-container">
                   <h6 id="stream-title">{streamTitle}</h6>  

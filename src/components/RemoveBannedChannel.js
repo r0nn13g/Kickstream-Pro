@@ -7,6 +7,8 @@ let isLive;
 let channel;
 let streamTitle;
 let rawViewers;
+let followers;
+let followerCount;
 let viewerCount;
 let previousStreamTitle;
 
@@ -43,12 +45,14 @@ const RemoveBannedChannel = () => {
     return (
       <div className="live-stream-card-container">
         {data.map((item) => {
-          if(data){
-              
+          if(data){ 
             if(item && item.user){
               pfp = item.user.profile_pic;
               channel = item.user.username;
+              followerCount = item.followersCount;
+              followers = followerCount.toLocaleString("en-US");
               console.log("Channel:", channel);
+              console.log(followerCount);
             } else {
               pfp = '';
             };
@@ -84,6 +88,7 @@ const RemoveBannedChannel = () => {
                       <div  className='live-stream-details-container'>
                         <div className='channel-name-container'>
                           <h6 id='channel-name'>{channel}</h6>
+                          <h6>{followers}</h6>
                         </div> 
                         <div className="stream-title-container">
                           <h6 id="stream-title">{streamTitle}</h6>  

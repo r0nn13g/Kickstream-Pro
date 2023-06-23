@@ -34,7 +34,6 @@
 .channel-name-container {
   grid-area: name;
   display: grid;
-  margin-bottom: 20px;
   margin-top: 2px;
 }
 
@@ -50,7 +49,7 @@
 }
 
 #stream-title{
-  margin: 0px;
+  margin-bottom: 5px;
   font-size: 10px;
 }
 
@@ -81,17 +80,23 @@
     text-align: center;
   }
 
-  #is-online {
-    margin: 0px;
-  }
-  
   #offline-live{
+    margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     color:rgb(39, 39, 39);
   }
+
+  #online-live {   
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #is-online{
+    margin: 0px;
     text-align: center;
   }
 
@@ -104,5 +109,5 @@
 }
 
 #viewer-count {
-  margin: 0px;
+  margin-right: 10px;
 }
