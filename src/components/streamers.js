@@ -11,4 +11,11 @@ export let streamers = [
   'https://kick.com/api/v1/channels/garydavid',
   'https://kick.com/api/v1/channels/johnnysomali',
   'https://kick.com/api/v1/channels/sam',
+  'https://kick.com/api/v1/channels/nickwhite',
+  'https://kick.com/api/v1/channels/asianandy',
+  'https://kick.com/api/v1/channels/suspendas',
+  'https://kick.com/api/v1/channels/burgerplanet',
+  'https://kick.com/api/v1/channels/deepak',
+  'https://kick.com/api/v1/channels/andymilonakis',
+  'https://kick.com/api/v1/channels/hyubsama',
 ];

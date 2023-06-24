@@ -1,12 +1,12 @@
 .live-stream-card-container {
-  margin: 5px;
+  margin: 10px;
   /* border: 1px solid rgb(35, 35, 35); */
   border-radius: 2%;
 }
 
 .live-stream-card {
   display: grid;
-  margin: 5px;
+  /* margin: 5px; */
   grid-template-rows: 1fr;
   grid-template-columns: 0.5fr 2.5fr 0.5fr ;
   grid-template-areas: 
@@ -25,9 +25,10 @@
 }
 #channel-pfp {
   padding: 0px;
-  margin: 5px;
-  width: 50px; 
-  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 40px; 
+  height: 40px;
   border-radius: 50%;
   overflow: hidden;
 }
