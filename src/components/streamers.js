@@ -1,21 +1,14 @@
-// import axios from "axios";
-
-const Streamers = () => {
- let urls = [
-   axios.get('https://kick.com/api/v1/channels/drdisrespect'),
-   axios.get('https://kick.com/api/v1/channels/ludwig'),
-  axios.get('https://kick.com/api/v1/channels/xqc'),
-  axios.get('https://kick.com/api/v1/channels/adinross'),
-  axios.get('https://kick.com/api/v1/channels/brucedropemoff'),
-  axios.get('https://kick.com/api/v1/channels/iceposeidon'),
-  axios.get('https://kick.com/api/v1/channels/eddie'),
-  axios.get('https://kick.com/api/v1/channels/sam'),
-  axios.get('https://kick.com/api/v1/channels/imjoel3004'),
-  axios.get('https://kick.com/api/v1/channels/garydavid'),
-  axios.get('https://kick.com/api/v1/channels/johnnysomali'),
-  axios.get('https://kick.com/api/v1/channels/suspendas'),
+export let streamers = [
+  'https://kick.com/api/v1/channels/drdisrespect',
+  'https://kick.com/api/v1/channels/ludwig',
+  'https://kick.com/api/v1/channels/xqc',
+  'https://kick.com/api/v1/channels/adinross',
+  'https://kick.com/api/v1/channels/brucedropemoff',
+  'https://kick.com/api/v1/channels/iceposeidon',
+  'https://kick.com/api/v1/channels/corinnakopf',
+  'https://kick.com/api/v1/channels/eddie',
+  'https://kick.com/api/v1/channels/imjoel3004',
+  'https://kick.com/api/v1/channels/garydavid',
+  'https://kick.com/api/v1/channels/johnnysomali',
+  'https://kick.com/api/v1/channels/sam',
 ];
-  return urls;
-};
-
-export default Streamers;

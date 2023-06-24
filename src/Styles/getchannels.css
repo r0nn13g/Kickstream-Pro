@@ -6,6 +6,7 @@
 
 .live-stream-card {
   display: grid;
+  margin: 5px;
   grid-template-rows: 1fr;
   grid-template-columns: 0.5fr 2.5fr 0.5fr ;
   grid-template-areas: 

@@ -1,5 +1,6 @@
 import React, {useState, useEffect}from "react";
 import '../Styles/getchannels.css';
+import { streamers } from "./streamers";
 
 let pfp;
 let isLive;
@@ -18,7 +19,7 @@ const GetChannels = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const responses = await Promise.all(streamers());  
+          const responses = await Promise.all(streamers);  
           const responseData = responses.map((response) => response.data);
           setData(responseData);
         } catch (error) {

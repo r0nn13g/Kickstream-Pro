@@ -1,8 +1,12 @@
 import {useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
+import { streamers } from "./streamers";
 
+// Declare variables to store data
 let pfp;
+// Default avatar image URL
+let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
 let isLive;
 let channel;
 let streamTitle;
@@ -12,30 +16,17 @@ let followerCount;
 let viewerCount;
 let previousStreamTitle;
 
-let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
-
 const SortedChannels = () => {
+   // State to store the sorted data
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-          let urls = [
-                'https://kick.com/api/v1/channels/drdisrespect',
-                'https://kick.com/api/v1/channels/ludwig',
-                'https://kick.com/api/v1/channels/xqc',
-                'https://kick.com/api/v1/channels/adinross',
-                'https://kick.com/api/v1/channels/brucedropemoff',
-                'https://kick.com/api/v1/channels/iceposeidon',
-                'https://kick.com/api/v1/channels/eddie',
-                'https://kick.com/api/v1/channels/sam',
-                'https://kick.com/api/v1/channels/imjoel3004',
-                'https://kick.com/api/v1/channels/garydavid',
-                'https://kick.com/api/v1/channels/johnnysomali',
-          ];
-          const responses = await Promise.all(urls.map(url => axios.get(url)));  
-            const responseData = responses.map((response) => response.data);
+          const responses = await Promise.all(streamers.map(url => axios.get(url)));  
+          const responseData = responses.map((response) => response.data);
+            // sorts data area by concurrent viewership
             const sortedData = [...responseData].sort((a, b) => {
-            return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
+              return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
           });
           setData(sortedData);
         } catch (error) {
@@ -49,10 +40,12 @@ const SortedChannels = () => {
 
   return (
     <div className="live-stream-card-container">
+       {/* Map over the data and render the live stream cards  */}
       {data.map((item,index) => {
+        //if item exists, set variables for channel name, followers, and previousStream titles
         if(item && item.user && item.previous_livestreams[0]){
           channel = item.user.username;
-          // console.log("Channel:", channel);
+          console.log(channel);
           followerCount = item.followersCount;
           followers = followerCount.toLocaleString("en-US");
           previousStreamTitle = item.previous_livestreams[0].session_title
@@ -60,28 +53,27 @@ const SortedChannels = () => {
         } else {
           previousStreamTitle = "No titles yet.";
         };
-        
+        //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
         if(item.livestream){
             rawViewers = item.livestream.viewer_count;
             console.log(rawViewers);
             viewerCount = rawViewers.toLocaleString("en-US");
-              
           streamTitle = item.livestream.session_title;
             } else {
               viewerCount = undefined;
               streamTitle = `Last Title: ${previousStreamTitle}`;
             };
-
+            //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
             if(item.user.profile_pic === null && item.livestream === null ){
               channel = item.user.username;
-              // console.log("Channel:",channel)
               followerCount = item.followersCount;
               followers = followerCount.toLocaleString("en-US");
               previousStreamTitle = "No titles yet.";
               pfp = kickAvatar;
            }
+           //if channel is live, display "Live"
               isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
-            
+            //jsx returning live stream card
                     return(
                       <div key={index} className='live-stream-card'>
                       <div className='channel-pfp-container'>
