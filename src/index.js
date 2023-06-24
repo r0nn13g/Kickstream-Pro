@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import SortedChannels from './components/Sorted-Channels';
+import SortedChannels from './components/SortedChannels.js';
 
 export default function App() {
   return (
