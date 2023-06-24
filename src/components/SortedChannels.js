@@ -33,8 +33,8 @@ const SortedChannels = () => {
                 'https://kick.com/api/v1/channels/johnnysomali',
           ];
           const responses = await Promise.all(urls.map(url => axios.get(url)));  
-          const responseData = responses.map((response) => response.data);
-          const sortedData = [...responseData].sort((a, b) => {
+            const responseData = responses.map((response) => response.data);
+            const sortedData = [...responseData].sort((a, b) => {
             return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
           });
           setData(sortedData);
