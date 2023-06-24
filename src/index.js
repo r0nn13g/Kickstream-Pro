@@ -4,10 +4,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import SortedChannels from './components/SortedChannels.js';
+import Nav from './components/Nav.js';
 
 export default function App() {
   return (
     <BrowserRouter>
+    <Nav/>
       <Routes>
         <Route path="/" element={<SortedChannels />}></Route>
       </Routes>
