@@ -7,11 +7,11 @@
 .live-stream-card {
   display: grid;
   /* margin: 5px; */
+  border-top: 0.5px solid rgb(73, 73, 73);
   grid-template-rows: 1fr;
   grid-template-columns: 0.5fr 2.5fr 0.5fr ;
   grid-template-areas: 
    "pfp details isLive ";
-   border-top: 1px solid rgb(35, 35, 35);
 }
 .channel-pfp-container {
   grid-area: pfp;
@@ -41,13 +41,22 @@
 
 #channel-name {
   color: rgb(85, 255, 47);
-  font-size: 15px;
   text-align: left;
   white-space: nowrap;
 }
 
 #channel-name h5 {
   margin: 5px;
+}
+
+#channel-online {
+  font-size: 14px;
+  color: rgb(85, 255, 47);
+}
+
+#channel-offline {
+  font-size: 14px;
+  color: rgb(73, 73, 73);
 }
 
 #stream-title{
@@ -57,7 +66,7 @@
 
 .live-stream-details-container {
   grid-area: details;
-  color: rgb(94, 94, 94);
+  color: rgb(73, 73, 73);
   text-align: left;
   overflow: hidden;
   text-overflow:ellipsis;

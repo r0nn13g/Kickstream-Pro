@@ -18,4 +18,6 @@ export let streamers = [
   'https://kick.com/api/v1/channels/deepak',
   'https://kick.com/api/v1/channels/andymilonakis',
   'https://kick.com/api/v1/channels/hyubsama',
+  'https://kick.com/api/v1/channels/officialebz',
+
 ];
