@@ -4,8 +4,9 @@ import axios from "axios";
 import { streamers } from "./streamers";
 
 // Declare variables to store data
+
 let pfp;
-// Default avatar image URL
+let pfpLive;
 let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
 let isLive;
 let channel;
@@ -17,6 +18,8 @@ let followers;
 let followerCount;
 let viewerCount;
 let previousStreamTitle;
+// let lastOnline;
+// let gameName;
 
 const DevChannel = () => {
    // State to store the sorted data
@@ -59,7 +62,7 @@ const DevChannel = () => {
         //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
         if(item.livestream){
             rawViewers = item.livestream.viewer_count;
-            console.log(rawViewers);
+            console.log("Live with:", rawViewers, "viewers");
             viewerCount = rawViewers.toLocaleString("en-US");
           streamTitle = item.livestream.session_title;
             } else {
@@ -80,18 +83,19 @@ const DevChannel = () => {
               channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
 
               titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
+
+              pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
             //jsx returning live stream card
                     return(
                       <div key={index} className='live-stream-card'>
                         <div className='channel-pfp-container'>
-                          <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
+                          {/* <img  id='channel-pfp' src={pfp} alt='channel_pfp'/> */}
+                          {pfpLive}
                         </div>
                         <div  className='live-stream-details-container'>
                         <div className='channel-name-container'>
                             {channelLive}
-                          <h6 id='followers'>
-                            {followers}
-                          </h6>
+                          <h6 id='followers'>{followers}</h6>
                         </div> 
                         <div className="stream-title-container">
                             <h6 id="stream-title">
