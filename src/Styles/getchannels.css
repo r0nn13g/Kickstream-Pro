@@ -60,14 +60,14 @@
 
 #channel-offline {
   font-size: 14px;
-  color: rgb(53, 53, 53);
+    color:rgb(97, 97, 97);
 }
 
 #followers {
   margin-top: 5px;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 800;
-  color: rgb(53, 53, 53);
+  color:rgb(97, 97, 97);
 }
 
 #stream-title{
@@ -76,10 +76,12 @@
 }
 
 #title-offline {
+      color:rgb(97, 97, 97);
   /* margin-bottom: 10px; */
   font-size: 10px;
 }
  #title-online {
+      color:rgb(97, 97, 97);
   margin-bottom: 5px;
   font-size: 10px;
  }
@@ -110,12 +112,12 @@
   }
 
   #offline-live{
-    /* color: rgb(255, 255, 255); */
+    font-size: 12px;
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:rgb(39, 39, 39);
+    color:rgb(97, 97, 97);
   }
 
   #online-live {

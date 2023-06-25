@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
+import AnimatedNumber from "./AnimatedNumber";
 
 // Declare variables to store data
 let pfp;
@@ -59,6 +60,7 @@ const DevChannel = () => {
            //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
            if(item.livestream){
                rawViewers = item.livestream.viewer_count;
+               AnimatedNumber(rawViewers)
                console.log("Live with:", rawViewers, "viewers");
                viewerCount = rawViewers.toLocaleString("en-US");
              streamTitle = item.livestream.session_title;
