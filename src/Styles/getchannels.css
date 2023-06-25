@@ -1,34 +1,29 @@
 .live-stream-card-container {
-  margin: 10px;
+  margin: 5px;
   /* border: 1px solid rgb(35, 35, 35); */
   border-radius: 2%;
 }
 
 .live-stream-card {
   display: grid;
-  /* margin: 5px; */
-  border-top: 0.5px solid rgb(73, 73, 73);
+  border-top: 2px solid rgba(73, 73, 73, 0.203);
   grid-template-rows: 1fr;
-  grid-template-columns: 0.5fr 2.5fr 0.5fr ;
+  grid-template-columns: 0.3fr 2.5fr 0.3fr ;
   grid-template-areas: 
-   "pfp details isLive ";
+   "pfp details isLive viewers ";
 }
+
 .channel-pfp-container {
   grid-area: pfp;
   display: flex;
   justify-content: center;
   margin: 0px;
-  margin-top: 2px;
-  padding: 0px;
-  /* border: 5px solid rgb(35, 35, 35); */
-  border-radius: 2%;
 }
+
 #channel-pfp {
-  padding: 0px;
-  margin-right: 10px;
-  margin-top: 10px;
-  width: 40px; 
-  height: 40px;
+  margin: 10px;
+  width: 50px; 
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -36,7 +31,7 @@
 .channel-name-container {
   grid-area: name;
   display: grid;
-  margin-top: 2px;
+  margin-top: 5px;
 }
 
 #channel-name {
@@ -56,21 +51,36 @@
 
 #channel-offline {
   font-size: 14px;
-  color: rgb(73, 73, 73);
+  color: rgb(53, 53, 53);
+}
+
+#followers {
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgb(53, 53, 53);
 }
 
 #stream-title{
-  margin-bottom: 5px;
+  margin-top: 5px;
   font-size: 10px;
 }
 
+#title-offline {
+  /* margin-bottom: 10px; */
+  font-size: 10px;
+}
+ #title-online {
+  margin-bottom: 5px;
+  font-size: 10px;
+ }
 .live-stream-details-container {
   grid-area: details;
   color: rgb(73, 73, 73);
   text-align: left;
   overflow: hidden;
   text-overflow:ellipsis;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .live-stream-details-container h6 {
@@ -82,16 +92,16 @@
 }
   .is-live{
     grid-area: isLive;
+    font-size: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:  rgb(85, 255, 47);
     margin: 0px;
-
     text-align: center;
   }
 
   #offline-live{
+    /* color: rgb(255, 255, 255); */
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -99,8 +109,9 @@
     color:rgb(39, 39, 39);
   }
 
-  #online-live {   
-    margin: 0px;
+  #online-live {
+    color:rgb(255, 255, 255);   
+    margin: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,13 +123,20 @@
   }
 
 .live-viewers-count-container {
-  color: rgb(177, 177, 177);
   grid-area: isLive;
   display: grid;
   text-align: center;
   white-space: nowrap;
 }
 
+.viewers{
+  font-size: 10px;
+  grid-area: viewers;
+  display: grid;
+}
+
 #viewer-count {
+  font-size: 12px;
+  color:  rgb(85, 255, 47);
   margin-right: 10px;
 }

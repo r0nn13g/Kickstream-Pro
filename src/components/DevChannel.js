@@ -11,6 +11,7 @@ let isLive;
 let channel;
 let channelLive;
 let streamTitle;
+let titleLive;
 let rawViewers;
 let followers;
 let followerCount;
@@ -62,7 +63,7 @@ const SortedChannels = () => {
           streamTitle = item.livestream.session_title;
             } else {
               viewerCount = undefined;
-              streamTitle = `Last Title: ${previousStreamTitle}`;
+              streamTitle = `${previousStreamTitle}`;
             };
             //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
             if(item.user.profile_pic === null && item.livestream === null ){
@@ -73,35 +74,40 @@ const SortedChannels = () => {
               pfp = kickAvatar;
            }
            //if channel is live, display "Live"
-              isLive = item.livestream !== null? <p id='online-live'>LIVE</p> : <p id='offline-live'>offline</p>;
+              isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>;
 
-              channelLive = item.livestream ? <h6 id='channel-online'>{channel}</h6> : <h6 id='channel-offline'>{channel}</h6>
+              channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
 
+              titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
             //jsx returning live stream card
                     return(
                       <div key={index} className='live-stream-card'>
-                      <div className='channel-pfp-container'>
-                        <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
-                      </div>
-                      <div  className='live-stream-details-container'>
+                        <div className='channel-pfp-container'>
+                          <img  id='channel-pfp' src={pfp} alt='channel_pfp'/>
+                        </div>
+                        <div  className='live-stream-details-container'>
                         <div className='channel-name-container'>
-                          <h6 id='channel'>{channelLive}</h6>
-                          <h6>{followers}</h6>
+                            {channelLive}
+                          <h6 id='followers'>
+                            {followers}
+                          </h6>
                         </div> 
                         <div className="stream-title-container">
-                          <h6 id="stream-title">{streamTitle}</h6>  
+                            <h6 id="stream-title">
+                              {titleLive}
+                            </h6>  
+                        </div>
+                        </div>
+                        <div className="is-live">
+                          {isLive}
+                          &nbsp;
+                          <div className='live-viewers-count-container'>
+                          <h6 id="viewer-count">{viewerCount}</h6>
+                          </div>
                         </div>
                       </div>
-                      <div className="is-live">
-                        <h6 id="is-online">{isLive}</h6>
-                        &nbsp;&nbsp;
-                      <div className='live-viewers-count-container'>
-                        <h6 id="viewer-count" >{viewerCount}</h6>
-                      </div>
-                      </div>
-                  </div>
-            )
-          })}
+                    )
+                })}
         </div>
       );
     };
