@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
@@ -18,7 +18,8 @@ let followerCount;
 let viewerCount;
 let previousStreamTitle;
 
-const SortedChannels = () => {
+const DevChannel = () => {
+
    // State to store the sorted data
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -102,7 +103,8 @@ const SortedChannels = () => {
                           {isLive}
                           &nbsp;
                           <div className='live-viewers-count-container'>
-                          <h6 id="viewer-count">{viewerCount}</h6>
+                          {/* <h6 id="viewer-count">{viewerCount}</h6> */}
+                          <td id="viewer-count">{viewerCount}</td>
                           </div>
                         </div>
                       </div>
@@ -111,4 +113,4 @@ const SortedChannels = () => {
         </div>
       );
     };
-export default SortedChannels;
+export default DevChannel;
