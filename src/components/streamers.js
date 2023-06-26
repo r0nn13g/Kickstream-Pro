@@ -1,5 +1,5 @@
 export let streamers = [
-  'https://kick.com/api/v1/channels/drdisrespect',
+  // 'https://kick.com/api/v1/channels/drdisrespect',
   'https://kick.com/api/v1/channels/ludwig',
   'https://kick.com/api/v1/channels/xqc',
   'https://kick.com/api/v1/channels/adinross',

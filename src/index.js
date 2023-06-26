@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
+
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import SortedChannels from './components/SortedChannels.js';
-import DevChannel from './components/DevChannel.js';
-import AnimatedNumber from './components/AnimatedNumber.js'
+import SortedChannels from './components/SortedChannels';
+import DevChannel from './components/DevChannel';
 import Nav from './components/Nav.js';
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<SortedChannels />}></Route>
         <Route path="/dev" element={<DevChannel />}></Route>
-        <Route path="/animated" element={<AnimatedNumber />}></Route>
       </Routes>
     </BrowserRouter>
   );
@@ -23,7 +21,3 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

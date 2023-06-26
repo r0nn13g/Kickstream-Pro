@@ -40,6 +40,7 @@
 .channel-name-container {
   grid-area: name;
   display: grid;
+  position: relative;
   margin-top: 5px;
 }
 
@@ -60,7 +61,7 @@
 
 #channel-offline {
   font-size: 14px;
-    color:rgb(97, 97, 97);
+  color:rgb(97, 97, 97);
 }
 
 #followers {
@@ -70,7 +71,15 @@
   color:rgb(97, 97, 97);
 }
 
+.followed-by-container{
+  position:relative;
+  font-size: 10px;
+  font-weight: 800;
+  margin-top: 5px;
+};
+
 #stream-title{
+  position: relative;
   margin-top: 5px;
   font-size: 10px;
 }
@@ -101,10 +110,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.stream-title-container{
+  position: relative;
+  margin-top: 10px;
+}
   .is-live{
     grid-area: isLive;
     font-size: 6px;
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     margin: 0px;
@@ -136,19 +151,17 @@
 .live-viewers-count-container {
   grid-area: isLive;
   display: grid;
+  position: relative;
   text-align: center;
   white-space: nowrap;
+  font-size: 12px;
+  font-weight: 800;
+  color:  rgb(85, 255, 47);
+  margin-right: 10px;
 }
 
 .viewers{
   font-size: 10px;
   grid-area: viewers;
   display: grid;
-}
-
-#viewer-count {
-  font-size: 12px;
-  font-weight: 800;
-  color:  rgb(85, 255, 47);
-  margin-right: 10px;
 }
