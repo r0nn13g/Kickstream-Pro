@@ -25,22 +25,30 @@ const DevChannel = () => {
      useEffect(() => {
        const fetchData = async () => {
          try {
-             const responses = await Promise.all(streamers.map(url => axios.get(url)));  
-             const responseData = responses.map((response) => response.data);
-               // sorts data area by concurrent viewership
-               const sortedData = [...responseData].sort((a, b) => {
-                 return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
-             });
+           const responses = await Promise.all(streamers.map(url => axios.get(url)));  
+           const validResponses = responses.filter(response => response !== null);
+           const responseData = validResponses.map(response => response.data);
+           //  const responseData = responses.map((response) => response.data);
+           // sorts data area by concurrent viewership
+           const sortedData = [...responseData].sort((a, b) => {
+              return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
+            });
              setData(sortedData);
            } catch (error) {
              console.error('Error:', error);
+             if (error.response && error.response.status === 404) {
+              // Ignore 404 response and return null for this URL
+              return null;
+            } else {
+              throw error; // Throw other errors
+            }
            };
          };
-         const refreshInterval = 50000;
+         const refreshInterval = 60000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
-   
+
      return (
        <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
@@ -110,6 +118,6 @@ const DevChannel = () => {
                        )
                    })}
            </div>
-         );
+        );
     };
 export default DevChannel;

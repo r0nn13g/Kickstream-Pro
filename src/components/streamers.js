@@ -17,6 +17,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/andymilonakis',
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/officialebz',
+    // // 'https://kick.com/api/v1/channels/asianandy',
     // 'https://kick.com/api/v1/channels/drdisrespect',
-    // 'https://kick.com/api/v1/channels/asianandy',
 ];
