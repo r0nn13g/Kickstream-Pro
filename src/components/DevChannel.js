@@ -81,7 +81,7 @@ const DevChannel = () => {
                   
                   pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
                   
-                  console.log(`${channel} with ${viewerCount} viewers`) ;
+                  console.log(`${channel}: ${viewerCount}`) ;
                //jsx returning live stream card
                return(
                         <div key={index} className='live-stream-card'>
