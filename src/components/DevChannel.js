@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
+// import { Link } from "react-router-dom";
 
 // Declare variables to store data
   let pfp;
@@ -26,25 +27,26 @@ const DevChannel = () => {
        const fetchData = async () => {
          try {
            const responses = await Promise.all(streamers.map(url => axios.get(url)));  
-           const validResponses = responses.filter(response => response !== null);
-           const responseData = validResponses.map(response => response.data);
-           //  const responseData = responses.map((response) => response.data);
-           // sorts data area by concurrent viewership
-           const sortedData = [...responseData].sort((a, b) => {
-              return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
-            });
-             setData(sortedData);
-           } catch (error) {
-             console.error('Error:', error);
-             if (error.response && error.response.status === 404) {
-              // Ignore 404 response and return null for this URL
+
+           const responseData = responses.map(urls => urls.data);
+           const validResponses = responseData.filter(response => response.status !== null);
+           console.log(validResponses);
+            // sorts data area by concurrent viewership
+            const sortedData = [...validResponses].sort((a, b) => {
+               return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
+             });
+              setData(sortedData);
+          } catch (error) {
+            // Ignore 404 response and return null for this URL
+            if (error.response && error.response.status === 404) {
+              console.error("Banned channel in streamers Array", error)
               return null;
             } else {
               throw error; // Throw other errors
             }
            };
          };
-         const refreshInterval = 60000;
+         const refreshInterval = 50000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
@@ -92,9 +94,8 @@ const DevChannel = () => {
                   console.log(`${channel}: ${viewerCount}`) ;
                //jsx returning live stream card
                return(
-                        <div key={index} className='live-stream-card'>
+                          <div key={index} className='live-stream-card'>
                             <div className='channel-pfp-container'>
-                             {/* <img  id='channel-pfp' src={pfp} alt='channel_pfp'/> */}
                              {pfpLive}
                             </div>
                           <div  className='live-stream-details-container'>

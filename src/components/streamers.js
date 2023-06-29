@@ -8,7 +8,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/eddie',
     'https://kick.com/api/v1/channels/imjoel3004',
     'https://kick.com/api/v1/channels/garydavid',
-    'https://kick.com/api/v1/channels/johnnysomali',
     'https://kick.com/api/v1/channels/sam',
     'https://kick.com/api/v1/channels/nickwhite',
     'https://kick.com/api/v1/channels/suspendas',
@@ -17,6 +16,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/andymilonakis',
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/officialebz',
-    // // 'https://kick.com/api/v1/channels/asianandy',
-    // 'https://kick.com/api/v1/channels/drdisrespect',
+    'https://kick.com/api/v1/channels/greekgodx',
+    // 'https://kick.com/api/v1/channels/johnnysomali',
+    // 'https://kick.com/api/v1/channels/asianandy'
 ];
