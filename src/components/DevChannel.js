@@ -2,13 +2,14 @@ import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
+import NotificationComponent from "./Notificationcomponent";
 // import { Link } from "react-router-dom";
 
 // Declare variables to store data
   let pfp;
   let pfpLive;
   let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
-  let isLive;
+  // let isLive;
   let channel;
   let channelLive;
   let streamTitle;
@@ -55,6 +56,7 @@ const DevChannel = () => {
        <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
+          console.log(item)
            //if item exists, set variables for channel name, followers, and previousStream titles
            if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
@@ -83,7 +85,7 @@ const DevChannel = () => {
                  pfp = kickAvatar;
                 }
                 //if channel is live, display "Live"
-                  isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>;
+                  // isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>;
                   
                   channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
                   
@@ -110,7 +112,7 @@ const DevChannel = () => {
                             </div>
                           </div>
                           <div className="is-live">
-                              {isLive}&nbsp;
+                              {<NotificationComponent/>}&nbsp;
                           <div className='live-viewers-count-container'>
                             {viewerCount}
                           </div>
