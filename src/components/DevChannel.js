@@ -2,14 +2,13 @@ import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
-import NotificationComponent from "./Notificationcomponent";
-// import { Link } from "react-router-dom";
+import notificationSound from '../assets/notification-tone-swift-gesture.mp3';
 
 // Declare variables to store data
   let pfp;
   let pfpLive;
   let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
-  // let isLive;
+  let isLive;
   let channel;
   let channelLive;
   let streamTitle;
@@ -45,18 +44,26 @@ const DevChannel = () => {
             } else {
               throw error; // Throw other errors
             }
-           };
+          };
          };
          const refreshInterval = 50000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
-
-     return (
-       <div className="live-stream-card-container">
+       
+       const sendNotification = () => {
+        if('Notification' in window && Notification.permission === 'granted') {
+          console.log('online');
+          const audio = new Audio(notificationSound);
+          audio.play();
+        }
+      };
+        
+        return (
+          <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
-          console.log(item)
+           console.log(item)
            //if item exists, set variables for channel name, followers, and previousStream titles
            if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
@@ -65,19 +72,20 @@ const DevChannel = () => {
              previousStreamTitle = item.previous_livestreams[0].session_title
              pfp = item.user.profile_pic;
             } else {
-             previousStreamTitle = "No titles yet.";
-           };
-           //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
-           if(item.livestream){
-             rawViewers = item.livestream.viewer_count;
-             viewerCount = rawViewers.toLocaleString("en-US");
-             streamTitle = item.livestream.session_title;
+              previousStreamTitle = "No titles yet.";
+            };
+            //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
+            if(item.livestream){
+              rawViewers = item.livestream.viewer_count;
+              viewerCount = rawViewers.toLocaleString("en-US");
+              streamTitle = item.livestream.session_title;
+                sendNotification()
             } else {
               viewerCount = null;
               streamTitle = `${previousStreamTitle}`;
             };
             //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
-               if(item.user.profile_pic === null && item.livestream === null ){
+            if(item.user.profile_pic === null && item.livestream === null ){
                  channel = item.user.username;
                  followerCount = item.followersCount;
                  followers = followerCount.toLocaleString("en-US");
@@ -85,18 +93,18 @@ const DevChannel = () => {
                  pfp = kickAvatar;
                 }
                 //if channel is live, display "Live"
-                  // isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>;
+                isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>; 
+                
+                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
+                
+                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
+                
+                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
                   
-                  channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
-                  
-                  titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
-                  
-                  pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
-                  
-                  console.log(`${channel}: ${viewerCount}`) ;
+                console.log(`${channel}: ${viewerCount}`) ;
                //jsx returning live stream card
                return(
-                          <div key={index} className='live-stream-card'>
+                 <div key={index} className='live-stream-card'>
                             <div className='channel-pfp-container'>
                              {pfpLive}
                             </div>
@@ -112,7 +120,7 @@ const DevChannel = () => {
                             </div>
                           </div>
                           <div className="is-live">
-                              {<NotificationComponent/>}&nbsp;
+                              {isLive}
                           <div className='live-viewers-count-container'>
                             {viewerCount}
                           </div>
