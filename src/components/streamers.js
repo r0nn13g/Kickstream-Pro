@@ -19,5 +19,8 @@ export let streamers = [
     'https://kick.com/api/v1/channels/nedx',
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/bongbong_irl',
-    'https://kick.com/api/v1/channels/scriptedagain'
+    'https://kick.com/api/v1/channels/hkftv',
+    'https://kick.com/api/v1/channels/swimmernick',
+    'https://kick.com/api/v1/channels/jino',
+
 ];
