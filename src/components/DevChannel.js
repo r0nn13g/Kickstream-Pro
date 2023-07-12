@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
@@ -98,9 +99,11 @@ const DevChannel = () => {
                //jsx returning live stream card
                return(
                  <div key={index} className='live-stream-card'>
+                  <Link to={`https://www.kick.com/${slug}`} path='relative'>
                             <div className='channel-pfp-container'>
                              {pfpLive}
                             </div>
+                          </Link>
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
                               {channelLive}
