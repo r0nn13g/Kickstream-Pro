@@ -2,11 +2,11 @@ import {React, useState, useEffect} from "react";
 import '../Styles/getchannels.css';
 import axios from "axios";
 import { streamers } from "./streamers";
-import notificationSound from '../assets/notification-tone-swift-gesture.mp3';
 
 // Declare variables to store data
   let pfp;
   let pfpLive;
+  let slug;
   let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
   let isLive;
   let channel;
@@ -27,7 +27,6 @@ const DevChannel = () => {
        const fetchData = async () => {
          try {
            const responses = await Promise.all(streamers.map(url => axios.get(url)));  
-
            const responseData = responses.map(urls => urls.data);
            const validResponses = responseData.filter(response => response.status !== null);
            console.log(validResponses);
@@ -50,15 +49,7 @@ const DevChannel = () => {
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
-       
-       const sendNotification = () => {
-        if('Notification' in window && Notification.permission === 'granted') {
-          console.log('online');
-          const audio = new Audio(notificationSound);
-          audio.play();
-        }
-      };
-        
+
         return (
           <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
@@ -71,6 +62,8 @@ const DevChannel = () => {
              followers = followerCount.toLocaleString("en-US");
              previousStreamTitle = item.previous_livestreams[0].session_title
              pfp = item.user.profile_pic;
+             slug = item.slug;
+             console.log(slug);
             } else {
               previousStreamTitle = "No titles yet.";
             };
@@ -79,7 +72,7 @@ const DevChannel = () => {
               rawViewers = item.livestream.viewer_count;
               viewerCount = rawViewers.toLocaleString("en-US");
               streamTitle = item.livestream.session_title;
-                sendNotification()
+                // sendNotification()
             } else {
               viewerCount = null;
               streamTitle = `${previousStreamTitle}`;
