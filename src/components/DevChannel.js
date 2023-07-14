@@ -57,14 +57,13 @@ const DevChannel = () => {
          setInterval(fetchData, refreshInterval);
        }, []);
 
-
         return (
           <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
           //  console.log(item)
            //if item exists, set variables for channel name, followers, and previousStream titles
-           if(item && item.user && item.previous_livestreams[0]){
+            if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
              followerCount = item.followersCount;
              followers = followerCount.toLocaleString("en-US");
@@ -104,16 +103,15 @@ const DevChannel = () => {
                 titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
                 
                 pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
-                  
-                console.log(`${channel}: ${viewerCount}`) ;
+      
                //jsx returning live stream card
                return(
                  <div key={index} className='live-stream-card'>
-                      <Link to={`https://www.kick.com/${slug}`} path='relative'>
+                          <Link to={`https://www.kick.com/${slug}`} path='relative'>
                             <div className='channel-pfp-container'>
                              {pfpLive}
                             </div>
-                      </Link>
+                          </Link>
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
                               {channelLive}
