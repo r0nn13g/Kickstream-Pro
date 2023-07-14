@@ -4,6 +4,7 @@ import '../Styles/getchannels.css';
 import axios from "axios";
 import axiosRetry from 'axios-retry';
 import { streamers } from "./streamers";
+import PulsatingDot from './PulsatingDot';
 
 // Declare variables to store data
   let pfp;
@@ -96,7 +97,7 @@ const DevChannel = () => {
                  pfp = kickAvatar;
                 }
                 //if channel is live, display "Live"
-                isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <p id='online-live'>LIVE</p>; 
+                isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
                 
                 channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
                 
