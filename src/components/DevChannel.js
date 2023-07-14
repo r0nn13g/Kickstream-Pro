@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import '../Styles/getchannels.css';
 import axios from "axios";
+import axiosRetry from 'axios-retry';
 import { streamers } from "./streamers";
 
 // Declare variables to store data
@@ -24,6 +25,8 @@ const DevChannel = () => {
      // State to store the sorted data
      const [data, setData] = useState([]);
 
+     axiosRetry(axios, { retries: 3 });
+
      useEffect(() => {
        const fetchData = async () => {
          try {
@@ -37,6 +40,9 @@ const DevChannel = () => {
              });
               setData(sortedData);
           } catch (error) {
+            axiosRetry(axios, { retryDelay: (retryCount) => {
+             return retryCount * 1000;
+           }});
             // Ignore 404 response and return null for this URL
             if (error.response && error.response.status === 404) {
               console.error("Banned channel in streamers Array", error)
@@ -50,6 +56,7 @@ const DevChannel = () => {
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
+
 
         return (
           <div className="live-stream-card-container">
@@ -103,11 +110,11 @@ const DevChannel = () => {
                //jsx returning live stream card
                return(
                  <div key={index} className='live-stream-card'>
-                  <Link to={`https://www.kick.com/${slug}`} path='relative'>
+                      <Link to={`https://www.kick.com/${slug}`} path='relative'>
                             <div className='channel-pfp-container'>
                              {pfpLive}
                             </div>
-                          </Link>
+                      </Link>
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
                               {channelLive}
