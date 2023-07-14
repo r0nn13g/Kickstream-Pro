@@ -59,21 +59,25 @@ const DevChannel = () => {
            //if item exists, set variables for channel name, followers, and previousStream titles
            if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
+             console.log(channel)
              followerCount = item.followersCount;
              followers = followerCount.toLocaleString("en-US");
              previousStreamTitle = item.previous_livestreams[0].session_title
              pfp = item.user.profile_pic;
              slug = item.slug;
-             console.log(slug);
             } else {
               previousStreamTitle = "No titles yet.";
             };
             //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
             if(item.livestream){
+              channel = item.user.username;
+              followerCount = item.followersCount;
+              followers = followerCount.toLocaleString("en-US");
               rawViewers = item.livestream.viewer_count;
               viewerCount = rawViewers.toLocaleString("en-US");
+              pfp = item.user.profile_pic;
               streamTitle = item.livestream.session_title;
-                // sendNotification()
+              slug = item.slug;
             } else {
               viewerCount = null;
               streamTitle = `${previousStreamTitle}`;
