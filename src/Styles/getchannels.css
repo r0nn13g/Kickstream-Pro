@@ -1,5 +1,5 @@
 :root {
-  --pulsating-dot: #00ff33;
+  --pulsating-dot: rgb(85, 255, 47)
 }
 
 .live-stream-card-container {
