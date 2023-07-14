@@ -34,7 +34,7 @@ const DevChannel = () => {
            const responses = await Promise.all(streamers.map(url => axios.get(url)));  
            const responseData = responses.map(urls => urls.data);
            const validResponses = responseData.filter(response => response.status !== null);
-           console.log(validResponses);
+          //  console.log(validResponses);
             // sorts data area by concurrent viewership
             const sortedData = [...validResponses].sort((a, b) => {
                return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
