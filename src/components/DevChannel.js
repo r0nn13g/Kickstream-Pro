@@ -52,7 +52,7 @@ const DevChannel = () => {
             }
           };
          };
-         const refreshInterval = 50000;
+         const refreshInterval = 40000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
@@ -62,11 +62,10 @@ const DevChannel = () => {
           <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
-           console.log(item)
+          //  console.log(item)
            //if item exists, set variables for channel name, followers, and previousStream titles
            if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
-             console.log(channel)
              followerCount = item.followersCount;
              followers = followerCount.toLocaleString("en-US");
              previousStreamTitle = item.previous_livestreams[0].session_title
