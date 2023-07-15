@@ -62,7 +62,7 @@ const DevChannel = () => {
           <div className="live-stream-card-container">
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
-          //  console.log(item)
+           console.log(item)
            //if item exists, set variables for channel name, followers, and previousStream titles
             if(item && item.user && item.previous_livestreams[0]){
              channel = item.user.username;
@@ -71,12 +71,19 @@ const DevChannel = () => {
              previousStreamTitle = item.previous_livestreams[0].session_title
              pfp = item.user.profile_pic;
              slug = item.slug;
+             console.log(slug)
             } else {
+              channel = item.user.username;
+              followerCount = item.followersCount;
+              followers = followerCount.toLocaleString("en-US");
+              pfp = item.user.profile_pic;
+              slug = item.slug;
               previousStreamTitle = "No titles yet.";
             };
             //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
             if(item.livestream){
               channel = item.user.username;
+              console.log(channel)
               followerCount = item.followersCount;
               followers = followerCount.toLocaleString("en-US");
               rawViewers = item.livestream.viewer_count;
@@ -89,12 +96,8 @@ const DevChannel = () => {
               streamTitle = `${previousStreamTitle}`;
             };
             //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
-            if(item.user.profile_pic === null && item.livestream === null ){
-                 channel = item.user.username;
-                 followerCount = item.followersCount;
-                 followers = followerCount.toLocaleString("en-US");
-                 previousStreamTitle = "No titles yet.";
-                 pfp = kickAvatar;
+            if(!item.user.profile_pic && !item.livestream ){
+              pfp = kickAvatar;
                 }
                 //if channel is live, display "Live"
                 isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
