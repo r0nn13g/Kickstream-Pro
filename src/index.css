@@ -16,7 +16,7 @@ code {
 
 .nav {
   display: grid;
-  position: sticky;
+  position: relative;
 }
 
 #nav-logo {
