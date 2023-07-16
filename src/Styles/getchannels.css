@@ -1,8 +1,8 @@
 :root {
-  --pulsating-dot: rgb(81, 81, 81);
+  --pulsating-dot: rgb(134, 134, 134);
   --green-elements: rgb(85, 255, 47);
-  --gray-elements: rgb(73, 73, 73); 
-  --white-elements: white;
+  --gray-elements: rgb(92, 92, 92);
+  --white-elements: rgba(255, 255, 255, 0.66);
 }
 
 .live-stream-card-container {

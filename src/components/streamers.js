@@ -12,6 +12,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/burgerplanet',
     'https://kick.com/api/v1/channels/deepak',
     'https://kick.com/api/v1/channels/andymilonakis',
+    'https://kick.com/api/v1/channels/shotime',
     'https://kick.com/api/v1/channels/kiaraakitty',
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/officialebz',
@@ -26,7 +27,5 @@ export let streamers = [
     'https://kick.com/api/v1/channels/boomyi12',
     'https://kick.com/api/v1/channels/bongbong_irl',
     'https://kick.com/api/v1/channels/coolslicklive',
-    'https://kick.com/api/v1/channels/shotime',
-
    // 'https://kick.com/api/v1/channels/hamptonbrando' //banned channel for testing
 ];
