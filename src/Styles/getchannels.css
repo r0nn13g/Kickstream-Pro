@@ -6,6 +6,7 @@
 }
 
 .live-stream-card-container {
+  /* margin: 6px; */
   padding-top: 60px;
 }
 
@@ -34,17 +35,17 @@
 
 #offline-pfp {
   filter: grayscale(100%);
-  margin: 7px;
-  width: 50px; 
-  height: 50px;
+  margin: 4px;
+  width: 45px; 
+  height: 45px;
   border-radius: 50%;
   overflow: hidden;
 }
 
 #online-pfp {
-  margin: 7px;
-  width: 50px; 
-  height: 50px;
+  margin: 4px;
+  width: 45px;
+  height: 45px;
   border: 1px var(--green-elements) solid;
   border-radius: 50%;
   overflow: hidden;
@@ -67,12 +68,13 @@
 }
 
 #channel-online {
-  font-size: 16px;
+  font-weight: 800;
+  font-size: 12px;
   color: var( --green-elements);
 }
 
 #channel-offline {
-  font-size: 16px;
+  font-size: 12px;
   color:var(--gray-elements);
 }
 
@@ -82,27 +84,25 @@
 }
 
 #followers {
-  margin-top: 4px;
+  margin-top: 2px;
   font-size: 10px;
-  font-weight: 800;
-  color:var(--gray-elements);
-}
-
-#stream-title{
-  font-size: 10px;
+  font-weight: 700;
+  color:var(--white-elements);
 }
 
 #title-offline {
+  margin-top: 2px;
   color:var(--gray-elements);
-  /* margin-bottom: 7px; */
 }
+
  #title-online {
-  color:var(--white-elements);
-  /* margin-bottom: 7px; */
+  margin-top: 6px;
+  color:var(--gray-elements);
  }
 
 .live-stream-details-container {
   grid-area: details;
+  margin-bottom: 6px;
   color:var(--gray-elements);
   overflow: hidden;
   text-overflow:ellipsis;
@@ -120,16 +120,13 @@
 
 .stream-title-container{
   position: relative;
-  margin-top: 10px;
+  font-size: 16px;
+  /* margin-top: 7px; */
 }
   .is-live{
     grid-area: isLive;
-    font-size: 6px;
     display: flex;
-    position: relative;
-    justify-content: center;
     align-items: center;
-    margin: 0px;
     text-align: center;
   }
 
@@ -143,7 +140,7 @@
   }
 
   #online-live {
-    margin: 6px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,17 +154,15 @@
 .live-viewers-count-container {
   grid-area: isLive;
   display: grid;
-  position: relative;
   text-align: center;
   white-space: nowrap;
-  margin-right: 10px;
-  font-size: 12px;
-  font-weight: 600;
+  margin-right: 5px;
+  font-size: 10px;
+  font-weight: 700;
   color:var(--green-elements);
 };
 
 .viewers{
-  font-size: 10px;
   grid-area: viewers;
   display: grid;
 }

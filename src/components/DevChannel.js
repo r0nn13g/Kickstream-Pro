@@ -111,25 +111,27 @@ const DevChannel = () => {
                 pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
                //jsx returning live stream card
                return(
-                 <div key={index} className='live-stream-card'>
+                    <div key={index} className='live-stream-card'>
                           <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} path='relative'>
                             <div className="pfp">
                              {pfpLive}
                             </div>
                           </Link>
+                          
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
                             {channelLive}
                             </div> 
                             <div className='followed-by-container'>
                               <div id='followers'>
-                              {followers} followers
+                              {followers}
                               </div>
                             </div>
                             <div className="stream-title-container">
                               {titleLive} 
                             </div>
                           </div>
+
                           <div className="is-live">
                               {isLive}
                           <div className='live-viewers-count-container'>
