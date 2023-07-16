@@ -14,6 +14,7 @@ import PulsatingDot from './PulsatingDot';
   let isVerified;
   let verified;
   let verifiedBadge = 'https://i.imgur.com/quUBzZJ.png';
+  let verifiedLive;
   let channel;
   let channelLive;
   let streamTitle;
@@ -104,10 +105,14 @@ const DevChannel = () => {
             if(!item.user.profile_pic && !item.livestream ){
               pfp = kickAvatar;
             }
-                //if channel is live, display "Live"
+                //if channel is live, display Pulsating dot
                 isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
-                isVerified = verified === true ? <img id='verified-badge' src={verifiedBadge} alt='verification-badge'/> : null ;
-                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{isVerified}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
+                //if channel is partnered with kick display verified badge next to name
+                isVerified = verified === true ? <img id='verified-badge-online' src={verifiedBadge} alt='verification-badge'/> : null ;
+                //if channel is partnered with kick and offline display verified badge with gray scale filter
+                verifiedLive = isVerified !== null && !item.livestream ? <img id='verified-badge-offline' src={verifiedBadge} alt='verification-badge'/> : isVerified;
+                //if channel is live display elements in color, else display in gray scale.
+                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
                 titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
                 pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
                 followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;

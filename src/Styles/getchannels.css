@@ -47,7 +47,7 @@
   margin: 4px;
   width: 45px;
   height: 45px;
-  border: 1px var(--green-elements) solid;
+  /* border: 1px var(--green-elements) solid; */
   border-radius: 50%;
   overflow: hidden;
 }
@@ -79,8 +79,13 @@
   color:var(--gray-elements);
 }
 
-#verified-badge{
+#verified-badge-online{
   height: 15px;
+}
+
+#verified-badge-offline{
+  height: 15px;
+  filter: grayscale(100%);
 }
 
 #followers {
