@@ -6,9 +6,7 @@
 }
 
 .live-stream-card-container {
-  /* margin: 5px; */
-  /* border: 1px solid rgb(35, 35, 35); */
-  border-radius: 2%;
+  padding-top: 60px;
 }
 
 .live-stream-card {
