@@ -2,7 +2,7 @@
   --pulsating-dot: rgb(134, 134, 134);
   --green-elements: rgb(85, 255, 47);
   --gray-elements: rgb(92, 92, 92);
-  --white-elements: rgba(255, 255, 255, 0.66);
+  --white-elements: rgba(255, 255, 255, 0.575);
 }
 
 .live-stream-card-container {
@@ -101,7 +101,7 @@
 
 #followers-online{
   margin: 0px;
-  color:var(--white-elements);
+  color:var(--gray-elements);
 }
 
 #title-offline {
@@ -111,7 +111,7 @@
 
  #title-online {
   margin-top: 6px;
-  color:var(--gray-elements);
+  color:var(--white-elements);
  }
 
 .live-stream-details-container {
