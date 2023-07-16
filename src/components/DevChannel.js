@@ -11,7 +11,9 @@ import PulsatingDot from './PulsatingDot';
   let slug;
   let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
   let isLive;
+  let isVerified;
   let verified;
+  let verifiedBadge = 'https://i.imgur.com/quUBzZJ.png';
   let channel;
   let channelLive;
   let streamTitle;
@@ -56,50 +58,52 @@ const DevChannel = () => {
           {/* Map over the data and render the live stream cards  */}
          {data.map((item,index) => {
            console.log(item)
-           
-           //if item exists, set variables for channel name, followers, and previousStream titles
-            if(item && item.user && item.previous_livestreams[0]){
-             channel = item.user.username;
-             followerCount = item.followersCount;
-             followers = followerCount.toLocaleString("en-US");
-             previousStreamTitle = item.previous_livestreams[0].session_title
-             pfp = item.user.profile_pic;
-             slug = item.slug;
-            } else {
-              channel = item.user.username;
-              followerCount = item.followersCount;
-              followers = followerCount.toLocaleString("en-US");
-              pfp = item.user.profile_pic;
-              slug = item.slug;
-              previousStreamTitle = "No titles yet.";
-            };
+           //if verified object exists than a channel is verified and the verified variable is set to true
+            if(item.verified !== null){
+                verified = true;
+                console.log("verified user", verified);
+              } else {
+                verified = false;
+                console.log("verified user", verified);
+              }
 
-            if(item && item.verified !== null){
-              verified = item.verified;
-              console.log(`verified user: ${verified}`);
-            }
-
-            //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
-            if(item.livestream){
-              channel = item.user.username;
-              console.log(channel)
-              followerCount = item.followersCount;
-              followers = followerCount.toLocaleString("en-US");
-              rawViewers = item.livestream.viewer_count;
-              viewerCount = rawViewers.toLocaleString("en-US");
-              pfp = item.user.profile_pic;
-              streamTitle = item.livestream.session_title;
-              slug = item.slug;
-            } else {
-              viewerCount = null;
+              //if item exists, set variables for channel name, followers, and previousStream titles
+              if(item && item.user && item.previous_livestreams[0]){
+                pfp = item.user.profile_pic;
+                channel = item.user.username;
+                followerCount = item.followersCount;
+                followers = followerCount.toLocaleString("en-US");
+                previousStreamTitle = item.previous_livestreams[0].session_title
+                slug = item.slug;
+              } else {
+                pfp = item.user.profile_pic;
+                channel = item.user.username;
+                followerCount = item.followersCount;
+                followers = followerCount.toLocaleString("en-US");
+                previousStreamTitle = "No titles yet.";
+                slug = item.slug;
+              };
+              
+              //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
+              if(item.livestream){
+                pfp = item.user.profile_pic;
+                channel = item.user.username;
+                console.log(channel)
+                followerCount = item.followersCount;
+                followers = followerCount.toLocaleString("en-US");
+                rawViewers = item.livestream.viewer_count;
+                viewerCount = rawViewers.toLocaleString("en-US");
+                streamTitle = item.livestream.session_title;
+                slug = item.slug;
+              } else {
+                viewerCount = null;
               streamTitle = `${previousStreamTitle}`;
             };
             //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
             if(!item.user.profile_pic && !item.livestream ){
               pfp = kickAvatar;
-                }
+            }
 
-            
                 //if channel is live, display "Live"
                 isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
                 
@@ -108,6 +112,8 @@ const DevChannel = () => {
                 titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
                 
                 pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
+
+                isVerified = verified === true ? <img id='verified-badge' src={verifiedBadge} alt='verification-badge'/> : null ;
       
                //jsx returning live stream card
                return(
@@ -119,8 +125,9 @@ const DevChannel = () => {
                           </Link>
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
-                              {channelLive}
+                            {isVerified}{channelLive}
                             </div> 
+                    
                             <div className='followed-by-container'>
                               {followers} followers
                             </div>

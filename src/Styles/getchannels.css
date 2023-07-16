@@ -47,8 +47,9 @@
 
 .channel-name-container {
   grid-area: name;
-  display: grid;
-  position: relative;
+  display: flex;
+  /* align-items: center; */
+  /* position: relative; */
   margin-top: 5px;
 }
 
@@ -63,6 +64,7 @@
 }
 
 #channel-online {
+  margin-right: 0px;
   font-size: 14px;
   color: var( --green-elements);
 }
@@ -70,6 +72,12 @@
 #channel-offline {
   font-size: 14px;
   color:var(--gray-elements);
+}
+
+#verified-badge{
+  margin-top: 2px;
+  height: 15px;
+  display: flex;
 }
 
 #followers {
