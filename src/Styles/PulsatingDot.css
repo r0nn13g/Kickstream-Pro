@@ -1,6 +1,6 @@
 .pulsatingDot {
   animation: pulseDot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
-  background-color: var(--pulsating-dot, #00BEFF);
+  background-color: var(--pulsating-dot);
   border-radius: 50%;
   box-sizing: border-box;
   height: 5px;
@@ -9,7 +9,7 @@
 
 .pulsatingDot:before {
   animation: pulseRing 2.00s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-  background-color: var(--pulsating-dot, #00BEFF);
+  background-color: var(--pulsating-dot,);
   border-radius: 45px;
   content: '';
   display: block;
