@@ -64,7 +64,7 @@
   white-space: nowrap;
 }
 
-#channel-name h5 {
+#channel-name h6 {
   margin: 5px;
 }
 
@@ -81,7 +81,6 @@
 #verified-badge{
   margin-top: 2px;
   height: 15px;
-  display: flex;
 }
 
 #followers {

@@ -103,18 +103,12 @@ const DevChannel = () => {
             if(!item.user.profile_pic && !item.livestream ){
               pfp = kickAvatar;
             }
-
                 //if channel is live, display "Live"
                 isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
-                
-                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
-                
-                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
-                
-                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
-
                 isVerified = verified === true ? <img id='verified-badge' src={verifiedBadge} alt='verification-badge'/> : null ;
-      
+                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{isVerified}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>
+                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
+                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
                //jsx returning live stream card
                return(
                  <div key={index} className='live-stream-card'>
@@ -125,7 +119,7 @@ const DevChannel = () => {
                           </Link>
                           <div  className='live-stream-details-container'>
                             <div className='channel-name-container'>
-                            {isVerified}{channelLive}
+                            {channelLive}
                             </div> 
                             <div className='followed-by-container'>
                               <div id='followers'>
