@@ -6,12 +6,13 @@
 }
 
 .live-stream-card-container {
-  /* margin: 6px; */
   padding-top: 60px;
 }
 
 .live-stream-card {
   display: grid;
+  margin-left: 6px;
+  margin-right: 6px;
   border-top: 2px solid rgba(73, 73, 73, 0.203);
   grid-template-rows: 1fr;
   grid-template-columns: 0.3fr 2.5fr 0.3fr ;
@@ -79,19 +80,27 @@
 }
 
 #verified-badge{
-  margin-top: 2px;
   height: 15px;
 }
 
 #followers {
-  margin-top: 2px;
+  margin-top: 6px;
   font-size: 10px;
   font-weight: 700;
+}
+
+#followers-offline{
+  margin: 0px;
+  color: var(--gray-elements);
+}
+
+#followers-online{
+  margin: 0px;
   color:var(--white-elements);
 }
 
 #title-offline {
-  margin-top: 2px;
+  margin-top: 6px;
   color:var(--gray-elements);
 }
 

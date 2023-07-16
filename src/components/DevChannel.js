@@ -21,6 +21,7 @@ import PulsatingDot from './PulsatingDot';
   let rawViewers;
   let followers;
   let followerCount;
+  let followersLive;
   let viewerCount;
   let previousStreamTitle;
 
@@ -106,9 +107,11 @@ const DevChannel = () => {
                 //if channel is live, display "Live"
                 isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
                 isVerified = verified === true ? <img id='verified-badge' src={verifiedBadge} alt='verification-badge'/> : null ;
-                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{isVerified}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>
-                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6> 
-                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>
+                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{isVerified}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
+                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
+                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
+                followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;
+
                //jsx returning live stream card
                return(
                     <div key={index} className='live-stream-card'>
@@ -124,7 +127,7 @@ const DevChannel = () => {
                             </div> 
                             <div className='followed-by-container'>
                               <div id='followers'>
-                              {followers}
+                              {followersLive}
                               </div>
                             </div>
                             <div className="stream-title-container">
