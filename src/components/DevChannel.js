@@ -98,7 +98,7 @@ const DevChannel = () => {
               pfp = kickAvatar;
                 }
                 //if channel is live, display "Live"
-                isLive = item.livestream === null ? <p id='offline-live'></p> : <div id='online-live'><PulsatingDot /></div>; 
+                isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
                 
                 channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}</h6> : <h6 id='channel-online'>{channel}</h6>
                 
@@ -119,7 +119,7 @@ const DevChannel = () => {
                               {channelLive}
                             </div> 
                             <div className='followed-by-container'>
-                              {followers}
+                              {followers} followers
                             </div>
                             <div className="stream-title-container">
                               {titleLive} 

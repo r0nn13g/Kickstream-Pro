@@ -1,7 +1,8 @@
 :root {
-  --pulsating-dot: rgb(85, 255, 47);
+  --pulsating-dot: rgb(167, 0, 0);
   --green-elements: rgb(85, 255, 47);
   --gray-elements: rgb(73, 73, 73); 
+  --white-elements: white;
 }
 
 .live-stream-card-container {
@@ -75,7 +76,7 @@
   margin-top: 5px;
   font-size: 8px;
   font-weight: 800;
-  color:var(--gray-elements);
+  color:var(--white-elements);
 }
 
 .followed-by-container{
@@ -97,7 +98,7 @@
   font-size: 10px;
 }
  #title-online {
-  color:var(--gray-elements);
+  color:var(--white-elements);
   margin-bottom: 5px;
   font-size: 10px;
  }
@@ -159,11 +160,11 @@
   position: relative;
   text-align: center;
   white-space: nowrap;
-  font-size: 12px;
-  font-weight: 800;
-  color:var(--green-elements);
   margin-right: 10px;
-}
+  font-size: 12px;
+  font-weight: 600;
+  color:var(--white-elements);
+};
 
 .viewers{
   font-size: 10px;
