@@ -1,12 +1,12 @@
 :root {
-  --pulsating-dot: rgb(167, 0, 0);
+  --pulsating-dot: rgb(81, 81, 81);
   --green-elements: rgb(85, 255, 47);
   --gray-elements: rgb(73, 73, 73); 
   --white-elements: white;
 }
 
 .live-stream-card-container {
-  margin: 5px;
+  /* margin: 5px; */
   /* border: 1px solid rgb(35, 35, 35); */
   border-radius: 2%;
 }
@@ -22,14 +22,21 @@
 
 .channel-pfp-container {
   grid-area: pfp;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  align-items: center;
   margin: 0px;
+  padding: 0px;
+}
+
+.pfp{
+  display: grid;
+  place-items: center;
+  margin: 2px;
 }
 
 #offline-pfp {
   filter: grayscale(100%);
-  margin: 10px;
+  margin: 7px;
   width: 50px; 
   height: 50px;
   border-radius: 50%;
@@ -37,7 +44,7 @@
 }
 
 #online-pfp {
-  margin: 10px;
+  margin: 7px;
   width: 50px; 
   height: 50px;
   border: 1px var(--green-elements) solid;
@@ -48,9 +55,7 @@
 .channel-name-container {
   grid-area: name;
   display: flex;
-  /* align-items: center; */
-  /* position: relative; */
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 #channel-name {
@@ -64,13 +69,12 @@
 }
 
 #channel-online {
-  margin-right: 0px;
-  font-size: 14px;
+  font-size: 16px;
   color: var( --green-elements);
 }
 
 #channel-offline {
-  font-size: 14px;
+  font-size: 16px;
   color:var(--gray-elements);
 }
 
@@ -81,44 +85,35 @@
 }
 
 #followers {
-  margin-top: 5px;
-  font-size: 8px;
-  font-weight: 800;
-  color:var(--white-elements);
-}
-
-.followed-by-container{
-  position:relative;
+  margin-top: 4px;
   font-size: 10px;
   font-weight: 800;
-  margin-top: 10px;
-};
+  color:var(--gray-elements);
+}
 
 #stream-title{
-  position: relative;
-  margin-top: 5px;
   font-size: 10px;
 }
 
 #title-offline {
-  /* color:var(--gray-elements); */
-  /* margin-bottom: 10px; */
-  font-size: 10px;
+  color:var(--gray-elements);
+  /* margin-bottom: 7px; */
 }
  #title-online {
   color:var(--white-elements);
-  margin-bottom: 5px;
-  font-size: 10px;
+  /* margin-bottom: 7px; */
  }
+
 .live-stream-details-container {
   grid-area: details;
   color:var(--gray-elements);
-  text-align: left;
   overflow: hidden;
   text-overflow:ellipsis;
 }
 
 .live-stream-details-container h6 {
+  display: inline-block;
+  place-items: center;
   margin: 0px;
   width: 100%;
   overflow: hidden;
@@ -171,7 +166,7 @@
   margin-right: 10px;
   font-size: 12px;
   font-weight: 600;
-  color:var(--white-elements);
+  color:var(--green-elements);
 };
 
 .viewers{

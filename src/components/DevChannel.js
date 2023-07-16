@@ -118,8 +118,8 @@ const DevChannel = () => {
                //jsx returning live stream card
                return(
                  <div key={index} className='live-stream-card'>
-                          <Link to={`https://www.kick.com/${slug}`} path='relative'>
-                            <div className='channel-pfp-container'>
+                          <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} path='relative'>
+                            <div className="pfp">
                              {pfpLive}
                             </div>
                           </Link>
@@ -127,9 +127,10 @@ const DevChannel = () => {
                             <div className='channel-name-container'>
                             {isVerified}{channelLive}
                             </div> 
-                    
                             <div className='followed-by-container'>
+                              <div id='followers'>
                               {followers} followers
+                              </div>
                             </div>
                             <div className="stream-title-container">
                               {titleLive} 
