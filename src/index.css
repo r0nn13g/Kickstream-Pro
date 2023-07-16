@@ -49,6 +49,7 @@ Link{
   margin-right: 14px;
   justify-content: flex-end;
   grid-area: hamburger;
+  opacity: 50%;
 }
 
 #hamburger-menu{
