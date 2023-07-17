@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import '../Styles/NavBar.css'; 
+import TemporaryDrawer from "./TemporaryDrawer";
 
 const Navbar = () => {
   return(
@@ -12,7 +13,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='hamburger-menu-container'>
-        <img id="hamburger-menu" src={'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamburger_icon_white.svg/120px-Hamburger_icon_white.svg.png?20190820131613'} alt="kickster"/>
+        <TemporaryDrawer/>
       </div>
       </div>
     </nav>
