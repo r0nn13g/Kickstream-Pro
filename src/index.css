@@ -18,6 +18,7 @@ html, body {
 .footer{
   text-align: right;
   color: black;
+  font-size: 10px;
   font-weight: 800;
   display: block;
   padding: 20px;

@@ -1,0 +1,14 @@
+.rotating-spinner{
+  /* border: 2px solid red; */
+  text-align: center;
+  margin:auto 0;
+  padding-top: 240px;
+  padding-bottom: 320px;
+
+}
+
+#spinner{
+  text-align: center;
+  margin: 50px;
+  margin-left: 180px;
+}
