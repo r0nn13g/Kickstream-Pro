@@ -48,8 +48,14 @@ const Channels = () => {
           } catch (error) {
             // Ignore 404 response and return null for this URL
             if (error.response && error.response.status === 404) {
-              console.error("Banned channel in streamers Array", error)
-                 setIsLoading(true);
+              console.error("Banned channel in streamers Array", error);
+              setIsLoading(true);
+            } else if (error.response === 429) {
+              console.error("Too many requests. Please wait and try again later.", error);
+              // Handle the 429 status error here
+              // You can display an error message to the user, set a retry mechanism, or take any other appropriate action
+              // For example, you can set a timeout and call `fetchData` again after a certain interval
+              setTimeout(fetchData, 5000); // Retry after 5 seconds
             } else {
               throw error; // Throw other errors
             }
