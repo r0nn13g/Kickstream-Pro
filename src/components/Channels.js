@@ -87,11 +87,11 @@ const Channels = () => {
                         slug = item.slug;
                       } else {
                         pfp = item.user.profile_pic;
-                channel = item.user.username;
-                followerCount = item.followersCount;
-                followers = followerCount.toLocaleString("en-US");
-                previousStreamTitle = "No titles yet.";
-                slug = item.slug;
+                        channel = item.user.username;
+                        followerCount = item.followersCount;
+                        followers = followerCount.toLocaleString("en-US");
+                        previousStreamTitle = "No titles yet.";
+                        slug = item.slug;
               };
               
               //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
@@ -156,7 +156,6 @@ const Channels = () => {
                           </div>
                     </div>   
                        )
-                       
                       })
                     }
                     </>

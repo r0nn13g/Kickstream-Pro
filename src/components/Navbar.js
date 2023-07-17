@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav>
       <div className="nav-bar">
       <div className="home-logo-container">
-        <Link id="home-logo-link" to={'/channels'} path='relative'>
+        <Link id="home-logo-link" to={'/'} path='relative'>
          <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
         </Link>
       </div>
