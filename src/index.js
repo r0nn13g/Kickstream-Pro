@@ -5,7 +5,7 @@ import './index.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Channels from './components/Channels.js';
 import Navbar from './components/Navbar.js';
-import FourOhFour from './pages/FourOhFour.js';
+import FourOhFour from './pages/fourOhFour.js';
 import Home from './pages/homepage.js';
 
 export default function App() {

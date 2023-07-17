@@ -13,49 +13,6 @@ Link{
   text-decoration: none;
 }
 
-.nav-bar{
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-   "home hamburger";
-  z-index: 1;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  background-color: #1b1b1b;
-}
-
-.home-logo-container{
-  grid-area: home;
-  display: grid;
-  margin-right: auto;
-  /* border: 2px solid #1b1b1b; */
-}
-
-#home-logo {
-  /* flex: 1; */
-  margin-left: auto;
-  margin: 15px;
-  height:30px;
-}
-#home-logo-link{
-  text-decoration: none;
-}
-
-.hamburger-menu-container{ 
-  display: grid;
-  margin-right: 14px;
-  justify-content: flex-end;
-  grid-area: hamburger;
-  opacity: 50%;
-}
-
-#hamburger-menu{
-  height:30px;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

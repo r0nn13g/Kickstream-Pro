@@ -1,9 +1,10 @@
 import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import '../Styles/getchannels.css';
+import '../Styles/Channels.css';
 import axios from "axios";
-import { streamers } from "./streamers";
+import { streamers } from "../data/streamers";
 import PulsatingDot from './PulsatingDot';
+import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 
 // Declare variables to store data
   let pfp;
@@ -106,7 +107,7 @@ const Channels = () => {
               pfp = kickAvatar;
             }
                 //if channel is live, display Pulsating dot
-                isLive = item.livestream === null ? <p id='offline-live'></p> : <div id='online-live'><PulsatingDot /></div>; 
+                isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
                 //if channel is partnered with kick display verified badge next to name
                 isVerified = verified === true ? <img id='verified-badge-online' src={verifiedBadge} alt='verification-badge'/> : null ;
                 //if channel is partnered with kick and offline display verified badge with gray scale filter
