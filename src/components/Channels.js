@@ -26,7 +26,7 @@ import PulsatingDot from './PulsatingDot';
   let viewerCount;
   let previousStreamTitle;
 
-const DevChannel = () => {
+const Channels = () => {
      // State to store the sorted data
      const [data, setData] = useState([]);
      useEffect(() => {
@@ -50,7 +50,7 @@ const DevChannel = () => {
             }
           };
          };
-         const refreshInterval = 40000;
+         const refreshInterval = 60000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
        }, []);
@@ -106,7 +106,7 @@ const DevChannel = () => {
               pfp = kickAvatar;
             }
                 //if channel is live, display Pulsating dot
-                isLive = item.livestream === null ? <p id='offline-live'>offline</p> : <div id='online-live'><PulsatingDot /></div>; 
+                isLive = item.livestream === null ? <p id='offline-live'></p> : <div id='online-live'><PulsatingDot /></div>; 
                 //if channel is partnered with kick display verified badge next to name
                 isVerified = verified === true ? <img id='verified-badge-online' src={verifiedBadge} alt='verification-badge'/> : null ;
                 //if channel is partnered with kick and offline display verified badge with gray scale filter
@@ -152,4 +152,4 @@ const DevChannel = () => {
            </div>
         );
     };
-export default DevChannel;
+export default Channels;

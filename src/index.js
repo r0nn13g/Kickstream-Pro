@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import SortedChannels from './components/SortedChannels';
-import DevChannel from './components/DevChannel';
-import Nav from './components/Nav.js';
+import Channels from './components/Channels.js';
+import Navbar from './components/Navbar.js';
+import FourOhFour from './pages/FourOhFour.js';
+import Home from './pages/homepage.js';
 
 export default function App() {
   return (
     <BrowserRouter>
-    <Nav/>
+    <Navbar/>
       <Routes>
-        <Route path="/" element={<SortedChannels />}></Route>
-        <Route path="/dev" element={<DevChannel />}></Route>
+        <Route path='*' element={<FourOhFour/>}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path="/channels" element={<Channels />}></Route>
       </Routes>
     </BrowserRouter>
   );

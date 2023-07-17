@@ -1,4 +1,3 @@
-import React from 'react';
 import notificationSound from '../assets/notification-tone-swift-gesture.mp3'
 
        const sendNotification = () => {

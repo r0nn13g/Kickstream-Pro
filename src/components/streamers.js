@@ -26,6 +26,4 @@ export let streamers = [
     'https://kick.com/api/v1/channels/totalirl',
     'https://kick.com/api/v1/channels/boomyi12',
     'https://kick.com/api/v1/channels/bongbong_irl',
-    'https://kick.com/api/v1/channels/coolslicklive',
-   // 'https://kick.com/api/v1/channels/hamptonbrando' //banned channel for testing
 ];

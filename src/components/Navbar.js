@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 import '../index.css'; 
 
-const Nav = () => {
+const Navbar = () => {
   return(
     <nav>
       <div className="nav-bar">
@@ -20,4 +20,4 @@ const Nav = () => {
   )
 }
 
-export default Nav;
+export default Navbar;
