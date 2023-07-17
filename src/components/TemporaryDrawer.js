@@ -8,8 +8,6 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import ListItemText from '@mui/material/ListItemText';
-// import DarkMode from '../Components/DarkMode';
-import '../Styles/TempDrawer.css'
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -18,15 +16,12 @@ export default function TemporaryDrawer() {
     bottom: false,
     right: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
-
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -36,9 +31,9 @@ export default function TemporaryDrawer() {
     >
       <List>
           <ListItem >
-              <Link to="/" style={{ textDecoration: 'none' , color: 'white' }}>
-              <ListItemText primary="Home" />
-              </Link>
+              <ListItemText primary="" />
+          </ListItem>
+          <ListItem >
           </ListItem>
           <ListItem >
               <Link to="/channels" style={{ textDecoration: 'none' , color: 'white' }}>
@@ -46,7 +41,7 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'white' }}>
+              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
               <ListItemText primary="Create +" />
               </Link>
           </ListItem>
@@ -62,7 +57,7 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/signup" style={{ textDecoration: 'none' , color: 'white' }}>
+              <Link to="/signup" style={{ textDecoration: 'none' , color: 'white'}}>
               <ListItemText primary="Sign Up" />
               </Link>
           </ListItem>
@@ -71,17 +66,15 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-      <ListItem enablepadding>
+      <ListItem>
               <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
               <b>Kicksta</b>
-              <ListItemText secondary="Created by Ronnie Garcia" />
+              <ListItemText primary="Created by Ronnie Garcia" />
               </Link>
           </ListItem>
       </List>
     </Box>
   );
-
-
   return (
     <div>
       {['right'].map((anchor) => (
@@ -90,7 +83,7 @@ export default function TemporaryDrawer() {
           <Drawer
             PaperProps={{
             sx: {
-              backgroundColor: "#2b2b2b",
+              backgroundColor: "#1b1b1be4",
             }
             }}
             anchor={anchor}
