@@ -135,7 +135,7 @@ const Channels = () => {
                 //jsx returning live stream card
                 return(
                   <div key={index} className='live-stream-card'>
-                      <Link className='channel-pfp-container' style={{textDecoration: 'none'}} to={`https://www.kick.com/${slug}`} path='relative'>
+                      <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
                         <div className="pfp">
                           {pfpLive}
                         </div>
@@ -149,7 +149,7 @@ const Channels = () => {
                               {followersLive}
                             </div>
                           </div>
-                          <Link style={{textDecoration: 'none'}}  to={`https://www.kick.com/${slug}/chatroom`}>
+                          <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
                           <div className="stream-title-container">
                             {titleLive} 
                           </div>
@@ -157,7 +157,7 @@ const Channels = () => {
                           </div>
                           <div className="is-live">
                               {isLive}
-                            <Link style={{textDecoration: 'none'}}  to={`https://www.kick.com/${slug}/chatroom`}>
+                            <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
                             <div className='live-viewers-count-container'>
                               {viewerCount}
                             </div>
