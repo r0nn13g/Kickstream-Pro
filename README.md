@@ -16,3 +16,6 @@ And finally to start the server that can be checked in your local browser just r
 ![_(iPhone 13 _ iPhone 13 Pro) (2)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/d0c30589-c0b7-47d2-b251-591c87ce0abd)
 ![_(iPhone 13 _ iPhone 13 Pro) (3)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/a2130c89-b62b-434f-9fd3-71c3653de767)
 ![ (Browser)_](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/14beb025-c41a-4c0e-a812-c738f8feaeab)
+
+
+```https://www.kicksta.netlify.app```
