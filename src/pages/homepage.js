@@ -9,8 +9,9 @@ const Homepage = () => {
       <div className="home-text">
        {/* <p>Welcome to the Kicksta</p> */}
        <Link to={'/channels'}>
-       <img id="home-page-logo"src={'https://i.imgur.com/fExb69W.png'} alt='logo'/>
+       <img id="home-page-logo"src={'https://i.imgur.com/3dmvkBd.png'} alt='logo'/>
        </Link>
+       {/* <p>Bored?</p> */}
       </div>
        <Footer/>
     </div>
