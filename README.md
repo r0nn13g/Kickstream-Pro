@@ -1,4 +1,4 @@
-# Kickster for Kick Live Streaming
+# Kicksta for Kick Live Streaming
 Keep tabs on your favorite live streamers recent titles, followers, when they go live and viewer count all in one place. Still a work in progress!
 
 ## Instructions to run app Locally 
