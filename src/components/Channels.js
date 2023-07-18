@@ -55,7 +55,6 @@ const Channels = () => {
               // Handle the 429 status error here
               // You can display an error message to the user, set a retry mechanism, or take any other appropriate action
               // For example, you can set a timeout and call `fetchData` again after a certain interval
-              setTimeout(fetchData, 5000); // Retry after 5 seconds
             } else {
               throw error; // Throw other errors
             }
@@ -136,7 +135,7 @@ const Channels = () => {
                 //jsx returning live stream card
                 return(
                   <div key={index} className='live-stream-card'>
-                      <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} path='relative'>
+                      <Link className='channel-pfp-container' style={{textDecoration: 'none'}} to={`https://www.kick.com/${slug}`} path='relative'>
                         <div className="pfp">
                           {pfpLive}
                         </div>
@@ -150,15 +149,19 @@ const Channels = () => {
                               {followersLive}
                             </div>
                           </div>
+                          <Link style={{textDecoration: 'none'}}  to={`https://www.kick.com/${slug}/chatroom`}>
                           <div className="stream-title-container">
                             {titleLive} 
                           </div>
+                          </Link>
                           </div>
                           <div className="is-live">
                               {isLive}
+                            <Link style={{textDecoration: 'none'}}  to={`https://www.kick.com/${slug}/chatroom`}>
                             <div className='live-viewers-count-container'>
                               {viewerCount}
                             </div>
+                          </Link>
                           </div>
                     </div>   
                        )
