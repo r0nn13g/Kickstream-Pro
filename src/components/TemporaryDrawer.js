@@ -36,29 +36,29 @@ export default function TemporaryDrawer() {
           <ListItem >
           </ListItem>
           <ListItem >
-              <Link to="/channels" style={{ textDecoration: 'none' , color: 'white' }}>
-              <ListItemText primary="Channels" />
+              <Link to="/channels" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <ListItemText primary="+ channels" />
               </Link>
           </ListItem>
           <ListItem >
               <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
-              <ListItemText primary="Create +" />
+              <ListItemText primary="+ create" />
               </Link>
           </ListItem>
           <Divider />
           <ListItem >
-              <Link to="/about-us" style={{ textDecoration: 'none' , color: 'white' }}>
-              <ListItemText primary="About us" />
+              <Link to="/about-us" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <ListItemText primary="+ about us" />
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/contact" style={{ textDecoration: 'none' , color: 'white' }}>
-              <ListItemText primary="Contact" />
+              <Link to="/contact" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <ListItemText primary="+ contact" />
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/signup" style={{ textDecoration: 'none' , color: 'white'}}>
-              <ListItemText primary="Sign Up" />
+              <Link to="/signup" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <ListItemText primary="+ sign Up" />
               </Link>
           </ListItem>
           {/* Dark Mode Toggle switch */}
@@ -69,7 +69,7 @@ export default function TemporaryDrawer() {
       <ListItem>
               <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
               <b>Kicksta</b>
-              <ListItemText primary="Created by Ronnie Garcia" />
+              <ListItemText secondary="Created by Ronnie Garcia" />
               </Link>
           </ListItem>
       </List>
