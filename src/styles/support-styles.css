@@ -1,0 +1,41 @@
+.support-details-container{
+  display: flex;
+  width:100%;
+  margin-top: 180px;
+}
+
+#eth, #btc, #ltc{
+  display: flex;
+  text-align: center;
+  height:100px;
+}
+
+.crypto-container{
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.crypto-container p{
+  word-break: break-all;
+  white-space: normal;
+  font-size: 8px;
+}
+
+.eth-container{
+  /* margin-left: 50px; */
+  flex: 25%;
+  padding: 5px;
+}
+
+.ltc-container{
+  flex: 25%;
+  padding: 5px;
+}
+
+.btc-container{
+flex: 1%;
+  padding: 5px;
+}

@@ -47,9 +47,9 @@ export default function TemporaryDrawer() {
           </ListItem>
           <Divider />
           <ListItem >
-              <Link to={{ pathname: "https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" }} style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+             <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ github" />
-              </Link>
+             </a>
           </ListItem>
           <ListItem >
               <Link to="/support" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>

@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import '../Styles/navbar-styles.css'; 
+import '../styles/navbar-styles.css'; 
 import TemporaryDrawer from "./TemporaryDrawer";
 
 const Navbar = () => {

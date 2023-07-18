@@ -1,4 +1,4 @@
-import '../Styles/support-styles.css'
+import '../styles/support-styles.css'
 import Footer from '../components/Footer.js'
 
 const Support = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import  '../Styles/pulsatingdot-styles.css'
+import  '../styles/pulsatingdot-styles.css'
 
 const PulsatingDot = () => {
 return(

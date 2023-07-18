@@ -1,14 +1,14 @@
 import React from "react";
-import '../Styles/fourohfour-styles.css';
+import '../styles/fourohfour-styles.css';
 
 const FourOhFour = () => {
 return (
   <div className="FourOhFour-container">
-     <img id="joel-always-wins" src={'https://i.imgur.com/vULJOFd.gif'} alt='joel-always-wins'></img>
-     <p>404</p>
-     <p>This page does not exist yet.</p>
+     <h1>404</h1>
+     <img id="joel-always-wins" src={'https://i.imgur.com/YN8RwVD.gif'} alt='joel-always-wins'></img>
+     <h5>This page does not exist yet.</h5>
   </div>
 )
-}
+};
 
 export default FourOhFour;

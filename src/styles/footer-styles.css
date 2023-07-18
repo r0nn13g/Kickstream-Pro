@@ -1,0 +1,16 @@
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--green-elements);
+  color: black;
+  font-size: 8px;
+  font-weight: 800;
+  text-align: right;
+  padding: 5px;
+}
+
+#footer-text{
+  margin-right: 20px;
+}
