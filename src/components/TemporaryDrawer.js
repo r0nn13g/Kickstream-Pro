@@ -48,17 +48,17 @@ export default function TemporaryDrawer() {
           <Divider />
           <ListItem >
               <Link to="/about-us" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ about us" />
+              <ListItemText primary="+ learn" />
               </Link>
           </ListItem>
           <ListItem >
               <Link to="/contact" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ contact" />
+              <ListItemText primary="+ github" />
               </Link>
           </ListItem>
           <ListItem >
               <Link to="/signup" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ sign up" />
+              <ListItemText primary="+ support" />
               </Link>
           </ListItem>
           {/* Dark Mode Toggle switch */}
@@ -68,8 +68,8 @@ export default function TemporaryDrawer() {
       <List>
       <ListItem>
               <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
-              <b>Kicksta</b>
-              <ListItemText secondary="Created by Ronnie Garcia" />
+              <b>Kicksta®</b>
+              <ListItemText secondary="" />
               </Link>
           </ListItem>
       </List>

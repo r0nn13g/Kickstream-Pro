@@ -11,7 +11,7 @@ const Homepage = () => {
        <Link to={'/channels'}>
        <img id="home-page-logo"src={'https://i.imgur.com/3dmvkBd.png'} alt='logo'/>
        </Link>
-       {/* <p>Bored?</p> */}
+       <p>dont break it.</p>
       </div>
        <Footer/>
     </div>
