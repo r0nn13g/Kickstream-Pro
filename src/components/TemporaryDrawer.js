@@ -58,7 +58,7 @@ export default function TemporaryDrawer() {
           </ListItem>
           <ListItem >
               <Link to="/signup" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ sign Up" />
+              <ListItemText primary="+ sign up" />
               </Link>
           </ListItem>
           {/* Dark Mode Toggle switch */}
