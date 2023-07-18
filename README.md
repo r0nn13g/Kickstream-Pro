@@ -1,7 +1,18 @@
 # Kickster for Kick Live Streaming
 Keep tabs on your favorite live streamers recent titles, followers, when they go live and viewer count all in one place. Still a work in progress!
 
+## Instructions to run app Locally 
 
-![mobile](https://github.com/r0nn13g/Kickster-for-kick-live-streaming/assets/86433181/a9bd5c07-fd0e-455a-b993-715bc82c5f83)
-![mobile](https://github.com/r0nn13g/Kickster-for-kick-live-streaming/assets/86433181/b6fac866-7581-44c9-9dfc-ac7b88664f22)
-![browser](https://github.com/r0nn13g/Kickster-for-kick-live-streaming/assets/86433181/9b171ee0-96c5-4ee6-9b10-f21ce250e601)
+I have some pre-wrtitten scripts to make this process a lot easier. 
+
+` npm install `
+
+And finally to start the server that can be checked in your local browser just run the script
+
+```npm start```
+
+![(iPhone 13 _ iPhone 13 Pro)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/b0f18c76-60e1-4145-a452-bf65110e979b)
+![(iPhone 13 _ iPhone 13 Pro) (1)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/2c63887b-d0a3-4d4a-a305-d95c97813ac4)
+![_(iPhone 13 _ iPhone 13 Pro) (2)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/d0c30589-c0b7-47d2-b251-591c87ce0abd)
+![_(iPhone 13 _ iPhone 13 Pro) (3)](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/a2130c89-b62b-434f-9fd3-71c3653de767)
+![ (Browser)_](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/14beb025-c41a-4c0e-a812-c738f8feaeab)
