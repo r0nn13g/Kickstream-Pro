@@ -1,5 +1,5 @@
 .homepage-container{
-  margin-top: 320px;
+  margin-top: 220px;
 }
 
 .home-text{
@@ -12,6 +12,11 @@
   height: 200px;
   background-size: cover;
   animation: rotation 7s infinite linear; 
+  animation-play-state: running;
+}
+
+#home-page-logo:hover {
+  animation-play-state: paused;
 }
 
 @keyframes rotation {
