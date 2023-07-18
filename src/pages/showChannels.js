@@ -2,7 +2,7 @@ import React from "react";
 import Channels from "../components/Channels.js";
 
 
-const showChannels = () => {
+const ShowChannels = () => {
     return(
       <React.Fragment>
         <Channels />
@@ -10,4 +10,4 @@ const showChannels = () => {
     )
 }
 
-export default showChannels;
+export default ShowChannels;

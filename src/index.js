@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Channels from './pages/showChannels.js';
+import Channels from './pages/ShowChannels.js';
 import Navbar from './components/Navbar.js';
-import FourOhFour from './pages/fourOhFour.js';
-import Home from './pages/homepage.js';
+import FourOhFour from './pages/FourOhFour.js';
+import Home from './pages/HomePage.js';
 
 export default function App() {
   return (

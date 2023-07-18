@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/FourOhFour.css';
+import '../Styles/fourohfour-styles.css';
 
 const FourOhFour = () => {
 return (

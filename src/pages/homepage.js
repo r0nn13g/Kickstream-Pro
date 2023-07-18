@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../Styles/Homepage.css';
+import '../Styles/homepage-styles.css';
 import Footer from "../components/Footer";
 
-const homepage = () => {
+const Homepage = () => {
   return(
     <div className='homepage-container'>
       <div className="home-text">
@@ -18,4 +18,4 @@ const homepage = () => {
 
 }
 
-export default homepage;
+export default Homepage;
