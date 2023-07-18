@@ -7,6 +7,7 @@ import ShowChannels from './pages/ShowChannels.js';
 import Navbar from './components/Navbar.js';
 import FourOhFour from './pages/FourOhFour.js';
 import Home from './pages/HomePage.js';
+import Support from './pages/Support.js';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path='*' element={<FourOhFour/>}></Route>
         <Route path='/' element={<Home />}></Route>
         <Route path="/channels" element={<ShowChannels />}></Route>
+        <Route path="/support" element={<Support/>}></Route>
       </Routes>
     </BrowserRouter>
   );

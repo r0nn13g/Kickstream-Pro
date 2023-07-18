@@ -24,7 +24,7 @@ export default function TemporaryDrawer() {
   };
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200 }}
       role="presentation"
       onClick={toggleDrawer(anchor, true)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -41,33 +41,26 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
+              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ create" />
               </Link>
           </ListItem>
           <Divider />
           <ListItem >
-              <Link to="/about-us" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ learn" />
-              </Link>
-          </ListItem>
-          <ListItem >
-              <Link to="/contact" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <Link to={{ pathname: "https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" }} style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ github" />
               </Link>
           </ListItem>
           <ListItem >
-              <Link to="/signup" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <Link to="/support" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
               <ListItemText primary="+ support" />
               </Link>
           </ListItem>
-          {/* Dark Mode Toggle switch */}
-          {/* <DarkMode/> */}
       </List>
       <Divider />
       <List>
       <ListItem>
-              <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
+              <Link to="/" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <b>Kicksta®</b>
               <ListItemText secondary="" />
               </Link>
