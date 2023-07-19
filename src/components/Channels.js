@@ -71,17 +71,13 @@ const Channels = () => {
                       <RotatingSpinner />
                       ) : (
                         <>
-            {data.map((item,index) => {
-              console.log(item)
+                {data.map((item,index) => {
                       //if verified object exists than a channel is verified and the verified variable is set to true
                       if(item.verified !== null){
                         verified = true;
-                        console.log("verified user", verified);
                       } else {
                         verified = false;
-                        console.log("verified user", verified);
                       }
-                      
                       //if item exists, set variables for channel name, followers, and previousStream titles
                       if(item && item.user && item.previous_livestreams[0]){
                         pfp = item.user.profile_pic;
@@ -98,12 +94,11 @@ const Channels = () => {
                         previousStreamTitle = "No titles yet.";
                         slug = item.slug;
               };
-              
               //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
               if(item.livestream){
                 pfp = item.user.profile_pic;
                 channel = item.user.username;
-                console.log(channel)
+                console.log("Live:", channel)
                 followerCount = item.followersCount;
                 followers = followerCount.toLocaleString("en-US");
                 rawViewers = item.livestream.viewer_count;
@@ -114,12 +109,10 @@ const Channels = () => {
                 viewerCount = null;
                 streamTitle = `${previousStreamTitle}`;
               };
-
               //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
               if(!item.user.profile_pic && !item.livestream ){
                 pfp = kickAvatar;
               };
-
             //if channel is live, display Pulsating dot
             isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
                 //if channel is partnered with kick display verified badge next to name
@@ -130,8 +123,7 @@ const Channels = () => {
                 channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
                 titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
                 pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
-                followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;
-                
+                followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;      
                 //jsx returning live stream card
                 return(
                   <div key={index} className='live-stream-card'>
