@@ -10,6 +10,7 @@ const RotatingSpinner = () =>{
       <Stack id="spinner" justifyContent="center" alignItems="center" sx={{ color: 'grey.500' }} spacing={2} direction="row">
         <CircularProgress color="inherit" />
       </Stack>
+       <img id="home-logo-rotating-spin" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
     </div>
   )
 };
