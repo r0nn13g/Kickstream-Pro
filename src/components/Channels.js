@@ -19,13 +19,13 @@ import RotatingSpinner from "../components/RotatingSpinner";
   let verifiedLive;
   let channel;
   let channelLive;
-  let streamTitle;
-  let titleLive;
-  let rawViewers;
   let followers;
   let followerCount;
   let followersLive;
+  let rawViewers;
   let viewerCount;
+  let titleLive;
+  let streamTitle;
   let previousStreamTitle;
 
 const Channels = () => {
@@ -52,9 +52,6 @@ const Channels = () => {
               setIsLoading(true);
             } else if (error.response === 429) {
               console.error("Too many requests. Please wait and try again later.", error);
-              // Handle the 429 status error here
-              // You can display an error message to the user, set a retry mechanism, or take any other appropriate action
-              // For example, you can set a timeout and call `fetchData` again after a certain interval
             } else {
               throw error; // Throw other errors
             }
@@ -67,6 +64,7 @@ const Channels = () => {
 
         return (
             <div className="live-stream-card-container">
+                    {/* display rotating spinner until get requests are succesful */}
                     {isLoading ? (
                       <RotatingSpinner />
                       ) : (
@@ -93,74 +91,74 @@ const Channels = () => {
                         followers = followerCount.toLocaleString("en-US");
                         previousStreamTitle = "No titles yet.";
                         slug = item.slug;
-              };
-              //if channel is live, populate raw viewers variable wiith live concurrent viewer count and previous stream title
-              if(item.livestream){
-                pfp = item.user.profile_pic;
-                channel = item.user.username;
-                console.log("Live:", channel)
-                followerCount = item.followersCount;
-                followers = followerCount.toLocaleString("en-US");
-                rawViewers = item.livestream.viewer_count;
-                viewerCount = rawViewers.toLocaleString("en-US");
-                streamTitle = item.livestream.session_title;
-                slug = item.slug;
-              } else {
-                viewerCount = null;
-                streamTitle = `${previousStreamTitle}`;
-              };
-              //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
-              if(!item.user.profile_pic && !item.livestream ){
-                pfp = kickAvatar;
-              };
-            //if channel is live, display Pulsating dot
-            isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
-                //if channel is partnered with kick display verified badge next to name
-                isVerified = verified === true ? <img id='verified-badge-online' src={verifiedBadge} alt='verification-badge'/> : null ;
-                //if channel is partnered with kick and offline display verified badge with gray scale filter
-                verifiedLive = isVerified !== null && !item.livestream ? <img id='verified-badge-offline' src={verifiedBadge} alt='verification-badge'/> : isVerified;
-                //if channel is live display elements in color, else display in gray scale.
-                channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
-                titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
-                pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
-                followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;      
-                //jsx returning live stream card
-                return(
-                  <div key={index} className='live-stream-card'>
-                      <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                        <div className="pfp">
-                          {pfpLive}
-                        </div>
-                      </Link>
-                        <div  className='live-stream-details-container'>
-                          <div className='channel-name-container'>
-                            {channelLive}
-                          </div> 
-                          <div className='followed-by-container'>
-                            <div id='followers'>
-                              {followersLive}
-                            </div>
-                          </div>
-                          <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                          <div className="stream-title-container">
-                            {titleLive} 
-                          </div>
-                          </Link>
-                          </div>
-                          <div className="is-live">
-                              {isLive}
-                            <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                            <div className='live-viewers-count-container'>
-                              {viewerCount}
-                            </div>
-                          </Link>
-                          </div>
-                    </div>   
-                       )
-                      })
-                    }
+                      };
+                      //if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
+                       if(item.livestream){
+                        pfp = item.user.profile_pic;
+                        channel = item.user.username;
+                        console.log("Live:", channel)
+                        followerCount = item.followersCount;
+                        followers = followerCount.toLocaleString("en-US");
+                        rawViewers = item.livestream.viewer_count;
+                        viewerCount = rawViewers.toLocaleString("en-US");
+                        streamTitle = item.livestream.session_title;
+                        slug = item.slug;
+                      } else {
+                        viewerCount = null;
+                        streamTitle = `${previousStreamTitle}`;
+                      };
+                      //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
+                      if(!item.user.profile_pic && !item.livestream ){
+                        pfp = kickAvatar;
+                      };
+                         //if channel is live, display Pulsating dot
+                        isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
+                        //if channel is partnered with kick display verified badge next to name
+                        isVerified = verified === true ? <img id='verified-badge-online' src={verifiedBadge} alt='verification-badge'/> : null ;
+                        //if channel is partnered with kick and offline display verified badge with gray scale filter
+                        verifiedLive = isVerified !== null && !item.livestream ? <img id='verified-badge-offline' src={verifiedBadge} alt='verification-badge'/> : isVerified;
+                        //if channel is live display elements in color, else display in gray scale.
+                        channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
+                        titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
+                        pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
+                        followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;      
+                        //jsx returning live stream card
+                        return(
+                          <div key={index} className='live-stream-card'>
+                              <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
+                                <div className="pfp">
+                                  {pfpLive}
+                                </div>
+                              </Link>
+                                <div  className='live-stream-details-container'>
+                                  <div className='channel-name-container'>
+                                    {channelLive}
+                                  </div> 
+                                  <div className='followed-by-container'>
+                                    <div id='followers'>
+                                      {followersLive}
+                                    </div>
+                                  </div>
+                                  <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
+                                  <div className="stream-title-container">
+                                    {titleLive} 
+                                  </div>
+                                  </Link>
+                                  </div>
+                                  <div className="is-live">
+                                      {isLive}
+                                    <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
+                                    <div className='live-viewers-count-container'>
+                                      {viewerCount}
+                                    </div>
+                                  </Link>
+                                  </div>
+                            </div>   
+                          )
+                        })
+                      }
                     </>
-                    )}
+                  )}
            </div>
         );
     };
