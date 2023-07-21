@@ -81,10 +81,13 @@
 }
 
 #verified-badge-online{
+  position: absolute;
+  /* margin-top: 10px; */
   height: 15px;
 }
 
 #verified-badge-offline{
+  position: absolute;
   height: 15px;
   filter: grayscale(100%);
 }
