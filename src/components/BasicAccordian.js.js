@@ -3,7 +3,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ListIcon from '@mui/icons-material/List';
+// import ListIcon from '@mui/icons-material/List';
 import '../styles/accordian-styles.css';
 
 export default function BasicAccordion() {
@@ -18,14 +18,14 @@ export default function BasicAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <ListIcon/>
+          {/* <ListIcon/> */}
         </AccordionSummary>
         <AccordionDetails>
               <li id="accordian-text">
-                Click profile photo to get directed to streamers channel on kick.
+                Click profile photo to get directed to a streamers channel.
               </li>
               <li id="accordian-text">
-                Click title or viewer count to get directed to the channels chatroom.                
+                Click title or viewers to open chatroom in a second window.                
               </li>  
         </AccordionDetails>
       </Accordion>
