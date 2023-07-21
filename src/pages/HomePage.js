@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../styles/homepage-styles.css';
 import Footer from "../components/Footer";
+// import ActionAreaCard from "../components/ActionAreaCard.tsx";
 
 const Homepage = () => {
   return(
     <div className='homepage-container'>
+      <div className="home-page-card">
+        {/* <ActionAreaCard /> */}
+      </div>
       <div className="home-text">
        {/* <p>Welcome to the Kicksta</p> */}
        <Link to={'/channels'}>
@@ -14,7 +18,7 @@ const Homepage = () => {
        <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>
        </Link>
       </div>
-       <Footer/>
+        <Footer/>
     </div>
   )
 

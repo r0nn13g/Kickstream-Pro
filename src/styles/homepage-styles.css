@@ -1,8 +1,9 @@
 .homepage-container{
-    margin-top: 220px;
+    margin-top: 200px;
 }
 
 .home-text{
+  padding-top: 100px;
   margin: 10px;
   text-align: center;
 }
@@ -21,6 +22,17 @@
 
 #home-enter-logo{
   height: 40px;
+}
+
+.home-page-card{
+  position:fixed;
+  top: 30%; /* Move the top edge to the center */
+  left: 50%; /* Move the left edge to the center */
+  transform: translate(-50%, -50%); /* Center the div precisely */
+}
+
+.css-46bh2p-MuiCardContent-root {
+  background-color: var(--green-elements);
 }
 
 @keyframes rotation {
