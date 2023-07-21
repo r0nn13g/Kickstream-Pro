@@ -10,6 +10,7 @@
   position: fixed;
   width: 100%;
   background-color: #1b1b1b;
+  border-bottom: 1px solid rgba(94, 94, 94, 0.178);
 }
 
 .home-logo-container{

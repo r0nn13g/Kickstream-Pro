@@ -2,10 +2,12 @@ import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import '../styles/channel-styles.css';
 import axios from "axios";
-import { streamers } from "../data/streamers";
+import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import RotatingSpinner from "../components/RotatingSpinner";
+import BasicAccordion from "./BasicAccordian.js";
+
 
 // Declare variables to store data
   let pfp;
@@ -50,13 +52,14 @@ const Channels = () => {
             if (error.response && error.response.status === 404) {
               console.error("Banned channel in streamers Array", error);
               setIsLoading(true);
-            } else if (error.response === 429) {
+            } else if (error.response === 429 && error.response.status) {
               console.error("Too many requests. Please wait and try again later.", error);
             } else {
               throw error; // Throw other errors
             }
           };
          };
+         
          const refreshInterval = 60000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
@@ -64,53 +67,54 @@ const Channels = () => {
 
         return (
             <div className="live-stream-card-container">
+              <BasicAccordion />
                     {/* display rotating spinner until get requests are succesful */}
                     {isLoading ? (
                       <RotatingSpinner />
                       ) : (
                         <>
-                {data.map((item,index) => {
-                      //if verified object exists than a channel is verified and the verified variable is set to true
-                      if(item.verified !== null){
-                        verified = true;
-                      } else {
-                        verified = false;
-                      }
-                      //if item exists, set variables for channel name, followers, and previousStream titles
-                      if(item && item.user && item.previous_livestreams[0]){
-                        pfp = item.user.profile_pic;
-                        channel = item.user.username;
-                        followerCount = item.followersCount;
-                        followers = followerCount.toLocaleString("en-US");
-                        previousStreamTitle = item.previous_livestreams[0].session_title
-                        slug = item.slug;
-                      } else {
-                        pfp = item.user.profile_pic;
-                        channel = item.user.username;
-                        followerCount = item.followersCount;
-                        followers = followerCount.toLocaleString("en-US");
-                        previousStreamTitle = "No titles yet.";
-                        slug = item.slug;
-                      };
-                      //if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
-                       if(item.livestream){
-                        pfp = item.user.profile_pic;
-                        channel = item.user.username;
-                        console.log("Live:", channel)
-                        followerCount = item.followersCount;
-                        followers = followerCount.toLocaleString("en-US");
-                        rawViewers = item.livestream.viewer_count;
-                        viewerCount = rawViewers.toLocaleString("en-US");
-                        streamTitle = item.livestream.session_title;
-                        slug = item.slug;
-                      } else {
-                        viewerCount = null;
-                        streamTitle = `${previousStreamTitle}`;
-                      };
-                      //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
-                      if(!item.user.profile_pic && !item.livestream ){
-                        pfp = kickAvatar;
-                      };
+                      {data.map((item,index) => {
+                          //if verified object exists than a channel is verified and the verified variable is set to true
+                          if(item.verified !== null){
+                            verified = true;
+                          } else {
+                            verified = false;
+                          }
+                          //if item exists, set variables for channel name, followers, and previousStream titles
+                          if(item && item.user && item.previous_livestreams[0]){
+                            pfp = item.user.profile_pic;
+                            channel = item.user.username;
+                            followerCount = item.followersCount;
+                            followers = followerCount.toLocaleString("en-US");
+                            previousStreamTitle = item.previous_livestreams[0].session_title
+                            slug = item.slug;
+                          } else {
+                            pfp = item.user.profile_pic;
+                            channel = item.user.username;
+                            followerCount = item.followersCount;
+                            followers = followerCount.toLocaleString("en-US");
+                            previousStreamTitle = "No titles yet.";
+                            slug = item.slug;
+                          };
+                          //if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
+                          if(item.livestream){
+                            pfp = item.user.profile_pic;
+                            channel = item.user.username;
+                            console.log("Live:", channel)
+                            followerCount = item.followersCount;
+                            followers = followerCount.toLocaleString("en-US");
+                            rawViewers = item.livestream.viewer_count;
+                            viewerCount = rawViewers.toLocaleString("en-US");
+                            streamTitle = item.livestream.session_title;
+                            slug = item.slug;
+                          } else {
+                            viewerCount = null;
+                            streamTitle = `${previousStreamTitle}`;
+                          };
+                          //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
+                          if(!item.user.profile_pic && !item.livestream ){
+                            pfp = kickAvatar;
+                          };
                          //if channel is live, display Pulsating dot
                         isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
                         //if channel is partnered with kick display verified badge next to name

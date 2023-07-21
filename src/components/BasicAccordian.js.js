@@ -1,0 +1,36 @@
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import '../styles/accordian-styles.css';
+
+export default function BasicAccordion() {
+  return (
+    <div>
+      <Accordion sx={{ 
+    backgroundColor: '#1b1b1b',
+    color: 'var(--white-elements)'
+    }} >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography id='typo-accordian'>Channels</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+              <li>
+                Click profile photo to get directed to streamers channel on kick.
+              </li>
+              <li>
+                Click title or viewer count to get directed to the channels chatroom.                
+              </li>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
+  );
+}
