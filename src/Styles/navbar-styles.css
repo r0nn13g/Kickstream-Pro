@@ -20,8 +20,8 @@
 }
 
 #home-logo {
-  margin-left: auto;
-  margin: 15px;
+  margin: 0px;
+  margin-left: 10px;
   height:30px;
 }
 #home-logo-link{
@@ -30,29 +30,18 @@
 
 .hamburger-menu-container{ 
   display: grid;
-  margin-right: 14px;
+  margin-right: 10px;
   justify-content: flex-end;
   grid-area: hamburger;
   opacity: 50%;
 }
 
 #hamburger-menu{
-  height:30px;
+  height:20px;
 }
 
 #home-logo{
-  width: 30px; 
-  height: 30px;
+  width: 20px; 
+  height: 20px;
   background-size: cover;
-  animation: rotation 7s infinite linear; 
-  animation-play-state: running;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
