@@ -8,8 +8,6 @@ import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import RotatingSpinner from "../components/RotatingSpinner";
 import BasicAccordion from "./BasicAccordian.js";
 
-
-// Declare variables to store data
   let pfp;
   let pfpLive;
   let slug;
@@ -67,7 +65,7 @@ const Channels = () => {
 
         return (
             <div className="live-stream-card-container">
-              <BasicAccordion />
+                    <BasicAccordion />
                     {/* display rotating spinner until get requests are succesful */}
                     {isLoading ? (
                       <RotatingSpinner />
