@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import ListItemText from '@mui/material/ListItemText';
 
 export default function TemporaryDrawer() {
@@ -46,15 +47,15 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <Divider />
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
-             <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ github" />
-             </a>
-          </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ support" />
               </Link>
+          </ListItem>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
+             <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <GitHubIcon />
+             </a>
           </ListItem>
       </List>
       <Divider />
