@@ -1,16 +1,20 @@
 .homepage-container{
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .home-text{
-  padding-top: 100px;
+  padding-top: 200px;
   margin: 10px;
   text-align: center;
 }
 
+#home-animation{
+  height: 175px
+}
+
 #home-page-logo{
-  width: 100px; 
-  height: 100px;
+  width: 300px; 
+  height: 300px;
   background-size: cover;
   animation: rotation 7s infinite linear; 
   animation-play-state: running;

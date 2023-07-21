@@ -15,8 +15,6 @@ const topFilms = () => [
     },
     { label: 'The Good, the Bad and the Ugly', year: 1966 }
 ];
-
-
   const CreateChannels = () => {
     return (
         <div className="App">

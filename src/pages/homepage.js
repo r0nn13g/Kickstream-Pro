@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../styles/homepage-styles.css';
 import Footer from "../components/Footer";
 // import ActionAreaCard from "../components/ActionAreaCard.tsx";
+import HomeAnimation from '../assets/LSS.gif';
 
 const Homepage = () => {
   return(
@@ -13,7 +14,8 @@ const Homepage = () => {
       <div className="home-text">
        {/* <p>Welcome to the Kicksta</p> */}
        <Link to={'/channels'}>
-       <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
+       <img id="home-animation" src={HomeAnimation} alt="kickster"/>
+      
       <div></div>
        <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>
        </Link>
