@@ -2,8 +2,8 @@ import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ListIcon from '@mui/icons-material/List';
 import '../styles/accordian-styles.css';
 
 export default function BasicAccordion() {
@@ -18,17 +18,15 @@ export default function BasicAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography id='typo-accordian'>Channels</Typography>
+          <ListIcon/>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
               <li>
                 Click profile photo to get directed to streamers channel on kick.
               </li>
               <li>
                 Click title or viewer count to get directed to the channels chatroom.                
-              </li>
-          </Typography>
+              </li>  
         </AccordionDetails>
       </Accordion>
     </div>

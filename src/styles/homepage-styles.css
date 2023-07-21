@@ -1,5 +1,5 @@
 .homepage-container{
-  margin-top: 220px;
+    margin-top: 220px;
 }
 
 .home-text{
@@ -8,8 +8,8 @@
 }
 
 #home-page-logo{
-  width: 200px; 
-  height: 200px;
+  width: 100px; 
+  height: 100px;
   background-size: cover;
   animation: rotation 7s infinite linear; 
   animation-play-state: running;
@@ -17,6 +17,10 @@
 
 #home-page-logo:hover {
   animation-play-state: paused;
+}
+
+#home-enter-logo{
+  height: 40px;
 }
 
 @keyframes rotation {

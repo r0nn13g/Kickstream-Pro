@@ -1,12 +1,19 @@
 li{
-  font-size: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  color:white;
   margin-left: 20px;
   margin-right:20px;
   margin-bottom: 5px;
 }
 
 #typo-accordian{
+  font-size: 12px;
+  font-weight: 600;
+
+  color:white;
   margin: 0px;
+  padding: 0px;
 }
 
 .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {

@@ -10,8 +10,9 @@ const Homepage = () => {
        {/* <p>Welcome to the Kicksta</p> */}
        <Link to={'/channels'}>
        <img id="home-page-logo"src={'https://i.imgur.com/3dmvkBd.png'} alt='logo'/>
+      <div></div>
+       <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>
        </Link>
-       <p>dont break it.</p>
       </div>
        <Footer/>
     </div>
