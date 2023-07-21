@@ -4,7 +4,6 @@ import List from '@mui/material/List';
 import { Link } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -46,7 +45,6 @@ export default function TemporaryDrawer() {
               <ListItemText primary="+ create" />
               </Link>
           </ListItem>
-          <Divider />
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ support" />
@@ -58,7 +56,6 @@ export default function TemporaryDrawer() {
              </a>
           </ListItem>
       </List>
-      <Divider />
       <List>
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
