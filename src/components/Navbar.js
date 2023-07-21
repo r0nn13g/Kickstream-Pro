@@ -9,7 +9,7 @@ const Navbar = () => {
       <div className="nav-bar">
       <div className="home-logo-container">
         <Link id="home-logo-link" to={'/'} path='relative'>
-         <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
+         <img id="home-logo" src={'https://i.imgur.com/3dmvkBd.png'} alt="kickster"/>
         </Link>
       </div>
       <div className='hamburger-menu-container'>

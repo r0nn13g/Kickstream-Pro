@@ -61,12 +61,12 @@ const Channels = () => {
          const refreshInterval = 60000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
-       }, []);
+        }, []);
 
         return (
             <div className="live-stream-card-container">
-                    <BasicAccordion />
                     {/* display rotating spinner until get requests are succesful */}
+                    <BasicAccordion />
                     {isLoading ? (
                       <RotatingSpinner />
                       ) : (

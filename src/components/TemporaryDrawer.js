@@ -35,33 +35,34 @@ export default function TemporaryDrawer() {
           </ListItem>
           <ListItem >
           </ListItem>
-          <ListItem >
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/channels" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ channels" />
               </Link>
           </ListItem>
-          <ListItem >
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ create" />
               </Link>
           </ListItem>
           <Divider />
-          <ListItem >
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
              <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ github" />
              </a>
           </ListItem>
-          <ListItem >
-              <Link to="/support" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
+              <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <ListItemText primary="+ support" />
               </Link>
           </ListItem>
       </List>
       <Divider />
       <List>
-      <ListItem>
-              <Link to="/" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <b>Kicksta®</b>
+      <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
+              <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
+              {/* <h1>Kicksta®</h1> */}
+               <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
               <ListItemText secondary="" />
               </Link>
           </ListItem>
@@ -70,7 +71,7 @@ export default function TemporaryDrawer() {
   );
   return (
     <div>
-      {['right'].map((anchor) => (
+      {['bottom'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}> <MenuIcon id="menu-icon"  fontSize="large" style={{ color: 'white' }} /></Button>
           <Drawer

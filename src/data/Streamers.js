@@ -29,6 +29,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/slykane',
     'https://kick.com/api/v1/channels/cristravels',
     'https://kick.com/api/v1/channels/ludwig',
-    'https://kick.com/api/v1/channels/destiny'
-    // 'https://kick.com/api/v1/channels/drdisrespect',
+    'https://kick.com/api/v1/channels/destiny',
+    'https://kick.com/api/v1/channels/sunnyirl',
 ];

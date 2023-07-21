@@ -21,10 +21,10 @@ export default function BasicAccordion() {
           <ListIcon/>
         </AccordionSummary>
         <AccordionDetails>
-              <li>
+              <li id="accordian-text">
                 Click profile photo to get directed to streamers channel on kick.
               </li>
-              <li>
+              <li id="accordian-text">
                 Click title or viewer count to get directed to the channels chatroom.                
               </li>  
         </AccordionDetails>
