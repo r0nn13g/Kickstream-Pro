@@ -76,7 +76,7 @@ export default function TemporaryDrawer() {
             PaperProps={{
             sx: {
               backgroundColor: "#1b1b1be4",
-              marginBottom: '10px'
+              marginBottom: '20px'
             }
             }}
             anchor={anchor}
