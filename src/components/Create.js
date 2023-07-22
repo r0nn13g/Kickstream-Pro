@@ -30,10 +30,12 @@ let previousStreamTitle;
 const Create = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
+
   const fetchData = async (url) => {
     try {
       const response = await axios.get(url);
       const responseData = response.data;
+      console.log(responseData);
 
       setData((prevData) => {
         // Check if there's more than one slug in the data array
@@ -53,11 +55,12 @@ const Create = () => {
       console.error("Error fetching data:", error);
     }
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Generate the slug from the streamerName
-    const slug = streamerName.toLowerCase().replace(/\s/g, "-");
+    const slug = streamerName.toLowerCase().replace(/\s/g, "");
     let url = `https://kick.com/api/v1/channels/${slug}`;
 
     // Make axios request for the current streamer
@@ -66,9 +69,16 @@ const Create = () => {
     // Clear the input field after submitting
     setStreamerName("");
   };
+
   useEffect(() => {
-    // Fetch initial data
-    fetchData();
+    // Fetch initial data from local storage (if available)
+    const storedData = localStorage.getItem("streamData");
+    if (storedData) {
+      setData(JSON.parse(storedData));
+    } else {
+      // If no data in local storage, fetch initial data
+      fetchData();
+    }
 
     // Set up the interval to refresh the API every 1 minute (60000 milliseconds)
     const intervalId = setInterval(() => {
@@ -80,30 +90,38 @@ const Create = () => {
       clearInterval(intervalId);
     };
   }, []);
+
+  // Save data to local storage whenever it changes
+  useEffect(() => {
+    // Store the latest data in local storage
+    localStorage.setItem("streamData", JSON.stringify(data));
+  }, [data]);
+
+  
         return (
           <div className="create">
              <h2 id="create-header">Create +</h2>
-      <div className="create-input-container">
-        <form onSubmit={handleSubmit}>
-          <Box
-            component="div"
-            sx={{ "& > :not(style)": { m: 1, width: "36ch" } }}
-            noValidate
-            autoComplete="off"
-          >
-            <TextField
-              id="outlined-basic"
-              label="enter streamers name"
-              color="success"
-              variant="standard"
-              value={streamerName}
-              onChange={(e) => setStreamerName(e.target.value)}
-            />
-          </Box>
-          {/* <button type="submit">Submit</button> */}
-        </form>
-      </div>
-             {data.map((item,index) => {
+            <div className="create-input-container">
+              <form onSubmit={handleSubmit}>
+                <Box
+                  component="div"
+                  sx={{ "& > :not(style)": { m: 1, width: "36ch" } }}
+                  noValidate
+                  autoComplete="off"
+                >
+                  <TextField
+                    id="outlined-basic"
+                    label="enter streamers name"
+                    color="success"
+                    variant="standard"
+                    value={streamerName}
+                    onChange={(e) => setStreamerName(e.target.value)}
+                  />
+                </Box>
+                {/* <button type="submit">Submit</button> */}
+              </form>
+            </div>
+                {data.map((item,index) => {
                           //if verified object exists than a channel is verified and the verified variable is set to true
                           if(item.verified !== null){
                             verified = true;
