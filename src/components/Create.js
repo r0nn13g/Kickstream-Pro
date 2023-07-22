@@ -69,6 +69,19 @@ const Create = () => {
     // Clear the input field after submitting
     setStreamerName("");
   };
+  
+  const deleteUrlFromLocalStorage = (slug) => {
+    // Find the index of the item with the given slug and remove it from the data array
+    const indexToDelete = data.findIndex((item) => item.slug === slug);
+    if (indexToDelete !== -1) {
+      const updatedData = [...data];
+      updatedData.splice(indexToDelete, 1);
+      setData(updatedData);
+  
+      // Save updated data to local storage after removing the streamer
+      localStorage.setItem("streamData", JSON.stringify(updatedData));
+    }
+  };
 
   useEffect(() => {
     // Fetch initial data from local storage (if available)
@@ -90,14 +103,13 @@ const Create = () => {
       clearInterval(intervalId);
     };
   }, []);
-
+  
   // Save data to local storage whenever it changes
   useEffect(() => {
     // Store the latest data in local storage
     localStorage.setItem("streamData", JSON.stringify(data));
   }, [data]);
 
-  
         return (
           <div className="create">
              <h2 id="create-header">Create +</h2>
@@ -118,14 +130,13 @@ const Create = () => {
                     onChange={(e) => setStreamerName(e.target.value)}
                   />
                 </Box>
-                {/* <button type="submit">Submit</button> */}
               </form>
             </div>
                 {data.map((item,index) => {
-                          //if verified object exists than a channel is verified and the verified variable is set to true
-                          if(item.verified !== null){
-                            verified = true;
-                          } else {
+                  //if verified object exists than a channel is verified and the verified variable is set to true
+                  if(item.verified !== null){
+                    verified = true;
+                  } else {
                             verified = false;
                           }
                           //if item exists, set variables for channel name, followers, and previousStream titles
@@ -204,6 +215,7 @@ const Create = () => {
                                       {viewerCount} 
                                     </div>
                                 </Link>
+                            <button key={index} id="delete-from-list" onClick={() => deleteUrlFromLocalStorage(item.slug)}>delete</button>
                             </div>
                       </div>   
                   )
