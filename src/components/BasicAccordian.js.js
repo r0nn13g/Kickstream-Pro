@@ -10,7 +10,7 @@ export default function BasicAccordion() {
   return (
     <div>
       <Accordion sx={{ 
-    backgroundColor: '#1b1b1b',
+    backgroundColor: '#2a2a2a',
     color: 'var(--white-elements)'
     }} >
         <AccordionSummary
@@ -18,6 +18,7 @@ export default function BasicAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
+          Streamers
           {/* <ListIcon/> */}
         </AccordionSummary>
         <AccordionDetails>
