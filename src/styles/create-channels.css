@@ -1,6 +1,6 @@
 .create-channels-container{
   margin: auto 0;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .create{
@@ -13,4 +13,17 @@
   padding: 0px;
   background-color: rgb(37, 37, 37);
   color: var(--white-elements);
+}
+
+.create-input-container{
+  margin-bottom: 10px;
+}
+
+
+.textfield{
+  color: white;
+}
+
+.label.Mui-focused{
+  color: white;
 }

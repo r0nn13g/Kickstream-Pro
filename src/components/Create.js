@@ -6,6 +6,7 @@ import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 let pfp;
 let pfpLive;
@@ -117,26 +118,29 @@ const Create = () => {
               <form onSubmit={handleSubmit}>
                 <Box
                   component="div"
-                  sx={{ "& > :not(style)": { m: 1, width: "36ch" } }}
+                  sx={{ "& > :not(style)": { m: 1, width: "36ch"}, color: 'var(--green-elements)'  }}
                   noValidate
                   autoComplete="off"
                 >
                   <TextField
+                  color="success" focused
+                  sx={{ input: { color: 'var(--green-elements)' } }}
+                    className="textfield"
                     id="outlined-basic"
-                    label="enter streamers name"
-                    color="success"
-                    variant="standard"
+                    label="add streamers"
+                    variant="outlined"
                     value={streamerName}
                     onChange={(e) => setStreamerName(e.target.value)}
+                    inputProps={{ style: { color: 'white'} }}
                   />
                 </Box>
               </form>
-            </div>
-                {data.map((item,index) => {
-                  //if verified object exists than a channel is verified and the verified variable is set to true
-                  if(item.verified !== null){
-                    verified = true;
-                  } else {
+        </div>
+                      {data.map((item,index) => {
+                          //if verified object exists than a channel is verified and the verified variable is set to true
+                          if(item.verified !== null){
+                            verified = true;
+                          } else {
                             verified = false;
                           }
                           //if item exists, set variables for channel name, followers, and previousStream titles
@@ -215,7 +219,7 @@ const Create = () => {
                                       {viewerCount} 
                                     </div>
                                 </Link>
-                            <button key={index} id="delete-from-list" onClick={() => deleteUrlFromLocalStorage(item.slug)}>delete</button>
+                                  <CancelIcon key={index} id="delete-from-list" onClick={() => deleteUrlFromLocalStorage(item.slug)}/>
                             </div>
                       </div>   
                   )

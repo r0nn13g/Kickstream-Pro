@@ -5,11 +5,6 @@
   --white-elements: rgba(255, 255, 255, 0.782);
 }
 
-#delete-from-list {
-  border-radius: 10px;
-  background-color: var(--green-elements);
-}
-
 .live-stream-card-container {
   min-height: 98.5%;
   padding-top: 50px;
@@ -190,6 +185,3 @@
   display: grid;
 }
 
-.css-1x51dt5-MuiInputBase-input-MuiInput-input{
-  color:white;
-}
