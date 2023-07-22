@@ -5,8 +5,8 @@ import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
-import RotatingSpinner from "../components/RotatingSpinner";
-import BasicAccordion from "./BasicAccordian.js";
+import RotatingSpinner from "./RotatingSpinner";
+import BasicAccordion from "./BasicAccordian.js.js";
 
   let pfp;
   let pfpLive;
@@ -28,7 +28,7 @@ import BasicAccordion from "./BasicAccordian.js";
   let streamTitle;
   let previousStreamTitle;
 
-const Channels = () => {
+     const Channels = () => {
      // State to store the sorted data
      const [data, setData] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
@@ -151,7 +151,7 @@ const Channels = () => {
                                       {isLive}
                                     <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
                                     <div className='live-viewers-count-container'>
-                                      {viewerCount}
+                                      {viewerCount} 
                                     </div>
                                   </Link>
                                   </div>

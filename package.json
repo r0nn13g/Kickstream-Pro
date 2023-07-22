@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "animated-number-react": "^0.1.2",
     "axios": "^1.4.0",
     "axios-retry": "^3.5.1",
     "cheerio": "^1.0.0-rc.12",

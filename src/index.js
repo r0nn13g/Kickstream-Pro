@@ -1,13 +1,13 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import ShowChannels from './pages/ShowChannels.js';
+import Home from './pages/Home.js'
 import Navbar from './components/Navbar.js';
 import FourOhFour from './pages/FourOhFour.js';
-import Home from './pages/HomePage.js';
+import ShowChannels from './pages/ShowChannels.js';
+import CreateChannels from './pages/CreateChannels.js';
 import Support from './pages/Support.js';
-import CreateChannels from './components/CreateChannels.js';
 
 export default function App() {
   return (
