@@ -113,7 +113,7 @@ const Create = () => {
 
         return (
           <div className="create">
-             <h2 id="create-header">Create +</h2>
+             <h5 id="create-header">Create a personalized watch list</h5>
             <div className="create-input-container">
               <form onSubmit={handleSubmit}>
                 <Box
@@ -127,7 +127,7 @@ const Create = () => {
                   sx={{ input: { color: 'var(--green-elements)' } }}
                     className="textfield"
                     id="outlined-basic"
-                    label="add streamers"
+                    label="add channel"
                     variant="outlined"
                     value={streamerName}
                     onChange={(e) => setStreamerName(e.target.value)}

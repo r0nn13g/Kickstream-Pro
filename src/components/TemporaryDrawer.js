@@ -37,17 +37,20 @@ export default function TemporaryDrawer() {
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/channels" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ channels" />
+              {/* <ListItemText primary="+ channels" /> */}
+              <b>Trending +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ create" />
+              {/* <ListItemText primary="+ create" /> */}
+              <b>Create +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <ListItemText primary="+ support" />
+              {/* <ListItemText primary="+ support" /> */}
+              <b>Support Us +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
@@ -56,15 +59,15 @@ export default function TemporaryDrawer() {
              </a>
           </ListItem>
       </List>
-      <List>
+      {/* <List> */}
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
-              {/* <h1>Kicksta®</h1> */}
-               <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
+              <h3>Kickster Beta v0.3</h3>
+              {/*  <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/> */}
               <ListItemText secondary="" />
               </Link>
           </ListItem>
-      </List>
+      {/* </List> */}
     </Box>
   );
   return (

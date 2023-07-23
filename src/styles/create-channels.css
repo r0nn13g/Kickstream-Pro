@@ -1,17 +1,18 @@
 .create-channels-container{
   margin: auto 0;
-  margin-top: 75px;
+  margin-top: 55px;
 }
 
 .create{
   margin: 5px;
-  text-align: left;
 }
 
 #create-header{
+  text-align: center;
+  white-space: nowrap;
   margin: 10px;
-  padding: 0px;
-  background-color: rgb(37, 37, 37);
+  /* margin-right: 270px; */
+  border-radius: 10px;
   color: var(--white-elements);
 }
 
