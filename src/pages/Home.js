@@ -8,7 +8,7 @@ const Home = () => {
   return(
     <div className='homepage-container'>
         <div className="home-text">
-          <Link to={'/channels'}>
+          <Link to={'/trending'}>
             <img id="home-animation" src={HomeAnimation} alt="kickster"/>
             <div></div>
             <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>

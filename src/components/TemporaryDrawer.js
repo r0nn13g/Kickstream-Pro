@@ -30,43 +30,38 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem >
-              <ListItemText primary="" />
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
+              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
+              <b>Create +</b>
+              </Link>
           </ListItem>
-          <ListItem >
-          </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/channels" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              {/* <ListItemText primary="+ channels" /> */}
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--gray-elements)' }} >
+              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <b>Trending +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              {/* <ListItemText primary="+ create" /> */}
-              <b>Create +</b>
+              <Link to="/kick" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Contact +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              {/* <ListItemText primary="+ support" /> */}
-              <b>Support Us +</b>
+              <b>Support +</b>
               </Link>
           </ListItem>
+      </List>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
              <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <GitHubIcon />
              </a>
           </ListItem>
-      </List>
-      {/* <List> */}
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
-              <h3>Kickster Beta v0.3</h3>
-              {/*  <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/> */}
+          <Link to="/" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
+            <h3>Kickster Beta v0.3</h3>
               <ListItemText secondary="" />
-              </Link>
-          </ListItem>
+          </Link>
+      </ListItem>
       {/* </List> */}
     </Box>
   );
@@ -79,7 +74,7 @@ export default function TemporaryDrawer() {
             PaperProps={{
             sx: {
               backgroundColor: "#1b1b1be4",
-              marginBottom: '20px'
+              marginBottom: '20px',
             }
             }}
             anchor={anchor}

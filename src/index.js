@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path='*' element={<FourOhFour/>}></Route>
         <Route path='/' element={<Home />}></Route>
-        <Route path="/channels" element={<ShowChannels />}></Route>
+        <Route path="/trending" element={<ShowChannels />}></Route>
         <Route path="/create" element={<CreateChannels />}></Route>
         <Route path="/support" element={<Support/>}></Route>
       </Routes>
