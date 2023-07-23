@@ -4,11 +4,11 @@
 
 .styles_ticker__-0UvZ{
   color: black;
-  background-color: var(--green-elements);
+  background-color: var(--gray-elements);
 }
 
 .styles_title__n7qOv{
   font-weight: 800;
   margin: 5px;
-  color: black;
+  color: var(--green-elements);
 }
