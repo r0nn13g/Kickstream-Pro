@@ -9,7 +9,7 @@ import Carousel from '../components/Carousel'
 const Home = () => {  
   return(
     <div className='homepage-container'>
-        <div className="home-text">
+          <div className="home-text">
           <Link to={'/trending'}>
             <img id="home-animation" src={HomeAnimation} alt="kickster"/>
             <div></div>
