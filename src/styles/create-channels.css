@@ -4,15 +4,13 @@
 }
 
 .create{
-  margin: 5px;
+  position: relative;
+  margin-top: 10px;
 }
 
 #create-header{
-  text-align: center;
-  white-space: nowrap;
+  text-align: left;
   margin: 10px;
-  /* margin-right: 270px; */
-  border-radius: 10px;
   color: var(--white-elements);
 }
 
@@ -20,6 +18,9 @@
   margin-bottom: 10px;
 }
 
+.box{
+  margin-left: 5px;
+}
 
 .textfield{
   color: white;

@@ -117,6 +117,7 @@ const Create = () => {
             <div className="create-input-container">
               <form onSubmit={handleSubmit}>
                 <Box
+                className='box'
                   component="div"
                   sx={{ "& > :not(style)": { m: 1, width: "36ch"}, color: 'var(--green-elements)'  }}
                   noValidate

@@ -17,7 +17,7 @@
 }
 
 .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .css-o4b71y-MuiAccordionSummary-content {
@@ -34,5 +34,5 @@
 }
 
 .css-i4bv87-MuiSvgIcon-root {
-  color: var(--white-elements);
+  color: var(--gray-elements);
 }

@@ -30,14 +30,14 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--green-elements)' }}>
-              <b>Create +</b>
-              </Link>
-          </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--gray-elements)' }} >
               <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <b>Trending +</b>
+              </Link>
+          </ListItem>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
+              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Create +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >

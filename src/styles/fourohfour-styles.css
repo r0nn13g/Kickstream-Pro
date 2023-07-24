@@ -1,12 +1,23 @@
 .FourOhFour-container{
-  width:99%;
-  min-height: 100%;
-  margin-top: 10px;
-  padding-top: 285px;
-  text-align: center;
+  margin-top: 50px;
+  margin-left: 45px;
+  padding-top: 80px;
+  text-align: left;
   padding-bottom: 100px;
+  color: var(--gray-elements);
 }
 
+.fourOFour-details-container{
+  align-items: center;
+}
+
+
 #joel-always-wins{
-  height: 100px;
+  height: 90px;
+  float: left;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../styles/homepage-styles.css';
 import Footer from "../components/Footer";
 import HomeAnimation from '../assets/LSS.gif';
+import MaterialCards from "../components/MaterialCards";
 
 const Home = () => {  
   return(
@@ -14,6 +15,7 @@ const Home = () => {
             <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>
           </Link>
         </div>
+        <MaterialCards/>
         <Footer/>
     </div>
   )
