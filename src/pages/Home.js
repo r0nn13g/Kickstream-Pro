@@ -4,6 +4,7 @@ import '../styles/homepage-styles.css';
 import Footer from "../components/Footer";
 import HomeAnimation from '../assets/LSS.gif';
 import MaterialCards from "../components/MaterialCards";
+import Carousel from '../components/Carousel'
 
 const Home = () => {  
   return(
@@ -16,6 +17,7 @@ const Home = () => {
           </Link>
         </div>
         <MaterialCards/>
+        <Carousel/>
         <Footer/>
     </div>
   )
