@@ -7,12 +7,6 @@ const MaterialCards = () => {
       <div class="material-cards-container">
         <div class="row">
           <div class="col-md-4">
-            <div class="card card-2">
-              <h2>UI Components</h2>
-              <p id="p-material-cards">Robust buttons, inputs, and more!</p>
-            </div>
-          </div>
-          <div class="col-md-4">
             <div class="card card-1">
               <h2>Kick</h2>
               <p id="p-material-cards">A Kick live streaming solutions platform.</p>
