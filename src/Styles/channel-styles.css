@@ -147,7 +147,7 @@
     align-items: center;
     text-align: center;
   }
-
+  
   #offline-live{
     font-size: 12px;
     margin: 0px;
@@ -157,6 +157,7 @@
     color:var(--gray-elements);
   }
 
+  
   #online-live {
     margin: 5px;
     display: flex;

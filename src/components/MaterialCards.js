@@ -4,17 +4,16 @@ import '../styles/material-card-styles.css'
 
 const MaterialCards = () => {
   return(
-      <div class="material-cards-container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-1">
+      <div className="material-cards-container">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="card card-1">
               <h2>Kick</h2>
               <p id="p-material-cards">A Kick live streaming solutions platform.</p>
             </div>
           </div>
-
-          <div class="col-md-4">  
-            <div class="card card-3">
+          <div className="col-md-4">  
+            <div className="card card-3">
               <h2>Custom Widgets</h2>
               <p id="p-material-cards">Learn how to easily customize and integrate </p>
             </div>

@@ -22,7 +22,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/swimmernick',
     'https://kick.com/api/v1/channels/jino',
     'https://kick.com/api/v1/channels/nedx',
-    'https://kick.com/api/v1/channels/imjoel3004',
+    // 'https://kick.com/api/v1/channels/imjoel3004',
     'https://kick.com/api/v1/channels/totalirl',
     'https://kick.com/api/v1/channels/boomyi12',
     'https://kick.com/api/v1/channels/bongbong_irl',
