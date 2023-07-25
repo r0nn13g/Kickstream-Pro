@@ -58,7 +58,7 @@ import BasicAccordion from "./BasicAccordian.js.js";
           };
          };
          
-         const refreshInterval = 60000;
+         const refreshInterval = 50000;
          fetchData(); 
          setInterval(fetchData, refreshInterval);
         }, []);
