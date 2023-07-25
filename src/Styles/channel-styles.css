@@ -48,7 +48,7 @@
   margin: 4px;
   width: 45px;
   height: 45px;
-  /* border: 1px var(--green-elements) solid; */
+  border: 1px var(--green-elements) solid;
   border-radius: 50%;
   overflow: hidden;
 }
