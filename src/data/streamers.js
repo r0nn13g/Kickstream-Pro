@@ -29,4 +29,11 @@ export let streamers = [
     'https://kick.com/api/v1/channels/suspendas',
     'https://kick.com/api/v1/channels/jino',
     'https://kick.com/api/v1/channels/sunnyirl',
+    'https://kick.com/api/v1/channels/roshtein',
+    'https://kick.com/api/v1/channels/cloakzy',
+    'https://kick.com/api/v1/channels/classybeef',
+    'https://kick.com/api/v1/channels/arabandy',
+    'https://kick.com/api/v1/channels/slykane',
+    'https://kick.com/api/v1/channels/yassuo',
+    'https://kick.com/api/v1/channels/asianandy',
 ];

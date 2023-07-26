@@ -112,7 +112,11 @@ import BasicAccordion from "./BasicAccordian.js.js";
                           //if a profile pic does not exist and channel has never gone live, set channel name, followers, previous stream title, and profile pic to default kick avatar.
                           if(!item.user.profile_pic && !item.livestream ){
                             pfp = kickAvatar;
-                          };
+                          } 
+                          //if a profile pic does not exist and channel goes live, set the profile pic to default kick avatar
+                          if(!item.user.profile_pic && item.livestream ){
+                            pfp = kickAvatar
+                          }
                          //if channel is live, display Pulsating dot
                         isLive = item.livestream === null ? <div id='offline-live'><VideocamOffIcon/></div> : <div id='online-live'><PulsatingDot /></div>; 
                         //if channel is partnered with kick display verified badge next to name
