@@ -19,7 +19,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/officialebz',
     'https://kick.com/api/v1/channels/gmhikaru',
-    'https://kick.com/api/v1/channels/officialebz',
     'https://kick.com/api/v1/channels/hkftv',
     'https://kick.com/api/v1/channels/swimmernick',
     'https://kick.com/api/v1/channels/johnnysomali',
@@ -36,4 +35,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/slykane',
     'https://kick.com/api/v1/channels/yassuo',
     'https://kick.com/api/v1/channels/asianandy',
+    'https://kick.com/api/v1/channels/cristravels',
+    'https://kick.com/api/v1/channels/sampanday',
+    'https://kick.com/api/v1/channels/ninja',
 ];
