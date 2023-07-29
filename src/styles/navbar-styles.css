@@ -55,7 +55,7 @@ Link{
   text-decoration: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 820px) {
   nav {
     position: sticky;
     bottom: 0;
@@ -66,7 +66,7 @@ Link{
     .hamburger-menu-container {
       margin: 10px;
       grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-      gap: 90px;
+      gap: 100px;
       justify-content: center; /* Center the icons horizontally */
     }
   

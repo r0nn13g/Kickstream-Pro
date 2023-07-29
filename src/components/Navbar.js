@@ -23,7 +23,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const isMobile = windowWidth <= 420;
+  const isMobile = windowWidth <= 820;
 
   return (
     <nav>
@@ -36,16 +36,16 @@ const Navbar = () => {
             <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
           <Link id="trending-mobile-link" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
-            <AutoGraphIcon/>
+            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="create-mobile-link" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
-            <AddCircleOutlineIcon/>
+            <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="support-mobile-link" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
-            <MonetizationOnIcon/>
+            <MonetizationOnIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="contact-mobile-link" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
-            <ContactPageIcon/>
+            <ContactPageIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
             </>
           ) : (
