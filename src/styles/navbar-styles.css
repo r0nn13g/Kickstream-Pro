@@ -1,12 +1,20 @@
-Link{
-  text-decoration: none;
-}
-
 .browser-nav-container{
-  position: fixed;
-  width: 100%;
+  /* position: fixed; */
+  width: 100%; 
   background-color: #1b1b1b;
   border-bottom: 1px solid rgba(94, 94, 94, 0.178); 
+
+  display: flex;
+  justify-content: space-between; /* This will separate the elements, pushing one to the left and the other to the right */
+  align-items: center; /* This will vertically center the items */
+  padding: 10px; /* Add some padding around the items (adjust as needed) */
+}
+
+.mobile-menu-container{ 
+  display: flex;
+  grid-template-columns: repeat(1, auto); /* Four equal columns with auto-sizing based on content */
+  /* gap: 90px; */
+  justify-content: flex-end; /* Center the icons horizontally */
 }
 
 .home-logo-container{
@@ -24,13 +32,6 @@ Link{
   text-decoration: none;
 }
 
-.hamburger-menu-container{ 
-  display: flex;
-  grid-template-columns: repeat(1, auto); /* Four equal columns with auto-sizing based on content */
-  gap: 90px;
-  justify-content: flex-end; /* Center the icons horizontally */
-}
-
 #hamburger-menu{
   height:20px;
 }
@@ -41,20 +42,6 @@ Link{
   background-size: cover;
 }
 
-#trending-mobile-link {
-  text-decoration: none;
-}
-
-#create-mobile-link{
-  text-decoration: none;
-}
-#support-mobile-link{
-  text-decoration: none;
-}
-#contact-mobile-link{
-  text-decoration: none;
-}
-
 @media (max-width: 820px) {
   nav {
     position: sticky;
@@ -63,25 +50,38 @@ Link{
     width: 100%;
   }
   
-    .hamburger-menu-container {
+  .mobile-menu-container {
       margin: 10px;
       grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-      gap: 100px;
+      gap: 150px;
       justify-content: center; /* Center the icons horizontally */
     }
+    
+    #home-mobile-logo {
+      height:20px;
+      width: 20px;
+    }
+}
+
+@media (max-width: 544px) {
   
+  .mobile-menu-container {
+    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    gap: 85px;
+    justify-content: center; /* Center the icons horizontally */
+  }
+
   #home-mobile-logo {
-    height:20px;
-    width: 20px;
+  height:20px;
+  width: 20px;
   }
 }
 
 @media (max-width: 420px) {
   
-    .hamburger-menu-container {
-      margin: 10px;
+    .mobile-menu-container {
       grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-      gap: 50px;
+      gap: 57px;
       justify-content: center; /* Center the icons horizontally */
     }
   
@@ -89,5 +89,18 @@ Link{
     height:20px;
     width: 20px;
     }
- 
+}
+
+@media (max-width: 220px) {
+  
+  .mobile-menu-container {
+    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    gap: 27px;
+    justify-content: center; /* Center the icons horizontally */
+  }
+
+  #home-mobile-logo {
+  height:20px;
+  width: 20px;
+  }
 }

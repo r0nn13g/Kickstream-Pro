@@ -26,31 +26,30 @@ const Navbar = () => {
   const isMobile = windowWidth <= 820;
 
   return (
-    <nav>
-      <div className="nav-bar">
-        <div className='hamburger-menu-container'>
+    <nav className="nav-bar">
+        <div className='mobile-menu-container'>
           {isMobile ? (
             <>
            {/* ÷÷ */}
-           <Link id="home-mobile-link" to={'/'} path='relative'>
+           <Link id="mobile-nav-item" to={'/'} path='relative'>
             <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
-          <Link id="trending-mobile-link" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
+          <Link id="mobile-nav-item" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
             <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="create-mobile-link" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
+          <Link id="mobile-nav-item" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
             <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="support-mobile-link" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
+          <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <MonetizationOnIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="contact-mobile-link" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
+          <Link id="mobile-nav-item" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
             <ContactPageIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
             </>
           ) : (
             // Show the Temporary Drawer for larger screens
-          <div className="browser-">
+          <div className="browser-nav-container">
           <Link id="home-logo-link" to={'/'} path='relative'>
             <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
@@ -58,7 +57,7 @@ const Navbar = () => {
         </div>
           )}
         </div>
-      </div>
+   
     </nav>
   );
 }
