@@ -2,7 +2,7 @@ Link{
   text-decoration: none;
 }
 
-.nav-bar{
+.browser-nav-container{
   position: fixed;
   width: 100%;
   background-color: #1b1b1b;
@@ -25,10 +25,10 @@ Link{
 }
 
 .hamburger-menu-container{ 
-  display: grid;
-  margin-right: 10px;
-  justify-content: flex-end;
-  grid-area: hamburger;
+  display: flex;
+  grid-template-columns: repeat(1, auto); /* Four equal columns with auto-sizing based on content */
+  gap: 90px;
+  justify-content: flex-end; /* Center the icons horizontally */
 }
 
 #hamburger-menu{

@@ -188,3 +188,10 @@
   display: grid;
 }
 
+
+@media (max-width: 420px) {
+
+.live-stream-card-container {
+  margin-top: 0px;
+}
+}
