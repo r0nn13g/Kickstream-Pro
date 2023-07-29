@@ -23,14 +23,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const isMobile = windowWidth <= 767;
+  const isMobile = windowWidth <= 420;
 
   return (
     <nav>
       <div className="nav-bar">
         <div className='hamburger-menu-container'>
           {isMobile ? (
-            // Show the 4 icons here for mobile devices
             <>
            {/* ÷÷ */}
            <Link id="home-mobile-link" to={'/'} path='relative'>
@@ -48,11 +47,10 @@ const Navbar = () => {
           <Link id="contact-mobile-link" to={'/contact'} path='relative'>
             <ContactPageIcon/>
           </Link>
-
             </>
           ) : (
             // Show the Temporary Drawer for larger screens
-          <div className="hamburger-menu-container">
+          <div className="browser-nav-container">
           <Link id="home-logo-link" to={'/'} path='relative'>
             <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>

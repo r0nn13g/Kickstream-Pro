@@ -6,8 +6,10 @@
 }
 
 .live-stream-card-container {
+  position: relative;
   min-height: 98.5%;
-  padding-top: 52px;
+  margin-top: 48px;
+  background-color: #1b1b1b;
 }
 
 .live-stream-card {
