@@ -36,15 +36,18 @@ import BasicAccordion from "./BasicAccordian.js.js";
      useEffect(() => {
        const fetchData = async () => {
          try {
-           const responses = await Promise.all(streamers.map(url => axios.get(url)));  
-           const responseData = responses.map(urls => urls.data);
-           const validResponses = responseData.filter(response => response.status !== null);
-            // sorts data area by concurrent viewership
-            const sortedData = [...validResponses].sort((a, b) => {
-               return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
-             });
-              setData(sortedData);
-              setIsLoading(false); 
+          const responses = await Promise.all(streamers.map(url => axios.get(url)));
+          const responseData = responses.map(urls => urls.data);
+          const validResponses = responseData.filter(response => response.status !== null);
+  
+          const onlineStreamers = validResponses.filter(response => response.livestream && response.livestream.viewer_count > 0);
+          const offlineStreamers = validResponses.filter(response => response.livestream === null);
+  
+          const sortedOnlineStreamers = onlineStreamers.sort((a, b) => b.livestream.viewer_count - a.livestream.viewer_count);
+          const streamerWithZeroViewers = sortedOnlineStreamers.find(streamer => streamer.livestream.viewer_count === 0);
+  
+          setData(streamerWithZeroViewers ? [...sortedOnlineStreamers, ...offlineStreamers] : [...onlineStreamers, ...offlineStreamers]);
+          setIsLoading(false);
           } catch (error) {
             // Ignore 404 response and return null for this URL
             if (error.response && error.response.status === 404) {
