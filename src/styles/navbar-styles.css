@@ -41,6 +41,19 @@ Link{
   background-size: cover;
 }
 
+#trending-mobile-link {
+  text-decoration: none;
+}
+
+#create-mobile-link{
+  text-decoration: none;
+}
+#support-mobile-link{
+  text-decoration: none;
+}
+#contact-mobile-link{
+  text-decoration: none;
+}
 
 @media (max-width: 767px) {
   nav {
