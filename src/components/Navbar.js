@@ -35,22 +35,22 @@ const Navbar = () => {
            <Link id="home-mobile-link" to={'/'} path='relative'>
             <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
-          <Link id="trending-mobile-link" to={'/trending'} path='relative'>
+          <Link id="trending-mobile-link" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
             <AutoGraphIcon/>
           </Link>
-          <Link id="create-mobile-link" to={'/create'} path='relative'>
+          <Link id="create-mobile-link" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
             <AddCircleOutlineIcon/>
           </Link>
-          <Link id="support-mobile-link" to={'/support'} path='relative'>
+          <Link id="support-mobile-link" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <MonetizationOnIcon/>
           </Link>
-          <Link id="contact-mobile-link" to={'/contact'} path='relative'>
+          <Link id="contact-mobile-link" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
             <ContactPageIcon/>
           </Link>
             </>
           ) : (
             // Show the Temporary Drawer for larger screens
-          <div className="browser-nav-container">
+          <div className="browser-">
           <Link id="home-logo-link" to={'/'} path='relative'>
             <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
