@@ -42,12 +42,11 @@ const Create = () => {
         // Check if there's more than one slug in the data array
         if (prevData.length > 0) {
           const combinedData = [...prevData, responseData];
-          const sortedData = combinedData.sort((a, b) => {
-            return (b?.livestream?.viewer_count || 0) - (a?.livestream?.viewer_count || 0);
-          });
-          return sortedData;
+          const onlineStreamers = combinedData.filter(item => item.livestream && item.livestream.viewer_count > 0);
+          const offlineStreamers = combinedData.filter(item => !item.livestream || item.livestream.viewer_count === 0);
+          const sortedOnlineStreamers = onlineStreamers.sort((a, b) => b.livestream.viewer_count - a.livestream.viewer_count);
+          return [...sortedOnlineStreamers, ...offlineStreamers];
         } else {
-          // If only one slug, return responseData as an array
           return [responseData];
         }
       });
