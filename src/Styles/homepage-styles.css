@@ -7,7 +7,7 @@ body{
 }
 
 .home-text{
-  padding-top: 100px;
+  padding-top: 25px;
   margin: 10px;
   text-align: center;
 }
@@ -35,7 +35,7 @@ body{
 
 .home-page-card{
   position:fixed;
-  top: 30%; 
+  top: 10%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
 }

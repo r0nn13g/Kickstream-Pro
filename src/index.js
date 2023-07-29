@@ -12,7 +12,6 @@ import Support from './pages/Support.js';
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar/>
       <Routes>
         <Route path='*' element={<FourOhFour/>}></Route>
         <Route path='/' element={<Home />}></Route>
@@ -20,6 +19,7 @@ export default function App() {
         <Route path="/create" element={<CreateChannels />}></Route>
         <Route path="/support" element={<Support/>}></Route>
       </Routes>
+      <Navbar/>
     </BrowserRouter>
   );
 }

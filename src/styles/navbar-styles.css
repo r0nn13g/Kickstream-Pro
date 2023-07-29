@@ -13,8 +13,14 @@
 .mobile-menu-container{ 
   display: flex;
   grid-template-columns: repeat(1, auto); /* Four equal columns with auto-sizing based on content */
-  /* gap: 90px; */
+  width: 100%;
   justify-content: flex-end; /* Center the icons horizontally */
+  background-color: #1b1b1b;
+}
+
+#mobile-nav-item{
+  margin: 2px;
+  margin-top: 10px;
 }
 
 .home-logo-container{
@@ -51,42 +57,53 @@
   }
   
   .mobile-menu-container {
-      margin: 10px;
-      grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-      gap: 150px;
-      justify-content: center; /* Center the icons horizontally */
-    }
-    
-    #home-mobile-logo {
-      height:20px;
-      width: 20px;
-    }
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 40px;
+    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    gap: 150px;
+    justify-content: center; /* Center the icons horizontally */
+  }
+  
+  #home-mobile-logo {
+    height:20px;
+    width: 20px;
+  }
 }
 
 @media (max-width: 620px) {
   
   .mobile-menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 40px;
     grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
     gap: 100px;
     justify-content: center; /* Center the icons horizontally */
   }
-
+  
   #home-mobile-logo {
   height:20px;
   width: 20px;
-  }
+}
 }
 
 @media (max-width: 420px) {
   
-    .mobile-menu-container {
-      grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-      gap: 57px;
+  .mobile-menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 40px;
+    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    gap: 57px;
       justify-content: center; /* Center the icons horizontally */
     }
-  
+    
     #home-mobile-logo {
-    height:20px;
+      height:20px;
     width: 20px;
     }
 }
@@ -95,6 +112,7 @@
   
   .mobile-menu-container {
     grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    margin-top: 40px;
     gap: 27px;
     justify-content: center; /* Center the icons horizontally */
   }
