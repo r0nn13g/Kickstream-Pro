@@ -63,11 +63,11 @@
     }
 }
 
-@media (max-width: 544px) {
+@media (max-width: 620px) {
   
   .mobile-menu-container {
     grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
-    gap: 85px;
+    gap: 100px;
     justify-content: center; /* Center the icons horizontally */
   }
 
