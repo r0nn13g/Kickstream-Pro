@@ -1,7 +1,7 @@
 :root {
-  --pulsating-dot: rgb(134, 134, 134);
+  --pulsating-dot: var(--green-elements);
   --green-elements: rgb(85, 255, 47);
-  --gray-elements: rgb(92, 92, 92);
+  --gray-elements: rgb(85, 85, 85);
   --white-elements: rgba(255, 255, 255, 0.782);
 }
 

@@ -62,7 +62,7 @@ import BasicAccordion from "./BasicAccordian.js.js";
          };
          
          const refreshInterval = 50000;
-        //  fetchData(); 
+         fetchData(); 
          setInterval(fetchData, refreshInterval);
         }, []);
 
@@ -130,7 +130,7 @@ import BasicAccordion from "./BasicAccordian.js.js";
                         channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
                         titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
                         pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
-                        followersLive = item.livestream === null ? <p id='followers-offline'>{followers}</p> : <p id='followers-online'>{followers}</p>;      
+                        followersLive = item.livestream === null ? <p id='followers-offline'>{followers} followers</p> : <p id='followers-online'>{followers} followers</p>;      
                         //jsx returning live stream card
                         return(
                           <div key={index} className='live-stream-card'>
