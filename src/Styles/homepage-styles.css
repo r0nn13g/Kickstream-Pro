@@ -3,7 +3,7 @@ body{
 }
 
 .homepage-container{
-    /* margin-top: 20px; */
+    margin-top: 60px;
 }
 
 .home-text{
@@ -29,7 +29,7 @@ body{
 }
 
 #home-enter-logo{
-  margin-top: 60px;
+  margin-top: 80px;
   height: 75px;
 }
 

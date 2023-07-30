@@ -8,8 +8,7 @@
 .live-stream-card-container {
   position: relative;
   min-height: 98.5%;
-  /* margin-top: 48px; */
-  padding-bottom: 35px;
+  padding-bottom: 50px;
   background-color: #1b1b1b;
 }
 

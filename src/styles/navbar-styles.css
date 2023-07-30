@@ -1,5 +1,4 @@
 nav {
-  /* Change 'bottom' to 'top' to fix the nav bar at the top of the page */
   position: sticky;
   top: 0;
   left: 0;
@@ -7,10 +6,6 @@ nav {
 }
 
 .browser-nav-container{
-  /* position: fixed;
-  width: 100%; 
-  background-color: #fff; /* You can adjust the background color as needed */
-  /* padding: 10px; */
   border-bottom: 1px solid rgba(94, 94, 94, 0.178); 
   display: flex;
   justify-content: space-between;
@@ -25,15 +20,17 @@ nav {
 
 .mobile-menu-container{ 
   display: flex;
-  grid-template-columns: repeat(1, auto); /* Four equal columns with auto-sizing based on content */
+  grid-template-columns: repeat(1, auto); 
   width: 100%;
-  justify-content: flex-end; /* Center the icons horizontally */
+  justify-content: flex-end; 
   background-color: #1b1b1b;
+  /* border-top: 1px solid var(--gray-elements); */
 }
 
 #mobile-nav-item{
   margin: 2px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .home-logo-container{
@@ -74,9 +71,9 @@ nav {
     bottom: 0;
     left: 0;
     margin-top: 40px;
-    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    grid-template-columns: repeat(5, auto); 
     gap: 150px;
-    justify-content: center; /* Center the icons horizontally */
+    justify-content: center; 
   }
   
   #home-mobile-logo {
@@ -92,9 +89,9 @@ nav {
     bottom: 0;
     left: 0;
     margin-top: 40px;
-    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    grid-template-columns: repeat(5, auto); 
     gap: 100px;
-    justify-content: center; /* Center the icons horizontally */
+    justify-content: center; 
   }
   
   #home-mobile-logo {
@@ -110,9 +107,9 @@ nav {
     bottom: 0;
     left: 0;
     margin-top: 40px;
-    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    grid-template-columns: repeat(5, auto); 
     gap: 57px;
-      justify-content: center; /* Center the icons horizontally */
+      justify-content: center; 
     }
     
     #home-mobile-logo {
@@ -124,10 +121,10 @@ nav {
 @media (max-width: 220px) {
   
   .mobile-menu-container {
-    grid-template-columns: repeat(5, auto); /* Four equal columns with auto-sizing based on content */
+    grid-template-columns: repeat(5, auto);
     margin-top: 40px;
     gap: 27px;
-    justify-content: center; /* Center the icons horizontally */
+    justify-content: center;
   }
 
   #home-mobile-logo {

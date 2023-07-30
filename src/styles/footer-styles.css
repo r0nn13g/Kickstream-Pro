@@ -3,7 +3,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: var(--gray-elements);
+  background-color: var(--green-elements);
   color: black;
   font-size: 8px;
   font-weight: 800;
@@ -15,8 +15,6 @@
   padding: 0px;
   margin: 0px;
   margin-right: 5px;
-  /* float:right; */
-
 }
 
 #footer-time{
@@ -24,6 +22,4 @@
   padding: 0px;
   margin: 0px;
   margin-right: 5px;
-
-  /* float:right; */
 }
