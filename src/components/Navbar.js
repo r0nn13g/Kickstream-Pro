@@ -1,8 +1,7 @@
-import React from "react";
-import {Link} from "react-router-dom";
 import '../styles/navbar-styles.css'; 
+import {Link} from "react-router-dom";
 import TemporaryDrawer from "./TemporaryDrawer";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
@@ -10,54 +9,102 @@ import ContactPageIcon from '@mui/icons-material/ContactPage';
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(windowWidth <= 820);
+  const [clickedLinks, setClickedLinks] = useState({}); 
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      const newWidth = window.innerWidth;
+      setWindowWidth(newWidth);
+      setIsMobile(newWidth <= 820);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  const isMobile = windowWidth <= 820;
+  // Function to handle the click event and update the clickedLinks state
+  const handleLinkClick = (linkId) => {
+    setClickedLinks((prevState) => ({
+      ...prevState,
+      [linkId]: !prevState[linkId], 
+    }));
+  };
 
   return (
     <nav className="nav-bar">
-        <div className='mobile-menu-container'>
-          {isMobile ? (
-            <>
-           {/* ÷÷ */}
-           <Link id="mobile-nav-item" to={'/'} path='relative'>
-            <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
-          </Link>
-          <Link id="mobile-nav-item" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
-          <Link id="mobile-nav-item" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
-            <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
-          <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
-            <MonetizationOnIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
-          <Link id="mobile-nav-item" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
-            <ContactPageIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
-            </>
-          ) : (
-            // Show the Temporary Drawer for larger screens
+      <div className='mobile-menu-container'>
+        {isMobile ? (
+          <>
+            {/* ÷÷ */}
+            <Link
+              id="mobile-nav-item"
+              to={'/'}
+              path='relative'
+              onClick={() => handleLinkClick("home")}
+            >
+              <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster" />
+            </Link>
+            <Link
+              id="mobile-nav-item"
+              to={'/trending'}
+              path='relative'
+              style={{
+                textDecoration: 'none',
+                fill: clickedLinks["trending"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+              }}
+              onClick={() => handleLinkClick("trending")}
+            >
+              <AutoGraphIcon />
+            </Link>
+            <Link
+              id="mobile-nav-item"
+              to={'/create'}
+              path='relative'
+              style={{
+                textDecoration: 'none',
+                fill: clickedLinks["create"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+              }}
+              onClick={() => handleLinkClick("create")}
+            >
+              <AddCircleOutlineIcon />
+            </Link>
+            <Link
+              id="mobile-nav-item"
+              to={'/support'}
+              path='relative'
+              style={{
+                textDecoration: 'none',
+                fill: clickedLinks["support"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+              }}
+              onClick={() => handleLinkClick("support")}
+            >
+              <MonetizationOnIcon />
+            </Link>
+            <Link
+              id="mobile-nav-item"
+              to={'/contact'}
+              path='relative'
+              style={{
+                textDecoration: 'none',
+                fill: clickedLinks["contact"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+              }}
+              onClick={() => handleLinkClick("contact")}
+            >
+              <ContactPageIcon />
+            </Link>
+          </>
+        ) : (
+          // Show the Temporary Drawer for larger screens
           <div className="browser-nav-container">
-          <Link id="home-logo-link" to={'/'} path='relative'>
-            <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
-          </Link>
-          <TemporaryDrawer />
-        </div>
-          )}
-        </div>
-   
+            <Link id="home-logo-link" to={'/'} path='relative'>
+              <img id="home-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster" />
+            </Link>
+            <TemporaryDrawer />
+          </div>
+        )}
+      </div>
     </nav>
   );
 }
