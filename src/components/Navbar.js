@@ -2,10 +2,12 @@ import '../styles/navbar-styles.css';
 import {Link} from "react-router-dom";
 import TemporaryDrawer from "./TemporaryDrawer";
 import React, { useState, useEffect } from "react";
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+// import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
+import SdStorageOutlinedIcon from '@mui/icons-material/SdStorageOutlined';
+// import ContactPageIcon from '@mui/icons-material/ContactPage';
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -38,14 +40,18 @@ const Navbar = () => {
         {isMobile ? (
           <>
             {/* ÷÷ */}
-            <Link
-              id="mobile-nav-item"
-              to={'/'}
-              path='relative'
-              onClick={() => handleLinkClick("home")}
-            >
-              <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster" />
-            </Link>
+              <Link
+                id="mobile-nav-item"
+                to={'/support'}
+                path='relative'
+                style={{
+                  textDecoration: 'none',
+                  fill: clickedLinks["support"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+                }}
+                onClick={() => handleLinkClick("support")}
+              >
+                <CurrencyBitcoinIcon />
+              </Link>
             <Link
               id="mobile-nav-item"
               to={'/trending'}
@@ -58,30 +64,26 @@ const Navbar = () => {
             >
               <AutoGraphIcon />
             </Link>
-            <Link
-              id="mobile-nav-item"
-              to={'/create'}
-              path='relative'
-              style={{
-                textDecoration: 'none',
-                fill: clickedLinks["create"] ? 'var(--white-elements)' : 'var(--gray-elements)',
-              }}
-              onClick={() => handleLinkClick("create")}
-            >
-              <AddCircleOutlineIcon />
-            </Link>
-            <Link
-              id="mobile-nav-item"
-              to={'/support'}
-              path='relative'
-              style={{
-                textDecoration: 'none',
-                fill: clickedLinks["support"] ? 'var(--white-elements)' : 'var(--gray-elements)',
-              }}
-              onClick={() => handleLinkClick("support")}
-            >
-              <MonetizationOnIcon />
-            </Link>
+              <Link
+                id="mobile-nav-item"
+                to={'/'}
+                path='relative'
+                onClick={() => handleLinkClick("home")}
+              >
+                <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster" />
+              </Link>
+              <Link
+                id="mobile-nav-item"
+                to={'/create'}
+                path='relative'
+                style={{
+                  textDecoration: 'none',
+                  fill: clickedLinks["create"] ? 'var(--white-elements)' : 'var(--gray-elements)',
+                }}
+                onClick={() => handleLinkClick("create")}
+              >
+                <AddCircleOutlineIcon />
+              </Link>
             <Link
               id="mobile-nav-item"
               to={'/contact'}
@@ -92,7 +94,7 @@ const Navbar = () => {
               }}
               onClick={() => handleLinkClick("contact")}
             >
-              <ContactPageIcon />
+              <SdStorageOutlinedIcon />
             </Link>
           </>
         ) : (
