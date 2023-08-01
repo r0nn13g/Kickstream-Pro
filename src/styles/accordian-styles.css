@@ -1,4 +1,4 @@
-#accordian-text{
+w#accordian-text{
   font-size: 10px;
   font-weight: 600;
   color:white;
@@ -23,7 +23,8 @@
 }
 
 .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root:hover:not(.Mui-disabled){
-  background-color: #333333;
+  color: black;
+  background-color: var(--green-elements);
   margin: 0px;
 
 }
@@ -33,5 +34,5 @@
 }
 
 .css-i4bv87-MuiSvgIcon-root {
-  color: var(--gray-elements);
+  color: var(--green-elements);
 }

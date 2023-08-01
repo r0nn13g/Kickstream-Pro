@@ -34,3 +34,30 @@
 .css-1sm5zq2{
   margin: 5px;
 }
+
+
+@media (max-width: 820px) {
+  .create-channels-container{
+    margin-top: 0px;
+  }
+}
+
+
+@media (max-width: 620px) {
+  .create-channels-container{
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 420px){
+  .create-channels-container{
+    margin-top: 0px;
+  }
+}
+
+
+@media (max-width: 220px){
+  .create-channels-container{
+    margin-top: 0px;
+  } 
+}
