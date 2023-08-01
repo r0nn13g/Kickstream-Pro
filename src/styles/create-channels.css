@@ -4,7 +4,7 @@
 
 .create{
   position: relative;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #create-header{
@@ -14,11 +14,17 @@
 }
 
 .create-input-container{
-  margin-bottom: 10px;
+  width: 99%;
+  /* border: 2px solid white; */
+  margin-bottom: 20px;
 }
 
 .textfield{
   color: white;
+}
+
+label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  width: 99%;
 }
 
 .label.Mui-focused{
