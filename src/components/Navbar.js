@@ -5,8 +5,9 @@ import TemporaryDrawer from "./TemporaryDrawer";
 import { useState, useEffect } from "react";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import SdStorageOutlinedIcon from '@mui/icons-material/SdStorageOutlined';
+// import SdStorageOutlinedIcon from '@mui/icons-material/SdStorageOutlined';
 import CardGiftcardOutlinedIcon from '@mui/icons-material/CardGiftcardOutlined';
+import GitHubIcon from '@mui/icons-material/GitHub';
 // import ContactPageIcon from '@mui/icons-material/ContactPage';
 // import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 
@@ -32,21 +33,20 @@ const Navbar = () => {
         <div className='mobile-menu-container'>
           {isMobile ? (
             <>
-           {/* ÷÷ */}
-          <Link id="mobile-nav-item" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
-            <SdStorageOutlinedIcon style={{ fill: 'var(--gray-elements)' }}/>
+           <Link id="mobile-nav-item" to={'/'} path='relative'>
+            <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
           <Link id="mobile-nav-item" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
             <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
-           <Link id="mobile-nav-item" to={'/'} path='relative'>
-            <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
           </Link>
           <Link id="mobile-nav-item" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
             <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <CardGiftcardOutlinedIcon style={{ fill: 'var(--gray-elements)' }}/>
+          </Link>
+          <Link id="mobile-nav-item" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
+              <GitHubIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
             </>
           ) : (
@@ -59,7 +59,6 @@ const Navbar = () => {
         </div>
           )}
         </div>
-   
     </nav>
   );
 }

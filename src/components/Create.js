@@ -118,12 +118,12 @@ const Create = () => {
                 <Box
                 className='box'
                   component="div"
-                  sx={{ "& > :not(style)": { m: 1, width: "36ch"}, color: 'var(--green-elements)'  }}
+                  sx={{ "& > :not(style)": { m: 1, width: "36ch"}, color: 'var(--white-elements)'  }}
                   noValidate
                   autoComplete="off"
                 >
                   <TextField
-                  color="success" focused
+                  color="success" autoFocus
                   sx={{ input: { color: 'var(--green-elements)' } }}
                     className="textfield"
                     id="outlined-basic"
