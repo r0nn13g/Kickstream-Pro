@@ -1,6 +1,7 @@
 import {React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/channel-styles.css';
+// import '../styles/create-channels.css';
 import axios from "axios";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
@@ -112,7 +113,7 @@ const Create = () => {
 
         return (
           <div className="create">
-             <h5 id="create-header">Create a personalized watch list</h5>
+             {/* <h5 id="create-header">Create a personalized watch list</h5> */}
             <div className="create-input-container">
               <form onSubmit={handleSubmit}>
                 <Box

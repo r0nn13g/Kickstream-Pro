@@ -1,5 +1,3 @@
-
-
 .create-channels-container{
   margin-top: 55px;
 }
@@ -29,5 +27,10 @@
 
 .css-113pz37-MuiFormControl-root-MuiTextField-root input{
   color: white;
+  /* width: 100%; */
   background-color: #333333;
+}
+
+.css-1sm5zq2{
+  margin: 5px;
 }
