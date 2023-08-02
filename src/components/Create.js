@@ -32,6 +32,7 @@ let previousStreamTitle;
 const Create = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const fetchData = async (url) => {
     try {
@@ -53,7 +54,7 @@ const Create = () => {
       });
     } catch (error) {
       // Handle errors
-      console.error("Error fetching data:", error);
+      console.log("nothing rendered yet..")
     }
   };
 
@@ -64,11 +65,13 @@ const Create = () => {
     const slug = streamerName.toLowerCase().replace(/\s/g, "");
     let url = `https://kick.com/api/v1/channels/${slug}`;
 
+    
     // Make axios request for the current streamer
     fetchData(url);
-
+    
     // Clear the input field after submitting
     setStreamerName("");
+    setIsSubmitted(true);
   };
   
   const deleteUrlFromLocalStorage = (slug) => {
@@ -78,12 +81,12 @@ const Create = () => {
       const updatedData = [...data];
       updatedData.splice(indexToDelete, 1);
       setData(updatedData);
-  
+      setIsSubmitted(false);
       // Save updated data to local storage after removing the streamer
       localStorage.setItem("streamData", JSON.stringify(updatedData));
     }
   };
-
+  
   useEffect(() => {
     // Fetch initial data from local storage (if available)
     const storedData = localStorage.getItem("streamData");
@@ -94,15 +97,9 @@ const Create = () => {
       fetchData();
     }
 
-    // Set up the interval to refresh the API every 1 minute (60000 milliseconds)
-    const intervalId = setInterval(() => {
-      fetchData();
-    }, 60000);
-
-    // Clean up the interval on component unmount to avoid memory leaks
-    return () => {
-      clearInterval(intervalId);
-    };
+    const refreshInterval = 50000;
+    fetchData(); 
+    setInterval(fetchData, refreshInterval);
   }, []);
   
   // Save data to local storage whenever it changes
@@ -114,7 +111,8 @@ const Create = () => {
         return (
           <div className="create">
              {/* <h5 id="create-header">Create a personalized watch list</h5> */}
-            <div className="create-input-container">
+
+              <div className="create-input-container">
               <form onSubmit={handleSubmit}>
                 <Box
                 className='box'
@@ -140,9 +138,11 @@ const Create = () => {
                 </Box>
               </form>
         </div>
+                        {isSubmitted ? (             
+                          <>    
                       {data.map((item,index) => {
-                          //if verified object exists than a channel is verified and the verified variable is set to true
-                          if(item.verified !== null){
+                        //if verified object exists than a channel is verified and the verified variable is set to true
+                        if(item.verified !== null){
                             verified = true;
                           } else {
                             verified = false;
@@ -226,10 +226,19 @@ const Create = () => {
                                   <CancelIcon key={index} id="delete-from-list" onClick={() => deleteUrlFromLocalStorage(item.slug)}/>
                             </div>
                       </div>   
-                  )
-              })
-          }
-    </div>
+                  )})
+              }
+            </>
+                 ) : ( 
+                  <>
+                  <div className="before-submission-container">
+                    <img id="joel-always-wins-sub" src={'https://i.imgur.com/YN8RwVD.gif'} alt="kickster"/>
+                    <br></br>
+                   nothing here yet...
+                  </div>
+                  </>
+              )}
+      </div>
   );
 };
 
