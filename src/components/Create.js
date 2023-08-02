@@ -32,7 +32,6 @@ let previousStreamTitle;
 const Create = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const fetchData = async (url) => {
     try {
@@ -71,7 +70,6 @@ const Create = () => {
     
     // Clear the input field after submitting
     setStreamerName("");
-    setIsSubmitted(true);
   };
   
   const deleteUrlFromLocalStorage = (slug) => {
@@ -81,7 +79,6 @@ const Create = () => {
       const updatedData = [...data];
       updatedData.splice(indexToDelete, 1);
       setData(updatedData);
-      setIsSubmitted(false);
       // Save updated data to local storage after removing the streamer
       localStorage.setItem("streamData", JSON.stringify(updatedData));
     }
@@ -138,8 +135,7 @@ const Create = () => {
                 </Box>
               </form>
         </div>
-                        {isSubmitted ? (             
-                          <>    
+                     
                       {data.map((item,index) => {
                         //if verified object exists than a channel is verified and the verified variable is set to true
                         if(item.verified !== null){
@@ -227,17 +223,7 @@ const Create = () => {
                             </div>
                       </div>   
                   )})
-              }
-            </>
-                 ) : ( 
-                  <>
-                  <div className="before-submission-container">
-                    <img id="joel-always-wins-sub" src={'https://i.imgur.com/YN8RwVD.gif'} alt="kickster"/>
-                    <br></br>
-                   nothing here yet...
-                  </div>
-                  </>
-              )}
+                }
       </div>
   );
 };
