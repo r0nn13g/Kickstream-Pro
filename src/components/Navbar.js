@@ -45,9 +45,9 @@ const Navbar = () => {
           <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <CardGiftcardOutlinedIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/contact'} path='relative' style={{textDecoration: 'none'}}>
+          <a id="mobile-nav-item" href= 'https://www.github.com/r0nn13g/kickster-for-kick-live-streaming.git' target="_blank"  rel="noreferrer" style={{textDecoration: 'none'}}>
               <GitHubIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </Link>
+          </a>
             </>
           ) : (
             // Show the Temporary Drawer for larger screens

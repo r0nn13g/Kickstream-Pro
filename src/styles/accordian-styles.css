@@ -1,5 +1,5 @@
-w#accordian-text{
-  font-size: 10px;
+#accordian-text{
+  font-size: 9px;
   font-weight: 600;
   color:white;
   margin-bottom: 10px;
@@ -7,7 +7,7 @@ w#accordian-text{
 }
 
 #typo-accordian{
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   color:white;
   margin: 0px;
