@@ -1,5 +1,7 @@
 .pulsatingDot {
-  animation: pulseDot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+  margin-top: 2px;
+  margin-right: 1px;
+  animation: pulseDot 1.00s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
   background-color: var(--pulsating-dot);
   border-radius: 50%;
   box-sizing: border-box;

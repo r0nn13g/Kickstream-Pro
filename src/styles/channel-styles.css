@@ -14,8 +14,9 @@
 
 .live-stream-card {
   display: grid;
-  margin-left: 6px;
-  margin-right: 6px;
+  /* margin-left: 6px;
+  margin-right: 6px; */
+  margin: 0px;
   border-top: 2px solid rgba(73, 73, 73, 0.203);
   grid-template-rows: 1fr;
   grid-template-columns: 0.3fr 2.5fr 0.3fr ;
@@ -34,7 +35,8 @@
 .pfp{
   display: grid;
   place-items: center;
-  margin: 2px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 #offline-pfp {
@@ -58,7 +60,6 @@
 .channel-name-container {
   grid-area: name;
   display: flex;
-  margin-top: 4px;
 }
 
 #channel-name {
@@ -74,6 +75,7 @@
 #channel-online {
   font-weight: 800;
   font-size: 12px;
+  margin-top: 1px;
   color: var( --green-elements);
 }
 
@@ -95,7 +97,7 @@
 }
 
 #followers {
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 10px;
   font-weight: 700;
 }
@@ -116,14 +118,14 @@
 }
 
  #title-online {
-  margin-top: 6px;
+  margin-top: 8px;
   color:var(--gray-elements);
  }
 
 .live-stream-details-container {
   grid-area: details;
   margin-top: 1px;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   color:var(--gray-elements);
   overflow: hidden;
   text-overflow:ellipsis;
@@ -141,19 +143,18 @@
 
 .stream-title-container{
   position: relative;
-  font-size: 16px;
-  /* margin-top: 7px; */
+  font-size: 14px;
 }
   .is-live{
     grid-area: isLive;
     display: flex;
     align-items: center;
     text-align: center;
+    margin: 2px;
   }
   
   #offline-live{
     font-size: 12px;
-    margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,9 +179,9 @@
   display: grid;
   text-align: center;
   white-space: nowrap;
-  margin-right: 5px;
+  margin-right: 4px;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   color:var(--white-elements);
 };
 
