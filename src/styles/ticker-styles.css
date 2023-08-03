@@ -6,8 +6,10 @@
   background-color: #0444e4;
 }
 
-.styles_ticker__-0UvZ {
-  background-color: #0444e4;
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  .styles_ticker__-0UvZ{
+    background-color: #0444e4;
+  }
 }
 
 .styles_title__n7qOv{
