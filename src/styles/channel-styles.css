@@ -117,11 +117,12 @@
 
  #title-online {
   margin-top: 6px;
-  color:var(--white-elements);
+  color:var(--gray-elements);
  }
 
 .live-stream-details-container {
   grid-area: details;
+  margin-top: 1px;
   margin-bottom: 6px;
   color:var(--gray-elements);
   overflow: hidden;
@@ -180,7 +181,7 @@
   margin-right: 5px;
   font-size: 10px;
   font-weight: 700;
-  color:var(--green-elements);
+  color:var(--white-elements);
 };
 
 .viewers{
