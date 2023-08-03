@@ -58,7 +58,7 @@ nav {
   background-size: cover;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 840px) {
   nav {
     position: sticky;
     top: 0;
@@ -70,10 +70,11 @@ nav {
     position: fixed;
     bottom: 0;
     left: 0;
-    margin-top: 40px;
+    margin-top: 30px;
     grid-template-columns: repeat(5, auto); 
     gap: 150px;
     justify-content: center; 
+    border-top: 1px solid var(--gray-elements);
   }
   
   #home-mobile-logo {
@@ -82,13 +83,13 @@ nav {
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 768px) {
   
   .mobile-menu-container {
     position: fixed;
     bottom: 0;
     left: 0;
-    margin-top: 40px;
+    margin-top: 30px;
     grid-template-columns: repeat(5, auto); 
     gap: 100px;
     justify-content: center; 
@@ -100,15 +101,52 @@ nav {
 }
 }
 
-@media (max-width: 420px) {
+  /* *Samsung S23* */
+@media (max-width: 414px) {
   
   .mobile-menu-container {
     position: fixed;
     bottom: 0;
     left: 0;
-    margin-top: 40px;
+    margin-top: 30px;
+    grid-template-columns: repeat(5, auto); 
+    gap: 60px;
+    justify-content: center; 
+  }
+  
+  #home-mobile-logo {
+  height:20px;
+  width: 20px;
+}
+}
+
+@media (max-width: 390px) {
+  
+  .mobile-menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 0px;
     grid-template-columns: repeat(5, auto); 
     gap: 57px;
+      justify-content: center; 
+    }
+    
+    #home-mobile-logo {
+      height:20px;
+    width: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+  
+  .mobile-menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 0px;
+    grid-template-columns: repeat(5, auto); 
+    gap: 47px;
       justify-content: center; 
     }
     
@@ -122,7 +160,7 @@ nav {
   
   .mobile-menu-container {
     grid-template-columns: repeat(5, auto);
-    margin-top: 40px;
+    margin-top: 30px;
     gap: 27px;
     justify-content: center;
   }
