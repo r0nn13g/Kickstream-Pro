@@ -5,7 +5,7 @@ const AdTicker = () => {
   return(
     <div className="ticker">
           <Ticker isNewsTicker={true}>
-            <NewsTicker id="1"  title="                                                 KICKSTER - live streaming solutions for futuristic beings   |   create your own personalized watch list   |   BruceDropEmOff & xQc sign 2yr / $100M deal with Kick   |   who is the next big signing? | designed by r0nn13g" url=" https://metro.co.uk/2020/02/22/blue-passports-issued-brits-first-time-decades-next-months-12281012/?ito=newsnow-feed" />
+            <NewsTicker id="2"  title="   r0nn13g       | Kickster® - live streaming solutions for futuristic beings   |   create your own personalized watch list   |   Keep track of trending channels without leaving the stream!   |   BruceDropEmOff & xQc sign 2yr / $100M deal with Kick   |   who is the next big signing?    |    r0nn13g" url="https://www.kick.com" />
           </Ticker>
     </div>
   )

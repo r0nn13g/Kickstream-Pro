@@ -50,14 +50,20 @@ import BasicAccordion from "./BasicAccordian.js.js";
           setIsLoading(false);
           } catch (error) {
             // Ignore 404 response and return null for this URL
-            if (error.response && error.response.status === 404) {
+            if (error.response ) {
               console.error("Banned channel in streamers Array", error);
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
               setIsLoading(true);
-            } else if (error.response === 429 && error.response.status) {
-              console.error("Too many requests. Please wait and try again later.", error);
+            } else if (error.request) {
+              // console.error("Too many requests. Please wait and try again later.", error);
+              console.log(error.request);
             } else {
-              throw error; // Throw other errors
+              console.log('Error', error.message);
+              // throw error; // Throw other errors
             }
+            console.log(error.config);
           };
          };
          

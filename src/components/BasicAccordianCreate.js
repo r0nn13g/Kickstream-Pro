@@ -9,7 +9,7 @@ import '../styles/accordian-styles.css';
 export default function BasicAccordionCreate() {
   return (
       <Accordion sx={{ 
-    backgroundColor: '#333333',
+    backgroundColor: '#2a2a2a',
     color: 'var(--white-elements)'
     }} >
         <AccordionSummary
