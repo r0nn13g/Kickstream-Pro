@@ -24,13 +24,14 @@ nav {
   width: 100%;
   justify-content: flex-end; 
   background-color: #1b1b1b;
-  /* border-top: 1px solid var(--gray-elements); */
+  border-top: 1px solid var(--gray-elements);
 }
 
 #mobile-nav-item{
   margin: 2px;
   margin-top: 20px;
   margin-bottom: 20px;
+  
 }
 
 .home-logo-container{
@@ -74,7 +75,6 @@ nav {
     grid-template-columns: repeat(5, auto); 
     gap: 150px;
     justify-content: center; 
-    border-top: 1px solid var(--gray-elements);
   }
   
   #home-mobile-logo {
