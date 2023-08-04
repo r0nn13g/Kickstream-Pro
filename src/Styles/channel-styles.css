@@ -8,6 +8,7 @@
 .live-stream-card-container {
   position: relative;
   min-height: 98.5%;
+  margin: 2px;
   padding-bottom: 40px;
   background-color: #1b1b1b;
 }
@@ -75,7 +76,7 @@
 #channel-online {
   font-weight: 800;
   font-size: 12px;
-  margin-top: 1px;
+  margin-top: 6px;
   color: var( --green-elements);
 }
 
