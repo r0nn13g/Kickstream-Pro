@@ -133,7 +133,7 @@ import BasicAccordion from "./BasicAccordian.js.js";
                         //if channel is partnered with kick and offline display verified badge with gray scale filter
                         verifiedLive = isVerified !== null && !item.livestream ? <img id='verified-badge-offline' src={verifiedBadge} alt='verification-badge'/> : isVerified;
                         //if channel is live display elements in color, else display in gray scale.
-                        channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}{isVerified}</h6>;
+                        channelLive = !item.livestream ? <h6 id='channel-offline'>{channel}{verifiedLive}</h6> : <h6 id='channel-online'>{channel}&nbsp;{isVerified}</h6>;
                         titleLive = !item.livestream ? <h6 id='title-offline'>{streamTitle}</h6> : <h6 id='title-online'>{streamTitle}</h6>;
                         pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
                         followersLive = item.livestream === null ? <p id='followers-offline'>{followers} followers</p> : <p id='followers-online'>{followers} followers</p>;      

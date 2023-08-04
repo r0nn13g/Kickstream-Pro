@@ -15,8 +15,6 @@
 
 .live-stream-card {
   display: grid;
-  /* margin-left: 6px;
-  margin-right: 6px; */
   margin: 0px;
   border-top: 2px solid rgba(73, 73, 73, 0.203);
   grid-template-rows: 1fr;
@@ -87,7 +85,6 @@
 
 #verified-badge-online{
   position: absolute;
-  /* margin-top: 10px; */
   height: 15px;
 }
 
