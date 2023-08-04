@@ -2,6 +2,7 @@
   --pulsating-dot: var(--green-elements);
   --green-elements: rgb(85, 255, 47);
   --gray-elements: rgb(85, 85, 85);
+  --graytwo-elements: rgb(162, 162, 162);
   --white-elements: rgba(255, 255, 255, 0.782);
 }
 
@@ -72,14 +73,16 @@
 }
 
 #channel-online {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 12px;
   margin-top: 5px;
   color: var( --green-elements);
 }
 
 #channel-offline {
+  font-weight: 900;
   font-size: 12px;
+  margin-top: 5px;
   color:var(--gray-elements);
 }
 
@@ -95,29 +98,38 @@
 }
 
 #followers {
-  margin-top: 4px;
   font-size: 10px;
   font-weight: 700;
 }
 
 #followers-offline{
+  font-weight: 400;
   margin: 0px;
+  margin-top:2px;
   color: var(--gray-elements);
 }
 
 #followers-online{
+  font-weight: 400;
   margin: 0px;
+  margin-top:2px;
   color:var(--gray-elements);
 }
 
 #title-offline {
-  margin-top: 6px;
+  font-size: 10px;
+  margin: 0px;
+  margin-top: 2px;
+  font-weight: 900;
   color:var(--gray-elements);
 }
 
  #title-online {
-  margin-top: 8px;
-  color:var(--gray-elements);
+  font-size: 10px;
+  margin: 0px;
+  margin-top: 2px;
+  font-weight: 900;
+  color:var(--graytwo-elements);
  }
 
 .live-stream-details-container {
@@ -141,7 +153,7 @@
 
 .stream-title-container{
   position: relative;
-  font-size: 14px;
+ 
 }
   .is-live{
     grid-area: isLive;
@@ -179,7 +191,7 @@
   white-space: nowrap;
   margin-right: 4px;
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 900;
   color:var(--white-elements);
 };
 
