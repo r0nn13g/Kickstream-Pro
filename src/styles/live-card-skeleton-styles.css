@@ -1,6 +1,7 @@
 .live-stream-card-skeleton-container{
-  z-index: -2;
+  z-index: 900;
   margin-top: 0px;
+  padding-bottom: 30px;
 }
 
 .viewers-skeleton{
