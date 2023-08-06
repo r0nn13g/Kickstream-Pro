@@ -1,6 +1,6 @@
 import {React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../styles/channel-styles.css';
+import '../styles/trending-styles.css';
 // import '../styles/create-channels.css';
 import axios from "axios";
 import PulsatingDot from './PulsatingDot';
