@@ -6,7 +6,7 @@ import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 // import RotatingSpinner from "./RotatingSpinner";
-import BasicAccordion from "./BasicAccordian.js";
+import BasicAccordion from "./BasicAccordian.js.js";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 
   let pfp;
@@ -29,7 +29,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
   let streamTitle;
   let previousStreamTitle;
 
-     const Channels = () => {
+     const Trending = () => {
      // State to store the sorted data
      const [data, setData] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
@@ -208,4 +208,4 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
            </div>
         );
     };
-export default Channels;
+export default Trending;

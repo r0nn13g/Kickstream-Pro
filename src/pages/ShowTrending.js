@@ -1,16 +1,16 @@
 import React from "react";
-import Channels from "../components/Channels.js";
+import Trending from "../components/Trending.js";
 import Footer from '../components/Footer.js';
 import AdTicker from "../components/AdTicker.js";
 
-const ShowChannels = () => {
+const ShowTrending = () => {
     return(
       <React.Fragment>
         <AdTicker />
-        <Channels />
+        <Trending />
         <Footer />
     </React.Fragment>
     )
 };
 
-export default ShowChannels;
+export default ShowTrending;
