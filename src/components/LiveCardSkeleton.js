@@ -1,24 +1,211 @@
 import React from "react";
-import Skeleton from 'react-loading-skeleton'
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import '../styles/live-card-skeleton-styles.css';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-const LiveCardSkeleton = ({ isLoading, pfp, channel, followers, title, viewers }) => {
+const LiveCardSkeleton = ({props}) => {
   return (
+    <div className="live-stream-card-skeleton-container">
     <div className="live-stream-card">
-      <div className="pfp">{/* {pfpLive} */}</div>
-      <div className="live-stream-details-container">
-        <div className="channel-name-container">{/* {channelLive} */}</div>
-        <div className="followed-by-container">
-          <div id="followers">{/* {followersLive} */}</div>
-        </div>
-        <div className="stream-title-container">{/* {titleLive}  */}</div>
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
       </div>
-      <div className="is-live">
-        {/* {isLive} */}
-        <div className="live-viewers-count-container">
-          {/* {viewerCount}  */}
-        </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
       </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
+    <div className="live-stream-card">
+     <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <div style={{ margin: "14px" }}>
+     <Skeleton
+        circle
+        height="40px"
+        width="40px"
+        containerClassName="avatar-skeleton"
+      />
+      </div>
+    <div>
+      <p>
+        <Skeleton count={2} />
+      </p>
+    </div>
+    <div className="viewers-skeleton">
+    <Skeleton />
+    </div>
+  </SkeletonTheme>
+    </div>
     </div>
   );
 }
