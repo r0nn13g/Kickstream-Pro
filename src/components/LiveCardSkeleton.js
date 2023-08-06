@@ -166,46 +166,6 @@ const LiveCardSkeleton = ({props}) => {
     </div>
   </SkeletonTheme>
     </div>
-    <div className="live-stream-card">
-     <SkeletonTheme baseColor="#202020" highlightColor="#444">
-      <div style={{ margin: "14px" }}>
-     <Skeleton
-        circle
-        height="40px"
-        width="40px"
-        containerClassName="avatar-skeleton"
-      />
-      </div>
-    <div>
-      <p>
-        <Skeleton count={2} />
-      </p>
-    </div>
-    <div className="viewers-skeleton">
-    <Skeleton />
-    </div>
-  </SkeletonTheme>
-    </div>
-    <div className="live-stream-card">
-     <SkeletonTheme baseColor="#202020" highlightColor="#444">
-      <div style={{ margin: "14px" }}>
-     <Skeleton
-        circle
-        height="40px"
-        width="40px"
-        containerClassName="avatar-skeleton"
-      />
-      </div>
-    <div>
-      <p>
-        <Skeleton count={2} />
-      </p>
-    </div>
-    <div className="viewers-skeleton">
-    <Skeleton />
-    </div>
-  </SkeletonTheme>
-    </div>
     </div>
   );
 }
