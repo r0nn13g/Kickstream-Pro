@@ -6,6 +6,26 @@
   --white-elements: rgba(255, 255, 255, 0.782);
 }
 
+ /* button */
+.offline-online-switch-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#online-offline-switch{
+  display: flex;
+  color: var(--green-elements);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(116, 116, 116);
+  margin: 16px;
+}
+
 .live-stream-card-container {
   position: relative;
   min-height: 98.5%;
