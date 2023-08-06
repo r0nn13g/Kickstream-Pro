@@ -36,41 +36,58 @@ import BasicAccordion from "./BasicAccordian.js.js";
      useEffect(() => {
        const fetchData = async () => {
          try {
-          const responses = await Promise.all(streamers.map(url => axios.get(url)));
-          const responseData = responses.map(urls => urls.data);
-          const validResponses = responseData.filter(response => response.status !== null);
-  
-          const onlineStreamers = validResponses.filter(response => response.livestream && response.livestream.viewer_count > 0);
-          const offlineStreamers = validResponses.filter(response => response.livestream === null);
-  
-          const sortedOnlineStreamers = onlineStreamers.sort((a, b) => b.livestream.viewer_count - a.livestream.viewer_count);
-          const streamerWithZeroViewers = sortedOnlineStreamers.find(streamer => streamer.livestream.viewer_count === 0);
-  
-          setData(streamerWithZeroViewers ? [...sortedOnlineStreamers, ...offlineStreamers] : [...onlineStreamers, ...offlineStreamers]);
-          setIsLoading(false);
-          } catch (error) {
-            // Ignore 404 response and return null for this URL
-            if (error.response ) {
-              console.error("Banned channel in streamers Array", error);
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
-              setIsLoading(true);
-            } else if (error.request) {
-              // console.error("Too many requests. Please wait and try again later.", error);
-              console.log(error.request);
-            } else {
-              console.log('Error', error.message);
-              // throw error; // Throw other errors
-            }
-            console.log(error.config);
-          };
-         };
-         
-         const refreshInterval = 50000;
-         fetchData(); 
-         setInterval(fetchData, refreshInterval);
-        }, []);
+           const responses = await Promise.all(
+             streamers.map((url) => axios.get(url))
+           );
+           const responseData = responses.map((urls) => urls.data);
+           const validResponses = responseData.filter(
+             (response) => response.status !== null
+           );
+
+           const onlineStreamers = validResponses.filter(
+             (response) =>
+               response.livestream && response.livestream.viewer_count >= 0
+           );
+           const offlineStreamers = validResponses.filter(
+             (response) => response.livestream === null
+           );
+
+           const sortedOnlineStreamers = onlineStreamers.sort(
+             (a, b) => b.livestream.viewer_count - a.livestream.viewer_count
+           );
+           const streamerWithZeroViewers = sortedOnlineStreamers.find(
+             (streamer) => streamer.livestream.viewer_count === 0
+           );
+
+           setData(
+             streamerWithZeroViewers
+               ? [...sortedOnlineStreamers, ...offlineStreamers]
+               : [...onlineStreamers, ...offlineStreamers]
+           );
+           setIsLoading(false);
+         } catch (error) {
+           // Ignore 404 response and return null for this URL
+           if (error.response) {
+             console.error("Banned channel in streamers Array", error);
+             console.log(error.response.data);
+             console.log(error.response.status);
+             console.log(error.response.headers);
+             setIsLoading(true);
+           } else if (error.request) {
+             // console.error("Too many requests. Please wait and try again later.", error);
+             console.log(error.request);
+           } else {
+             console.log("Error", error.message);
+             // throw error; // Throw other errors
+           }
+           console.log(error.config);
+         }
+       };
+
+       const refreshInterval = 50000;
+       fetchData();
+       setInterval(fetchData, refreshInterval);
+     }, []);
 
         return (
             <div className="live-stream-card-container">
@@ -138,38 +155,50 @@ import BasicAccordion from "./BasicAccordian.js.js";
                         pfpLive = !item.livestream ? <img id='offline-pfp' src={pfp} alt='channel_pfp'/> : <img id='online-pfp' src={pfp} alt='channel_pfp'/>;
                         followersLive = item.livestream === null ? <p id='followers-offline'>{followers} followers</p> : <p id='followers-online'>{followers} followers</p>;      
                         //jsx returning live stream card
-                        return(
-                          <div key={index} className='live-stream-card'>
-                              <Link className='channel-pfp-container' to={`https://www.kick.com/${slug}`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                                <div className="pfp">
-                                  {pfpLive}
+                        return (
+                          <div key={index} className="live-stream-card">
+                            <Link
+                              className="channel-pfp-container"
+                              to={`https://www.kick.com/${slug}`}
+                              target="_blank"
+                              path="relative"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <div className="pfp">{pfpLive}</div>
+                            </Link>
+                            <div className="live-stream-details-container">
+                              <div className="channel-name-container">
+                                {channelLive}
+                              </div>
+                              <div className="followed-by-container">
+                                <div id="followers">{followersLive}</div>
+                              </div>
+                              <Link
+                                to={`https://www.kick.com/${slug}/chatroom`}
+                                target="_blank"
+                                path="relative"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <div className="stream-title-container">
+                                  {titleLive}
                                 </div>
                               </Link>
-                                <div  className='live-stream-details-container'>
-                                  <div className='channel-name-container'>
-                                    {channelLive}
-                                  </div> 
-                                  <div className='followed-by-container'>
-                                    <div id='followers'>
-                                      {followersLive}
-                                    </div>
-                                  </div>
-                                  <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                                  <div className="stream-title-container">
-                                    {titleLive} 
-                                  </div>
-                                  </Link>
-                                  </div>
-                                  <div className="is-live">
-                                      {isLive}
-                                    <Link to={`https://www.kick.com/${slug}/chatroom`} target="_blank" path='relative' style={{textDecoration: 'none'}} >
-                                    <div className='live-viewers-count-container'>
-                                      {viewerCount} 
-                                    </div>
-                                  </Link>
-                                  </div>
-                            </div>   
-                          )
+                            </div>
+                            <div className="is-live">
+                              {isLive}
+                              <Link
+                                to={`https://www.kick.com/${slug}/chatroom`}
+                                target="_blank"
+                                path="relative"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <div className="live-viewers-count-container">
+                                  {viewerCount}
+                                </div>
+                              </Link>
+                            </div>
+                          </div>
+                        );
                         })
                       }
                     </>
