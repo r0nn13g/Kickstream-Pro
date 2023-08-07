@@ -5,7 +5,6 @@ import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
-// import RotatingSpinner from "./RotatingSpinner";
 import BasicAccordion from "./BasicAccordian.js.js";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 
@@ -29,7 +28,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
   let streamTitle;
   let previousStreamTitle;
 
-  const Trending = () => {
+  const Live = () => {
     const [isLoading, setLoading] = useState(true);
     const [showLive, setShowLive] = useState(true); // State variable to track mode (live or offline)
     const [onlineStreamers, setOnlineStreamers] = useState([]);
@@ -387,4 +386,4 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
     );
   };
   
-  export default Trending;
+  export default Live;

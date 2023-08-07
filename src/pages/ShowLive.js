@@ -1,14 +1,14 @@
 import React from "react";
-import Testing from "../components/Testing.js";
+import Live from "../components/Live.js";
 import AdTicker from "../components/AdTicker.js";
 
-const TestingOnly = () => {
+const ShowLive = () => {
   return (
     <div>
       <AdTicker />
-      <Testing />
+      <Live />
     </div>
   );
 };
 
-export default TestingOnly;
+export default ShowLive;

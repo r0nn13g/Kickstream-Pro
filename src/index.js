@@ -8,7 +8,7 @@ import FourOhFour from './pages/FourOhFour.js';
 import ShowTrending from './pages/ShowTrending.js';
 import CreateChannels from './pages/CreateChannels.js';
 import Support from './pages/Support.js';
-import Testing from './pages/TestingOnly.js';
+import Live from './pages/ShowLive.js';
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/trending" element={<ShowTrending />}></Route>
         <Route path="/create" element={<CreateChannels />}></Route>
         <Route path="/support" element={<Support/>}></Route>
-        <Route path="/testing" element={<Testing />}></Route>
+        <Route path="/Live" element={<Live />}></Route>
       </Routes>
       <Navbar/>
     </BrowserRouter>
