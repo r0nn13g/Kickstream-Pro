@@ -3,7 +3,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 950;;
+  z-index: 950;
 }
 
 .browser-nav-container{
@@ -16,7 +16,7 @@ nav {
   left: 0;
   width: 100%;
   background-color: #1b1b1b;
-  z-index: 9999;
+  z-index: 950;
 }
 
 .mobile-menu-container{ 
@@ -25,7 +25,7 @@ nav {
   width: 100%;
   justify-content: flex-end; 
   background-color: #1b1b1b;
-  border-top: 0.01em solid var(--gray-elements);
+  /* border-top: 0.01em solid var(--gray-elements); */
 }
 
 #mobile-nav-item{

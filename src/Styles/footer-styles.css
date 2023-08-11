@@ -8,6 +8,7 @@
   font-size: 8px;
   font-weight: 800;
   text-align: right;
+  z-index: 9999;
 }
 
 #footer-text{
