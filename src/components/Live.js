@@ -5,7 +5,6 @@ import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
-import BasicAccordion from "./BasicAccordian.js.js";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 
   let pfp;
@@ -87,8 +86,24 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
 
     return (
       <div className="live-stream-card-container">
-        <BasicAccordion />
         <div className="offline-online-switch-container">
+
+        <button id="online-offline-switch">
+         ss
+        </button>
+
+        <button id="online-offline-switch" onClick={toggleLiveOffline}>
+          {showLive ? "descending" : "ascending"}
+        </button>
+
+        <button id="online-offline-switch" onClick={toggleLiveOffline}>
+          {showLive ? "a - z" : "z - a"}
+        </button>
+
+        <button id="online-offline-switch" onClick={toggleLiveOffline}>
+          Kick®
+        </button>
+       
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>

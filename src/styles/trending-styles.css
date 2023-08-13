@@ -10,20 +10,31 @@
 .offline-online-switch-container{
   display: flex;
   justify-content: flex-end;
+  margin: 0px;
 }
 
 #online-offline-switch{
-  display: flex;
+  background-color: rgb(49, 49, 49);
   color: var(--green-elements);
-  border: none;
-  border-radius: 5px;
   display: flex;
   justify-content: flex-end;
-  padding: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  /* padding: 5px; */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#online-offline-switch:hover{
+  color: white;
   background-color: rgb(116, 116, 116);
-  margin: 16px;
+}
+
+#online-offline-switch:active{
+  color: rgb(49, 49, 49);;
+  background-color: var(--green-elements);
 }
 
 .live-stream-card-container {
