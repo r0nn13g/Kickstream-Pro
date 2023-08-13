@@ -23,7 +23,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/officialebz',
     'https://kick.com/api/v1/channels/princessangelcakez',
     'https://kick.com/api/v1/channels/sam',
-    // 'https://kick.com/api/v1/channels/sampanday',
+    'https://kick.com/api/v1/channels/fousey',
     'https://kick.com/api/v1/channels/scriptedagain',
     'https://kick.com/api/v1/channels/shotime',
     'https://kick.com/api/v1/channels/slightlyhomeless',
