@@ -61,7 +61,6 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
           setOfflineStreamers(offlineStreamers);
           setLoading(false);
         } catch (error) {
-          // Ignore 404 response and return null for this URL
           if (error.response) {
             console.error("Banned channel in streamers Array", error);
             console.log(error.response.data);
@@ -69,11 +68,9 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
             console.log(error.response.headers);
             setLoading(true);
           } else if (error.request) {
-            // console.error("Too many requests. Please wait and try again later.", error);
             console.log(error.request);
           } else {
             console.log("Error", error.message);
-            // throw error; // Throw other errors
           }
           console.log(error.config);
         }
@@ -83,8 +80,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
       fetchData();
       setInterval(fetchData, refreshInterval);
     }, []);
-
-    // Function to toggle between live and offline
+    
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
     };
@@ -181,12 +177,14 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
                     </h6>
                   );
 
+                  // Stream title
                   titleLive = item.livestream ? (
                     <h6 id="title-online">{streamTitle}</h6>
                   ) : (
                     <h6 id="title-offline">{streamTitle}</h6>
                   );
 
+                  // Followers
                   followersLive = item.livestream ? (
                     <p id="followers-online">{followers} followers</p>
                   ) : (
@@ -319,13 +317,14 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
                       {verifiedLive}
                     </h6>
                   );
-
+                  
+                  // Stream title
                   titleLive = item.livestream ? (
                     <h6 id="title-online">{streamTitle}</h6>
                   ) : (
                     <h6 id="title-offline">{streamTitle}</h6>
                   );
-
+                  // Followers
                   followersLive = item.livestream ? (
                     <p id="followers-online">{followers} followers</p>
                   ) : (
