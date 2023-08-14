@@ -16,4 +16,6 @@ And finally to start the server that can be checked in your local browser just r
 
 Screenshots - ios - iPhone 14 Pro
 ![kickstermobilelayout](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/8d09f6b5-7e7d-4e25-a587-d8600fa1b242)
+![home - Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/2310e8ae-26bc-41b5-a210-e7a56a9005d6)
+![Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/97b5945a-9c08-4df3-b3b3-86ce9532ea42)
 
