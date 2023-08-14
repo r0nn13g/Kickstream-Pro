@@ -21,5 +21,5 @@ ios - iPhone 14 Pro
 
 Browser - Google Chrome
 
-       ![home - Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/2310e8ae-26bc-41b5-a210-e7a56a9005d6)
+![home - Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/2310e8ae-26bc-41b5-a210-e7a56a9005d6)
 ![Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/97b5945a-9c08-4df3-b3b3-86ce9532ea42)
