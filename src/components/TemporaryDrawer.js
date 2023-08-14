@@ -31,13 +31,13 @@ export default function TemporaryDrawer() {
     >
       <List>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
-              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <b>Trending +</b>
+              <Link to="/live" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Live +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/live" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <b>Live +</b>
+              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Trending +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
@@ -63,7 +63,7 @@ export default function TemporaryDrawer() {
           </ListItem>
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
           <Link to="/" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
-            <h3>Kickster Beta v0.3</h3>
+            <h3>Kickster Beta v0.5</h3>
               <ListItemText secondary="" />
           </Link>
       </ListItem>
