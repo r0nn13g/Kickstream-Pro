@@ -10,7 +10,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
   let pfp;
   let pfpLive;
   let slug;
-  let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/3b83fba0-3fe7-4538-ae3f-3e95592706ec/images/user-profile-pic.png';
+  let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/d1d6906c-00fe-4aac-9ae8-be0f3a2826ab/images/user-profile-pic.png';
   let isLive;
   let isVerified;
   let verified;
