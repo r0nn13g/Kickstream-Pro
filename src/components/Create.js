@@ -53,7 +53,7 @@ const Create = () => {
       });
     } catch (error) {
       // Handle errors
-      console.log("nothing rendered yet..")
+      console.log("Softbanned by kick servers  & cloud flare")
     }
   };
 
