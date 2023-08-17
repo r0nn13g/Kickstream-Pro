@@ -87,23 +87,6 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
     return (
       <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-
-        <button id="online-offline-switch">
-         ss
-        </button>
-
-        <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          {showLive ? "descending" : "ascending"}
-        </button>
-
-        <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          {showLive ? "a - z" : "z - a"}
-        </button>
-
-        <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          Kick®
-        </button>
-       
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
