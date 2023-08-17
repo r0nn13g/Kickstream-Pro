@@ -25,7 +25,7 @@ nav {
   width: 100%;
   justify-content: flex-end; 
   background-color: #1b1b1b;
-  /* border-top: 0.01em solid var(--gray-elements); */;
+  border-top: 1px solid var(--gray-elements);
 }
 
 #mobile-nav-item{

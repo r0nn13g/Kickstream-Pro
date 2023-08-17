@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+// import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import RedeemIcon from '@mui/icons-material/Redeem';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 
@@ -39,8 +40,8 @@ const Navbar = () => {
           <Link id="mobile-nav-item" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
             <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/trending'} path='relative' style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
+            <RedeemIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <a id="mobile-nav-item" href= 'https://www.github.com/r0nn13g/kickster-for-kick-live-streaming.git' target="_blank"  rel="noreferrer" style={{textDecoration: 'none'}}>
               <GitHubIcon style={{ fill: 'var(--gray-elements)' }}/>
