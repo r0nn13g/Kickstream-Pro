@@ -2,20 +2,6 @@
   margin-top: 47px;
 }
 
-.styles_ticker__-0UvZ{
-  background-color: #0444e4;
-}
-
-.styles_ticker__-0UvZ {
-  background-color: #0444e4;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-  .styles_ticker__-0UvZ{
-    background-color: #0444e4;
-  }
-}
-
 .styles_title__n7qOv{
   font-weight: 600;
   margin: 0px;
@@ -23,13 +9,8 @@
   
 }
 
-.styles_newsticker__py7eW {
-  background-color: #0444e4;
-}
-
 .styles_tickerItem__Vj57z:hover {
   text-decoration: none;
-  background-color: #0444e4;
 }
 
 @media (max-width: 820px){
