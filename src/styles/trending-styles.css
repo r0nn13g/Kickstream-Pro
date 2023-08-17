@@ -41,15 +41,16 @@
   position: relative;
   min-height: 98.5%;
   margin: 2px;
-  margin-bottom: 25px;
+  padding-bottom: 60px;
   background-color: #1b1b1b;
 }
 
 .live-stream-card {
   display: grid;
-  margin: 0px;
-  border-top: 2px solid rgba(73, 73, 73, 0.203);
+  padding-top: 4px;
+  margin-bottom: 4px;
   grid-template-rows: 1fr;
+  border-top: 2px solid rgba(73, 73, 73, 0.203);
   grid-template-columns: 0.3fr 2.5fr 0.3fr ;
   grid-template-areas: 
    "pfp details isLive viewers ";
