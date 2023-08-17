@@ -14,7 +14,7 @@ const LiveCardSkeleton = ({ props }) => {
         </div>
         <div style={{ zIndex: "2", marginTop: "6px", marginLeft: "2px", marginRight: "10px", marginBottom: "6px" }}>
           <p style={{ zIndex: "2", margin: "0px", width:"140px", paddingBottom: "4px" }}><Skeleton/></p>
-          <p style={{ zIndex: "2",  margin:"0px", marginBottom: "0px", marginRight: "10px"}}><Skeleton/></p>
+          <p style={{ zIndex: "2",  margin:"0px", marginBottom: "0px", marginRight: "5px"}}><Skeleton/></p>
         </div>
         <div className="viewers-skeleton">
           <Skeleton />
