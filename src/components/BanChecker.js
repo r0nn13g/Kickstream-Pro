@@ -23,7 +23,7 @@ const BanChecker = () => {
     fetchData(streamerName);
     setStreamerName("");
   };
-
+  
   return (
     <div className="ban-checker">
       <div className="ban-checker-input-wrapper">
@@ -33,32 +33,36 @@ const BanChecker = () => {
             value={streamerName}
             onChange={(event) => setStreamerName(event.target.value)}
             placeholder="Enter streamer's name"
-          />
+            />
           <button type="submit">Search</button>
         </form>
       </div>
       {data.map((item, index) => {
         let pfp = ""; // Initialize with an empty string
         let streamer = ""; // Initialize with an empty string
-        let isBanned = false; // Initialize as false
-
+        let banStatus = "";
+        
         console.log(item[0]);
         if (!item[0]) {
           console.log("This streamer does not exist in our system yet");
           return null; // Return null if the streamer doesn't exist
-        } else {
-          isBanned = item[0].is_banned;
         }
-        
         if (item[0].user) {
           pfp = item[0].user.profile_pic; // Use item.user.profile_pic
           streamer = item[0].user.username; // Use item.user.username
+        }
+        
+        if(item[0].is_banned === false){
+          banStatus = "Not Banned"
+        } else {
+          banStatus = "Banned"
         }
 
         return (
           <div key={index}>
             <img src={pfp} alt="Profile" />
-            <p>{`${streamer}, has been banned: ${isBanned}`}</p>
+            <h1>{`${streamer}`}</h1>
+            <h4>Account Status:  {banStatus}</h4>
           </div>
         );
       })}
