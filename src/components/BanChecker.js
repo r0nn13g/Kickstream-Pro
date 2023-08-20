@@ -30,7 +30,15 @@ const BanChecker = () => {
   
   return(
     <div className="ban-checker-container">
-
+        <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    value={streamerName}
+                    onChange={(event) => setStreamerName(event.target.value)}
+                    placeholder="Enter streamer's name"
+                />
+                <button type="submit">Search</button>
+            </form>
     </div>
   )
 };
