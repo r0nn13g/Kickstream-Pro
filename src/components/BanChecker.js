@@ -53,16 +53,27 @@ const BanChecker = () => {
         }
         
         if(item[0].is_banned === false){
-          banStatus = "Not Banned"
-        } else {
-          banStatus = "Banned"
+          banStatus = "ACTIVE ✅"
+        } else if(item[0].is_banned === true){
+          banStatus = "BANNED ❌"
         }
 
         return (
-          <div key={index}>
-            <img src={pfp} alt="Profile" />
-            <h1>{`${streamer}`}</h1>
-            <h4>Account Status:  {banStatus}</h4>
+          <div className="streamer-ban-details" key={index}>
+            <div className="image-wrapper"> 
+            <img id="pfp" src={pfp} alt="Profile" />
+            </div>
+            <div className="streamername-wrapper">
+            <h3 id="streamer_name">{`${streamer}`}</h3>
+            </div>
+            <div className="ban_status_wrapper">
+            <h5
+                style={{ color: item[0].is_banned ? "red" : "var(--gray-elements)" }}
+                id="ban-status"
+              >
+                {banStatus}
+              </h5>
+              </div>
           </div>
         );
       })}

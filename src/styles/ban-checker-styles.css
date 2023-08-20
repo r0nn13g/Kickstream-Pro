@@ -1,4 +1,54 @@
 .ban-checker-wrapper{
   text-align: center;
-  width: 99.8%
+}
+
+.ban-checker-input-wrapper{
+  margin-top: 150px;
+}
+
+.ban-checker-input-wrapper input{
+  color:black;
+  background-color: var(--green-elements);
+}
+
+.ban-checker-input-wrapper button{
+  margin: 10px;
+  color:black;
+  background-color: rgb(139, 139, 139);
+}
+
+.streamer-ban-details {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr(3);
+  grid-template-areas:
+  "pfp name status";
+  align-items: center;
+}
+
+.image-wrapper{
+  grid-area: pfp;
+}
+
+#pfp{
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.streanername-wrapper{
+  grid-area: name;
+}
+
+#streamer_name{
+  color: var(--green-elements);
+}
+
+.ban_status_wrapper{
+  grid-area: status;
+}
+#ban-status{
+  margin-right: 10px;
+  align-items: center;
 }
