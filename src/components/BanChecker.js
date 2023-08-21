@@ -27,6 +27,8 @@ const BanChecker = () => {
   return (
     <div className="ban-checker">
       <div className="ban-checker-input-wrapper">
+        <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>BAN HAMMER 🔨</h3>
+        <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>check the account status of any kick channel.</h4>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -68,7 +70,7 @@ const BanChecker = () => {
             </div>
             <div className="ban_status_wrapper">
             <h5
-                style={{ color: item[0].is_banned ? "red" : "var(--gray-elements)" }}
+                style={{ color: item[0].is_banned ? "red" : "var(--green-elements)" }}
                 id="ban-status"
               >
                 {banStatus}

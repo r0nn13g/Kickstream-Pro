@@ -3,22 +3,27 @@
 }
 
 .ban-checker-input-wrapper{
-  margin-top: 100px;
+  text-align: left;
+  margin: 20px;
 }
 
 .ban-checker-input-wrapper input{
-  color:black;
-  background-color: var(--white-elements);
+  margin-top: 10px;
+  color:white;
+  background-color: var(--gray-elements);
+  border-radius: 5px;
 }
 
 .ban-checker-input-wrapper button{
   margin: 10px;
-  color:black;
-  background-color: rgb(139, 139, 139);
+  color: var(--green-elements);
+  background-color: var(--gray-elements);
 }
 
 .streamer-ban-details {
-  margin-top: 100px;
+  background-color: rgb(41, 41, 41);
+  margin-top: 60px;
+  margin:20px;
   display: grid;
   grid-template-columns: 1fr(3);
   grid-template-areas:
@@ -26,12 +31,12 @@
   align-items: center;
 }
 
-.image-wrapper{
+.image-wrapper{ 
+  margin-top: 4px;
   grid-area: pfp;
 }
 
 #pfp{
-  margin-left: 10px;
   height: 50px;
   width: 50px;
   border-radius: 50%;
@@ -42,13 +47,12 @@
 }
 
 #streamer_name{
-  color: var(--green-elements);
+  color: var(--gray-elements);
 }
 
 .ban_status_wrapper{
   grid-area: status;
 }
 #ban-status{
-  margin-right: 10px;
   align-items: center;
 }
