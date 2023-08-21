@@ -22,6 +22,7 @@
 
 .streamer-ban-details {
   background-color: rgb(41, 41, 41);
+  border-radius: 6px;
   margin-top: 60px;
   margin:20px;
   display: grid;
