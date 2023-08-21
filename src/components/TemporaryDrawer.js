@@ -46,13 +46,18 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/kick" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <b>Contact +</b>
+              <Link to="/checker" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Checker +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <b>Support +</b>
+              </Link>
+          </ListItem>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
+              <Link to="/contact" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Contact +</b>
               </Link>
           </ListItem>
       </List>
