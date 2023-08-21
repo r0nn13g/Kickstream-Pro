@@ -8,7 +8,7 @@
 
 .ban-checker-input-wrapper input{
   color:black;
-  background-color: var(--green-elements);
+  background-color: var(--white-elements);
 }
 
 .ban-checker-input-wrapper button{

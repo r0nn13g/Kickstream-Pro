@@ -1,7 +1,6 @@
 import {React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/live-styles.css';
-// import '../styles/create-channels.css';
 import axios from "axios";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
