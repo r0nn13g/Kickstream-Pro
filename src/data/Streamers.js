@@ -6,7 +6,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/bongbong_irl',
     'https://kick.com/api/v1/channels/burgerplanet',
     'https://kick.com/api/v1/channels/brucedropemoff',
-    // 'https://kick.com/api/v1/channels/cristravels',
+    'https://kick.com/api/v1/channels/cristravels',
     'https://kick.com/api/v1/channels/deepak',
     'https://kick.com/api/v1/channels/eddie',
     'https://kick.com/api/v1/channels/garydavid',
