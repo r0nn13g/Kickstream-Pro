@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
 // import GitHubIcon from '@mui/icons-material/GitHub';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+// import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
@@ -41,7 +42,7 @@ const Navbar = () => {
             <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="mobile-nav-item" to={'/checker'} path='relative' style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
+            <HowToRegIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <RedeemIcon style={{ fill: 'var(--gray-elements)' }}/>
