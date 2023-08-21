@@ -1,9 +1,11 @@
 import '../styles/support-styles.css'
+import AdTicker from '../components/AdTicker.js';
 import Footer from '../components/Footer.js'
 
 const Support = () => {
   return(
     <>
+    <AdTicker />
     <div className="support-details-container">
       <div className='crypto-container'> 
         <div className='eth-container'>

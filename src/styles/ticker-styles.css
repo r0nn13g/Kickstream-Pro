@@ -1,21 +1,45 @@
 .ticker{
   margin-top: 47px;
+  background-color: var(--blue-elements);
 }
 
 .styles_title__n7qOv{
   font-weight: 600;
   margin: 0px;
-  color: var(--gray-elements);
-  
+  color: var(--white-elements);
+  background-color: var(--blue-elements)
 }
 
 .styles_tickerItem__Vj57z:hover {
   text-decoration: none;
+  background-color: var(--blue-elements)
 }
+
+.styles_newsWrapper__KvsKt{
+  background-color: var(--blue-elements)
+
+}
+
+.styles_newsticker__py7eW{
+  background-color: var(--blue-elements)
+
+}
+
+.styles_tickerItem__Vj57z{
+  background-color: var(--blue-elements)
+
+}
+
+.styles_ticker__-0UvZ {
+  background-color: var(--blue-elements)
+
+}
+
 
 @media (max-width: 820px){
   .ticker{
     margin-top: 0px;
+    background-color: var(--blue-elements)
   }
   
 }
@@ -24,6 +48,7 @@
 @media (max-width: 620px){
   .ticker{
     margin-top: 0px;
+    background-color: var(--blue-elements)
   }
   
 }
@@ -32,6 +57,7 @@
 @media (max-width: 420px){
   .ticker{
     margin-top: 0px;
+    background-color: var(--blue-elements)
   }
   
 }
@@ -40,6 +66,7 @@
 @media (max-width: 220px){
   .ticker{
     margin-top: 0px;
+    background-color: var(--blue-elements)
   }
   
 }
