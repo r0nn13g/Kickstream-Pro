@@ -54,12 +54,8 @@ const BanChecker = () => {
           streamer = item[0].user.username; // Use item.user.username
         }
         
-        if(item[0].is_banned === false){
-          banStatus = "ACTIVE ✅"
-        } else if(item[0].is_banned === true){
-          banStatus = "BANNED ❌"
-        }
-
+        banStatus = item[0].is_banned ? "BANNED ❌" : "ACTIVE ✅";
+        
         return (
           <div className="streamer-ban-details" key={index}>
             <div className="image-wrapper"> 
