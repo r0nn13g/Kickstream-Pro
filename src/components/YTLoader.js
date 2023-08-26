@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/video-styles.css';
 
 const YTLoader = () => {
-    const [searchStr, setSearchStr] = useState("");
     const [data, setData] = useState([]);
 
-    const handleResult = (e) => {
-        e.preventDefault();
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${searchStr}&type=video&key=${process.env.REACT_APP_API_KEY}`)
-        .then(res => res.json())
-        .then((ytData) => {
-            setData(ytData.items);
-            if (searchStr) {
-                setSearchStr("");
-            }
-        });
-    }
-
-    const handleSearch = (e) => {
-        setSearchStr(e.target.value);
-    }
+    useEffect(() => {
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
+            .then((response) => {
+                setData(response.data.items);
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
 
     const youtubeDataArr = data.map((video) => (
         <div key={video.id.videoId} className="video-thumbnail-wrapper">
-            <Link to={"videos/" + video.id.videoId}>
+            <Link to={`/videos/${video.id.videoId}`}>
                 <img id="video-thumbnails" src={video.snippet.thumbnails.high.url} alt="youtube thumbnail" />
                 <br />
+                <h4 style={{ color: "var(--green-elements" }} id="video-title">{video.snippet.channelTitle}</h4>
                 <h4 id="video-title">{video.snippet.title}</h4>
             </Link>
         </div>
@@ -34,10 +29,6 @@ const YTLoader = () => {
 
     return (
         <div>
-            <form onSubmit={handleResult} id="search-bar">
-                <input type="text" id="text-input" onChange={handleSearch} value={searchStr} />
-                <button type="submit" id="search-button"><strong>Search</strong></button>
-            </form>
             <div className="videos">
                 {youtubeDataArr}
             </div>
