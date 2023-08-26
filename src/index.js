@@ -9,6 +9,7 @@ import ShowTrending from './pages/ShowTrending.js';
 import CreateChannels from './pages/CreateChannels.js';
 import ShowChecker from './pages/ShowChecker.js';
 import Support from './pages/Support.js';
+import DisplayVideo from './pages/DisplayVideo';
 import Live from './pages/ShowLive.js';
 
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
       <Routes>
         <Route path='*' element={<FourOhFour/>}/>
         <Route path='/' element={<Home />}/>
-        <Route path="/trending" element={<ShowTrending />}></Route>
+        <Route path="/videos/:id" element={DisplayVideo}/>
+        <Route path="/trending" element={<ShowTrending />}/>
         <Route path="/create" element={<CreateChannels />}/>
         <Route path='/checker' element={<ShowChecker />}/>
         <Route path="/support" element={<Support/>}/>

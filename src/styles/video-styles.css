@@ -1,0 +1,84 @@
+h4{
+color: white;
+}
+
+a{
+  text-decoration: none;
+  color: var(--gray-elements);
+}
+
+#yt-logo {
+  display:grid;
+  width: 50px;
+}
+
+nav {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(255, 30, 34);
+  font-size: 20px;
+}
+
+nav a{
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  transition: .5s;
+}
+
+nav a:hover{
+  text-align: center;
+  background-color: rgb(58, 58, 58);
+  color: rgb(255, 255, 255);
+}
+
+#search-bar {
+    text-align: center;
+}
+
+#text-input {
+  width: 400px;
+  height: 30px;
+  margin-top: 50px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+#text-input:focus {
+  outline: none;
+}
+
+#search-button {
+  margin: 10px;
+  height: 35px;
+  width: 100px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.video-card {
+  margin: 40px;
+  text-align: center;
+}
+
+.videos {
+  padding: 50px;
+}
+
+.videos div {
+  margin: 5px;
+}
+
+.video-thumbnails {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 0px;
+}

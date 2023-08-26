@@ -98,7 +98,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
       <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
         <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? "High to Low" : "Low to High"}
+          {sortHighToLow ? "High - Low" : "Low - High"}
         </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}

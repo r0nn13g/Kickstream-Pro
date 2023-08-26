@@ -21,6 +21,7 @@
     "react-loading-skeleton": "^3.3.1",
     "react-resize-detector": "^9.1.0",
     "react-scripts": "5.0.1",
+    "react-youtube": "^10.1.0",
     "styled-components": "^6.0.5",
     "web-vitals": "^2.1.4"
   },
@@ -49,10 +50,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@craco/craco": "^7.1.0",
     "craco-alias": "^3.0.1",
     "flow-babel-webpack-plugin": "^1.1.1",
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "react-router-dom": "^6.13.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
