@@ -118,7 +118,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
                     : null;
                   viewerCount = rawViewers
                     ? rawViewers.toLocaleString("en-US")
-                    : null;
+                    : "Live";
                   streamTitle = item.livestream
                     ? item.livestream.session_title
                     : previousStreamTitle;
