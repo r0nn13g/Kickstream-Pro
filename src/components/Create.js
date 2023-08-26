@@ -4,8 +4,6 @@ import '../styles/live-styles.css';
 import axios from "axios";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import CancelIcon from '@mui/icons-material/Cancel';
 
 let pfp;
@@ -108,32 +106,19 @@ const Create = () => {
           <div className="create">
              {/* <h5 id="create-header">Create a personalized watch list</h5> */}
 
-              <div className="create-input-container">
-              <form onSubmit={handleSubmit}>
-                <Box
-                className='box'
-                  component="div"
-                  sx={{
-                    "& > :not(style)": { m: 1, width: '99%', maxWidth: '100ch', margin: '5px' },
-                    color: 'var(--white-elements)',
-                  }}
-                  noValidate
-                  autoComplete="off"
-                >
-                  <TextField
-                  color="success" focused
-                  sx={{ input: { color: 'var(--green-elements)' } }}
-                    className="textfield"
-                    id="outlined-basic"
-                    label="add channel"
-                    variant="outlined"
-                    value={streamerName}
-                    onChange={(e) => setStreamerName(e.target.value)}
-                    inputProps={{ style: { color: 'white'} }}
-                  />
-                </Box>
-              </form>
-        </div>
+             <div className="create-input-wrapper">
+             <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>CREATE ⚡️</h3>
+            <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>Create your own watch list.</h4>
+          <form onSubmit={handleSubmit}>
+            <input
+            type="text"
+            value={streamerName}
+            onChange={(event) => setStreamerName(event.target.value)}
+            placeholder="Enter streamer's name"
+            />
+          <button type="submit">Search</button>
+        </form>
+      </div>
                      
                       {data.map((item,index) => {
                         //if verified object exists than a channel is verified and the verified variable is set to true

@@ -6,8 +6,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import ListIcon from '@mui/icons-material/List';
 import '../styles/accordian-styles.css';
 
-export default function BasicAccordionCreate() {
+export default function BanAccordion() {
   return (
+    <div>
       <Accordion sx={{ 
     backgroundColor: '#2a2a2a',
     color: 'var(--white-elements)'
@@ -17,19 +18,19 @@ export default function BasicAccordionCreate() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-         Shortcuts
+          How it works
+          {/* <ListIcon/> */}
         </AccordionSummary>
         <AccordionDetails>
               <li id="accordian-text">
-                Click profile photo to get directed to a streamers channel.
+                Enter a streamers channel to see if their account is active or banned.
               </li>
+              <br></br>
               <li id="accordian-text">
-                Click title or viewers to open chatroom in a second window.                
-              </li> 
-              <li id="accordian-text">
-              search for a kick live stream and add them to your watch list.
-              </li>
+                This tool only works with Kick streamers that have gone live atleast once and uploaded emotes.          
+              </li>  
         </AccordionDetails>
       </Accordion>
+    </div>
   );
 }

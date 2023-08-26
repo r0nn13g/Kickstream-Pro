@@ -22,10 +22,24 @@
   color: var(--green-elements);
 }
 
-.create-input-container{
-  width: 99%;
-  /* border: 2px solid white; */
-  margin-bottom: 20px;
+.create-input-wrapper{
+    text-align: left;
+  margin: 20px;
+}
+
+.create-input-wrapper input{
+  margin-top: 10px;
+  color:white;
+  background-color: var(--gray-elements);
+  border-radius: 5px;
+}
+
+
+.create-input-wrapper button{
+  border-radius: 5px;
+  margin: 10px;
+  color: var(--green-elements);
+  background-color: var(--gray-elements);
 }
 
 .textfield{

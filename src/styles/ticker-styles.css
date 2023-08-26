@@ -4,7 +4,8 @@
 }
 
 .styles_title__n7qOv{
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 10px;
   margin: 0px;
   color: var(--white-elements);
   background-color: var(--blue-elements)
@@ -27,7 +28,9 @@
 
 .styles_tickerItem__Vj57z{
   background-color: var(--blue-elements)
-
+}
+.styles_tickerItem__Vj57z:hover {
+  background-color: var(--blue-elements)
 }
 
 .styles_ticker__-0UvZ {

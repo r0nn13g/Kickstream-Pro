@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "../styles/ban-checker-styles.css";
+import BanAccordion from "./BanAccordian";
 
 const BanChecker = () => {
   const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ const BanChecker = () => {
   
   return (
     <div className="ban-checker">
+      <BanAccordion />
       <div className="ban-checker-input-wrapper">
         <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>BAN HAMMER 🔨</h3>
         <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>check the account status of any kick channel.</h4>

@@ -16,6 +16,7 @@
 
 .ban-checker-input-wrapper button{
   margin: 10px;
+  border-radius: 5px;
   color: var(--green-elements);
   background-color: var(--gray-elements);
 }
