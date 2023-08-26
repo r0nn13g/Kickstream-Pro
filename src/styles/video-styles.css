@@ -12,28 +12,6 @@ a{
   width: 50px;
 }
 
-nav {
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: rgb(255, 30, 34);
-  font-size: 20px;
-}
-
-nav a{
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  padding: 20px;
-  transition: .5s;
-}
-
-nav a:hover{
-  text-align: center;
-  background-color: rgb(58, 58, 58);
-  color: rgb(255, 255, 255);
-}
-
 #search-bar {
     text-align: center;
 }
