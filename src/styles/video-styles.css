@@ -10,46 +10,21 @@ a{
   color: var(--gray-elements);
 }
 
-#search-bar {
-    text-align: center;
-}
-
-#text-input {
-  width: 200px;
-  height: 30px;
-  margin-top: 50px;
-  border-radius: 5px;
-}
-
-#text-input:focus {
-  outline: none;
-}
-
-#search-button {
-  margin: 10px;
-  height: 35px;
-  width: 100px;
-  color: black;
-  background-color: var(--green-elements);
-  border: none;
-  border-radius: 5px;
-}
-
 .videos{
-  height: 100px;
-  width: 100px;
+  text-align: center;
 }
 
 .video-thumbnail-wrapper {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(1 , 1fr);
+  padding-bottom: 50px;
 }
 
 #video-thumbnails{
-  padding-top: 10px;
-  margin-left: 26px;
-  margin-right: 26px;
+  /* padding-top: 10px; */
+  margin-left: 12px;
+  margin-right: 12px;
   height: 250x;
-  width: 335px;
+  width: 350px;
 }
