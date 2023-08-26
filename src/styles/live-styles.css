@@ -147,7 +147,7 @@
   font-weight: 400;
   margin: 0px;
   margin-top:2px;
-  color:var(--gray-elements);
+  color:var(--graytwo-elements);
 }
 
 #title-offline {
@@ -163,7 +163,7 @@
   margin: 0px;
   margin-top: 2px;
   font-weight: 900;
-  color:var(--graytwo-elements);
+  color:var(--gray-elements);
  }
 
 .live-stream-details-container {
@@ -226,7 +226,7 @@
   margin-right: 4px;
   font-size: 10px;
   font-weight: 900;
-  color:var(--white-elements);
+  color:var(--green-elements);
 };
 
 .viewers{
