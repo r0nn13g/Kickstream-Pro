@@ -1,5 +1,8 @@
 h4{
-color: white;
+font-size: 14px;
+margin-left: 14px;
+margin-right: 14px;
+color: var(--gray-elements);
 }
 
 a{
@@ -7,21 +10,15 @@ a{
   color: var(--gray-elements);
 }
 
-#yt-logo {
-  display:grid;
-  width: 50px;
-}
-
 #search-bar {
     text-align: center;
 }
 
 #text-input {
-  width: 400px;
+  width: 200px;
   height: 30px;
   margin-top: 50px;
   border-radius: 5px;
-  border: 1px solid gray;
 }
 
 #text-input:focus {
@@ -32,31 +29,27 @@ a{
   margin: 10px;
   height: 35px;
   width: 100px;
-  background-color: red;
+  color: black;
+  background-color: var(--green-elements);
   border: none;
   border-radius: 5px;
-  color: white;
 }
 
-.video-card {
-  margin: 40px;
-  text-align: center;
+.videos{
+  height: 100px;
+  width: 100px;
 }
 
-.videos {
-  padding: 50px;
-}
-
-.videos div {
-  margin: 5px;
-}
-
-.video-thumbnails {
+.video-thumbnail-wrapper {
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 50px;
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-right: 0px;
+  grid-template-columns: repeat(1 , 1fr);
+}
+
+#video-thumbnails{
+  padding-top: 10px;
+  margin-left: 26px;
+  margin-right: 26px;
+  height: 250x;
+  width: 325px;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../styles/homepage-styles.css';
 import HomeAnimation from '../assets/LSS.gif';
-import MaterialCards from "../components/MaterialCards";
 import YTLoader from '../components/YTLoader.js';
 import Footer from "../components/Footer";
 
@@ -17,7 +16,6 @@ const Home = () => {
           </Link>
         </div>
           <YTLoader />
-          <MaterialCards/>
           <Footer/>
     </div>
   )

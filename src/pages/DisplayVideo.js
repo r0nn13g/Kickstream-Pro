@@ -10,10 +10,8 @@ class DisplayVideo extends Component{
     }
     render(){
         return(
-            <div className="video-card">
                 <div className="videos">
                 <div><YouTube videoId={this.props.match.params.id} opts={{ height: '690', width: '1040' }} /></div>
-                </div>
                 </div>
         )
     }
