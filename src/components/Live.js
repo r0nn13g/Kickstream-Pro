@@ -32,6 +32,8 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
     const [showLive, setShowLive] = useState(true); // State variable to track mode (live or offline)
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
+    const [sortHighToLow, setSortHighToLow] = useState(true);
+  
 
     useEffect(() => {
       const fetchData = async () => {
@@ -52,11 +54,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
             (response) => response.livestream === null
           );
 
-          const sortedOnlineStreamers = onlineStreamers.sort(
-            (a, b) => b.livestream.viewer_count - a.livestream.viewer_count
-          );
-
-          setOnlineStreamers(sortedOnlineStreamers);
+          setOnlineStreamers(onlineStreamers);
           setOfflineStreamers(offlineStreamers);
           setLoading(false);
         } catch (error) {
@@ -78,15 +76,30 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
       const refreshInterval = 50000;
       fetchData();
       setInterval(fetchData, refreshInterval);
-    }, []);
+    }, [sortHighToLow]);
     
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
     };
 
+    const toggleSortOrder = () => {
+      setSortHighToLow((prevSortOrder) => !prevSortOrder);
+    };
+
+    const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
+      if (sortHighToLow) {
+        return b.livestream.viewer_count - a.livestream.viewer_count;
+      } else {
+        return a.livestream.viewer_count - b.livestream.viewer_count;
+      }
+    });
+
     return (
       <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
+        <button id="sort-order-switch" onClick={toggleSortOrder}>
+          {sortHighToLow ? "High to Low" : "Low to High"}
+        </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
@@ -98,7 +111,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
             {showLive ? (
               // Display online streamers
               <>
-                {onlineStreamers.map((item, index) => {
+                {sortedOnlineStreamers.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
 

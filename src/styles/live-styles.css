@@ -38,6 +38,25 @@
   background-color: var(--green-elements);
 }
 
+#sort-order-switch{
+    background-color: rgb(49, 49, 49);
+  color: var(--green-elements);
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  /* padding: 5px; */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#sort-order-switch:active{
+  color: rgb(49, 49, 49);
+  background-color: var(--green-elements);
+}
+
 .live-stream-card-container {
   position: relative;
   min-height: 98.5%;
