@@ -9,6 +9,7 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
+import KickLogo from '../assets/kickster.png';
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -33,7 +34,7 @@ const Navbar = () => {
           {isMobile ? (
             <>
            <Link id="mobile-nav-item" to={'/'} path='relative'>
-            <img id="home-mobile-logo" src={'https://i.imgur.com/fExb69W.png'} alt="kickster"/>
+            <img id="home-mobile-logo" src={KickLogo} alt="kickster"/>
           </Link>
           <Link id="mobile-nav-item" to={'/live'} path='relative' style={{textDecoration: 'none'}}>
             <LiveTvIcon style={{ fill: 'var(--gray-elements)' }}/>

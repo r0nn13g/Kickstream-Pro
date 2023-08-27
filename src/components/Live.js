@@ -6,6 +6,7 @@ import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
+import verifiedBadge from "../assets/verified_badge.png";
 
   let pfp;
   let pfpLive;
@@ -14,7 +15,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
   let isLive;
   let isVerified;
   let verified;
-  let verifiedBadge = 'https://i.imgur.com/quUBzZJ.png';
+  // let verifiedBadge = 'https://i.imgur.com/quUBzZJ.png';
   let verifiedLive;
   let channel;
   let channelLive;
