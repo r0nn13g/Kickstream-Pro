@@ -2,7 +2,8 @@
 font-size: 14px;
 margin-left: 14px;
 margin-right: 14px;
-color: var(--gray-elements);
+color: var(--green-elements);
+background-color: var(--gray-elements);
 }
 
 a{
@@ -19,9 +20,6 @@ a{
   text-align: center;
   margin: 10px;
   margin-top: 150px;
-  /* margin-left: 20px; */
-  /* margin-right: 10px; */
-
 }
 
 .video-thumbnail-wrapper {
@@ -29,6 +27,7 @@ a{
   text-align: center;
   padding-bottom: 50px;
   grid-template-columns: repeat(1 , 1fr);
+  background-image:url("https://media3.giphy.com/media/l41K3o5TzvmhZwd4A/giphy.gif?cid=6c09b952n6rfjlnb3qi71k89v7f1cn7rt5p7mb1um61jugw6&ep=v1_gifs_search&rid=giphy.gif&ct=g");  
 }
 
 .youtube-video{
@@ -48,6 +47,10 @@ a{
   margin-right: 10px;
   max-width: 95%;
   height: auto;
+}
+
+.videos-wrapper{
+  background-image:url("https://media3.giphy.com/media/l41K3o5TzvmhZwd4A/giphy.gif?cid=6c09b952n6rfjlnb3qi71k89v7f1cn7rt5p7mb1um61jugw6&ep=v1_gifs_search&rid=giphy.gif&ct=g");  
 }
 
 @media (min-width: 820px) {

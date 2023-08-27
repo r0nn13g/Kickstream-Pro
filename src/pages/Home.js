@@ -8,10 +8,9 @@ import AdTicker from '../components/AdTicker.js';
 
 const Home = () => {  
   return(
-    <>
+    <div className="'homepage-container'">
       <AdTicker />
-    <div className='homepage-container'>
-          <div className="home-text">
+      <div className="home-text">
           <Link to={'/live'}>
             <img id="home-animation" src={kicksterLogo} alt="kickster"/>
             <div></div>
@@ -21,7 +20,6 @@ const Home = () => {
           <YTLoader />
           <Footer/>
     </div>
-    </>
   )
 };
 

@@ -26,8 +26,8 @@ const YTLoader = () => {
     ));
     
     return (
-        <div>
-            <h6 style={{color: "var(--green-elements)", textAlign: "center"}}>Degen news provided by @Kick_Clipz</h6>
+        <div className='videos-wrapper'>
+            <h6 style={{color: "var(--green-elements)", backgroundColor: "var(--gray-elements)", fontWeight: "900", textAlign: "center", margin: "0px"}}>Degen news provided by @Kick_Clipz</h6>
             <div className="videos">
                 {youtubeDataArr}
             </div>
