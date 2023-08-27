@@ -7,21 +7,22 @@ body{
 }
 
 .home-text{
-  padding-top: 25px;
+  padding-top: 50px;
   margin: 10px;
   text-align: center;
 }
 
 #home-animation{
-  height: 300px
+  filter: opacity(80%);
+  height: 150px;
+  animation: rotation 7s infinite linear; 
+  animation-play-state: running;
 }
 
 #home-page-logo{
-  width: 300px; 
-  height: 300px;
+  width: 100px; 
+  height: 100px;
   background-size: cover;
-  animation: rotation 7s infinite linear; 
-  animation-play-state: running;
 }
 
 #home-page-logo:hover {
@@ -29,7 +30,7 @@ body{
 }
 
 #home-enter-logo{
-  margin-top: 30px;
+  margin-top: 60px;
   height: 75px;
 }
 
@@ -42,4 +43,23 @@ body{
 
 .css-46bh2p-MuiCardContent-root {
   background-color: var(--green-elements);
+}
+
+
+@media (min-width: 420px) {
+
+  .home-text{
+    display: grid;
+    text-align: center;
+    background-image:url("https://media3.giphy.com/media/l41K3o5TzvmhZwd4A/giphy.gif?cid=6c09b952n6rfjlnb3qi71k89v7f1cn7rt5p7mb1um61jugw6&ep=v1_gifs_search&rid=giphy.gif&ct=g");  
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

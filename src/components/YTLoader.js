@@ -21,15 +21,14 @@ const YTLoader = () => {
             <Link to={`/videos/${video.id.videoId}`}>
                 <img id="video-thumbnails" src={video.snippet.thumbnails.high.url} alt="youtube thumbnail" />
                 <h4 id="video-title">{video.snippet.title}</h4>
-                {/* <h4 style={{ color: "var(--green-elements", marginTop:"0px"}} id="video-title">{video.snippet.channelTitle}</h4> */}
             </Link>
         </div>
     ));
     
     return (
         <div>
-            <div className="videos">
             <h6 style={{color: "var(--green-elements)", textAlign: "center"}}>Degen news provided by @Kick_Clipz</h6>
+            <div className="videos">
                 {youtubeDataArr}
             </div>
         </div>
