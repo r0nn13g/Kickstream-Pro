@@ -12,6 +12,11 @@ a{
 
 .videos{
   text-align: center;
+  margin-top: 60px;
+}
+
+.video-container{
+  margin-top: 200px;
 }
 
 .video-thumbnail-wrapper {
