@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import '../styles/homepage-styles.css';
 import YTLoader from '../components/YTLoader.js';
 import Footer from "../components/Footer";
-import kicksterLogo from "../assets/kicksterlogo.png";
+import kicksterLogo from "../assets/LSS.gif";
 import AdTicker from '../components/AdTicker.js';
 
 const Home = () => {  

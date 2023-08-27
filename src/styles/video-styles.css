@@ -1,14 +1,13 @@
 #video-title{
 font-size: 14px;
-margin-left: 14px;
-margin-right: 14px;
+margin-left: 20px;
+margin-right: 20px;
 color: var(--green-elements);
-background-color: var(--gray-elements);
+background-color:  #1b1b1b;;
 }
 
 a{
   text-decoration: none;
-  color: var(--gray-elements);
 }
 
 .videos{
@@ -27,7 +26,6 @@ a{
   text-align: center;
   padding-bottom: 50px;
   grid-template-columns: repeat(1 , 1fr);
-  background-image:url("https://media3.giphy.com/media/l41K3o5TzvmhZwd4A/giphy.gif?cid=6c09b952n6rfjlnb3qi71k89v7f1cn7rt5p7mb1um61jugw6&ep=v1_gifs_search&rid=giphy.gif&ct=g");  
 }
 
 .youtube-video{
