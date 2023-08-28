@@ -15,7 +15,6 @@ import verifiedBadge from "../assets/verified_badge.png";
   let isLive;
   let isVerified;
   let verified;
-  // let verifiedBadge = 'https://i.imgur.com/quUBzZJ.png';
   let verifiedLive;
   let channel;
   let channelLive;
@@ -75,7 +74,7 @@ import verifiedBadge from "../assets/verified_badge.png";
       };
 
       const refreshInterval = 50000;
-      fetchData();
+      // fetchData();
       setInterval(fetchData, refreshInterval);
     }, [sortHighToLow]);
     

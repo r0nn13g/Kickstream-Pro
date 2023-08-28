@@ -12,24 +12,24 @@ a{
 
 .videos{
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .video-container{
   text-align: center;
   margin: 10px;
-  margin-top: 150px;
+  /* margin-top: 100px; */
 }
 
 .video-thumbnail-wrapper {
   display: grid;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 5px;
   grid-template-columns: repeat(1 , 1fr);
 }
 
 .youtube-video{
-  margin-top: 60px;
+  margin-top: 220px;
   text-align: center;
   max-width: 100%;
 }
@@ -41,16 +41,30 @@ a{
 }
 
 #video-thumbnails{
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 10px 0px 10px 0px;
   max-width: 95%;
   height: auto;
 }
 
 .videos-wrapper{
-  background-image:url("https://media3.giphy.com/media/l41K3o5TzvmhZwd4A/giphy.gif?cid=6c09b952n6rfjlnb3qi71k89v7f1cn7rt5p7mb1um61jugw6&ep=v1_gifs_search&rid=giphy.gif&ct=g");  
+  background-image:url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTlsaW9qZmNkZzhmNDRqeGE4emtkcHlyYm8xMTVtcWl2MHd6OWQwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XuBNdP9Pb7W9i/giphy.gif");
 }
 
+
+@media (min-width: 930px) {
+  .youtube-video{
+    margin:10px;
+    margin-top: 60px;
+  }
+  
+  #youtube-video{
+    text-align: center;
+    /* width: 98%;
+    height: 300px; */
+    width:100%;
+    height: 1000px;
+  }
+}
 @media (min-width: 820px) {
 
   .videos{
