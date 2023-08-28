@@ -74,7 +74,7 @@ import verifiedBadge from "../assets/verified_badge.png";
       };
 
       const refreshInterval = 50000;
-      // fetchData();
+      fetchData();
       setInterval(fetchData, refreshInterval);
     }, [sortHighToLow]);
     
