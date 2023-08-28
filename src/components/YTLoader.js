@@ -17,10 +17,10 @@ const YTLoader = () => {
     }, []);
 
     const youtubeDataArr = data.map((video) => (
-        <div key={video.id.videoId} className="video-thumbnail-wrapper">
-            <Link className='youtube-thumbnail-wrapper' to={`/videos/${video.id.videoId}`}>
-                <img id="video-thumbnails" src={video.snippet.thumbnails.high.url} alt="youtube thumbnail" />
-                <h4 id="video-title">{video.snippet.title}</h4>
+        <div key={video.id.videoId} className="youtube-thumbnail-wrapper">
+            <Link className='youtube-thumbnail-container' to={`/videos/${video.id.videoId}`}>
+                <img id="youtube-thumbnails" src={video.snippet.thumbnails.high.url} alt="youtube thumbnail" />
+                <h4 id="youtube-thumbnail-title">{video.snippet.title}</h4>
             </Link>
         </div>
     ));
