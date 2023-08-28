@@ -40,7 +40,7 @@ a{
 }
 
 #video-thumbnails{
-  border: solid 3px var(--green-elements);
+  border: solid 3px var(--gray-elements);
   margin: 0px 10px 0px 10px;
   max-width: 90%;
   height: auto;
