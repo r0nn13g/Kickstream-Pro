@@ -7,7 +7,7 @@ const YTLoader = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setData(response.data.items);
             })
@@ -18,7 +18,7 @@ const YTLoader = () => {
 
     const youtubeDataArr = data.map((video) => (
         <div key={video.id.videoId} className="video-thumbnail-wrapper">
-            <Link to={`/videos/${video.id.videoId}`}>
+            <Link className='youtube-thumbnail-wrapper' to={`/videos/${video.id.videoId}`}>
                 <img id="video-thumbnails" src={video.snippet.thumbnails.high.url} alt="youtube thumbnail" />
                 <h4 id="video-title">{video.snippet.title}</h4>
             </Link>

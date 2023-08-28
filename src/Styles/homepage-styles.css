@@ -12,6 +12,7 @@
   height: 200px;
   animation: rotation 7s infinite linear; 
   animation-play-state: running;
+  margin-bottom: 50px;
 }
 
 #home-page-logo{

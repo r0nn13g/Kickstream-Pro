@@ -14,7 +14,7 @@ const Home = () => {
           <Link to={'/live'}>
             <img id="home-animation" src={kicksterLogo} alt="kickster"/>
             <div></div>
-            <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/>
+            {/* <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/> */}
           </Link>
         </div>
           <YTLoader />
