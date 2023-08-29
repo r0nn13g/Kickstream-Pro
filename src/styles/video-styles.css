@@ -1,7 +1,7 @@
 .youtube-thumbnail-wrapper {
   display: grid;
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
   grid-template-columns: repeat(1 , 1fr);
 }
 
@@ -44,9 +44,9 @@ a{
 }
 
 .youtube-video-wrapper{
-   background-image:url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTlsaW9qZmNkZzhmNDRqeGE4emtkcHlyYm8xMTVtcWl2MHd6OWQwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XuBNdP9Pb7W9i/giphy.gif");
-   padding-bottom: 300px ;
-  }
+  background-image:url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTlsaW9qZmNkZzhmNDRqeGE4emtkcHlyYm8xMTVtcWl2MHd6OWQwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XuBNdP9Pb7W9i/giphy.gif");
+  padding-bottom: 300px ;
+}
 
 .youtube-video-container{
   margin-top: 220px;
