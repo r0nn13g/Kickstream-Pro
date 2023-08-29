@@ -6,17 +6,27 @@
 }
 
 #youtube-thumbnails{
-  /* border: solid 3px var(--gray-elements); */
-  margin: 0px 10px 0px 10px;
-  max-width: 90%;
+  position: relative;
+  /* margin: 0px 10px 0px 10px; */
+  max-width: 98%;
   height: auto;
 }
+
+#youtube-thumbnails img{
+  position: relative;
+  margin: 10px;
+  max-width: 98%;
+  height: auto;
+}
+
 #youtube-thumbnail-title{
   font-size: 14px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 10px;
+  padding: 5px;
   color: var(--white-elements);
   background-color:  #1b1b1b;
+  max-width: 98%;
+  height: auto;
 }
 
 a{
