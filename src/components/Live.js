@@ -86,6 +86,12 @@ import verifiedBadge from "../assets/verified_badge.png";
       setSortHighToLow((prevSortOrder) => !prevSortOrder);
     };
 
+    const handleToCreate = () => {
+      return window.location.href = "/create";
+    }
+
+    
+
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
         return b.livestream.viewer_count - a.livestream.viewer_count;
@@ -97,6 +103,9 @@ import verifiedBadge from "../assets/verified_badge.png";
     return (
       <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
+        <button id="navigate-create" onClick={handleToCreate}>
+            Create
+        </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
           {sortHighToLow ? "High - Low" : "Low - High"}
         </button>

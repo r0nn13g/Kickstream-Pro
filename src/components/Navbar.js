@@ -48,9 +48,6 @@ const Navbar = () => {
           <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
             <RedeemIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          {/* <a id="mobile-nav-item" href= 'https://www.github.com/r0nn13g/kickster-for-kick-live-streaming.git' target="_blank"  rel="noreferrer" style={{textDecoration: 'none'}}>
-              <GitHubIcon style={{ fill: 'var(--gray-elements)' }}/>
-          </a> */}
             </>
           ) : (
             // Show the Temporary Drawer for larger screens
