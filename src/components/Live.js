@@ -105,7 +105,7 @@ import verifiedBadge from "../assets/verified_badge.png";
             Create
         </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? "Ascending" : "Descending"}
+          {sortHighToLow ? "Descending" : "Ascending"}
         </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
