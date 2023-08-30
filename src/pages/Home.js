@@ -12,7 +12,7 @@ const Home = () => {
       <AdTicker />
       <div className="home-text">
           <Link to={'/live'}>
-            <img id="home-animation" src={kicksterLogo} alt="kickster"/>
+            <img id="home-animation" src={kicksterLogo} alt="Live-streaming-solutions"/>
             <div></div>
             {/* <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/> */}
           </Link>

@@ -73,8 +73,7 @@ import verifiedBadge from "../assets/verified_badge.png";
         }
       };
 
-      fetchData(); 
- 
+      fetchData();
       setInterval(fetchData, 60000);
     }, [sortHighToLow]);
     
