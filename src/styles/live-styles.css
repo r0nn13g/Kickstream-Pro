@@ -71,8 +71,10 @@
 
 .live-header-banner-wrapper{
   display: flex;
+  position: sticky;
   align-items: center; 
   font-weight: 800;
+  border-bottom: 1px solid gray;
   /* margin-top: 10px; */
   padding-bottom: 10px;
 }

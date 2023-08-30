@@ -101,7 +101,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
     });
 
     const randomizeStreamers = () => {
-      const randomizedStreamers = [...onlineStreamers];
+      const randomizedStreamers = [...sortedOnlineStreamers];
       for (let i = randomizedStreamers.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [randomizedStreamers[i], randomizedStreamers[j]] = [
@@ -113,7 +113,6 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
       return randomizeStreamers;
     };
 
-        
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
@@ -130,12 +129,11 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
           {showLive ? "Online" : "Offline"}
         </button>
         </div>
-        {/* <b style={{color: "var(--white-elements)", textAlign: "left", marginLeft: "10px"}}>LIVE</b> */}
         <div className="live-header-banner-wrapper">
-        <div className="video-camera-icon-container">
-          <h3 id="live-header-container">LIVE</h3>
-           <VideoCameraFrontIcon style={{ fill: 'red'}}/>
-        </div>
+          <div className="video-camera-icon-container">
+            <h3 id="live-header-container">LIVE</h3>
+            <VideoCameraFrontIcon style={{ fill: 'red'}}/>
+          </div>
         </div>
         {isLoading ? (
           <LiveCardSkeleton />
