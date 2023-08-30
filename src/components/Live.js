@@ -73,9 +73,9 @@ import verifiedBadge from "../assets/verified_badge.png";
         }
       };
 
-      const refreshInterval = 50000;
-      fetchData();
-      setInterval(fetchData, refreshInterval);
+      fetchData(); 
+ 
+      setInterval(fetchData, 60000);
     }, [sortHighToLow]);
     
     const toggleLiveOffline = () => {
@@ -89,8 +89,6 @@ import verifiedBadge from "../assets/verified_badge.png";
     const handleToCreate = () => {
       return window.location.href = "/create";
     }
-
-    
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
@@ -107,7 +105,7 @@ import verifiedBadge from "../assets/verified_badge.png";
             Create
         </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? "High - Low" : "Low - High"}
+          {sortHighToLow ? "Ascending" : "Descending"}
         </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
