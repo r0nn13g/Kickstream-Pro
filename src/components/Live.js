@@ -31,9 +31,10 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
   const Live = () => {
     const [isLoading, setLoading] = useState(true);
     const [showLive, setShowLive] = useState(true); // State variable to track mode (live or offline)
+    const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
-    const [sortHighToLow, setSortHighToLow] = useState(true);
+    // const [randomOrder, setRandomOrder] = useState(true);
   
 
     useEffect(() => {
@@ -99,11 +100,24 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
       }
     });
 
+    const randomizeStreamers = () => {
+      const randomizedStreamers = [...onlineStreamers];
+      for (let i = randomizedStreamers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [randomizedStreamers[i], randomizedStreamers[j]] = [
+          randomizedStreamers[j],
+          randomizedStreamers[i],
+        ];
+      }
+      console.log(randomizedStreamers); 
+      return randomizeStreamers;
+    };
+
         
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        <button id="navigate-create" >
+        <button id="navigate-create" onClick={randomizeStreamers} >
             Shuffle
           </button>
         <button id="navigate-create" onClick={handleToCreate}>

@@ -9,7 +9,6 @@ const YTLoader = () => {
     useEffect(() => {
         axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
-                console.log(response.data.items)
                 setData(response.data.items);
             })
             .catch((error) => {
