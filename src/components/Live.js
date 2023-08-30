@@ -7,6 +7,7 @@ import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
   let pfp;
   let pfpLive;
@@ -73,7 +74,8 @@ import verifiedBadge from "../assets/verified_badge.png";
         }
       };
 
-      fetchData();
+      //FETCH DATA
+      // fetchData();
       setInterval(fetchData, 60000);
     }, [sortHighToLow]);
     
@@ -97,23 +99,34 @@ import verifiedBadge from "../assets/verified_badge.png";
       }
     });
 
-    return (
-      <div className="live-stream-card-container">
+        
+        return (
+          <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
+        <button id="navigate-create" >
+            Shuffle
+          </button>
         <button id="navigate-create" onClick={handleToCreate}>
             Create
         </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? "Descending" : "Ascending"}
+          {sortHighToLow ? "Ascending" : "Descending"}
         </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
         </div>
+        {/* <b style={{color: "var(--white-elements)", textAlign: "left", marginLeft: "10px"}}>LIVE</b> */}
+        <div className="live-header-banner-wrapper">
+        <div className="video-camera-icon-container">
+          <h3 id="live-header-container">LIVE</h3>
+           <VideoCameraFrontIcon style={{ fill: 'red'}}/>
+        </div>
+        </div>
         {isLoading ? (
           <LiveCardSkeleton />
-        ) : (
-          <>
+          ) : (
+            <>
             {showLive ? (
               // Display online streamers
               <>
@@ -138,7 +151,7 @@ import verifiedBadge from "../assets/verified_badge.png";
                   viewerCount = rawViewers
                     ? rawViewers.toLocaleString("en-US")
                     : "Live";
-                  streamTitle = item.livestream
+                    streamTitle = item.livestream
                     ? item.livestream.session_title
                     : previousStreamTitle;
 
@@ -168,7 +181,7 @@ import verifiedBadge from "../assets/verified_badge.png";
                       alt="verification-badge"
                     />
                   ) : null;
-
+                  
                   // if channel is partnered with kick and offline display verified badge with gray scale filter
                   verifiedLive =
                     !item.livestream && isVerified ? (

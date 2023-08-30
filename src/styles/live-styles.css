@@ -10,15 +10,16 @@
  /* button */
 .offline-online-switch-container{
   display: flex;
-  justify-content: flex-end;
-  margin: 0px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 #online-offline-switch{
+  display: flex;
+  align-items: center;
   background-color: rgb(49, 49, 49);
   color: var(--green-elements);
-  display: flex;
-  justify-content: flex-end;
   margin: 10px;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -67,6 +68,20 @@
   color: rgb(49, 49, 49);
   background-color: var(--green-elements);
 }
+
+.live-header-banner-wrapper{
+  display: flex;
+  align-items: center; 
+  font-weight: 800;
+  /* margin-top: 10px; */
+  padding-bottom: 10px;
+}
+
+.video-camera-icon-container{
+  display: flex;
+  align-items: center; 
+}
+
 
 .live-stream-card-container {
   position: relative;
