@@ -75,7 +75,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
       };
 
       //FETCH DATA
-      // fetchData();
+      fetchData();
       setInterval(fetchData, 60000);
     }, [sortHighToLow]);
     
