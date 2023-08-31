@@ -131,8 +131,10 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
         </div>
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
-            <h3 id="live-header-container">LIVE</h3>
-            <VideoCameraFrontIcon style={{ fill: 'red'}}/>
+            <h3 id="live-header-container">
+            {showLive ? "LIVE" : "OFFLINE" }
+            </h3>
+            <VideoCameraFrontIcon style={{ fill: showLive ? 'red' : 'gray' }}/>
           </div>
         </div>
         {isLoading ? (
