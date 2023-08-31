@@ -35,7 +35,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
-    const [randomOrder, setRandomOrder] = useState(true);
+    const [randomOrder, setRandomOrder] = useState(false);
   
 
     useEffect(() => {
