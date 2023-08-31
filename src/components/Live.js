@@ -35,7 +35,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
-    // const [randomOrder, setRandomOrder] = useState(true);
+    const [randomOrder, setRandomOrder] = useState(true);
   
 
     useEffect(() => {
@@ -89,6 +89,10 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
       setSortHighToLow((prevSortOrder) => !prevSortOrder);
     };
 
+    const toggleShuffle = () => {
+      setRandomOrder((prevOrder) => !prevOrder)
+    }
+
     const handleToCreate = () => {
       return window.location.href = "/create";
     }
@@ -100,24 +104,30 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
         return a.livestream.viewer_count - b.livestream.viewer_count;
       }
     });
-
-    const randomizeStreamers = () => {
-      const randomizedStreamers = [...sortedOnlineStreamers];
-      for (let i = randomizedStreamers.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [randomizedStreamers[i], randomizedStreamers[j]] = [
-          randomizedStreamers[j],
-          randomizedStreamers[i],
-        ];
+    
+    const getRandomizedStreamers = () => {
+      if(randomOrder){
+        const randomizedStreamers = [...sortedOnlineStreamers];
+        for (let i = randomizedStreamers.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [randomizedStreamers[i], randomizedStreamers[j]] = [
+            randomizedStreamers[j],
+            randomizedStreamers[i],
+          ];
+        }
+        return randomizedStreamers; 
+      } else { 
+        return sortedOnlineStreamers;
       }
-      console.log(randomizedStreamers); 
-      return randomizeStreamers;
     };
-
+    
+    const displayStreamers = getRandomizedStreamers();
+    console.log(displayStreamers);
+    
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        <button id="navigate-create" onClick={randomizeStreamers} >
+        <button id="shuffle-button" onClick={toggleShuffle} >
             Shuffle
           </button>
         <button id="navigate-create" onClick={handleToCreate}>
@@ -145,7 +155,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             {showLive ? (
               // Display online streamers
               <>
-                {sortedOnlineStreamers.map((item, index) => {
+                {displayStreamers.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
 

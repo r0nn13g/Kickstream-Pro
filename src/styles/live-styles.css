@@ -28,6 +28,29 @@
   border: none;
 }
 
+#online-offline-switch:active{
+  color: rgb(49, 49, 49);;
+  background-color: var(--green-elements);
+}
+
+#shuffle-button{
+  display: flex;
+  align-items: center;
+  background-color: rgb(49, 49, 49);
+  color: var(--green-elements);
+  margin: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  /* padding: 5px; */
+  border-radius: 5px;
+  border: none;
+}
+
+#shuffle-button:active{
+  color: rgb(49, 49, 49);;
+  background-color: var(--green-elements);
+}
+
 #navigate-create{
   background-color: rgb(49, 49, 49);
   color: var(--green-elements);
@@ -39,11 +62,6 @@
   /* padding: 5px; */
   border-radius: 5px;
   border: none;
-}
-
-#online-offline-switch:active{
-  color: rgb(49, 49, 49);;
-  background-color: var(--green-elements);
 }
 
 #sort-order-switch{
