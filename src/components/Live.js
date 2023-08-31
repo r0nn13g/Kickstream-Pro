@@ -4,10 +4,11 @@ import '../styles/live-styles.css';
 import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
-import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
+// import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
+import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 
   let pfp;
   let pfpLive;
@@ -132,9 +133,9 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
             <h3 id="live-header-container">
-            {showLive ? "LIVE" : "OFFLINE" }
+              {showLive ? "LIVE" : "OFFLINE" }
             </h3>
-            <VideoCameraFrontIcon style={{ fill: showLive ? 'red' : 'gray' }}/>
+            {showLive ? <VideoCameraFrontIcon style={{ fill: showLive ? 'red' : 'gray' }}/> :  <VideoCamOffIcon style={{fill: showLive ? 'red' : 'gray'}}/> }            
           </div>
         </div>
         {isLoading ? (
@@ -183,7 +184,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
                     </div>
                   ) : (
                     <div id="offline-live">
-                      <VideocamOffIcon />
+                      {/* <VideocamOffIcon /> */}
                     </div>
                   );
 
@@ -324,7 +325,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
                     </div>
                   ) : (
                     <div id="offline-live">
-                      <VideocamOffIcon />
+                      {/* <VideocamOffIcon /> */}
                     </div>
                   );
 

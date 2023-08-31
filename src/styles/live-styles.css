@@ -41,11 +41,6 @@
   border: none;
 }
 
-#online-offline-switch:hover{
-  color: white;
-  background-color: rgb(116, 116, 116);
-}
-
 #online-offline-switch:active{
   color: rgb(49, 49, 49);;
   background-color: var(--green-elements);
