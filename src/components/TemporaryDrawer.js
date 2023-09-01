@@ -36,8 +36,8 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <b>Trending +</b>
+              <Link to="/news" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>News +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
@@ -48,6 +48,11 @@ export default function TemporaryDrawer() {
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
               <Link to="/checker" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
               <b>Checker +</b>
+              </Link>
+          </ListItem>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
+              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+              <b>Trending +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >

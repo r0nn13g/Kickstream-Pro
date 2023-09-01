@@ -121,7 +121,6 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     };
     
     const displayStreamers = getRandomizedStreamers();
-    console.log(displayStreamers);
     
         return (
           <div className="live-stream-card-container">
