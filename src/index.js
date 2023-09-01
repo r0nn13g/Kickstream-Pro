@@ -11,6 +11,7 @@ import ShowChecker from './pages/ShowChecker.js';
 import Support from './pages/Support.js';
 import DisplayVideo from './components/DisplayVideo';
 import Live from './pages/ShowLive.js';
+import News from './pages/News';
 
 export default function App() {
   return (
@@ -18,12 +19,13 @@ export default function App() {
       <Routes>
         <Route path='*' element={<FourOhFour/>}/>
         <Route path='/' element={<Home />}/>
-        <Route path="/videos/:id" element={<DisplayVideo />}/>
+        <Route path="/Live" element={<Live />}/>
         <Route path="/trending" element={<ShowTrending />}/>
         <Route path="/create" element={<CreateChannels />}/>
+        <Route path='/news' element={<News />}/>
+        <Route path="/videos/:id" element={<DisplayVideo />}/>
         <Route path='/checker' element={<ShowChecker />}/>
         <Route path="/support" element={<Support/>}/>
-        <Route path="/Live" element={<Live />}/>
       </Routes>
       <Navbar/>
     </BrowserRouter>
