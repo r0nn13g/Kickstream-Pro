@@ -126,12 +126,12 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        <button id="shuffle-button" onClick={toggleShuffle} >
-            Shuffle
-          </button>
         <button id="navigate-create" onClick={handleToCreate}>
             Create
         </button>
+        <button id="shuffle-button" onClick={toggleShuffle} >
+            Shuffle
+          </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
           {sortHighToLow ? "Ascending" : "Descending"}
         </button>
