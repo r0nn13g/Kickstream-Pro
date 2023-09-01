@@ -17,7 +17,8 @@ Screenshots
 
 ios - iPhone 14 Pro
 
-![kickstermobilelayout](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/8d09f6b5-7e7d-4e25-a587-d8600fa1b242)
+![ios_mobile_walkthrough](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/11a85807-7435-4ebb-9d5e-9a08d60953d9)
+
 
 Browser - Google Chrome
 
