@@ -3,12 +3,13 @@ import '../styles/navbar-styles.css';
 import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
-// import GitHubIcon from '@mui/icons-material/GitHub';
-// import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
-import RedeemIcon from '@mui/icons-material/Redeem';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
+import RedeemIcon from '@mui/icons-material/Redeem';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+// import GitHubIcon from '@mui/icons-material/GitHub';
+// import FeedIcon from '@mui/icons-material/Feed';
+// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import KickLogo from '../assets/kickster.png';
 
 const Navbar = () => {
@@ -37,10 +38,10 @@ const Navbar = () => {
             <img id="home-mobile-logo" src={KickLogo} alt="kickster"/>
           </Link>
           <Link id="mobile-nav-item" to={'/live'} path='relative' style={{textDecoration: 'none'}}>
-            <LiveTvIcon style={{ fill: 'var(--gray-elements)' }}/>
+            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/create'} path='relative' style={{textDecoration: 'none'}}>
-            <AddCircleOutlineIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link id="mobile-nav-item" to={'/news'} path='relative' style={{textDecoration: 'none'}}>
+            <LiveTvIcon style={{ fill: 'var(--gray-elements)' }}/>
           </Link>
           <Link id="mobile-nav-item" to={'/checker'} path='relative' style={{textDecoration: 'none'}}>
             <HowToRegIcon style={{ fill: 'var(--gray-elements)' }}/>

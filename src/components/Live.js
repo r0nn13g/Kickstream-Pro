@@ -4,7 +4,6 @@ import '../styles/live-styles.css';
 import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';
-// import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';

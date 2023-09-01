@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/video-styles.css';
 
-const YTLoader = () => {
-    const [data, setData] = useState([]);
+const NewsLoader = () => {
+  const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=kick_clipz&type=video&key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setData(response.data.items);
             })
@@ -24,15 +24,14 @@ const YTLoader = () => {
             </Link>
         </div>
     ));
-    
-    return (
-        <div className='videos-wrapper'>
-            <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @Kick_Clipz</h6>
+  return(
+    <div>
+         <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @Kick_Clipz</h6>
             <div className="videos">
                 {youtubeDataArr}
             </div>
-        </div>
-    );
-};
+    </div>
+  )
+}
 
-export default YTLoader;
+export default NewsLoader;
