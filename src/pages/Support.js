@@ -8,7 +8,6 @@ const Support = () => {
     <AdTicker />
     <div className="support-header-wrapper">
       <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>SUPPORT 💸</h3>
-      <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>Help a struggling developer live another day.</h4>
     </div>
     <div className="support-details-container">
       <div className='crypto-container'> 
