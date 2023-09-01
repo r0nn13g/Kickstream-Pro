@@ -54,7 +54,7 @@ a{
   max-width: 100%;
 }
 
-.youtube-video-container img, h3{
+.youtube-video-container img{
   display: inline;
   vertical-align: middle;
   margin: 10px;

@@ -92,6 +92,10 @@
   padding-bottom: 10px;
 }
 
+#live-header-container{
+  margin: 5px;
+}
+
 .video-camera-icon-container{
   display: flex;
   align-items: center; 
