@@ -93,6 +93,12 @@
 }
 
 #live-header-container{
+  color: gray;
+  margin: 5px;
+}
+
+#live-header-container:hover{
+  color: white;
   margin: 5px;
 }
 
