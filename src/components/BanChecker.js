@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useState } from "react";
 import "../styles/ban-checker-styles.css";
 import BanAccordion from "./BanAccordian";
+import RotatingSpinner from "../components/RotatingSpinner.js";
 
 const BanChecker = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
+  const [user, setUser] = useState(true);
 
   const fetchData = async (streamerName) => {
     try {
@@ -18,12 +20,19 @@ const BanChecker = () => {
       console.log("Softbanned by kick servers & cloud flare");
     }
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchData(streamerName);
     setStreamerName("");
+    setUser(false);
   };
+  
+  const handleDelete = () => {
+    setData([]);
+    setUser(false);
+
+  }
   
   return (
     <div className="ban-checker">
@@ -39,7 +48,10 @@ const BanChecker = () => {
             placeholder="Enter streamer's name"
             />
           <button type="submit">Search</button>
+          <button onClick={handleDelete}>Clear</button>
         </form>
+
+        
       </div>
       {data.map((item, index) => {
         let pfp = ""; // Initialize with an empty string
@@ -59,26 +71,32 @@ const BanChecker = () => {
         banStatus = item[0].is_banned ? "BANNED ❌" : "ACTIVE ✅";
         
         return (
+          <div className="AFQJS032840239845">
+          {user ? (<RotatingSpinner/>):(
           <div className="streamer-ban-details" key={index}>
-            <div className="image-wrapper"> 
-            <img id="pfp" src={pfp} alt="Profile" />
-            </div>
-            <div className="streamername-wrapper">
-            <h3 id="streamer_name">{`${streamer}`}</h3>
-            </div>
-            <div className="ban_status_wrapper">
-            <h5
-                style={{ color: item[0].is_banned ? "red" : "var(--green-elements)" }}
-                id="ban-status"
-              >
-                {banStatus}
-              </h5>
+              <div className="image-wrapper">
+                <img id="pfp" src={pfp} alt="Profile" />
               </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+              <div className="streamername-wrapper">
+                <h3 id="streamer_name">{`${streamer}`}</h3>
+              </div>
+              <div className="ban_status_wrapper">
+                <h5
+                  style={{
+                    color: item[0].is_banned ? "red" : "var(--green-elements)",
+                  }}
+                  id="ban-status"
+                >
+                  {banStatus}
+                </h5>
+              </div>
+        </div>
+        )}
+        </div>
+      );
+    })}
+  </div>
+);
 };
 
 export default BanChecker;

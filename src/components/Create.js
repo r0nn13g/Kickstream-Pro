@@ -37,65 +37,56 @@ const Create = () => {
       console.log(responseData);
 
       setData((prevData) => {
-        // Check if there's more than one slug in the data array
         if (prevData.length > 0) {
           const combinedData = [...prevData, responseData];
-          const onlineStreamers = combinedData.filter(item => item.livestream && item.livestream.viewer_count > 0);
-          const offlineStreamers = combinedData.filter(item => !item.livestream || item.livestream.viewer_count === 0);
-          const sortedOnlineStreamers = onlineStreamers.sort((a, b) => b.livestream.viewer_count - a.livestream.viewer_count);
+          const onlineStreamers = combinedData.filter(
+            (item) => item.livestream && item.livestream.viewer_count > 0
+          );
+          const offlineStreamers = combinedData.filter(
+            (item) => !item.livestream || item.livestream.viewer_count === 0
+          );
+          const sortedOnlineStreamers = onlineStreamers.sort(
+            (a, b) => b.livestream.viewer_count - a.livestream.viewer_count
+          );
           return [...sortedOnlineStreamers, ...offlineStreamers];
         } else {
           return [responseData];
         }
       });
     } catch (error) {
-      // Handle errors
-      console.log("Softbanned by kick servers  & cloud flare")
+      console.log("Softbanned by kick servers & cloudflare");
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Generate the slug from the streamerName
     const slug = streamerName.toLowerCase().replace(/\s/g, "");
     let url = `https://kick.com/api/v1/channels/${slug}`;
-
-    
-    // Make axios request for the current streamer
     fetchData(url);
-    
-    // Clear the input field after submitting
     setStreamerName("");
   };
-  
-  const deleteUrlFromLocalStorage = (slug) => {
-    // Find the index of the item with the given slug and remove it from the data array
-    const indexToDelete = data.findIndex((item) => item.slug === slug);
-    if (indexToDelete !== -1) {
-      const updatedData = [...data];
-      updatedData.splice(indexToDelete, 1);
-      setData(updatedData);
-      // Save updated data to local storage after removing the streamer
-      localStorage.setItem("streamData", JSON.stringify(updatedData));
-    }
-  };
-  
-  useEffect(() => {
-    // Fetch initial data from local storage (if available)
-    const storedData = localStorage.getItem("streamData");
-    if (storedData) {
-      setData(JSON.parse(storedData));
-    } else {
-      // If no data in local storage, fetch initial data
-      fetchData();
-    }
 
-    const refreshInterval = 50000;
-    fetchData(); 
-    setInterval(fetchData, refreshInterval);
+  const deleteStreamer = (slug) => {
+    setData((prevData) => {
+      const updatedData = prevData.filter((item) => item.slug !== slug);
+      return updatedData;
+    });
+  };
+
+  useEffect(() => {
+    // Fetch initial data when the component mounts
+    fetchData();
+
+    const refreshInterval = 60000;
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, refreshInterval);
+
+    return () => {
+      // Clear the interval when the component unmounts
+      clearInterval(intervalId);
+    };
   }, []);
-  
   // Save data to local storage whenever it changes
   useEffect(() => {
     // Store the latest data in local storage
@@ -203,7 +194,7 @@ const Create = () => {
                                       {viewerCount} 
                                     </div>
                                 </Link>
-                                  <CancelIcon key={index} id="delete-from-list" onClick={() => deleteUrlFromLocalStorage(item.slug)}/>
+                                  <CancelIcon key={index} id="delete-from-list" onClick={() => deleteStreamer(item.slug)}/>
                             </div>
                       </div>   
                   )})
