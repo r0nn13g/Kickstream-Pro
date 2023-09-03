@@ -31,17 +31,18 @@
 
 #youtube-video-player-link-01dj0d1jd1jhfgh{
   display: flex;
-  margin-top: 200px;
+  margin-top: 0px;
 }
 
 #youtube-play-button{
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 
 #youtube-channel-header{
   margin-top: 16px;
+  margin-bottom: 400px;
 }
 
 
@@ -61,10 +62,11 @@ a{
 
 .youtube-video-wrapper{
   background-image:url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTlsaW9qZmNkZzhmNDRqeGE4emtkcHlyYm8xMTVtcWl2MHd6OWQwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XuBNdP9Pb7W9i/giphy.gif");
+  padding-top: 50px;
 }
 
 .youtube-video-container{
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
   max-width: 100%;
 }
@@ -79,6 +81,7 @@ a{
   text-align: center;
   width: 98%;
   height: 300px;
+  margin: 5px;
 }
 
 .videos-wrapper{
@@ -92,12 +95,13 @@ a{
   text-align: center;
   width: 98%;
   height: 800px;
+  margin:20px;
 }
   
  
 #youtube-video-player-link-01dj0d1jd1jhfgh{
   display: flex;
-  margin-top: 400px;
+  margin-bottom: 100px;
 }
 
 .youtube-video-wrapper{
@@ -108,6 +112,11 @@ a{
   margin-bottom: 60px;
   text-align: center;
   max-width: 100%;
+}
+
+#youtube-channel-header{
+  margin-top: 16px;
+  margin-bottom: 0px;
 }
 
 .videos{
