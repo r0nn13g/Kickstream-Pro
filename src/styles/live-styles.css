@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   background-color: rgb(49, 49, 49);
-  color: var(--green-elements);
+  color: var(--white-elements);
   margin: 10px;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -30,14 +30,14 @@
 
 #online-offline-switch:active{
   color: rgb(49, 49, 49);;
-  background-color: var(--green-elements);
+  background-color: var(--white-elements);
 }
 
 #shuffle-button{
   display: flex;
   align-items: center;
   background-color: rgb(49, 49, 49);
-  color: var(--green-elements);
+  color: var(--white-elements);
   margin: 10px;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -48,12 +48,12 @@
 
 #shuffle-button:active{
   color: rgb(49, 49, 49);;
-  background-color: var(--green-elements);
+  background-color: var(--white-elements);
 }
 
 #navigate-create{
   background-color: rgb(49, 49, 49);
-  color: var(--green-elements);
+  color: var(--white-elements);
   display: flex;
   justify-content: flex-end;
   margin: 10px;
@@ -66,7 +66,7 @@
 
 #sort-order-switch{
     background-color: rgb(49, 49, 49);
-  color: var(--green-elements);
+  color: var(--white-elements);
   display: flex;
   justify-content: flex-end;
   margin: 10px;

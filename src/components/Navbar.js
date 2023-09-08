@@ -14,6 +14,7 @@ import KickLogo from '../assets/kickster.png';
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [activeLink, setActiveLink] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,25 +30,53 @@ const Navbar = () => {
 
   const isMobile = windowWidth <= 820;
 
+  const handleLinkClick = (linkId) => {
+    setActiveLink(linkId);
+  }
+
   return (
     <nav className="nav-bar">
         <div className='mobile-menu-container'>
           {isMobile ? (
             <>
-           <Link id="mobile-nav-item" to={'/'} path='relative'>
+           <Link 
+              id="mobile-nav-item"
+              to={'/'}
+              path='relative'
+              onClick={() => handleLinkClick('home')}>
             <img id="home-mobile-logo" src={KickLogo} alt="kickster"/>
           </Link>
-          <Link id="mobile-nav-item" to={'/live'} path='relative' style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link 
+            id="mobile-nav-item" 
+            to={'/live'} 
+            path='relative' 
+            onClick={() => handleLinkClick('live')}
+            style={{textDecoration: 'none'}}>
+            <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/news'} path='relative' style={{textDecoration: 'none'}}>
-            <LiveTvIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link 
+            id="mobile-nav-item" 
+            to={'/news'} 
+            path='relative'
+            onClick={() => handleLinkClick('news')} 
+            style={{textDecoration: 'none'}}>
+            <LiveTvIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/checker'} path='relative' style={{textDecoration: 'none'}}>
-            <HowToRegIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link 
+            id="mobile-nav-item" 
+            to={'/checker'} 
+            path='relative'
+            onClick={() => handleLinkClick('checker')} 
+            style={{textDecoration: 'none'}}>
+            <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--gray-elements)' }}/>
           </Link>
-          <Link id="mobile-nav-item" to={'/support'} path='relative' style={{textDecoration: 'none'}}>
-            <RedeemIcon style={{ fill: 'var(--gray-elements)' }}/>
+          <Link 
+            id="mobile-nav-item" 
+            to={'/support'} 
+            path='relative'
+            onClick={() => handleLinkClick('support')} 
+            style={{textDecoration: 'none'}}>
+            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--gray-elements' }}/>
           </Link>
             </>
           ) : (
