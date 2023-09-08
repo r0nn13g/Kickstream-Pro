@@ -1,5 +1,5 @@
 .homepage-container{
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .home-text{
@@ -8,7 +8,6 @@
 }
 
 #home-animation{
-  cursor: url("../assets/sonycam.png"), auto;
   filter: opacity(80%);
   height: 200px;
   animation: rotation 7s infinite linear; 
