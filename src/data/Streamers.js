@@ -29,7 +29,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/n3on',
     'https://kick.com/api/v1/channels/nedx',
     'https://kick.com/api/v1/channels/nickwhite',
-    // 'https://kick.com/api/v1/channels/officialebz',
+    'https://kick.com/api/v1/channels/officialebz',
     'https://kick.com/api/v1/channels/princessangelcakez',
     'https://kick.com/api/v1/channels/sam',
     'https://kick.com/api/v1/channels/sampanday',
@@ -45,6 +45,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/totalirl',
     'https://kick.com/api/v1/channels/trainwreckstv',
-    'https://kick.com/api/v1/channels/yourrage',
     'https://kick.com/api/v1/channels/xqc',
+    'https://kick.com/api/v1/channels/yourrage',
+    'https://kick.com/api/v1/channels/zherka'
 ];
