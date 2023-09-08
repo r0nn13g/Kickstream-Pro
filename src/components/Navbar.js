@@ -49,7 +49,7 @@ const Navbar = () => {
             path='relative' 
             onClick={() => handleLinkClick('live')}
             style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--gray-elements)' }}/>
+            <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -65,7 +65,7 @@ const Navbar = () => {
             path='relative'
             onClick={() => handleLinkClick('checker')} 
             style={{textDecoration: 'none'}}>
-            <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--gray-elements)' }}/>
+            <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -73,7 +73,7 @@ const Navbar = () => {
             path='relative'
             onClick={() => handleLinkClick('support')} 
             style={{textDecoration: 'none'}}>
-            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--gray-elements' }}/>
+            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--gray-elements'}}/>
           </Link>
             </>
           ) : (
