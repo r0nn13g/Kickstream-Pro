@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/navbar-styles.css'; 
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
 import RedeemIcon from '@mui/icons-material/Redeem';
@@ -11,6 +11,7 @@ import KickLogo from '../assets/kickster.png';
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const location = useLocation(); 
   const [activeLink, setActiveLink] = useState(null);
 
   useEffect(() => {
@@ -26,6 +27,31 @@ const Navbar = () => {
   }, []);
 
   const isMobile = windowWidth <= 820;
+
+  useEffect(() => {
+    // Use the pathname from location to determine the active link
+    switch (location.pathname) {
+      case '/':
+        setActiveLink('home');
+        break;
+      case '/live':
+        setActiveLink('live');
+        break;
+      case '/news':
+        setActiveLink('news');
+        break;
+      case '/checker':
+        setActiveLink('checker');
+        break;
+      case '/support':
+        setActiveLink('support');
+        break;
+      default:
+        setActiveLink(null);
+        break;
+    }
+  }, [location.pathname]);
+
 
   const handleLinkClick = (linkId) => {
     setActiveLink(linkId);
