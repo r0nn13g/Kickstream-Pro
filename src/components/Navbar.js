@@ -41,7 +41,7 @@ const Navbar = () => {
               to={'/'}
               path='relative'
               onClick={() => handleLinkClick('home')}>
-            <img id="home-mobile-logo" src={KickLogo} alt="kickster"/>
+            <img id="home-mobile-logo" src={KickLogo} alt="kickster" style={{  filter: activeLink === 'home' ? 'grayscale(0%)' : 'grayscale(90%)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -50,7 +50,7 @@ const Navbar = () => {
             onClick={(e) =>{ 
               handleLinkClick('live')}}
             style={{textDecoration: 'none'}}>
-            <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
+            <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -60,7 +60,7 @@ const Navbar = () => {
               handleLinkClick('news');
             }} 
             style={{textDecoration: 'none'}}>
-            <NewspaperIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
+            <NewspaperIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -70,7 +70,7 @@ const Navbar = () => {
             }} 
               to={'/checker'} 
             style={{textDecoration: 'none'}}>
-            <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
+            <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
@@ -80,7 +80,7 @@ const Navbar = () => {
               handleLinkClick('support');
             }} 
             style={{textDecoration: 'none'}}>
-            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--gray-elements'}}/>
+            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--white-elements'}}/>
           </Link>
             </>
           ) : (
