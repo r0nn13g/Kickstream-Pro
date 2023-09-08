@@ -47,7 +47,8 @@ const Navbar = () => {
             id="mobile-nav-item" 
             to={'/live'} 
             path='relative' 
-            onClick={() => handleLinkClick('live')}
+            onClick={(e) =>{ 
+              handleLinkClick('live')}}
             style={{textDecoration: 'none'}}>
             <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
@@ -55,15 +56,19 @@ const Navbar = () => {
             id="mobile-nav-item" 
             to={'/news'} 
             path='relative'
-            onClick={() => handleLinkClick('news')} 
+            onClick={(e) => {
+              handleLinkClick('news');
+            }} 
             style={{textDecoration: 'none'}}>
             <NewspaperIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
-            to={'/checker'} 
             path='relative'
-            onClick={() => handleLinkClick('checker')} 
+            onClick={(e) => {
+              handleLinkClick('checker');
+            }} 
+              to={'/checker'} 
             style={{textDecoration: 'none'}}>
             <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
@@ -71,7 +76,9 @@ const Navbar = () => {
             id="mobile-nav-item" 
             to={'/support'} 
             path='relative'
-            onClick={() => handleLinkClick('support')} 
+            onClick={(e) => {
+              handleLinkClick('support');
+            }} 
             style={{textDecoration: 'none'}}>
             <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--gray-elements'}}/>
           </Link>

@@ -35,29 +35,33 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
     const [randomOrder, setRandomOrder] = useState(false);
+    const [fetchedData, setFetchedData] = useState(null);
   
-
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const responses = await Promise.all(
-            streamers.map((url) => axios.get(url))
-          );
-          const responseData = responses.map((urls) => urls.data);
-          const validResponses = responseData.filter(
+          if(fetchedData) {
+            setOnlineStreamers(fetchedData.onlineStreamers);
+            setOfflineStreamers(fetchedData.offlineStreamers);
+          } else {
+            const responses = await Promise.all(
+              streamers.map((url) => axios.get(url))
+            )
+            const responseData = responses.map((urls) => urls.data);
+            const validResponses = responseData.filter(
             (response) => response.status !== null
-          );
-
-          const onlineStreamers = validResponses.filter(
+            );
+            const onlineStreamers = validResponses.filter(
             (response) =>
-              response.livestream && response.livestream.viewer_count >= 0
-          );
-          const offlineStreamers = validResponses.filter(
+            response.livestream && response.livestream.viewer_count >= 0
+            );
+            const offlineStreamers = validResponses.filter(
             (response) => response.livestream === null
-          );
-
-          setOnlineStreamers(onlineStreamers);
-          setOfflineStreamers(offlineStreamers);
+            );
+            setOnlineStreamers(onlineStreamers);
+            setOfflineStreamers(offlineStreamers);
+            setFetchedData({ onlineStreamers, offlineStreamers});
+          }
           setLoading(false);
         } catch (error) {
           if (error.response) {
@@ -75,10 +79,10 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
         }
       };
 
-      //FETCH DATA
+      //FETCH
       fetchData();
       setInterval(fetchData, 60000);
-    }, [sortHighToLow]);
+    }, [fetchedData, sortHighToLow]);
     
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
@@ -110,8 +114,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
         for (let i = randomizedStreamers.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [randomizedStreamers[i], randomizedStreamers[j]] = [
-            randomizedStreamers[j],
-            randomizedStreamers[i],
+            randomizedStreamers[j],randomizedStreamers[i]
           ];
         }
         return randomizedStreamers; 
