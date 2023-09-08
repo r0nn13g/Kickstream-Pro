@@ -31,10 +31,10 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
   const Live = () => {
     const [isLoading, setLoading] = useState(true);
     const [showLive, setShowLive] = useState(true); // State variable to track mode (live or offline)
+    const [randomOrder, setRandomOrder] = useState(false);
     const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
-    const [randomOrder, setRandomOrder] = useState(false);
   
 
     useEffect(() => {
