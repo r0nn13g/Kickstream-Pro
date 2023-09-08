@@ -77,7 +77,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 
       //FETCH DATA
       fetchData();
-      setInterval(fetchData, 60000);
+      setInterval(fetchData, 40000);
     }, [sortHighToLow]);
     
     const toggleLiveOffline = () => {
