@@ -1,5 +1,5 @@
 :root {
-  --pulsating-dot: var(--green-elements);
+  --pulsating-dot: var(--gray-elements);
   --green-elements: rgb(85, 255, 47);
   --gray-elements: rgb(85, 85, 85);
   --graytwo-elements: rgb(162, 162, 162);
@@ -233,7 +233,7 @@
   margin: 0px;
   margin-top: 2px;
   font-weight: 900;
-  color:var(--gray-elements);
+  color:var(--white-elements);
  }
 
 .live-stream-details-container {
