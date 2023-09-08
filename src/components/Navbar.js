@@ -3,13 +3,10 @@ import '../styles/navbar-styles.css';
 import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
-import LiveTvIcon from '@mui/icons-material/LiveTv';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-// import GitHubIcon from '@mui/icons-material/GitHub';
-// import FeedIcon from '@mui/icons-material/Feed';
-// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 import KickLogo from '../assets/kickster.png';
 
 const Navbar = () => {
@@ -60,7 +57,7 @@ const Navbar = () => {
             path='relative'
             onClick={() => handleLinkClick('news')} 
             style={{textDecoration: 'none'}}>
-            <LiveTvIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
+            <NewspaperIcon style={{fill: activeLink === 'news' ? 'var(--green-elements)' : 'var(--gray-elements)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
