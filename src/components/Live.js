@@ -165,11 +165,11 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             {showLive ? (
               // Display online streamers
               <>
-              <div style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
+              {/* <div style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
                 <b style={{color: "var(--gray-elements)"}}>
                   oops.. there seems to be a problem. please retry later.
                 </b>
-              </div>
+              </div> */}
                 {displayStreamers.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
