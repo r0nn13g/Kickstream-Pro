@@ -40,11 +40,25 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const responses = await Promise.all(
-            streamers.map((url) => axios.get(url))
-          );
-          const responseData = responses.map((urls) => urls.data);
-          const validResponses = responseData.filter(
+          const promises = streamers.map(async (url) => {
+            try {
+              const response = await axios.get(url);
+  
+              // Check for 429 or 404 status and ignore those URLs
+              if (response.status === 429 || response.status === 404) {
+                return null; // Ignore this URL
+              }
+  
+              return response.data;
+            } catch (error) {
+              // Handle other errors here if needed
+              console.error("Error fetching data from", url, error);
+              return null;
+            }
+          });
+  
+          const responses = await Promise.all(promises);
+          const validResponses = responses.filter(
             (response) => response.status !== null
           );
 
