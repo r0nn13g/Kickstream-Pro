@@ -35,7 +35,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
-  
+    const [loadingTimeout, setLoadingTimeout] = useState(null);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -59,6 +59,9 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
           setOnlineStreamers(onlineStreamers);
           setOfflineStreamers(offlineStreamers);
           setLoading(false);
+          if (loadingTimeout) {
+            clearTimeout(loadingTimeout);
+          }
         } catch (error) {
           if (error.response) {
             console.error("Banned channel in streamers Array", error);
@@ -72,13 +75,22 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             console.log("Error", error.message);
           }
           console.log(error.config);
+          if (!loadingTimeout) {
+            setLoadingTimeout(setTimeout(() => {
+              setLoading(false);
+              console.log("Softbanned by Cloudflare & kick servers. please retry later.");
+            }, 150000)); // 15 seconds in milliseconds
+          }
         }
       };
 
       //FETCH DATA
       fetchData();
-      setInterval(fetchData, 40000);
-    }, [sortHighToLow]);
+      const interval = setInterval(fetchData, 40000);
+      return () => {
+        clearInterval(interval);
+      };
+    }, [loadingTimeout, sortHighToLow]);
     
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
