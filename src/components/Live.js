@@ -40,25 +40,11 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const promises = streamers.map(async (url) => {
-            try {
-              const response = await axios.get(url);
-  
-              // Check for 429 or 404 status and ignore those URLs
-              if (response.status === 429 || response.status === 404) {
-                return null; // Ignore this URL
-              }
-  
-              return response.data;
-            } catch (error) {
-              // Handle other errors here if needed
-              console.error("Error fetching data from", url, error);
-              return null;
-            }
-          });
-  
-          const responses = await Promise.all(promises);
-          const validResponses = responses.filter(
+          const responses = await Promise.all(
+            streamers.map((url) => axios.get(url))
+          );
+          const responseData = responses.map((urls) => urls.data);
+          const validResponses = responseData.filter(
             (response) => response.status !== null
           );
 
@@ -93,7 +79,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             setLoadingTimeout(setTimeout(() => {
               setLoading(false);
               console.log("Softbanned by Cloudflare & kick servers. please retry later.");
-            }, 150000)); // 15 seconds in milliseconds
+            }, 15000)); // 15 seconds in milliseconds
           }
         }
       };
@@ -104,7 +90,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
       return () => {
         clearInterval(interval);
       };
-    }, [loadingTimeout, sortHighToLow]);
+    }, [loadingTimeout]);
     
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
@@ -179,6 +165,11 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             {showLive ? (
               // Display online streamers
               <>
+              <div style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
+                <b style={{color: "var(--gray-elements)"}}>
+                  oops.. there seems to be a problem. please retry later.
+                </b>
+              </div>
                 {displayStreamers.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
