@@ -5,6 +5,7 @@ import YTLoader from '../components/YTLoader.js';
 import Footer from "../components/Footer";
 import kicksterLogo from "../assets/LSS.gif";
 import AdTicker from '../components/AdTicker.js';
+import ClockWidget from "../components/ClockWidget";
 
 const Home = () => {  
   return(
@@ -16,6 +17,8 @@ const Home = () => {
             <div></div>
             {/* <img id="home-enter-logo" src={'https://i.imgur.com/L59bKvb.png'} alt='enter-button'/> */}
           </Link>
+          <ClockWidget />
+          <div></div>
         </div>
           <YTLoader />
           <Footer/>
