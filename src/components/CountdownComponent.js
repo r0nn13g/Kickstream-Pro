@@ -37,7 +37,8 @@ const CountdownComponent = () => {
     }, 1000);
 
     return () => {
-      clearInterval(interval); // Cleanup on unmount
+      // Cleanup on unmount
+      clearInterval(interval); 
     };
   }, []);
 
