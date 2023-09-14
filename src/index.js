@@ -12,6 +12,7 @@ import Support from './pages/Support.js';
 import DisplayVideo from './components/DisplayVideo';
 import Live from './pages/ShowLive.js';
 import News from './pages/News';
+import Countdown from './pages/Countdown';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
         <Route path='/checker' element={<ShowChecker />}/>
+        <Route path='/count-down' element={<Countdown />}/>
         <Route path="/support" element={<Support/>}/>
       </Routes>
       <Navbar/>
