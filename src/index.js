@@ -26,7 +26,7 @@ export default function App() {
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
         <Route path='/checker' element={<ShowChecker />}/>
-        <Route path='/count-down' element={<Countdown />}/>
+        <Route path='/johnny-somali' element={<Countdown />}/>
         <Route path="/support" element={<Support/>}/>
       </Routes>
       <Navbar/>
