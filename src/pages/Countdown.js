@@ -7,6 +7,6 @@ const Countdown = () => {
       <CountdownComponent />
     </div>
   )
-}
+};
 
 export default Countdown;
