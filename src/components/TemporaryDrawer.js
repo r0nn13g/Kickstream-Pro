@@ -73,7 +73,7 @@ export default function TemporaryDrawer() {
           </ListItem>
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
           <Link to="/" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
-            <h3>Kickster Beta v0.5</h3>
+            <h3>Kickstream PRO v0.5</h3>
               <ListItemText secondary="" />
           </Link>
       </ListItem>
