@@ -20,7 +20,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/hkftv',
     'https://kick.com/api/v1/channels/iceposeidon',
     'https://kick.com/api/v1/channels/jino',
-    // 'https://kick.com/api/v1/channels/johnnysomali',
+    'https://kick.com/api/v1/channels/johnnysomali',
     'https://kick.com/api/v1/channels/johnwhatsgoingon',
     'https://kick.com/api/v1/channels/kangjoel',
     'https://kick.com/api/v1/channels/kimmee',
