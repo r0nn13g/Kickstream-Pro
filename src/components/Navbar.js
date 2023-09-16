@@ -67,7 +67,7 @@ const Navbar = () => {
               to={'/'}
               path='relative'
               onClick={() => handleLinkClick('home')}>
-            <img id="home-mobile-logo" src={KickLogo} alt="kickster" style={{  filter: activeLink === 'home' || activeLink === null ? 'grayscale(0%)' : 'grayscale(90%)'}}/>
+            <img id="home-mobile-logo" src={KickLogo} alt="kickster" style={{  filter: activeLink === 'home' || activeLink === null ? 'grayscale(0%)' : 'grayscale(100%)'}}/>
           </Link>
           <Link 
             id="mobile-nav-item" 
