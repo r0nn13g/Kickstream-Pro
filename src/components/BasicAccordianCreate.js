@@ -3,7 +3,6 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import ListIcon from '@mui/icons-material/List';
 import '../styles/accordian-styles.css';
 
 export default function BasicAccordionCreate() {

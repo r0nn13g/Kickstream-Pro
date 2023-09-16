@@ -79,18 +79,17 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
             setLoadingTimeout(setTimeout(() => {
               setLoading(false);
               console.log("Softbanned by Cloudflare & kick servers. please retry later.");
-            }, 15000)); // 15 seconds in milliseconds
+            }, 15000)); 
           }
         }
       };
 
-      //FETCH DATA
-      fetchData();
-      const interval = setInterval(fetchData, 40000);
+      fetchData(); //<-----FETCHING CALLS FROM KICK API. 
+      const interval = setInterval(fetchData, 40000); //<-- FETCHES EVERY 40 SECONDS
       return () => {
         clearInterval(interval);
       };
-    }, [loadingTimeout]);
+    }, [loadingTimeout]); //<--LOADING TIMEOUT DEPENDANCY IMPROVES STABILITY WHEN FETCHING CONSISTENTLY 
     
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);

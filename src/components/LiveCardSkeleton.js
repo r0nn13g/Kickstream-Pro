@@ -4,7 +4,7 @@ import '../styles/live-card-skeleton-styles.css';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const LiveCardSkeleton = ({ props }) => {
-  const numCards = 20; // Change this number to the desired number of cards
+  const numCards = 20;
 
   const skeletonCards = Array.from({ length: numCards }, (_, index) => (
     <div key={index} className="live-stream-card">

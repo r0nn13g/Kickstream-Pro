@@ -3,7 +3,6 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import ListIcon from '@mui/icons-material/List';
 import '../styles/accordian-styles.css';
 
 export default function BasicAccordion() {
@@ -19,7 +18,6 @@ export default function BasicAccordion() {
           id="panel1a-header"
         >
           Streamers
-          {/* <ListIcon/> */}
         </AccordionSummary>
         <AccordionDetails>
               <li id="accordian-text">

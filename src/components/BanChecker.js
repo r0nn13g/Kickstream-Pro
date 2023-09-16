@@ -15,7 +15,7 @@ const BanChecker = () => {
       const url = `https://kick.com/emotes/${slug}`;
       const response = await axios.get(url);
       const responseData = response.data;
-      setData([responseData]); // Wrap responseData in an array to correctly handle it
+      setData([responseData]); 
     } catch (error) {
       console.log("Softbanned by kick servers & cloud flare");
     }
@@ -54,18 +54,18 @@ const BanChecker = () => {
         
       </div>
       {data.map((item, index) => {
-        let pfp = ""; // Initialize with an empty string
-        let streamer = ""; // Initialize with an empty string
+        let pfp = "";
+        let streamer = "";
         let banStatus = "";
         
         console.log(item[0]);
         if (!item[0]) {
           console.log("This streamer does not exist in our system yet");
-          return null; // Return null if the streamer doesn't exist
+          return null; 
         }
         if (item[0].user) {
-          pfp = item[0].user.profile_pic; // Use item.user.profile_pic
-          streamer = item[0].user.username; // Use item.user.username
+          pfp = item[0].user.profile_pic; 
+          streamer = item[0].user.username; 
         }
         
         banStatus = item[0].is_banned ? "BANNED ❌" : "ACTIVE ✅";

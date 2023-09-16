@@ -74,7 +74,6 @@ const Create = () => {
   };
 
   useEffect(() => {
-    // Fetch initial data when the component mounts
     fetchData();
 
     const refreshInterval = 60000;
@@ -83,20 +82,15 @@ const Create = () => {
     }, refreshInterval);
 
     return () => {
-      // Clear the interval when the component unmounts
       clearInterval(intervalId);
     };
   }, []);
-  // Save data to local storage whenever it changes
   useEffect(() => {
-    // Store the latest data in local storage
     localStorage.setItem("streamData", JSON.stringify(data));
   }, [data]);
 
         return (
           <div className="create">
-             {/* <h5 id="create-header">Create a personalized watch list</h5> */}
-
              <div className="create-input-wrapper">
              <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>CREATE ⚡️</h3>
             <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>Create your own watch list.</h4>

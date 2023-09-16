@@ -29,7 +29,6 @@ const Navbar = () => {
   const isMobile = windowWidth <= 820;
 
   useEffect(() => {
-    // Use the pathname from location to determine the active link
     switch (location.pathname) {
       case '/':
         setActiveLink('home');
