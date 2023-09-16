@@ -16,10 +16,11 @@ const DisplayVideo = () => {
             <YouTube id="youtube-video-player" videoId={id} style={{}} />
           </div>
             <a id="youtube-video-player-link-01dj0d1jd1jhfgh" href="https://www.youtube.com/channel/UCmXAEqNsldIpQWK6M8F156g?themeRefresh=1" target="blank">
-            <img  id="youtube-play-button" src={youtubePlay} alt="youtube_play_button" style={{height: "20px", marginLeft: "10px", marginTop:"20px"}}/>
-            <h3 id="youtube-channel-header" style={{color: "var(--green-elements", display: "flex", paddingBottom: "20px"}}>
-              @kick_clipz
-            </h3>
+            <img  id="youtube-play-button" src={youtubePlay} alt="youtube_play_button" style={{height: "14px", marginLeft: "10px", marginTop:"20px"}}/>
+            &nbsp;
+            <h4 id="youtube-channel-header" style={{color: "var(--green-elements", display: "flex", paddingBottom: "10px"}}>
+              @Chadwinsmith
+            </h4>
             </a>
             yt
       </div>
