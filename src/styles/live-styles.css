@@ -11,7 +11,7 @@
 .offline-online-switch-container{
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
@@ -21,9 +21,7 @@
   background-color: rgb(49, 49, 49);
   color: var(--white-elements);
   margin: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  /* padding: 5px; */
+  padding: 4px;
   border-radius: 5px;
   border: none;
 }
@@ -39,9 +37,7 @@
   background-color: rgb(49, 49, 49);
   color: var(--white-elements);
   margin: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  /* padding: 5px; */
+  padding: 4px;
   border-radius: 5px;
   border: none;
 }
@@ -57,9 +53,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  /* padding: 5px; */
+  padding: 4px;
   border-radius: 5px;
   border: none;
 }
@@ -70,9 +64,7 @@
   display: flex;
   justify-content: flex-end;
   margin: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  /* padding: 5px; */
+  padding: 4px;
   border-radius: 5px;
   border: none;
 }
@@ -88,8 +80,7 @@
   align-items: center; 
   font-weight: 800;
   border-bottom: 1px solid gray;
-  /* margin-top: 10px; */
-  padding-bottom: 10px;
+  padding-bottom: 0px;
 }
 
 #live-header-container{
@@ -104,7 +95,8 @@
 
 .video-camera-icon-container{
   display: flex;
-  align-items: center; 
+  align-items: center;
+  margin-top: 0px;
 }
 
 
