@@ -1,10 +1,9 @@
 import * as React from 'react';
+import '../styles/accordian-styles.css';
 import Accordion from '@mui/material/Accordion';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import ListIcon from '@mui/icons-material/List';
-import '../styles/accordian-styles.css';
 
 export default function BanAccordion() {
   return (
@@ -19,7 +18,6 @@ export default function BanAccordion() {
           id="panel1a-header"
         >
           How it works
-          {/* <ListIcon/> */}
         </AccordionSummary>
         <AccordionDetails>
               <li id="accordian-text">

@@ -1,13 +1,13 @@
-import {React, useState, useEffect} from "react";
-import { Link } from "react-router-dom";
-import '../styles/live-styles.css';
 import axios from "axios";
-import { streamers } from "../data/Streamers";
+import '../styles/live-styles.css';
+import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
+import { streamers } from "../data/Streamers";
+import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
-import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
   let pfp;
   let pfpLive;
@@ -30,7 +30,7 @@ import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 
   const Live = () => {
     const [isLoading, setLoading] = useState(true);
-    const [showLive, setShowLive] = useState(true); // State variable to track mode (live or offline)
+    const [showLive, setShowLive] = useState(true);
     const [randomOrder, setRandomOrder] = useState(false);
     const [sortHighToLow, setSortHighToLow] = useState(true);
     const [onlineStreamers, setOnlineStreamers] = useState([]);
