@@ -18,6 +18,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/hkftv',
     'https://kick.com/api/v1/channels/iceposeidon',
+    'https://kick.com/api/v1/channels/jaycgee',
     'https://kick.com/api/v1/channels/jino',
     'https://kick.com/api/v1/channels/johnnysomali',
     'https://kick.com/api/v1/channels/johnwhatsgoingon',
