@@ -25,6 +25,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/kangjoel',
     'https://kick.com/api/v1/channels/kimmee',
     'https://kick.com/api/v1/channels/kiaraakitty',
+    'https://kick.com/api/v1/channels/murda',
     'https://kick.com/api/v1/channels/nanpalive',
     'https://kick.com/api/v1/channels/n3on',
     'https://kick.com/api/v1/channels/nedx',
