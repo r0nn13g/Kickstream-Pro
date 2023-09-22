@@ -22,5 +22,5 @@ export let brandSafe = [
   'https://kick.com/api/v1/channels/yassuo',
   'https://kick.com/api/v1/channels/frankdimes',
   'https://kick.com/api/v1/channels/averagedad',
-
+  'https://kick.com/api/v1/channels/amouranth',
 ]
