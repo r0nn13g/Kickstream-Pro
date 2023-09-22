@@ -25,6 +25,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/kangjoel',
     'https://kick.com/api/v1/channels/kimmee',
     'https://kick.com/api/v1/channels/kiaraakitty',
+    'https://kick.com/api/v1/channels/lowtiergod',
     'https://kick.com/api/v1/channels/murda',
     'https://kick.com/api/v1/channels/nanpalive',
     'https://kick.com/api/v1/channels/n3on',
@@ -49,4 +50,5 @@ export let streamers = [
     'https://kick.com/api/v1/channels/xqc',
     'https://kick.com/api/v1/channels/yourrage',
     'https://kick.com/api/v1/channels/zherka'
+    // 'https://kick.com/api/v1/channels/lowti3rgod', //Banned channel for testing
 ];
