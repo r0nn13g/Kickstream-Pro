@@ -8,7 +8,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/burgerplanet',
     'https://kick.com/api/v1/channels/brucedropemoff',
     'https://kick.com/api/v1/channels/crazytawn',
-    // 'https://kick.com/api/v1/channels/cristravels' // banned 9/24/23
     'https://kick.com/api/v1/channels/deepak',
     'https://kick.com/api/v1/channels/eddie',
     'https://kick.com/api/v1/channels/fousey',
@@ -32,7 +31,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/nedx',
     'https://kick.com/api/v1/channels/nickwhite',
     'https://kick.com/api/v1/channels/officialebz',
-    'https://kick.com/api/v1/channels/oumb',
     'https://kick.com/api/v1/channels/princessangelcakez',
     'https://kick.com/api/v1/channels/sam',
     'https://kick.com/api/v1/channels/sampanday',
