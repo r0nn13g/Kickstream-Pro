@@ -26,7 +26,7 @@ const PasswordProtected = () => {
           <label htmlFor="password"></label>
           <input
             type="password"
-            id="password-protct"
+            id="password"
             value={password}
             onChange={handlePasswordChange}
             required
