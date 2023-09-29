@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/homepage-styles.css';
 import Footer from "../components/Footer";
 import kicksterLogo from "../assets/LSS.gif";
-import PasswordProtected from "../components/PasswordProtected";
+// import PasswordProtected from "../components/PasswordProtected";
 
 const Home = () => {  
   return(
@@ -10,7 +10,7 @@ const Home = () => {
       <div className="home-text" style={{marginTop: "180px"}}>   
             <img id="home-animation" src={kicksterLogo} alt="Live-streaming-solutions"/>
           <div></div>
-          <PasswordProtected />
+          {/* <PasswordProtected /> */}
         </div>
           <Footer/>
     </div>
