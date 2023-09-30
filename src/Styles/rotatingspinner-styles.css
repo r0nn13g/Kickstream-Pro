@@ -3,21 +3,21 @@
   /* border: 2px solid red; */
   text-align: center;
   margin:auto 0;
-  padding-top: 240px;
-  padding-bottom: 320px;
+  /* padding-top: 240px; */
+  /* padding-bottom: 320px; */
 
 }
 
 #spinner{
   text-align: center;
-  margin: 20px;
+  /* margin: 20px; */
   /* margin-left: 180px; */
 }
 
 #home-logo-rotating-spin{
   position: absolute;
-  top: 42.5%; /* Place the top edge of the image at the vertical center of the parent */
+  top: 36%; /* Place the top edge of the image at the vertical center of the parent */
   left: 50%; /* Place the left edge of the image at the horizontal center of the parent */
   transform: translate(-50%, -50%); /* Center the image perfectly by moving it 50% of its own width and height in the opposite direction */
-  height:10px;
+  height:16px;
 }

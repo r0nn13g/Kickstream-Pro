@@ -8,6 +8,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
+import RotatingSpinner from '../components/RotatingSpinner.js';
 
   let pfp;
   let pfpLive;
@@ -159,8 +160,9 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
         </div>
         { loadingTimeout ? (
           <div className="live-stream-card-error" style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
+            <RotatingSpinner />
           <b style={{color: "var(--gray-elements)"}}>
-            oops.. there seems to be a problem. please retry later.
+            Too many requests. Retrying...
           </b>
         </div>
         ) : isLoading ? (
