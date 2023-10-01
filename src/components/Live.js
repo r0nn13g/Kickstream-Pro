@@ -131,7 +131,7 @@ import RotatingSpinner from '../components/RotatingSpinner.js';
         return sortedOnlineStreamers;
       }
     };
-    
+
     const displayStreamers = getRandomizedStreamers();
     
         return (

@@ -1,3 +1,4 @@
+const Live = require('../components/Live').default;
 const { getRandomizedStreamers } = require('../src/components/Live'); // Import your module
 
 // Mock sortedOnlineStreamers for testing
