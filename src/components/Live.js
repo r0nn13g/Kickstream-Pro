@@ -3,13 +3,14 @@ import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
 import { streamers } from "../data/Streamers";
-import {React, useState, useEffect} from "react";
+import {React, useState, useEffect, useRef} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import RotatingSpinner from '../components/RotatingSpinner.js';
 import Ghost from "../assets/ghost.gif";
+import scarySound from "../assets/scarySound.mp3";
 
   let pfp;
   let pfpLive;
@@ -120,6 +121,13 @@ import Ghost from "../assets/ghost.gif";
         borderColor: '',
       };
 
+      const audioRef = useRef(null);
+
+      const playNotificationSound = () => {
+        if (audioRef.current) {
+          audioRef.current.play();
+        }
+      };
 
     const toggleHalloween = () => {
       setHalloweenMode((prevMode) => !prevMode);
@@ -128,11 +136,9 @@ import Ghost from "../assets/ghost.gif";
       viewersCountContainers.forEach(container => {
         container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
       });
-    } 
+        } 
+        playNotificationSound();
     }
-
-
-    
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
@@ -176,6 +182,7 @@ import Ghost from "../assets/ghost.gif";
           {showLive ? "Online" : "Offline"}
         </button>
           <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" onClick={toggleHalloween}/>
+          <audio ref={audioRef} src={scarySound} preload="auto"></audio>
         </div>
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
