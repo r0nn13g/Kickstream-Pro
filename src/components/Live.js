@@ -9,6 +9,7 @@ import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import RotatingSpinner from '../components/RotatingSpinner.js';
+import Ghost from "../assets/ghost.gif";
 
   let pfp;
   let pfpLive;
@@ -108,6 +109,10 @@ import RotatingSpinner from '../components/RotatingSpinner.js';
       return window.location.href = "/create";
     }
 
+    const handleHalloween = () => {
+
+    }
+
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
         return b.livestream.viewer_count - a.livestream.viewer_count;
@@ -149,6 +154,7 @@ import RotatingSpinner from '../components/RotatingSpinner.js';
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
+          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" onClick={handleHalloween}/>
         </div>
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
