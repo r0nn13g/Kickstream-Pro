@@ -38,7 +38,7 @@ import Ghost from "../assets/ghost.gif";
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
     const [loadingTimeout, setLoadingTimeout] = useState(null);
-    const [halloweenMode, sethalloweenMode] = useState(false);
+    const [halloweenMode, setHalloweenMode] = useState(false);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -110,9 +110,29 @@ import Ghost from "../assets/ghost.gif";
       return window.location.href = "/create";
     }
 
-    const handleHalloween = () => {
-     sethalloweenMode((prevMode) => !prevMode);
+    const halloweenStyle = halloweenMode
+    ? {
+        color: 'var(--orange-elements)',
+        borderColor: 'var(--orange-elements)',
+      }
+    : {
+        color: '',
+        borderColor: '',
+      };
+
+
+    const toggleHalloween = () => {
+      setHalloweenMode((prevMode) => !prevMode);
+      const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
+      if (viewersCountContainers) {
+      viewersCountContainers.forEach(container => {
+        container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
+      });
+    } 
     }
+
+
+    
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
@@ -155,7 +175,7 @@ import Ghost from "../assets/ghost.gif";
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
-          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" onClick={handleHalloween}/>
+          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" onClick={toggleHalloween}/>
         </div>
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
@@ -418,7 +438,7 @@ import Ghost from "../assets/ghost.gif";
                         to={`https://www.kick.com/${slug}`}
                         target="_blank"
                         path="relative"
-                        style={{ textDecoration: "none" }}
+                        style={{halloweenStyle}}
                       >
                         <div className="pfp">{pfpLive}</div>
                       </Link>
