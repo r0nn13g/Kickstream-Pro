@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import '../styles/live-styles.css';
+import '../styles/live-card-styles.css';
 import axios from "axios";
 import { streamers } from "../data/Streamers";
 import PulsatingDot from './PulsatingDot';

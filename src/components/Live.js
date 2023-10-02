@@ -1,5 +1,5 @@
 import axios from "axios";
-import '../styles/live-styles.css';
+import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
 import { streamers } from "../data/Streamers";
