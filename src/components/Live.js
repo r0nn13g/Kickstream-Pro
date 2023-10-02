@@ -38,6 +38,7 @@ import Ghost from "../assets/ghost.gif";
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
     const [loadingTimeout, setLoadingTimeout] = useState(null);
+    const [halloweenMode, sethalloweenMode] = useState(false);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -110,7 +111,7 @@ import Ghost from "../assets/ghost.gif";
     }
 
     const handleHalloween = () => {
-
+     sethalloweenMode((prevMode) => !prevMode);
     }
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
