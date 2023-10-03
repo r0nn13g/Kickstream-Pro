@@ -196,7 +196,7 @@ import scarySound from "../assets/scarySound.mp3";
           <div className="live-stream-card-error" style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
             <RotatingSpinner />
           <b style={{color: "var(--gray-elements)"}}>
-            Too many requests. Retrying...
+              Timed Out.
           </b>
         </div>
         ) : isLoading ? (
