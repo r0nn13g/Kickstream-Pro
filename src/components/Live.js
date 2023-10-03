@@ -40,7 +40,7 @@ import scarySound from "../assets/scarySound.mp3";
     const [offlineStreamers, setOfflineStreamers] = useState([]);
     const [loadingTimeout, setLoadingTimeout] = useState(null);
     const [halloweenMode, setHalloweenMode] = useState(false);
-
+  
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -129,8 +129,11 @@ import scarySound from "../assets/scarySound.mp3";
         }
       };
 
+      const handleHalloween = () => {
+        setHalloweenMode((prevMode) => !prevMode);
+      }
+
     const toggleHalloween = () => {
-      setHalloweenMode((prevMode) => !prevMode);
       const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
       if (viewersCountContainers) {
       viewersCountContainers.forEach(container => {
@@ -138,6 +141,7 @@ import scarySound from "../assets/scarySound.mp3";
       });
         } 
         playNotificationSound();
+        handleHalloween()
     }
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
@@ -181,7 +185,9 @@ import scarySound from "../assets/scarySound.mp3";
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
-          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" onClick={toggleHalloween}/>
+        <button id="shuffle-button" onClick={toggleHalloween}>
+          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" />
+        </button>
           <audio ref={audioRef} src={scarySound} preload="auto"></audio>
         </div>
         <div className="live-header-banner-wrapper">
