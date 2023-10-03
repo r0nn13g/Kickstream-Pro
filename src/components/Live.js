@@ -128,20 +128,16 @@ import scarySound from "../assets/scarySound.mp3";
           audioRef.current.play();
         }
       };
-
-      const handleHalloween = () => {
-        setHalloweenMode((prevMode) => !prevMode);
-      }
-
-    const toggleHalloween = () => {
+      
+      const toggleHalloween = () => {
       const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
       if (viewersCountContainers) {
-      viewersCountContainers.forEach(container => {
-        container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
-      });
-        } 
-        playNotificationSound();
-        handleHalloween()
+        viewersCountContainers.forEach(container => {
+          container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
+        });
+      } 
+      playNotificationSound();
+      setHalloweenMode((prevMode) => !prevMode);
     }
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
@@ -185,9 +181,7 @@ import scarySound from "../assets/scarySound.mp3";
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? "Online" : "Offline"}
         </button>
-        <button id="shuffle-button" onClick={toggleHalloween}>
-          <img style={{height: "40px"}} src={Ghost}  alt="ghost-gif" />
-        </button>
+          <img onClick={toggleHalloween} style={{height: "40px"}} src={Ghost}  alt="ghost-gif" />
           <audio ref={audioRef} src={scarySound} preload="auto"></audio>
         </div>
         <div className="live-header-banner-wrapper">
