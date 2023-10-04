@@ -111,34 +111,37 @@ import scarySound from "../assets/scarySound.mp3";
       return window.location.href = "/create";
     }
 
-    const halloweenStyle = halloweenMode
-    ? {
-        color: 'var(--orange-elements)',
-        borderColor: 'var(--orange-elements)',
-      }
-    : {
-        color: '',
-        borderColor: '',
-      };
+    const audioRef = useRef(null);
 
-      const audioRef = useRef(null);
+const playNotificationSound = () => {
+  if (audioRef.current) {
+    audioRef.current.play();
+  }
+};
 
-      const playNotificationSound = () => {
-        if (audioRef.current) {
-          audioRef.current.play();
-        }
-      };
-      
-      const toggleHalloween = () => {
-      const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
-      if (viewersCountContainers) {
-        viewersCountContainers.forEach(container => {
-          container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
-        });
-      } 
-      playNotificationSound();
-      setHalloweenMode((prevMode) => !prevMode);
+const toggleHalloween = () => {
+  const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
+
+  if (viewersCountContainers.length > 0) {
+    viewersCountContainers.forEach(container => {
+      container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
+    });
+
+    playNotificationSound();
+    // Consider uncommenting the line below if you need to toggle the Halloween mode
+    setHalloweenMode((prevMode) => !prevMode);
+  }
+};
+
+const halloweenStyle = halloweenMode
+  ? {
+      color: 'var(--orange-elements)',
+      borderColor: 'var(--orange-elements)',
     }
+  : {
+      color: '',
+      borderColor: '',
+    };
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
