@@ -89,7 +89,7 @@ import scarySound from "../assets/scarySound.mp3";
       };
 
       fetchData(); //<-----FETCHING CALLS FROM KICK API. 
-      const interval = setInterval(fetchData, 40000); //<-- FETCHES EVERY 40 SECONDS
+      const interval = setInterval(fetchData, 60000); //<-- FETCHES EVERY 40 SECONDS
       return () => {
         clearInterval(interval);
       };
