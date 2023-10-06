@@ -49,6 +49,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/thedirtydogg',
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/totalirl',
+    'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/xqc',
     'https://kick.com/api/v1/channels/yourrage',
