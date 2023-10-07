@@ -84,7 +84,7 @@ export default function TemporaryDrawer() {
     <div>
       {['bottom'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}> <MenuIcon id="menu-icon"  fontSize="large" style={{ color: 'white' }} /></Button>
+          <Button onClick={toggleDrawer(anchor, true)}> <MenuIcon id="menu-icon" style={{ color: 'white' }} /></Button>
           <Drawer
             PaperProps={{
             sx: {

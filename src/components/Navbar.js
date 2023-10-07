@@ -3,11 +3,12 @@ import '../styles/navbar-styles.css';
 import {Link, useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
-import RedeemIcon from '@mui/icons-material/Redeem';
+// import RedeemIcon from '@mui/icons-material/Redeem';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import KickLogo from '../assets/kickster.png';
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -105,7 +106,7 @@ const Navbar = () => {
               handleLinkClick('support');
             }} 
             style={{textDecoration: 'none'}}>
-            <RedeemIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--white-elements'}}/>
+            <MenuIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--white-elements'}}/>
           </Link>
             </>
           ) : (
