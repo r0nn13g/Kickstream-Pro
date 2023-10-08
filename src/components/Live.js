@@ -210,7 +210,6 @@ const halloweenStyle = halloweenMode
               // Display online streamers
               <>
                 {displayStreamers.map((item, index) => {
-              console.log(displayStreamers);
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
 

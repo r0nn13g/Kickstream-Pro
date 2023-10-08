@@ -14,6 +14,8 @@ const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation(); 
   const [activeLink, setActiveLink] = useState(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,8 +45,8 @@ const Navbar = () => {
       case '/checker':
         setActiveLink('checker');
         break;
-      case '/support':
-        setActiveLink('support');
+      case '/drawer':
+        setActiveLink('drawer');
         break;
       default:
         setActiveLink(null);
@@ -56,6 +58,11 @@ const Navbar = () => {
   const handleLinkClick = (linkId) => {
     setActiveLink(linkId);
   }
+
+  const handleMenuIconClick = () => {
+    // Toggle the state to open/close the drawer
+    setIsDrawerOpen(!isDrawerOpen);
+  };
 
   return (
     <nav className="nav-bar">
@@ -98,16 +105,14 @@ const Navbar = () => {
             style={{textDecoration: 'none'}}>
             <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
-          <Link 
+          <div 
             id="mobile-nav-item" 
-            to={'/support'} 
             path='relative'
-            onClick={(e) => {
-              handleLinkClick('support');
-            }} 
+            onClick={handleMenuIconClick} 
             style={{textDecoration: 'none'}}>
-            <MenuIcon style={{ fill: activeLink === 'support' ? 'var(--green-elements)': 'var(--white-elements'}}/>
-          </Link>
+              <MenuIcon style={{ fill: activeLink === 'drawer' ? 'var(--green-elements)': 'var(--white-elements'}}/>
+          </div>
+          {/* <TemporaryDrawer /> */}
             </>
           ) : (
             // Show the Temporary Drawer for larger screens
