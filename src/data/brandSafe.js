@@ -11,6 +11,7 @@ export let brandSafe = [
   'https://kick.com/api/v1/channels/mellstroy',
   'https://kick.com/api/v1/channels/annoying',
   'https://kick.com/api/v1/channels/nesszv',
+  'https://kick.com/api/v1/channels/malek_04',
   'https://kick.com/api/v1/channels/adinross',
   'https://kick.com/api/v1/channels/garydavid',
   'https://kick.com/api/v1/channels/hanridge',
