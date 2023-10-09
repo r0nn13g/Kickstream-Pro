@@ -3,19 +3,15 @@ import '../styles/navbar-styles.css';
 import {Link, useLocation} from "react-router-dom";
 import { useState, useEffect } from "react";
 import TemporaryDrawer from "./TemporaryDrawer";
-// import RedeemIcon from '@mui/icons-material/Redeem';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import KickLogo from '../assets/kickster.png';
-import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation(); 
   const [activeLink, setActiveLink] = useState(null);
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,11 +55,6 @@ const Navbar = () => {
     setActiveLink(linkId);
   }
 
-  const handleMenuIconClick = () => {
-    // Toggle the state to open/close the drawer
-    setIsDrawerOpen(!isDrawerOpen);
-  };
-
   return (
     <nav className="nav-bar">
         <div className='mobile-menu-container'>
@@ -105,14 +96,10 @@ const Navbar = () => {
             style={{textDecoration: 'none'}}>
             <HowToRegIcon style={{ fill: activeLink === 'checker' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
-          <div 
-            id="mobile-nav-item" 
-            path='relative'
-            onClick={handleMenuIconClick} 
-            style={{textDecoration: 'none'}}>
-              <MenuIcon style={{ fill: activeLink === 'drawer' ? 'var(--green-elements)': 'var(--white-elements'}}/>
-          </div>
-          {/* <TemporaryDrawer /> */}
+          <Link id="mobile-nav-item" 
+                path="relative">
+            <TemporaryDrawer />
+          </Link>
             </>
           ) : (
             // Show the Temporary Drawer for larger screens

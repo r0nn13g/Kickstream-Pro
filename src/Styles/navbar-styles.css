@@ -20,6 +20,7 @@ nav {
 }
 
 .mobile-menu-container{ 
+  padding-left: 10px;
   display: flex;
   grid-template-columns: repeat(5, auto); 
   width: 100%;
@@ -29,11 +30,21 @@ nav {
 }
 
 #mobile-nav-item{
-  margin: 2px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin: 0px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
   
 }
+
+#mobile-nav-drawer{
+  margin: 0px;
+  padding: 0px;
+}
+
+  
+  #nav-drawer-button{
+    margin: -14px;
+  }
 
 .home-logo-container{
   grid-area: home;
