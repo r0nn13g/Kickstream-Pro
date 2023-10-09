@@ -21,59 +21,53 @@
   display: flex;
   align-items: center;
   background-color: rgb(49, 49, 49);
-  color: var(--white-elements);
-  margin: 10px;
-  padding: 4px;
+  background: url("../assets/buttonbackground4.gif") no-repeat scroll 0 0  transparent;
+  background-size: 100px;
+  color: white;
+  margin: 14px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
 }
 
-#online-offline-switch:active{
-  color: rgb(49, 49, 49);;
-  background-color: var(--white-elements);
-}
 
 #shuffle-button{
   display: flex;
   align-items: center;
   background-color: rgb(49, 49, 49);
-  color: var(--white-elements);
-  margin: 10px;
-  padding: 4px;
+  background: url("../assets/buttonbackground2.gif") no-repeat scroll 0 0  transparent;
+  background-size: 100px;
+  color: white;
+  margin: 10PX;
+  padding: 10px;
   border-radius: 5px;
   border: none;
 }
 
-#shuffle-button:active{
-  color: rgb(49, 49, 49);;
-  background-color: var(--white-elements);
-}
-
 #navigate-create{
   background-color: rgb(49, 49, 49);
-  color: var(--white-elements);
+  background: url("../assets/buttonbackground.gif") no-repeat scroll 0 0 transparent;
+  background-size: 100px;
+  color: white;
   display: flex;
   justify-content: flex-end;
-  margin: 10px;
-  padding: 4px;
+  margin: 16px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
 }
 
 #sort-order-switch{
     background-color: rgb(49, 49, 49);
-  color: var(--white-elements);
+    background: url("../assets/buttonbackground3.gif") no-repeat scroll 0 0 transparent;
+    background-size: 100px;
+  color: white;
   display: flex;
   justify-content: flex-end;
   margin: 10px;
-  padding: 4px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
-}
-
-#sort-order-switch:active{
-  color: rgb(49, 49, 49);
-  background-color: var(--green-elements);
 }
 
 .live-header-banner-wrapper{
@@ -86,7 +80,7 @@
 }
 
 #live-header-container{
-  color: gray;
+  color: var(--green-elements);
   margin: 5px;
 }
 

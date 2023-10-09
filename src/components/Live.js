@@ -106,11 +106,7 @@ import scarySound from "../assets/scarySound.mp3";
     const toggleShuffle = () => {
       setRandomOrder((prevOrder) => !prevOrder)
     }
-
-    const handleToCreate = () => {
-      return window.location.href = "/create";
-    }
-
+    
     const audioRef = useRef(null);
 
 const playNotificationSound = () => {
@@ -172,17 +168,17 @@ const halloweenStyle = halloweenMode
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        <button id="navigate-create" onClick={handleToCreate}>
-            Create
-        </button>
+        {/* <button id="navigate-create" onClick={handleToCreate}>
+            <b>CREATE</b>
+        </button> */}
         <button id="shuffle-button" onClick={toggleShuffle} >
-            Shuffle
+            <b>Shuffle</b>
           </button>
         <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? "Ascending" : "Descending"}
+          {sortHighToLow ? <b>Ascending</b> : <b>Descending</b>}
         </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          {showLive ? "Online" : "Offline"}
+          {showLive ? <b>Online</b> : <b>Offline</b>}
         </button>
           <img onClick={toggleHalloween} style={{height: "40px"}} src={Ghost}  alt="ghost-gif" />
           <audio ref={audioRef} src={scarySound} preload="auto"></audio>
@@ -190,9 +186,9 @@ const halloweenStyle = halloweenMode
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
             <h3 id="live-header-container">
-              {showLive ? "LIVE" : "OFFLINE" }
+              {showLive ? "Live" : "Offline" }
             </h3>
-            {showLive ? <VideoCameraFrontIcon style={{ fill: showLive ? 'red' : 'gray' }}/> :  <VideoCamOffIcon style={{fill: showLive ? 'red' : 'gray'}}/> }
+            {showLive ? <VideoCameraFrontIcon style={{ fill: showLive ? 'var(--gray-elements)' : 'gray' }}/> :  <VideoCamOffIcon style={{fill: showLive ? 'red' : 'gray'}}/> }
           </div>
         </div>
         { loadingTimeout ? (
