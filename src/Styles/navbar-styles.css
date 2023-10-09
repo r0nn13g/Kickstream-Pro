@@ -20,7 +20,6 @@ nav {
 }
 
 .mobile-menu-container{ 
-  padding-left: 10px;
   display: flex;
   grid-template-columns: repeat(5, auto); 
   width: 100%;
@@ -43,7 +42,7 @@ nav {
 
   
   #nav-drawer-button{
-    margin: -14px;
+    margin: -20px;
   }
 
 .home-logo-container{
