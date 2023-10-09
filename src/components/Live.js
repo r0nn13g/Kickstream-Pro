@@ -3,14 +3,12 @@ import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
 import { streamers } from "../data/Streamers";
-import {React, useState, useEffect, useRef} from "react";
+import {React, useState, useEffect } from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import RotatingSpinner from '../components/RotatingSpinner.js';
-import Ghost from "../assets/ghost.gif";
-import scarySound from "../assets/scarySound.mp3";
 
   let pfp;
   let pfpLive;
@@ -39,7 +37,6 @@ import scarySound from "../assets/scarySound.mp3";
     const [onlineStreamers, setOnlineStreamers] = useState([]);
     const [offlineStreamers, setOfflineStreamers] = useState([]);
     const [loadingTimeout, setLoadingTimeout] = useState(null);
-    const [halloweenMode, setHalloweenMode] = useState(false);
   
     useEffect(() => {
       const fetchData = async () => {
@@ -106,38 +103,7 @@ import scarySound from "../assets/scarySound.mp3";
     const toggleShuffle = () => {
       setRandomOrder((prevOrder) => !prevOrder)
     }
-    
-    const audioRef = useRef(null);
 
-const playNotificationSound = () => {
-  if (audioRef.current) {
-    audioRef.current.play();
-  }
-};
-
-const toggleHalloween = () => {
-  const viewersCountContainers = document.querySelectorAll('.live-viewers-count-container');
-
-  if (viewersCountContainers.length > 0) {
-    viewersCountContainers.forEach(container => {
-      container.style.color = halloweenMode ? 'var(--orange-elements)' : '';
-    });
-
-    playNotificationSound();
-    // Consider uncommenting the line below if you need to toggle the Halloween mode
-    setHalloweenMode((prevMode) => !prevMode);
-  }
-};
-
-const halloweenStyle = halloweenMode
-  ? {
-      color: 'var(--orange-elements)',
-      borderColor: 'var(--orange-elements)',
-    }
-  : {
-      color: '',
-      borderColor: '',
-    };
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
@@ -180,8 +146,6 @@ const halloweenStyle = halloweenMode
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? <b>Online</b> : <b>Offline</b>}
         </button>
-          <img onClick={toggleHalloween} style={{height: "40px"}} src={Ghost}  alt="ghost-gif" />
-          <audio ref={audioRef} src={scarySound} preload="auto"></audio>
         </div>
         <div className="live-header-banner-wrapper">
           <div className="video-camera-icon-container">
@@ -444,7 +408,6 @@ const halloweenStyle = halloweenMode
                         to={`https://www.kick.com/${slug}`}
                         target="_blank"
                         path="relative"
-                        style={{halloweenStyle}}
                       >
                         <div className="pfp">{pfpLive}</div>
                       </Link>

@@ -1,7 +1,7 @@
 :root {
-  --pulsating-dot: var(--gray-elements);
+  --pulsating-dot: var(--green-elements);
   --green-elements: rgb(85, 255, 47);
-  --gray-elements: rgb(85, 85, 85);
+  --gray-elements: rgb(104, 104, 104);
   --graytwo-elements: rgb(162, 162, 162);
   --white-elements: rgba(211, 211, 211, 0.816);
   --blue-elements: rgb(12, 80, 207);
@@ -169,7 +169,7 @@
   font-weight: 900;
   font-size: 12px;
   margin-top: 5px;
-  color: var( --green-elements);
+  color: white;
 }
 
 #channel-offline {
@@ -206,7 +206,7 @@
   font-weight: 400;
   margin: 0px;
   margin-top:2px;
-  color:var(--graytwo-elements);
+  color:var(--gray-elements);
 }
 
 #title-offline {
@@ -222,7 +222,7 @@
   margin: 0px;
   margin-top: 2px;
   font-weight: 900;
-  color:var(--white-elements);
+  color:var(--graytwo-elements);
  }
 
 .live-stream-details-container {
