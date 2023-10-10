@@ -6,7 +6,7 @@ import '../styles/video-styles.css';
 const NewsLoader = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-      axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=potatojet&type=video&key=${process.env.REACT_APP_API_KEY}`)
+      axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=100&q=dexerto&type=video&key=${process.env.REACT_APP_API_KEY}`)
       .then((response) => {
                 setData(response.data.items);
             })
@@ -25,7 +25,7 @@ const NewsLoader = () => {
     ));
   return(
     <div>
-         <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @PotatoJet</h6>
+         <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @dexerto</h6>
             <div className="videos">
                 {youtubeDataArr}
             </div>

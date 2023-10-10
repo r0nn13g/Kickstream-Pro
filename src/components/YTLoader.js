@@ -7,7 +7,7 @@ const YTLoader = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=potatojet&type=video&key=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=dexerto&type=video&key=${process.env.REACT_APP_API_KEY}`)
             .then((response) => {
                 setData(response.data.items);
             })
