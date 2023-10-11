@@ -293,7 +293,7 @@
   display: grid;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 840px) {
   .offline-online-switch-container {
     align-items: center;
     display: flex;
