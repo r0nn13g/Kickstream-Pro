@@ -3,12 +3,14 @@ import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
 import { streamers } from "../data/Streamers";
-import {React, useState, useEffect } from "react";
+import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import RotatingSpinner from '../components/RotatingSpinner.js';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
   let pfp;
   let pfpLive;
@@ -137,12 +139,12 @@ import RotatingSpinner from '../components/RotatingSpinner.js';
         {/* <button id="navigate-create" onClick={handleToCreate}>
             <b>CREATE</b>
         </button> */}
+        <button id="sort-order-switch" onClick={toggleSortOrder}>
+          {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
+        </button>
         <button id="shuffle-button" onClick={toggleShuffle} >
             <b>Shuffle</b>
           </button>
-        <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? <b>Ascending</b> : <b>Descending</b>}
-        </button>
         <button id="online-offline-switch" onClick={toggleLiveOffline}>
           {showLive ? <b>Online</b> : <b>Offline</b>}
         </button>

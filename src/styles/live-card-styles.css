@@ -58,14 +58,14 @@
 }
 
 #sort-order-switch{
-    background-color: rgb(49, 49, 49);
-    background: url("../assets/buttonbackground3.gif") no-repeat scroll 0 0 transparent;
-    background-size: 100px;
+  background-color: rgb(49, 49, 49);
+  background: url("../assets/buttonbackground3.gif") no-repeat scroll 0 0 transparent;
+  background-size: 100px;
   color: white;
   display: flex;
   justify-content: flex-end;
   margin: 10px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   border: none;
 }
