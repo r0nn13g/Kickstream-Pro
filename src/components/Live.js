@@ -264,41 +264,34 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
                       
                       // JSX returning live stream card
                       return (
-                    <div key={index} className="live-stream-card">
-                      <Link
-                        className="channel-pfp-container"
-                        to={`https://www.kick.com/${slug}`}
-                        target="_blank"
-                        path="relative"
-                        style={{ textDecoration: "none" }}
-                      >
-                        <div className="pfp">{pfpLive}</div>
-                      </Link>
-                      <div className="live-stream-details-container">
-                        <div className="channel-name-container">
-                          {channelLive}
-                        </div>
-                        <div className="followed-by-container">
-                          <div id="followers">{followersLive}</div>
-                        </div>
-                        {/* <Link
-                          to={`https://www.kick.com/${slug}/chatroom`}
+                        <Link
+                          className="channel-pfp-container"
+                          to={`https://www.kick.com/${slug}`}
                           target="_blank"
                           path="relative"
                           style={{ textDecoration: "none" }}
-                        > */}
-                          <div className="stream-title-container">
-                            {titleLive}
+                        >
+                        <div key={index} className="live-stream-card">
+                          <div className="pfp">{pfpLive}</div>
+                        <div className="live-stream-details-container">
+                          <div className="channel-name-container">
+                            {channelLive}
                           </div>
-                        {/* </Link> */}
-                      </div>
-                      <div className="is-live">
-                        {isLive}        
+                        <div className="followed-by-container">
+                          <div id="followers">{followersLive}</div>
+                        </div>
+                        <div className="stream-title-container">
+                            {titleLive}
+                        </div>
+                        </div>
+                          <div className="is-live">
+                            {isLive}        
                           <div className="live-viewers-count-container">
                             {viewerCount}
                           </div>
-                      </div>
-                    </div>
+                          </div>
+                        </div>
+                      </Link>
                   );
                 })}
               </>
