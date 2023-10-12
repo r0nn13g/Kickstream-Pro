@@ -281,16 +281,16 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
                         <div className="followed-by-container">
                           <div id="followers">{followersLive}</div>
                         </div>
-                        <Link
+                        {/* <Link
                           to={`https://www.kick.com/${slug}/chatroom`}
                           target="_blank"
                           path="relative"
                           style={{ textDecoration: "none" }}
-                        >
+                        > */}
                           <div className="stream-title-container">
                             {titleLive}
                           </div>
-                        </Link>
+                        {/* </Link> */}
                       </div>
                       <div className="is-live">
                         {isLive}
