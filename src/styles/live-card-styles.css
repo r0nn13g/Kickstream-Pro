@@ -27,7 +27,7 @@
   margin: 14px;
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid var(--green-elements);
 }
 
 
@@ -42,6 +42,8 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
+  border: 1px solid var(--green-elements);
+
 }
 
 #navigate-create{
@@ -68,6 +70,8 @@
   padding: 5px;
   border-radius: 5px;
   border: none;
+  border: 1px solid var(--green-elements);
+
 }
 
 .live-header-banner-wrapper{
