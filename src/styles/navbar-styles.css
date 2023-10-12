@@ -15,7 +15,7 @@ nav {
   padding: 5px;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 99%;
   background-color: #1b1b1b;
   z-index: 950;
 }
@@ -45,7 +45,7 @@ nav {
 
   
   #nav-drawer-button{
-    margin: -24px;
+    margin: -50px;
   }
 
 .home-logo-container{
@@ -97,6 +97,33 @@ nav {
     width: 20px;
   }
 }
+
+
+@media (max-width: 625px) {
+  nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 950;
+  }
+  
+  .mobile-menu-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-top: 0px;
+    grid-template-columns: repeat(5, auto); 
+    gap: 120px;
+    justify-content: center; 
+    }
+    
+    #home-mobile-logo {
+      height:20px;
+    width: 20px;
+    }
+}
+
 
 
 @media (max-width: 540px) {
