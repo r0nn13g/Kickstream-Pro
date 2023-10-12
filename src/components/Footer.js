@@ -6,7 +6,7 @@ const Footer = () => {
   return(
     <footer className="footer">
       <p id='footer-time' >Arrival: {now.getHours()}:{now.getUTCMinutes()}:{now.getUTCSeconds()}</p >
-      <p id="footer-text">2023 KICKSTER®. ALL RIGHTS RESERVED</p>
+      <p id="footer-text">2023 Kickstream Pro. ALL RIGHTS RESERVED</p>
     </footer>
   )
 }
