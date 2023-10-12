@@ -293,17 +293,10 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
                         {/* </Link> */}
                       </div>
                       <div className="is-live">
-                        {isLive}
-                        <Link
-                          to={`https://www.kick.com/${slug}/chatroom`}
-                          target="_blank"
-                          path="relative"
-                          style={{ textDecoration: "none" }}
-                        >
+                        {isLive}        
                           <div className="live-viewers-count-container">
                             {viewerCount}
                           </div>
-                        </Link>
                       </div>
                     </div>
                   );
