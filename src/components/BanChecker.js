@@ -7,7 +7,7 @@ import RotatingSpinner from "../components/RotatingSpinner.js";
 const BanChecker = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
-  const [user, setUser] = useState(true);
+  const [isloading, setIsLoading] = useState(true);
 
   const fetchData = async (streamerName) => {
     try {
@@ -16,6 +16,7 @@ const BanChecker = () => {
       const response = await axios.get(url);
       const responseData = response.data;
       setData([responseData]); 
+      setIsLoading(false)
     } catch (error) {
       console.log("Softbanned by kick servers & cloud flare");
     }
@@ -25,12 +26,12 @@ const BanChecker = () => {
     event.preventDefault();
     fetchData(streamerName);
     setStreamerName("");
-    setUser(false);
+    setIsLoading(false)
   };
   
   const handleDelete = () => {
     setData([]);
-    setUser(false);
+    setIsLoading(false)
 
   }
   
@@ -38,8 +39,8 @@ const BanChecker = () => {
     <div className="ban-checker">
       <BanAccordion />
       <div className="ban-checker-input-wrapper">
-        <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>BAN HAMMER 🔨</h3>
-        <h4 style={{color: "var(--gray-elements)", textAlign: "left", whiteSpace: "nowrap"}}>check the account status of any kick channel.</h4>
+        <h3 style={{color: "var(--green-elements)", textAlign: "center"}}>BAN CHECKER</h3>
+        <h6 style={{color: "var(--gray-elements)", textAlign: "center", whiteSpace: "nowrap"}}>check the account status of any kick channel.</h6>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -50,8 +51,6 @@ const BanChecker = () => {
           <button type="submit">Search</button>
           <button onClick={handleDelete}>Clear</button>
         </form>
-
-        
       </div>
       {data.map((item, index) => {
         let pfp = "";
@@ -71,8 +70,10 @@ const BanChecker = () => {
         banStatus = item[0].is_banned ? "BANNED ❌" : "ACTIVE ✅";
         
         return (
-          <div className="AFQJS032840239845">
-          {user ? (<RotatingSpinner/>):(
+          <div className="">
+          {isloading ? (
+              <RotatingSpinner/>
+              ) : (
           <div className="streamer-ban-details" key={index}>
               <div className="image-wrapper">
                 <img id="pfp" src={pfp} alt="Profile" />
