@@ -52,12 +52,13 @@ a{
 
 .videos{
   text-align: center;
-  margin: 10px;
+  width: 98%;
+  margin: 5px;
   margin-top: 30px;
   display: grid;
   text-align: center;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   padding-bottom: 50px;
 }
   
