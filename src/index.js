@@ -9,7 +9,7 @@ import ShowTrending from './pages/ShowTrending.js';
 import CreateChannels from './pages/CreateChannels.js';
 import ShowChecker from './pages/ShowChecker.js';
 import Support from './pages/Support.js';
-import DisplayVideo from './components/DisplayVideo';
+import DisplayVideo from './pages/DisplayVideo';
 import Live from './pages/ShowLive.js';
 import News from './pages/News';
 
