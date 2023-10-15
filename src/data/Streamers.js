@@ -37,7 +37,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/sampanday',
     'https://kick.com/api/v1/channels/scriptedagain',
     'https://kick.com/api/v1/channels/shotime',
-    // 'https://kick.com/api/v1/channels/sjc_official',
+    'https://kick.com/api/v1/channels/sjc_official',
     'https://kick.com/api/v1/channels/sliker',
     'https://kick.com/api/v1/channels/slightlyhomeless',
     'https://kick.com/api/v1/channels/slykane',
@@ -50,7 +50,5 @@ export let streamers = [
     'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/xqc',
-    // 'https://kick.com/api/v1/channels/yourrage',
     'https://kick.com/api/v1/channels/zherka'
-    // 'https://kick.com/api/v1/channels/lowti3rgod', //Banned channel for testing
 ];
