@@ -18,7 +18,6 @@ export let streamers = [
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/hkftv',
     'https://kick.com/api/v1/channels/iceposeidon',
-    'https://kick.com/api/v1/channels/jaycgee',
     'https://kick.com/api/v1/channels/jino',
     'https://kick.com/api/v1/channels/johnnysomali',
     'https://kick.com/api/v1/channels/johnwhatsgoingon',
@@ -44,15 +43,14 @@ export let streamers = [
     'https://kick.com/api/v1/channels/slykane',
     'https://kick.com/api/v1/channels/suspendas',
     'https://kick.com/api/v1/channels/sunnyirl',
-    // 'https://kick.com/api/v1/channels/swimmernick',
-    'https://kick.com/api/v1/channels/toyladyboy',
+    'https://kick.com/api/v1/channels/swimmernick',
     'https://kick.com/api/v1/channels/thedirtydogg',
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/totalirl',
     'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/xqc',
-    'https://kick.com/api/v1/channels/yourrage',
+    // 'https://kick.com/api/v1/channels/yourrage',
     'https://kick.com/api/v1/channels/zherka'
     // 'https://kick.com/api/v1/channels/lowti3rgod', //Banned channel for testing
 ];
