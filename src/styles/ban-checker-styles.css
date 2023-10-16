@@ -77,9 +77,15 @@ input[type=text] {
 @media (min-width: 840px) {
   input[type=text] {
     width: 75%;
+    font-size: 22px;
+    font-weight: 800;
     padding: 30px 30px;
     margin: 8px 0;
     box-sizing: border-box;
+  }
+
+  input{
+    font-size: 40px;
   }
 
   .ban-checker-input-wrapper button{

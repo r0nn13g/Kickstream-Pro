@@ -43,7 +43,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/slykane',
     'https://kick.com/api/v1/channels/suspendas',
     'https://kick.com/api/v1/channels/sunnyirl',
-    'https://kick.com/api/v1/channels/swimmernick',
+    // 'https://kick.com/api/v1/channels/swimmernick',
     'https://kick.com/api/v1/channels/thedirtydogg',
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/totalirl',
