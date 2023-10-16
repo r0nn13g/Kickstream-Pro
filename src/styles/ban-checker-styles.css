@@ -5,8 +5,7 @@
 .ban-checker-input-wrapper{
   text-align: center;
   margin-top: 80px;
-  margin-bottom: 80px;
-
+  margin-bottom: 10px;
 }
 
 input[type=text] {
@@ -34,9 +33,8 @@ input[type=text] {
   font-family: 'Courier New', Courier, monospace;
   background-color: rgba(37, 37, 37, 0.968);
   border-radius: 10px;
-  margin-top: 100px;
-  padding: 40px;
-  margin: 40px;
+  padding-top: 40px;
+  margin: 36px;
   display: grid;
   grid-template-areas:
   "pfp"
@@ -50,8 +48,8 @@ input[type=text] {
 }
 
 #pfp{
-  height: 75px;
-  width: 75px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
@@ -78,15 +76,16 @@ input[type=text] {
 /* @@@ALL BROWSERS@@@ */
 @media (min-width: 840px) {
   input[type=text] {
-    width: 40%;
-    padding: 12px 20px;
+    width: 75%;
+    padding: 30px 30px;
     margin: 8px 0;
     box-sizing: border-box;
   }
 
   .ban-checker-input-wrapper button{
+    font-size: 22px;
     margin: 10px;
-    padding: 12px;
+    padding: 20px;
     border-radius: 5px;
     color: var(--green-elements);
     background-color: rgb(50, 50, 50);
