@@ -4,13 +4,22 @@
 
 .ban-checker-input-wrapper{
   text-align: center;
-  margin: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 .ban-checker-input-wrapper input{
-  margin-top: 10px;
+  margin-top: 40px;
   color:white;
-  background-color: var(--gray-elements);
+  background-color:  rgba(37, 37, 37, 0.968);
   border-radius: 5px;
 }
 
@@ -18,29 +27,31 @@
   margin: 10px;
   border-radius: 5px;
   color: var(--green-elements);
-  background-color: var(--gray-elements);
+  background-color: rgb(50, 50, 50);
 }
 
 .streamer-ban-details {
-  background-color: rgb(41, 41, 41);
-  border-radius: 6px;
-  margin-top: 60px;
-  margin:20px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(37, 37, 37, 0.968);
+  border-radius: 10px;
+  margin-top: 100px;
+  padding: 40px;
+  margin: 40px;
   display: grid;
-  grid-template-columns: 1fr(3);
   grid-template-areas:
-  "pfp name status";
+  "pfp"
+  "name"
+  "status";
   align-items: center;
 }
 
 .image-wrapper{ 
-  margin-top: 4px;
   grid-area: pfp;
 }
 
 #pfp{
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
 }
 
@@ -49,12 +60,74 @@
 }
 
 #streamer_name{
-  color: var(--gray-elements);
+  color: white;
+  font-size: 30px;
+  white-space: nowrap;
 }
 
 .ban_status_wrapper{
   grid-area: status;
+  font-size: 30px;
+  white-space: nowrap;
 }
 #ban-status{
   align-items: center;
+}
+
+
+/* @@@ALL BROWSERS@@@ */
+@media (min-width: 840px) {
+  input[type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .ban-checker-input-wrapper button{
+    margin: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    color: var(--green-elements);
+    background-color: rgb(50, 50, 50);
+  }
+  
+
+  .ban-checker-input-wrapper input{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    color:white;
+    background-color: rgba(37, 37, 37, 0.968);
+    border-radius: 5px;
+  }
+  
+
+  .streamer-ban-details {
+    border-radius: 10px;
+    margin-top: 100px;
+    padding: 20px;
+    margin: 40px;
+    display: grid;
+    grid-template-areas:
+    "pfp name status";
+    align-items: center;
+  }
+  
+  #pfp{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  #streamer_name{
+    font-size: 50px;
+    white-space: nowrap;
+    color: white;
+  }
+  
+  .ban_status_wrapper{
+    white-space: nowrap;
+    font-size: 50px;
+    grid-area: status;
+  }  
 }

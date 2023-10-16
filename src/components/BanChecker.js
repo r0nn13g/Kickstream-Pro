@@ -39,8 +39,8 @@ const BanChecker = () => {
     <div className="ban-checker">
       <BanAccordion />
       <div className="ban-checker-input-wrapper">
-        <h3 style={{color: "var(--green-elements)", textAlign: "center"}}>BAN CHECKER</h3>
-        <h6 style={{color: "var(--gray-elements)", textAlign: "center", whiteSpace: "nowrap"}}>check the account status of any kick channel.</h6>
+        <h1 style={{color: "var(--green-elements)", textAlign: "center"}}>BAN CHECKER</h1>
+        <h4 style={{color: "var(--gray-elements)", textAlign: "center", whiteSpace: "nowrap"}}>check the account status of any kick channel.</h4>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
