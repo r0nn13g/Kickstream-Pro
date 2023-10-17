@@ -30,54 +30,54 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
-              <Link to="/live" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
+            <Link to="/live" style={{textDecoration: 'none' , color: 'white' }}>
               <b>Live +</b>
-              </Link>
+            </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/news" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
+            <Link to="/news" style={{ textDecoration: 'none' , color: 'white' }}>
               <b>News +</b>
-              </Link>
+            </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)' }} >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/create" style={{ textDecoration: 'none' , color: 'white' }}>
               <b>Create +</b>
               </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/checker" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/checker" style={{textDecoration: 'none' , color: 'white' }}>
               <b>Checker +</b>
               </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/trending" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/trending" style={{ textDecoration: 'none' , color: 'white' }}>
               <b>Trending +</b>
               </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/support" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/support" style={{textDecoration: 'none' , color: 'white' }}>
               <b>Support +</b>
               </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
-              <Link to="/contact" style={{textDecoration: 'none' , color: 'var(--white-elements)' }}>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/contact" style={{textDecoration: 'none' , color: 'white' }}>
               <b>Contact +</b>
               </Link>
           </ListItem>
-      </List>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }}  >
-             <a href="https://github.com/r0nn13g/Kicksta-for-kick-live-streaming" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' , color: 'var(--white-elements)' }}>
-              <GitHubIcon />
-             </a>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }}  >
           </ListItem>
-      <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--white-elements)' }} >
+      <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)', marginBottom: '24px' }} >
           <Link to="/" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
-            <h3>Kickstream PRO v0.5</h3>
+            <h3>Kickstream PRO</h3>
               <ListItemText secondary="" />
           </Link>
+            &nbsp; &nbsp;&nbsp;
+             <a href="https://github.com/r0nn13g/Kickstream-Pro" target="_blank" rel="noreferrer">
+              <GitHubIcon style={{fill: 'orange'}}/>
+             </a>
       </ListItem>
-      {/* </List> */}
+      </List>
     </Box>
   );
   return (
