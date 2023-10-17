@@ -73,9 +73,9 @@ export default function TemporaryDrawer() {
               <ListItemText secondary="" />
           </Link>
             &nbsp; &nbsp;&nbsp;
-             <a href="https://github.com/r0nn13g/Kickstream-Pro" target="_blank" rel="noreferrer">
+             <Link href="https://github.com/r0nn13g/Kickstream-Pro" target="_blank" rel="noreferrer">
               <GitHubIcon style={{fill: 'orange'}}/>
-             </a>
+             </Link>
       </ListItem>
       </List>
     </Box>
