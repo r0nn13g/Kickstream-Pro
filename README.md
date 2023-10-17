@@ -1,11 +1,7 @@
 # Kickstream PRO for Kick.com Live Streaming Platform
 
 https://kickstreampro.netlify.app
-```
-## Notes
-Keep in mind Kick has not released their API to the public and cloud flare will temporarily soft ban your ip address if you quickly navigate between routes which result in making too many calls under 1 minute. 
-If you find that /Live is not responsive, clear web data and clear cache from your device, wait a minute or two and relaunch the app.
-```
+
 ```
 ## IOS App instructions
 
