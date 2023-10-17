@@ -1,11 +1,11 @@
 .ticker{
-  margin-top: 47px;
+  margin-top: 0px;
   background-color: var(--blue-elements);
 }
 
 .styles_title__n7qOv{
-  font-weight: 800;
-  font-size: 22px;
+  font-weight: 700;
+  font-size: 16px;
   color: white;
   background-color: var(--blue-elements)
 }
@@ -34,5 +34,15 @@
 
 .styles_ticker__-0UvZ {
   background-color: var(--blue-elements)
+
+}
+
+
+@media (min-width: 840px) {
+
+  .ticker{
+  margin-top: 47px;
+  background-color: var(--blue-elements);
+  }
 
 }
