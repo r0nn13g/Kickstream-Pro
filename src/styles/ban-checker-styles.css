@@ -4,7 +4,7 @@
 
 .ban-checker-input-wrapper{
   text-align: center;
-  margin-top: 80px;
+  margin-top: 60px;
   margin-bottom: 10px;
 }
 
@@ -48,8 +48,8 @@ input[type=text] {
 }
 
 #pfp{
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
 }
 
@@ -58,7 +58,7 @@ input[type=text] {
 }
 
 #streamer_name{
-  color: white;
+  color: rgb(155, 155, 155);
   font-size: 30px;
   white-space: nowrap;
 }
@@ -87,6 +87,12 @@ input[type=text] {
   input{
     font-size: 40px;
   }
+
+
+.ban-checker-input-wrapper{
+  text-align: center;
+  margin-top: 40px;
+}
 
   .ban-checker-input-wrapper button{
     font-size: 22px;
@@ -127,7 +133,7 @@ input[type=text] {
   #streamer_name{
     font-size: 50px;
     white-space: nowrap;
-    color: white;
+    color: rgb(155, 155, 155);;
   }
   
   .ban_status_wrapper{
