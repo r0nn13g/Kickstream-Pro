@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import ListItem from '@mui/material/ListItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ListItemText from '@mui/material/ListItemText';
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -67,17 +66,14 @@ export default function TemporaryDrawer() {
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }}  >
           </ListItem>
-      <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' , color: 'var(--green-elements)', marginBottom: '24px' }} >
-          <Link to="/" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
-            <h3>Kickstream PRO</h3>
-              <ListItemText secondary="" />
-          </Link>
-            &nbsp; &nbsp;&nbsp;
-             <Link href="https://github.com/r0nn13g/Kickstream-Pro" target="_blank" rel="noreferrer">
-              <GitHubIcon style={{fill: 'orange'}}/>
-             </Link>
-      </ListItem>
       </List>
+      <ListItem style={{ display: 'flex', justifyContent: 'flex-end' }} >
+          <a href="https://www.github.com/r0nn13g/Kickstream-Pro" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
+            <h3>Kickstream PRO</h3>
+          </a>
+            &nbsp; &nbsp;&nbsp;
+              <GitHubIcon style={{fill: 'orange'}}/>
+      </ListItem>
     </Box>
   );
   return (
