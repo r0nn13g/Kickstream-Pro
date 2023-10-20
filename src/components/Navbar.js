@@ -32,7 +32,7 @@ const Navbar = () => {
       case '/':
         setActiveLink('home');
         break;
-      case '/live':
+      case '/streaming':
         setActiveLink('live');
         break;
       case '/news':
@@ -69,7 +69,7 @@ const Navbar = () => {
           </Link>
           <Link 
             id="mobile-nav-item" 
-            to={'/live'} 
+            to={'/streaming'} 
             path='relative' 
             onClick={(e) =>{ 
               handleLinkClick('live')}}
