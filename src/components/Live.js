@@ -136,9 +136,6 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        {/* <button id="navigate-create" onClick={handleToCreate}>
-            <b>CREATE</b>
-        </button> */}
         <button id="sort-order-switch" onClick={toggleSortOrder}>
           {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
         </button>
