@@ -157,8 +157,8 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
         { loadingTimeout ? (
           <div className="live-stream-card-error" style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>
             <RotatingSpinner />
-          <b style={{color: "var(--gray-elements)"}}>
-              Timed Out.
+          <b style={{color: "var(--gray-elements)", fontSize: "30px"}}>
+              You are being rate limited. Please retry in a few moments.
           </b>
         </div>
         ) : isLoading ? (
