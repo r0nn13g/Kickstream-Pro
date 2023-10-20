@@ -69,7 +69,7 @@ export default function TemporaryDrawer() {
       </List>
       <ListItem style={{ display: 'flex', justifyContent: 'flex-end' }} >
           <a href="https://www.github.com/r0nn13g/Kickstream-Pro" style={{ textDecoration: 'none' , color: 'var(--gray-elements)' }}>
-            <h3>Kickstream PRO</h3>
+            <h3>IRL Network</h3>
           </a>
             &nbsp; &nbsp;&nbsp;
               <GitHubIcon style={{fill: 'orange'}}/>
