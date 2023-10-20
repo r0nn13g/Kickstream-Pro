@@ -31,7 +31,7 @@ export default function TemporaryDrawer() {
       <List>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
             <Link to="/streaming" style={{textDecoration: 'none' , color: 'white' }}>
-              <b>Live +</b>
+              <b>Streaming +</b>
             </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
