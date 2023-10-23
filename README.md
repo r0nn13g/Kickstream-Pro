@@ -24,8 +24,7 @@ Screenshots
 
 ios 17 - iPhone 15 Pro Max
 
-![Mobile screenshot](https://github.com/r0nn13g/Kickstream-Pro/assets/86433181/71b1437b-bc5d-4e11-87c8-ea60f496deae)
-
+![mobile_screenshot](https://github.com/r0nn13g/Kickstream-Pro/assets/86433181/b8f3e505-4178-4d9b-bd80-4014bcc85860)
 
 
 Browser - Google Chrome
