@@ -29,5 +29,7 @@ ios 17 - iPhone 15 Pro Max
 
 Browser - Google Chrome
 ![home - Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/623b3610-9b15-4bfb-ba3d-7e317b321ba2)
+<img width="1680" alt="Screenshot 2023-10-22 at 8 19 35 PM" src="https://github.com/r0nn13g/Kickstream-Pro/assets/86433181/b637272f-959a-47f6-83c7-1e4379dad8f6">
+
 ![live - Browser](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/5791d837-0b1d-41b6-937a-683b444b437e)
 
