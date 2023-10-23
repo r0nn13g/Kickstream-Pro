@@ -41,7 +41,7 @@ export default function TemporaryDrawer() {
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
               <Link to="/create" style={{ textDecoration: 'none' , color: 'white' }}>
-              <b>Create your own +</b>
+              <b>Create List +</b>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
