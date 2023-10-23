@@ -1,4 +1,4 @@
-# Kickstream PRO for Kick.com Live Streaming Platform
+# IRL Network Live v0.6
 
 https://irlnetwork.live
 
