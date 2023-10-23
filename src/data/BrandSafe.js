@@ -24,6 +24,7 @@ export let brandSafe = [
   'https://kick.com/api/v1/channels/snoh',
   'https://kick.com/api/v1/channels/sussulevrai',
   'https://kick.com/api/v1/channels/suitopoteto',
+  'https://kick.com/api/v1/channels/syztmz',
   'https://kick.com/api/v1/channels/trainwreckstv',
   'https://kick.com/api/v1/channels/Vituss2',
   'https://kick.com/api/v1/channels/yassuo',
