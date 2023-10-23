@@ -1,5 +1,7 @@
 # Kickstream PRO for Kick.com Live Streaming Platform
 
+https://irlnetwork.live
+
 https://kickstreampro.netlify.app
 
 ```
@@ -20,9 +22,10 @@ And finally to start the server that can be checked in your local browser just r
 ```
 Screenshots 
 
-ios - iPhone 14 Pro
+ios 17 - iPhone 15 Pro Max
 
-![ios_mobile_walkthrough](https://github.com/r0nn13g/Kicksta-for-kick-live-streaming/assets/86433181/11a85807-7435-4ebb-9d5e-9a08d60953d9)
+![Mobile screenshot](https://github.com/r0nn13g/Kickstream-Pro/assets/86433181/71b1437b-bc5d-4e11-87c8-ea60f496deae)
+
 
 
 Browser - Google Chrome
