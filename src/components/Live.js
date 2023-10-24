@@ -88,7 +88,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
       };
 
       fetchData(); //<-----FETCHING CALLS FROM KICK API. 
-      const interval = setInterval(fetchData, 60000); //<-- FETCHES EVERY 40 SECONDS
+      const interval = setInterval(fetchData, 40000); //<-- FETCHES EVERY 40 SECONDS
       return () => {
         clearInterval(interval);
       };
