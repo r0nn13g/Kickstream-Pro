@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.js';
 import FourOhFour from './pages/FourOhFour.js';
 import ShowTrending from './pages/ShowTrending.js';
 import CreateChannels from './pages/CreateChannels.js';
+import DgnsLive from './components/DgnsLive';
 import ShowChecker from './pages/ShowChecker.js';
 import Support from './pages/Support.js';
 import DisplayVideo from './pages/DisplayVideo';
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/create" element={<CreateChannels />}/>
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
+        <Route path='/the-network' element={<DgnsLive />}/>
         <Route path='/checker' element={<ShowChecker />}/>
         <Route path="/support" element={<Support/>}/>
       </Routes>

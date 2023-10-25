@@ -2,7 +2,7 @@ import axios from "axios";
 import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
-import { gamblers } from "../data/GambaStreamers.js";
+import { streamers } from "../data/Streamers";
 import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
@@ -31,7 +31,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
   let streamTitle;
   let previousStreamTitle;
 
-  const Live = () => {
+  const DgnsLive = () => {
     const [isLoading, setLoading] = useState(true);
     const [showLive, setShowLive] = useState(true);
     const [randomOrder, setRandomOrder] = useState(false);
@@ -44,7 +44,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
       const fetchData = async () => {
         try {
           const responses = await Promise.all(
-            gamblers.map((url) => axios.get(url))
+            streamers.map((url) => axios.get(url))
           );
           const responseData = responses.map((urls) => urls.data);
           const validResponses = responseData.filter(
@@ -438,4 +438,4 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     );
   };
   
-  export default Live;
+  export default DgnsLive;
