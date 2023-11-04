@@ -8,6 +8,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/bennymack',
     'https://kick.com/api/v1/channels/burgerplanet',
     'https://kick.com/api/v1/channels/brucedropemoff',
+    'https://kick.com/api/v1/channels/carldo',
     'https://kick.com/api/v1/channels/crazytawn',
     'https://kick.com/api/v1/channels/deepak',
     'https://kick.com/api/v1/channels/destiny',
