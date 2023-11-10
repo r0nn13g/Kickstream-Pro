@@ -25,7 +25,7 @@ const NewsLoader = () => {
     ));
   return(
     <div>
-         <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @KingsOfKick</h6>
+         <h6 style={{color: "var(--green-elements)", backgroundColor: "rgb(40, 40, 40)", fontWeight: "900", textAlign: "center", margin: "0px"}}>News provided by @kick_clipz via Youtube</h6>
             <div className="videos">
                 {youtubeDataArr}
             </div>
