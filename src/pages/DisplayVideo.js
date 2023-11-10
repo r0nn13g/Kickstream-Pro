@@ -19,7 +19,7 @@ const DisplayVideo = () => {
             <img  id="youtube-play-button" src={youtubePlay} alt="youtube_play_button" style={{height: "14px", marginLeft: "10px", marginTop:"20px"}}/>
             &nbsp;
             <h4 id="youtube-channel-header" style={{color: "var(--green-elements", display: "flex", paddingBottom: "10px"}}>
-              @PotatoJet
+              @Kick_clipz
             </h4>
             </a>
             yt
