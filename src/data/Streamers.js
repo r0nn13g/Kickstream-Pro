@@ -27,7 +27,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/kiaraakitty',
     'https://kick.com/api/v1/channels/kimmee',
     'https://kick.com/api/v1/channels/kingtriggered',
-    // 'https://kick.com/api/v1/channels/mando',
+    'https://kick.com/api/v1/channels/mando',
     'https://kick.com/api/v1/channels/wvagabond',
     'https://kick.com/api/v1/channels/modeen',
     'https://kick.com/api/v1/channels/murda',
