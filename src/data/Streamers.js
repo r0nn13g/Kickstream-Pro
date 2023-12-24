@@ -30,6 +30,7 @@ export let streamers = [
     'https://kick.com/api/v1/channels/mando',
     'https://kick.com/api/v1/channels/wvagabond',
     'https://kick.com/api/v1/channels/modeen',
+    'https://kick.com/api/v1/channels/mrbasednyc',
     'https://kick.com/api/v1/channels/murda',
     'https://kick.com/api/v1/channels/nanpalive',
     'https://kick.com/api/v1/channels/nedx',
