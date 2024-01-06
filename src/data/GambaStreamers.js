@@ -25,7 +25,6 @@ export let gamblers = [
   'https://kick.com/api/v1/channels/nickwhite',
   'https://kick.com/api/v1/channels/orangemorange',
   'https://kick.com/api/v1/channels/kranzzofficial',
-  'https://kick.com/api/v1/channels/magouille',
   'https://kick.com/api/v1/channels/lospollostv',
   'https://kick.com/api/v1/channels/mellstroy',
   'https://kick.com/api/v1/channels/malek_04',
