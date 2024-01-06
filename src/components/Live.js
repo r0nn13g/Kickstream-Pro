@@ -82,7 +82,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
             setLoadingTimeout(setTimeout(() => {
               setLoading(false);
               console.log("Softbanned by Cloudflare & kick servers. Retrying in a few moments.");
-            }, 15000)); 
+            }, 20000)); 
           }
         }
       };
