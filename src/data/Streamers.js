@@ -53,5 +53,5 @@ export let streamers = [
     'https://kick.com/api/v1/channels/totalirl',
     'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
-    // 'https://kick.com/api/v1/channels/xenathewitch',
+    'https://kick.com/api/v1/channels/xenathewitch',
 ];
