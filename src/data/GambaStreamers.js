@@ -40,7 +40,6 @@ export let gamblers = [
   'https://kick.com/api/v1/channels/syztmz',
   'https://kick.com/api/v1/channels/travelgambler',
   'https://kick.com/api/v1/channels/trainwreckstv',
-  'https://kick.com/api/v1/channels/Vituss2',
   'https://kick.com/api/v1/channels/xposed',
   'https://kick.com/api/v1/channels/xqc',
   'https://kick.com/api/v1/channels/yassuo',
