@@ -2,7 +2,7 @@ import axios from "axios";
 import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
-import { streamers } from "../data/Streamers";
+import { streamers } from "../data/streamers";
 import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
