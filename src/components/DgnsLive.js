@@ -15,7 +15,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
   let pfp;
   let pfpLive;
   let slug;
-  let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/7756bbea-c4f5-4871-8e79-d094e11223db/images/user-profile-pic.png';
+  let kickAvatar = 'https://dbxmjjzl5pc1g.cloudfront.net/6a985671-90ef-4d3f-a249-4451800dc6a1/images/user-profile-pic.png';
   let isLive;
   let isVerified;
   let verified;
