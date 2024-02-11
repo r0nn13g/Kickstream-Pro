@@ -2,7 +2,7 @@ import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import '../styles/live-card-styles.css';
 import axios from "axios";
-import { streamers } from "../data/streamers";
+import { channels } from "../data/streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import BasicAccordion from "./BasicAccordian.js.js";
@@ -37,7 +37,7 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
        const fetchData = async () => {
          try {
            const responses = await Promise.all(
-             streamers.map((url) => axios.get(url))
+             channels.map((url) => axios.get(url))
            );
            const responseData = responses.map((urls) => urls.data);
            const validResponses = responseData.filter(

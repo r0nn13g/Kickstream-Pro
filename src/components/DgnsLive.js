@@ -2,7 +2,7 @@ import axios from "axios";
 import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
-import { streamers } from "../data/streamers";
+import { channels } from "../data/streamers";
 import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
@@ -36,38 +36,38 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     const [showLive, setShowLive] = useState(true);
     const [randomOrder, setRandomOrder] = useState(false);
     const [sortHighToLow, setSortHighToLow] = useState(true);
-    const [onlineStreamers, setOnlineStreamers] = useState([]);
-    const [offlineStreamers, setOfflineStreamers] = useState([]);
+    const [onlineChannels, setOnlineChannels] = useState([]);
+    const [offlineChannels, setOfflineChannels] = useState([]);
     const [loadingTimeout, setLoadingTimeout] = useState(null);
   
     useEffect(() => {
       const fetchData = async () => {
         try {
           const responses = await Promise.all(
-            streamers.map((url) => axios.get(url))
+            channels.map((url) => axios.get(url))
           );
           const responseData = responses.map((urls) => urls.data);
           const validResponses = responseData.filter(
             (response) => response.status !== null
           );
 
-          const onlineStreamers = validResponses.filter(
+          const onlineChannels = validResponses.filter(
             (response) =>
               response.livestream && response.livestream.viewer_count >= 0
           );
-          const offlineStreamers = validResponses.filter(
+          const offlineChannels = validResponses.filter(
             (response) => response.livestream === null
           );
 
-          setOnlineStreamers(onlineStreamers);
-          setOfflineStreamers(offlineStreamers);
+          setOnlineChannels(onlineChannels);
+          setOfflineChannels(offlineChannels);
           setLoading(false);
           if (loadingTimeout) {
             clearTimeout(loadingTimeout);
           }
         } catch (error) {
           if (error.response) {
-            console.error("Banned channel in streamers Array", error);
+            console.error("Banned channel in Channels Array", error);
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers);
@@ -107,7 +107,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     }
 
 
-    const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
+    const sortedOnlineChannels = onlineChannels.slice().sort((a, b) => {
       if (sortHighToLow) {
         return b.livestream.viewer_count - a.livestream.viewer_count;
       } else {
@@ -115,23 +115,23 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
       }
     });
     
-    const getRandomizedStreamers = () => {
+    const getRandomizedChannels = () => {
       if(randomOrder){
-        const randomizedStreamers = [...sortedOnlineStreamers];
-        for (let i = randomizedStreamers.length - 1; i > 0; i--) {
+        const randomizedChannels = [...sortedOnlineChannels];
+        for (let i = randomizedChannels.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [randomizedStreamers[i], randomizedStreamers[j]] = [
-            randomizedStreamers[j],
-            randomizedStreamers[i],
+          [randomizedChannels[i], randomizedChannels[j]] = [
+            randomizedChannels[j],
+            randomizedChannels[i],
           ];
         }
-        return randomizedStreamers; 
+        return randomizedChannels; 
       } else { 
-        return sortedOnlineStreamers;
+        return sortedOnlineChannels;
       }
     };
 
-    const displayStreamers = getRandomizedStreamers();
+    const displayChannels = getRandomizedChannels();
     
         return (
           <div className="live-stream-card-container">
@@ -166,9 +166,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
           ) : (
             <>
             {showLive ? (
-              // Display online streamers
+              // Display online Channels
               <>
-                {displayStreamers.map((item, index) => {
+                {displayChannels.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
 
@@ -293,9 +293,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
                 })}
               </>
             ) : (
-              // Display offline streamers
+              // Display offline Channels
               <>
-                {offlineStreamers.map((item, index) => {
+                {offlineChannels.map((item, index) => {
                   // if verified object exists than a channel is verified and the verified variable is set to true
                   verified = item.verified !== null;
 
