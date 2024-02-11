@@ -2,7 +2,7 @@ import {React, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import '../styles/live-card-styles.css';
 import axios from "axios";
-import { streamers } from "../data/Streamers";
+import { streamers } from "../data/streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import BasicAccordion from "./BasicAccordian.js.js";
