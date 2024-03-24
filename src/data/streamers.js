@@ -19,7 +19,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/fousey',
     'https://kick.com/api/v1/channels/garydavid', 
     'https://kick.com/api/v1/channels/hanridge',
-    'https://kick.com/api/v1/channels/heelmike',
+    // 'https://kick.com/api/v1/channels/heelmike',
     'https://kick.com/api/v1/channels/hyubsama',
     'https://kick.com/api/v1/channels/hkftv',
     'https://kick.com/api/v1/channels/iceposeidon',
