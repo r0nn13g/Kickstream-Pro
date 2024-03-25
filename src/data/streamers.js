@@ -50,5 +50,4 @@ export let channels = [
     'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/vitaly',
-    'https://kick.com/api/v1/channels/xenathewitch',
 ];
