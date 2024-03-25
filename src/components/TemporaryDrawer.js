@@ -60,7 +60,7 @@ export default function TemporaryDrawer() {
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/the-network" style={{textDecoration: 'none' , color: 'white' }}>
+              <Link to="/the-network" style={{textDecoration: 'none' , color: '#252525' }}>
               <b>CX</b>
               </Link>
           </ListItem>
