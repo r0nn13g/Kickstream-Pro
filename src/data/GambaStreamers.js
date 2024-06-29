@@ -7,7 +7,6 @@ export let gamblers = [
   'https://kick.com/api/v1/channels/bednak',
   'https://kick.com/api/v1/channels/brucedropemoff',
   'https://kick.com/api/v1/channels/bradandsteveshow',
-  'https://kick.com/api/v1/channels/bossmanjack',
   'https://kick.com/api/v1/channels/classybeef',
   'https://kick.com/api/v1/channels/deepak',
   'https://kick.com/api/v1/channels/everton',
@@ -77,6 +76,5 @@ export let gamblers = [
     'https://kick.com/api/v1/channels/thedirtydogg',
     'https://kick.com/api/v1/channels/therealmoisesb',
     'https://kick.com/api/v1/channels/turanspidey',
-    'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/vitaly',
 ]
