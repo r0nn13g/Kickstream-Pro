@@ -8,7 +8,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/bakedalaska',
     'https://kick.com/api/v1/channels/bennymack',
     'https://kick.com/api/v1/channels/burgerplanet',
-    'https://kick.com/api/v1/channels/carldo',
+    // 'https://kick.com/api/v1/channels/carldo', banned until 7/8/24
     'https://kick.com/api/v1/channels/captaingee',
     'https://kick.com/api/v1/channels/crazytawn',
     'https://kick.com/api/v1/channels/deepak',
