@@ -10,7 +10,6 @@ const Home = () => {
       <div className="home-text" style={{marginTop: "180px"}}>   
             <img id="home-animation" src={kicksterLogo} alt="Live-streaming-solutions"/>
           <div></div>
-          {/* <PasswordProtected /> */}
         </div>
           <Footer/>
     </div>
