@@ -2,6 +2,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/aberizm',
     'https://kick.com/api/v1/channels/ac7ionman',
     'https://kick.com/api/v1/channels/adinross',
+    'https://kick.com/api/v1/channels/alexis',
     'https://kick.com/api/v1/channels/andy',
     'https://kick.com/api/v1/channels/arabandy',
     'https://kick.com/api/v1/channels/asianandy',
@@ -9,6 +10,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/bakedalaska',
     'https://kick.com/api/v1/channels/bennymack',
     'https://kick.com/api/v1/channels/blackassdave',
+    'https://kick.com/api/v1/channels/boneclinks    ',
     'https://kick.com/api/v1/channels/burgerplanet',
     'https://kick.com/api/v1/channels/carldo',
     'https://kick.com/api/v1/channels/captaingee',
@@ -16,7 +18,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/cristravels',
     'https://kick.com/api/v1/channels/dariusirl',
     'https://kick.com/api/v1/channels/deepak',
-    'https://kick.com/api/v1/channels/destiny',
+    'https://kick.com/api/v1/channels/dbr666',
     'https://kick.com/api/v1/channels/dtanmanb',
     'https://kick.com/api/v1/channels/eddie',
     'https://kick.com/api/v1/channels/fousey',
@@ -40,6 +42,8 @@ export let channels = [
     'https://kick.com/api/v1/channels/officialebz',
     'https://kick.com/api/v1/channels/robotandy',
     'https://kick.com/api/v1/channels/sam',
+    'https://kick.com/api/v1/channels/sampanday',
+    'https://kick.com/api/v1/channels/shakomako',
     'https://kick.com/api/v1/channels/shotime',
     'https://kick.com/api/v1/channels/slightlyhomeless',
     'https://kick.com/api/v1/channels/slykane',
@@ -50,7 +54,6 @@ export let channels = [
     'https://kick.com/api/v1/channels/turanspidey',
     'https://kick.com/api/v1/channels/trainwreckstv',
     'https://kick.com/api/v1/channels/vitaly',
+    'https://kick.com/api/v1/channels/wvagabond',
     'https://kick.com/api/v1/channels/xenathewitch',
-
-
 ];
