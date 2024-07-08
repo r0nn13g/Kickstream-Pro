@@ -56,4 +56,5 @@ export let channels = [
     'https://kick.com/api/v1/channels/vitaly',
     'https://kick.com/api/v1/channels/wvagabond',
     'https://kick.com/api/v1/channels/xenathewitch',
+    'https://kick.com/api/v1/channels/zaddyzavid',
 ];
