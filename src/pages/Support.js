@@ -11,7 +11,9 @@ const Support = () => {
     </div>
     <div className="support-details-container">
     <div className='btc-container'>
-          <b>Bitcoin cold wallet: </b><ul>bc1qswf7p68uxjhmfy2wc654zy9umz80unw8k3dkzl</ul>
+          <b>Bitcoin Address</b>
+          <ul>bc1qswf7p68uxjhmfy2wc654zy9umz80unw8k3dkzl</ul>
+          <p>donations are appreciated. thank you.</p>
     </div>
     </div>
     <Footer />
