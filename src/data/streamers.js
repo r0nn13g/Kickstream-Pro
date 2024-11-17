@@ -32,6 +32,7 @@ export let channels = [
     'https://kick.com/api/v1/channels/iceposeidon',
     'https://kick.com/api/v1/channels/iholly',
     'https://kick.com/api/v1/channels/johnwhatsgoingon',
+    'https://kick.com/api/v1/channels/jandro',
     'https://kick.com/api/v1/channels/kangjoel',
     'https://kick.com/api/v1/channels/kiaraakitty',
     'https://kick.com/api/v1/channels/kimmee',
