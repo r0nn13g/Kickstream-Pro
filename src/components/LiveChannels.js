@@ -1,14 +1,14 @@
 import axios from "axios";
 import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
-import PulsatingDot from './PulsatingDot';
-import { channels } from "../data/streamers";
+import PulsatingDot from './PulsatingDot.js';
+import { channels } from "../data/streamers.js";
 import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-import RotatingSpinner from '../components/RotatingSpinner.js';
+import RotatingSpinner from './RotatingSpinner.js';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 

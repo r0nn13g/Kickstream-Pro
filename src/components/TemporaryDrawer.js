@@ -29,10 +29,10 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
-            <Link to="/streaming" style={{textDecoration: 'none' , color: 'white' }}>
-              <b>Streaming +</b>
-            </Link>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
+              <Link to="/cx" style={{textDecoration: 'none' , color: '##800080' }}>
+              <b>CX</b>
+              </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
             <Link to="/news" style={{ textDecoration: 'none' , color: 'white' }}>
@@ -59,11 +59,6 @@ export default function TemporaryDrawer() {
               <b>Support +</b>
               </Link>
           </ListItem>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/the-network" style={{textDecoration: 'none' , color: '#252525' }}>
-              <b>CX</b>
-              </Link>
-          </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }}  >
           </ListItem>
       </List>
@@ -72,7 +67,7 @@ export default function TemporaryDrawer() {
             <h3>Kickstream Pro</h3>
           </a>
             &nbsp; &nbsp;&nbsp;
-              <GitHubIcon style={{fill: 'orange'}}/>
+              <GitHubIcon style={{fill: 'white'}}/>
       </ListItem>
     </Box>
   );
