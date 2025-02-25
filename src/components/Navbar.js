@@ -69,10 +69,10 @@ const Navbar = () => {
           </Link>
           <Link 
             id="mobile-nav-item" 
-            to={'/the-network'} 
+            to={'/cx'} 
             path='relative' 
             onClick={(e) =>{ 
-              handleLinkClick('live')}}
+              handleLinkClick('CX')}}
             style={{textDecoration: 'none'}}>
             <AutoGraphIcon style={{  fill: activeLink === 'live' ? 'var(--green-elements)' : 'var(--white-elements)'}}/>
           </Link>
