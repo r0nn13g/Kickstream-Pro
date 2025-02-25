@@ -31,7 +31,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
   let streamTitle;
   let previousStreamTitle;
 
-  const DgnsLive = () => {
+  const LiveChannels = () => {
     const [isLoading, setLoading] = useState(true);
     const [showLive, setShowLive] = useState(true);
     const [randomOrder, setRandomOrder] = useState(false);
@@ -53,7 +53,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
           const onlineChannels = validResponses.filter(
             (response) =>
-              response.livestream && response.livestream.viewer_count >= 0
+              response.livestream && response.livestream.viewer_count_ws >= 0
           );
           const offlineChannels = validResponses.filter(
             (response) => response.livestream === null
@@ -109,9 +109,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
     const sortedOnlineChannels = onlineChannels.slice().sort((a, b) => {
       if (sortHighToLow) {
-        return b.livestream.viewer_count - a.livestream.viewer_count;
+        return b.livestream.viewer_count_ws - a.livestream.viewer_count_ws;
       } else {
-        return a.livestream.viewer_count - b.livestream.viewer_count;
+        return a.livestream.viewer_count_ws - b.livestream.viewer_count_ws;
       }
     });
     
@@ -184,7 +184,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
                   // if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
                   rawViewers = item.livestream
-                  ? item.livestream.viewer_count
+                  ? item.livestream.viewer_count_ws
                   : null;
                   viewerCount = rawViewers
                     ? rawViewers.toLocaleString("en-US")
@@ -311,7 +311,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
                   // if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
                   rawViewers = item.livestream
-                    ? item.livestream.viewer_count
+                    ? item.livestream.viewer_count_ws
                     : null;
                   viewerCount = rawViewers
                     ? rawViewers.toLocaleString("en-US")
@@ -438,4 +438,4 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     );
   };
   
-  export default DgnsLive;
+  export default LiveChannels;
