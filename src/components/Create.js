@@ -40,13 +40,13 @@ const Create = () => {
         if (prevData.length > 0) {
           const combinedData = [...prevData, responseData];
           const onlineStreamers = combinedData.filter(
-            (item) => item.livestream && item.livestream.viewer_count > 0
+            (item) => item.livestream && item.livestream.viewer_count_ws > 0
           );
           const offlineStreamers = combinedData.filter(
-            (item) => !item.livestream || item.livestream.viewer_count === 0
+            (item) => !item.livestream || item.livestream.viewer_count_ws === 0
           );
           const sortedOnlineStreamers = onlineStreamers.sort(
-            (a, b) => b.livestream.viewer_count - a.livestream.viewer_count
+            (a, b) => b.livestream.viewer_count_ws - a.livestream.viewer_count_ws
           );
           return [...sortedOnlineStreamers, ...offlineStreamers];
         } else {
@@ -92,8 +92,15 @@ const Create = () => {
         return (
           <div className="create">
              <div className="create-input-wrapper">
-             <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>CREATE ⚡️</h3>
-            <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>Create your own watch list.</h4>
+              <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>
+               Search ⚡️
+              </h3>
+              <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>
+               Create your own watch list and see what the real viewer count is
+              </h4>
+              <h6 style={{color: "var(--gray-elements)", textAlign: "left"}}>
+              
+              </h6>
           <form onSubmit={handleSubmit}>
             <input
             type="text"
@@ -135,7 +142,7 @@ const Create = () => {
                             console.log("Live:", channel)
                             followerCount = item.followersCount;
                             followers = followerCount.toLocaleString("en-US");
-                            rawViewers = item.livestream.viewer_count;
+                            rawViewers = item.livestream.viewer_count_ws;
                             viewerCount = rawViewers.toLocaleString("en-US");
                             streamTitle = item.livestream.session_title;
                             slug = item.slug;
