@@ -16,7 +16,6 @@ export let channels = [
     'https://kick.com/api/v1/channels/chickenandy',
     'https://kick.com/api/v1/channels/deepak',
     'https://kick.com/api/v1/channels/dtanmanb',
-    'https://kick.com/api/v1/channels/duncle',
     'https://kick.com/api/v1/channels/eddie',
     'https://kick.com/api/v1/channels/fhiorre',
     'https://kick.com/api/v1/channels/fousey',
