@@ -136,14 +136,14 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
         return (
           <div className="live-stream-card-container">
         <div className="offline-online-switch-container">
-        <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
+        <button id="online-offline-switch" onClick={toggleLiveOffline}>
+          {showLive ? <VideoCamOffIcon style={{ fontSize: "small", color: "white"}}/> : <VideoCameraFrontIcon style={{ fontSize: "small", color: "white"}}/>}
         </button>
         <button id="shuffle-button" onClick={toggleShuffle} >
             <b>Shuffle</b>
           </button>
-        <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          {showLive ? <b>Online</b> : <b>Offline</b>}
+        <button id="sort-order-switch" onClick={toggleSortOrder}>
+          {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
         </button>
         </div>
         <div className="live-header-banner-wrapper">
@@ -151,7 +151,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
             <h3 id="live-header-container">
               {showLive ? "Live" : "Offline" }
             </h3>
-            {showLive ? <VideoCameraFrontIcon style={{ fill: showLive ? 'var(--gray-elements)' : 'gray' }}/> :  <VideoCamOffIcon style={{fill: showLive ? 'red' : 'gray'}}/> }
+            {showLive ? <VideoCameraFrontIcon style={{  fontSize:"small", color: showLive ? 'red' : 'gray' }}/> :  <VideoCamOffIcon style={{ fontSize:"small", color: showLive ? 'red' : 'gray'}}/> }
           </div>
         </div>
         { loadingTimeout ? (
