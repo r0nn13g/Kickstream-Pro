@@ -32,7 +32,7 @@ const Navbar = () => {
       case '/':
         setActiveLink('home');
         break;
-      case '/the-network':
+      case '/cx':
         setActiveLink('live');
         break;
       case '/news':
