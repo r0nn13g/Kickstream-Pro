@@ -9,7 +9,6 @@ import ShowTrending from './pages/ShowTrending.js';
 import CreateChannels from './pages/CreateChannels.js';
 import DgnsLive from './components/LiveChannels.js';
 import ShowChecker from './pages/ShowChecker.js';
-import Support from './pages/Support.js';
 import DisplayVideo from './pages/DisplayVideo';
 import Live from './pages/ShowLive.js';
 import News from './pages/News';
@@ -27,7 +26,6 @@ export default function App() {
         <Route path="/videos/:id" element={<DisplayVideo />}/>
         <Route path='/casino-streamers' element={<Live />}/>
         <Route path='/checker' element={<ShowChecker />}/>
-        <Route path="/support" element={<Support/>}/>
       </Routes>
       <Navbar/>
     </BrowserRouter>
