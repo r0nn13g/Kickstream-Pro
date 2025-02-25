@@ -20,12 +20,12 @@ export default function App() {
       <Routes>
         <Route path='*' element={<FourOhFour/>}/>
         <Route path='/' element={<Home />}/>
-        <Route path="/streaming" element={<Live />}/>
+        <Route path="/cx" element={<DgnsLive />}/>
         <Route path="/trending" element={<ShowTrending />}/>
         <Route path="/create" element={<CreateChannels />}/>
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
-        <Route path='/the-network' element={<DgnsLive />}/>
+        <Route path='/casino-streamers' element={<Live />}/>
         <Route path='/checker' element={<ShowChecker />}/>
         <Route path="/support" element={<Support/>}/>
       </Routes>

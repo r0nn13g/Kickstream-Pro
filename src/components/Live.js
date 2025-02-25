@@ -109,9 +109,9 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
     const sortedOnlineStreamers = onlineStreamers.slice().sort((a, b) => {
       if (sortHighToLow) {
-        return b.livestream.viewer_count - a.livestream.viewer_count;
+        return b.livestream._ws - a.livestream._ws;
       } else {
-        return a.livestream.viewer_count - b.livestream.viewer_count;
+        return a.livestream._ws - b.livestream._ws;
       }
     });
     
@@ -311,7 +311,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
                   // if channel is live, populate raw viewers, followers, slug and stream title, else if channel is offline set stream title to the last stream title used by channel
                   rawViewers = item.livestream
-                    ? item.livestream.viewer_count
+                    ? item.livestream.viewer_count_ws
                     : null;
                   viewerCount = rawViewers
                     ? rawViewers.toLocaleString("en-US")
