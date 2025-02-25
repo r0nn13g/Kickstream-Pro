@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "../styles/ban-checker-styles.css";
-import BanAccordion from "./BanAccordian";
 import RotatingSpinner from "../components/RotatingSpinner.js";
 
 const BanChecker = () => {
@@ -37,7 +36,6 @@ const BanChecker = () => {
   
   return (
     <div className="ban-checker">
-      <BanAccordion />
       <div className="ban-checker-input-wrapper">
         <h1 style={{color: "var(--green-elements)", textAlign: "center" }}>KICK® BAN CHECKER</h1>
         <form onSubmit={handleSubmit}>
