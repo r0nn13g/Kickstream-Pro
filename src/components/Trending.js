@@ -5,7 +5,6 @@ import axios from "axios";
 import { channels } from "../data/streamers";
 import PulsatingDot from './PulsatingDot';
 import VideocamOffIcon from '@mui/icons-material/VideocamOffOutlined';
-import BasicAccordion from "./BasicAccordian.js.js";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 
   let pfp;
@@ -92,7 +91,6 @@ import LiveCardSkeleton from "./LiveCardSkeleton.js"
         return (
             <div className="live-stream-card-container">
                     {/* display rotating spinner until get requests are succesful */}
-                    <BasicAccordion />
                     {isLoading ? (
                       // <RotatingSpinner />
                       <LiveCardSkeleton />
