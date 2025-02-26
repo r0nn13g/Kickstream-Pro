@@ -2,7 +2,7 @@ import axios from "axios";
 import '../styles/live-card-styles.css';
 import { Link } from "react-router-dom";
 import PulsatingDot from './PulsatingDot';
-import { gamblers } from "../data/gambaStreamers";
+import { channels } from "../data/streamers";
 import {React, useState, useEffect} from "react";
 import LiveCardSkeleton from "./LiveCardSkeleton.js"
 import verifiedBadge from "../assets/verified_badge.png";
@@ -44,7 +44,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
       const fetchData = async () => {
         try {
           const responses = await Promise.all(
-            gamblers.map((url) => axios.get(url))
+            channels.map((url) => axios.get(url))
           );
           const responseData = responses.map((urls) => urls.data);
           const validResponses = responseData.filter(
