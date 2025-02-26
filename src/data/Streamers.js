@@ -1,5 +1,6 @@
 export let channels = [
     'https://kick.com/api/v1/channels/abz',
+    'https://kick.com/api/v1/channels/ac7ionman',
     'https://kick.com/api/v1/channels/adinross',
     'https://kick.com/api/v1/channels/alexis',
     'https://kick.com/api/v1/channels/andy',
