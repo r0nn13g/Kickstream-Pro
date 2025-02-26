@@ -1,6 +1,4 @@
-# IRL Network Live v0.6
-
-https://irlnetwork.live
+# IRL Network Live v0.9
 
 https://kickstreampro.netlify.app
 
