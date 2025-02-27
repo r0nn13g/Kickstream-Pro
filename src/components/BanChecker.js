@@ -37,7 +37,7 @@ const BanChecker = () => {
   return (
     <div className="ban-checker">
       <div className="ban-checker-input-wrapper">
-        <h1 style={{color: "var(--green-elements)", textAlign: "center" }}>KICK® BAN CHECKER</h1>
+        <h1 style={{color: "var(--gray-elements)", textAlign: "center" }}>BAN CHECKER</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

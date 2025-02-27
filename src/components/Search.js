@@ -91,9 +91,11 @@ const Search = () => {
 
         return (
           <div className="search">
-             <div className="search-input-wrapper" style={{textAlign: "center"}}>
-          
-              <h4 style={{color: "var(--gray-elements)", textAlign: "center", marginTop: "100px"}}>
+             <div className="search-input-wrapper" style={{textAlign: "center", color: "var(--gray-elements)"}}>
+              <h1>
+                SEARCH 🔎
+              </h1>
+              <h4 style={{color: "var(--gray-elements)", textAlign: "center", marginTop: "50px"}}>
                Search for any streamer on Kick
               </h4>
           <form onSubmit={handleSubmit}>
