@@ -135,24 +135,27 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     
         return (
           <div className="live-stream-card-container">
-        <div className="offline-online-switch-container">
-        <button id="online-offline-switch" onClick={toggleLiveOffline}>
-          {showLive ? <VideoCamOffIcon style={{ fontSize: "small", color: "white"}}/> : <VideoCameraFrontIcon style={{ fontSize: "small", color: "white"}}/>}
-        </button>
-        <button id="shuffle-button" onClick={toggleShuffle} >
-            <b>Shuffle</b>
-          </button>
-        <button id="sort-order-switch" onClick={toggleSortOrder}>
-          {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
-        </button>
-        </div>
-        <div className="live-header-banner-wrapper">
-          <div className="video-camera-icon-container">
-            <h3 id="live-header-container">
-              {showLive ? "Live" : "Offline" }
-            </h3>
-            {showLive ? <VideoCameraFrontIcon style={{  fontSize:"small", color: showLive ? 'red' : 'gray' }}/> :  <VideoCamOffIcon style={{ fontSize:"small", color: showLive ? 'red' : 'gray'}}/> }
+            <div className="live-header-banner-wrapper">
+              
+              <div className="video-camera-icon-container">
+                <h3 id="live-header-container">
+                  {showLive ? "Live" : "Offline" }
+                </h3>
+                {showLive ? <VideoCameraFrontIcon style={{  fontSize:"small", color: showLive ? 'red' : 'gray' }}/> :  <VideoCamOffIcon style={{ fontSize:"small", color: showLive ? 'red' : 'gray'}}/> }
+              </div>
+
+          <div className="offline-online-switch-container">
+            <button id="online-offline-switch" onClick={toggleLiveOffline}>
+              {showLive ? <VideoCamOffIcon style={{ fontSize: "small", color: "white"}}/> : <VideoCameraFrontIcon style={{ fontSize: "small", color: "white"}}/>}
+            </button>
+            <button id="shuffle-button" onClick={toggleShuffle} >
+              <b>Shuffle</b>
+            </button>
+            <button id="sort-order-switch" onClick={toggleSortOrder}>
+              {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
+            </button>
           </div>
+        
         </div>
         { loadingTimeout ? (
           <div className="live-stream-card-error" style={{textAlign: "center", margin:"200px 20px 0px 20px"}}>

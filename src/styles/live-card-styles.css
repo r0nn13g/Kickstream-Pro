@@ -10,10 +10,13 @@
 
  /* button */
 .offline-online-switch-container{
+  margin-top: 10px;
+  margin-bottom: 5px;
+   position: fixed;
+  right: 20px;
+  transform: translateY(-20%);
   display: flex;
-  align-items: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  /* z-index: 1000; */
 }
 
 
@@ -78,19 +81,20 @@
   display: flex;
   position: sticky;
   align-items: center; 
-  font-weight: 800;
   border-bottom: 1px solid gray;
-  padding-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 #live-header-container{
   color: var(--green-elements);
-  margin: 5px;
+  margin: 6px;
 }
 
 #live-header-container:hover{
   color: white;
-  margin: 5px;
+  margin: 6px;
 }
 
 .video-camera-icon-container{
@@ -104,8 +108,9 @@
 .live-stream-card-container {
   position: relative;
   min-height: 98.5%;
-  margin: 2px;
-  padding-bottom: 65px;
+  margin: 6px;
+  margin-top: 20px;
+  padding-bottom: 60px;
   background-color: #1b1b1b;
 }
 
@@ -303,6 +308,7 @@
     display: flex;
     margin-bottom: 0;
     margin-top: 34px;
+    
 }
 
 }
