@@ -91,16 +91,11 @@ const Create = () => {
 
         return (
           <div className="create">
-             <div className="create-input-wrapper">
-              <h3 style={{color: "var(--green-elements)", textAlign: "left"}}>
-               Search ⚡️
-              </h3>
-              <h4 style={{color: "var(--gray-elements)", textAlign: "left"}}>
-               Create your own watch list and see what the real viewer count is
+             <div className="create-input-wrapper" style={{textAlign: "center"}}>
+          
+              <h4 style={{color: "var(--gray-elements)", textAlign: "center", marginTop: "100px"}}>
+               Search for any streamer on Kick
               </h4>
-              <h6 style={{color: "var(--gray-elements)", textAlign: "left"}}>
-              
-              </h6>
           <form onSubmit={handleSubmit}>
             <input
             type="text"
