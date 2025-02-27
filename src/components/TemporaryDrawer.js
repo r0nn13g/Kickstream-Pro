@@ -40,7 +40,7 @@ export default function TemporaryDrawer() {
             </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/create" style={{ textDecoration: 'none' , color: 'white' }}>
+              <Link to="/search-channels" style={{ textDecoration: 'none' , color: 'white' }}>
               <b>Search +</b>
               </Link>
           </ListItem>

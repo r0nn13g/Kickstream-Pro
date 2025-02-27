@@ -26,7 +26,7 @@ let titleLive;
 let streamTitle;
 let previousStreamTitle;
 
-const Create = () => {
+const Search = () => {
   const [data, setData] = useState([]);
   const [streamerName, setStreamerName] = useState("");
 
@@ -90,8 +90,8 @@ const Create = () => {
   }, [data]);
 
         return (
-          <div className="create">
-             <div className="create-input-wrapper" style={{textAlign: "center"}}>
+          <div className="search">
+             <div className="search-input-wrapper" style={{textAlign: "center"}}>
           
               <h4 style={{color: "var(--gray-elements)", textAlign: "center", marginTop: "100px"}}>
                Search for any streamer on Kick
@@ -199,4 +199,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default Search;

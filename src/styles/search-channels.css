@@ -7,27 +7,27 @@
   height:160px;
 }
 
-.create-channels-container{
+.search-channels-container{
   margin-top: 50px;
 }
 
-.create{
+.search{
   position: relative;
   margin-top: 20px;
 }
 
-#create-header{
+#search-header{
   text-align: left;
   margin: 10px;
   color: var(--green-elements);
 }
 
-.create-input-wrapper{
+.search-input-wrapper{
     text-align: left;
   margin: 20px;
 }
 
-.create-input-wrapper input{
+.search-input-wrapper input{
   margin-top: 10px;
   color:white;
   background-color: var(--gray-elements);
@@ -35,7 +35,7 @@
 }
 
 
-.create-input-wrapper button{
+.search-input-wrapper button{
   border-radius: 5px;
   margin: 10px;
   color: var(--green-elements);
@@ -65,41 +65,41 @@ label[data-shrink=false]+.MuiInputBase-formControl .css-1t8l2tu-MuiInputBase-inp
 
 
 @media (max-width: 840px) {
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   }
 }
 
 
 @media (max-width: 768px) {
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   }
 }
 
 
 @media (max-width: 414px) {
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   }
 }
 
 
 @media (max-width: 390px) {
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   }
 }
 
 @media (max-width: 360px){
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   }
 }
 
 
 @media (max-width: 220px){
-  .create-channels-container{
+  .search-channels-container{
     margin-top: 0px;
   } 
 }
