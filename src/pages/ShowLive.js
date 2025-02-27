@@ -1,10 +1,12 @@
 import React from "react";
-import Live from "../components/Live.js";
+import AdTicker from '../components/AdTicker.js';
+import Live from "../components/LiveChannels.js";
 import Footer from '../components/Footer.js';
 
 const ShowLive = () => {
   return (
-    <div>
+    <div className="show-live">
+      <AdTicker/>
       <Live />
       <Footer />
     </div>

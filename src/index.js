@@ -7,10 +7,10 @@ import Navbar from './components/Navbar.js';
 import FourOhFour from './pages/FourOhFour.js';
 import ShowTrending from './pages/ShowTrending.js';
 import SearchChannels from './pages/SearchChannels.js';
-import DgnsLive from './components/LiveChannels.js';
+import Cx from './pages/ShowLive.js';
 import ShowChecker from './pages/ShowChecker.js';
 import DisplayVideo from './pages/DisplayVideo';
-import Live from './pages/ShowLive.js';
+// import Live from './pages/ShowLive.js';
 import News from './pages/News';
 
 export default function App() {
@@ -19,12 +19,12 @@ export default function App() {
       <Routes>
         <Route path='*' element={<FourOhFour/>}/>
         <Route path='/' element={<Home />}/>
-        <Route path="/cx" element={<DgnsLive />}/>
+        <Route path="/cx" element={<Cx />}/>
         <Route path="/trending" element={<ShowTrending />}/>
         <Route path="/search-channels" element={<SearchChannels />}/>
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
-        <Route path='/casino-streamers' element={<Live />}/>
+        {/* <Route path='/casino-streamers' element={<Live />}/> */}
         <Route path='/checker' element={<ShowChecker />}/>
       </Routes>
       <Navbar/>

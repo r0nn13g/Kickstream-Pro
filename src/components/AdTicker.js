@@ -4,8 +4,10 @@ import '../styles/ticker-styles.css';
 const AdTicker = () => {
   return(
     <div className="ticker">
-          <Ticker isNewsTicker={true}>
-             <NewsTicker id="1"  title="Kickster® - The #1 Live Streaming Dashboard for Kick Live streaming platform" url="https://www.kick.com" />
+          <Ticker isNewsTicker={true} slideSpeed={9}>
+             <NewsTicker id="1"  title="Monitor real viewer count 🤖" />
+             <NewsTicker id="2"  title="Check who's banned 🔨🔨🔨" />
+             <NewsTicker id="5"  title="Created by Scriptedagain 🫠" url="https://www.kick.com/scriptedagain"/>
           </Ticker>
     </div>
   )
