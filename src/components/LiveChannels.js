@@ -9,8 +9,8 @@ import verifiedBadge from "../assets/verified_badge.png";
 import VideoCamOffIcon from '@mui/icons-material/VideocamOffOutlined';
 import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import RotatingSpinner from './RotatingSpinner.js';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+// import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+// import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
   let pfp;
   let pfpLive;
@@ -97,11 +97,11 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
     const toggleLiveOffline = () => {
       setShowLive((prevMode) => !prevMode);
     };
-
+// eslint-disable-next-line
     const toggleSortOrder = () => {
       setSortHighToLow((prevSortOrder) => !prevSortOrder);
     };
-
+// eslint-disable-next-line
     const toggleShuffle = () => {
       setRandomOrder((prevOrder) => !prevOrder)
     }
@@ -148,12 +148,12 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
             <button id="online-offline-switch" onClick={toggleLiveOffline}>
               {showLive ? <VideoCamOffIcon style={{ fontSize: "small", color: "white"}}/> : <VideoCameraFrontIcon style={{ fontSize: "small", color: "white"}}/>}
             </button>
-            <button id="shuffle-button" onClick={toggleShuffle} >
+            {/* <button id="shuffle-button" onClick={toggleShuffle} >
               <b>Shuffle</b>
-            </button>
-            <button id="sort-order-switch" onClick={toggleSortOrder}>
+            </button> */}
+            {/* <button id="sort-order-switch" onClick={toggleSortOrder}>
               {sortHighToLow ? <ArrowDownwardIcon style={{color: "white"}}/> : <ArrowUpwardIcon style={{color: "white"}}/>}
-            </button>
+            </button> */}
           </div>
         
         </div>
