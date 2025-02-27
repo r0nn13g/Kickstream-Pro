@@ -21,7 +21,7 @@ export default function App() {
         <Route path='/' element={<Home />}/>
         <Route path="/cx" element={<DgnsLive />}/>
         <Route path="/trending" element={<ShowTrending />}/>
-        <Route path="/search" element={<SearchChannels />}/>
+        <Route path="/search-channels" element={<SearchChannels />}/>
         <Route path='/news' element={<News />}/>
         <Route path="/videos/:id" element={<DisplayVideo />}/>
         <Route path='/casino-streamers' element={<Live />}/>

@@ -29,9 +29,9 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/cx" style={{textDecoration: 'none' , color: '##800080' }}>
-              <b>CX +</b>
+          <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'}} >
+              <Link to="/cx">
+              <img id="cxlogo" alt="cx logo" src='https://files.kick.com/emotes/622947/fullsize'/>
               </Link>
           </ListItem>
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none'  }} >
@@ -49,23 +49,13 @@ export default function TemporaryDrawer() {
               <b>Banned? +</b>
               </Link>
           </ListItem>
-          {/* <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/trending" style={{ textDecoration: 'none' , color: 'white' }}>
-              <b>Trending +</b>
-              </Link>
-          </ListItem> */}
-          {/* <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }} >
-              <Link to="/support" style={{textDecoration: 'none' , color: 'white' }}>
-              <b>Support +</b>
-              </Link>
-          </ListItem> */}
           <ListItem style={{ display: 'flex', justifyContent: 'flex-end', textDecoration: 'none' }}  >
           </ListItem>
       </List>
-      <ListItem style={{ display: 'flex', justifyContent: 'flex-end' }} >
-            <h3>Kickstream Pro</h3>
+      <ListItem style={{ color: "var(--gray-elements )",display: 'flex', justifyContent: 'flex-end' }} >
+            <h3>KickstreamPRO v0.8</h3>
             &nbsp; &nbsp;&nbsp;
-              <GitHubIcon style={{fill: 'white'}}/>
+              <GitHubIcon style={{fill: "var(--green-elements)"}}/>
       </ListItem>
     </Box>
   );
